@@ -30,8 +30,8 @@ PDF_INPUT_MODE = "pdf"
 QUESTION_ONLY_INPUT_MODE = "question_only"
 SUPPORTED_INPUT_MODES = {PDF_INPUT_MODE, QUESTION_ONLY_INPUT_MODE}
 UNANSWERABLE_LABEL = "Unanswerable"
-INFERENCE_PROTOCOL_VERSION = 6
-SCORING_PROTOCOL_VERSION = 5
+INFERENCE_PROTOCOL_VERSION = 7
+SCORING_PROTOCOL_VERSION = 6
 
 JUDGE_REQUIRED_QA_FIELDS = (
     "is_correct",
@@ -387,10 +387,12 @@ def build_judge_queue_contract(
             for name in (
                 "run_judge.py",
                 "evaluation_protocol.py",
-                "qa_scoring.py",
                 "eval_framework.py",
             )
         },
+        "judge_prompt_sha256": sha256_file(
+            Path(__file__).resolve().parents[3] / "evaluation/prompts/semantic_judge.txt"
+        ),
         "judge_provider_identity": judge_provider_identity,
         "judge_config": json.loads(
             json.dumps(
@@ -679,23 +681,19 @@ def validate_pdf_prediction(
     """Validate PDF fields and canonicalize the evidence page-set order.
 
     Evidence pages are a mathematical set for scoring. JSON list order does
-    not change the prediction, so a well-typed, duplicate-free list is sorted
-    deterministically here. Inference artifacts retain the exact raw response
-    and record this representation-only normalization; no page is added or
-    removed.
+    not change the prediction. Sort and deduplicate integer pages while keeping
+    the answer text unchanged. Inference artifacts retain the exact raw response.
     """
     if not isinstance(answer, str) or not answer.strip():
         raise ValueError("answer_pre must be a non-empty string")
-    answer = answer.strip()
     if not isinstance(raw_pages, list):
         raise ValueError("evidence_pages must be a JSON list")
     pages: list[int] = []
     for page in raw_pages:
         if isinstance(page, bool) or not isinstance(page, int) or page <= 0:
             raise ValueError("evidence_pages must contain positive integers")
-        if page in pages:
-            raise ValueError("evidence_pages must not contain duplicates")
-        pages.append(page)
+        if page not in pages:
+            pages.append(page)
     pages = sorted(pages)
     if maximum_pages is not None and len(pages) > maximum_pages:
         raise ValueError(
@@ -723,13 +721,28 @@ def validate_pdf_prediction(
     if answer == UNANSWERABLE_LABEL:
         if pages:
             raise ValueError("Unanswerable must have evidence_pages=[]")
-    elif answer.casefold() == UNANSWERABLE_LABEL.casefold():
+    elif answer.strip().casefold() == UNANSWERABLE_LABEL.casefold() or answer in {
+        "Not mentioned", "Not provided", "Unknown", "N/A", "None", "I cannot answer"
+    }:
         raise ValueError(
             f"unanswerable label must be exactly {UNANSWERABLE_LABEL!r}"
         )
     elif not pages:
         raise ValueError("answerable prediction must include evidence_pages")
     return answer, pages
+
+
+def _unique_json_fields(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON field: {key}")
+        result[key] = value
+    return result
+
+
+def _reject_json_constant(value):
+    raise ValueError(f"non-JSON constant: {value}")
 
 
 def parse_canonical_pdf_output(
@@ -743,7 +756,7 @@ def parse_canonical_pdf_output(
     if not raw:
         raise ValueError("empty output")
     try:
-        value = json.loads(raw)
+        value = json.loads(raw, object_pairs_hook=_unique_json_fields, parse_constant=_reject_json_constant)
     except (json.JSONDecodeError, TypeError) as exc:
         raise ValueError("output is not one JSON object") from exc
     if not isinstance(value, dict):
@@ -769,8 +782,8 @@ def canonicalize_pdf_output_for_storage(
     """Return canonical JSON plus an audit trail of safe normalizations.
 
     The input must already be the one legal JSON object with exactly the two
-    canonical keys. Only representation-level changes are allowed: trimming
-    outer answer whitespace and sorting the duplicate-free evidence page set.
+    canonical keys. Only outer JSON whitespace and evidence sorting/deduplication
+    are normalized. The answer's whitespace is part of the preserved answer.
     Callers store the original response separately for publication audit.
     """
     raw = str(output or "").strip()
@@ -781,9 +794,11 @@ def canonicalize_pdf_output_for_storage(
     )
     value = json.loads(raw)
     normalizations: list[str] = []
-    if value["answer_pre"] != answer:
-        normalizations.append("answer_outer_whitespace_trimmed")
-    if value["evidence_pages"] != pages:
+    if str(output or "") != raw:
+        normalizations.append("outer_whitespace")
+    if len(value["evidence_pages"]) != len(set(value["evidence_pages"])):
+        normalizations.append("evidence_pages_deduplicated")
+    if value["evidence_pages"] != sorted(value["evidence_pages"]):
         normalizations.append("evidence_pages_sorted")
     canonical = json.dumps(
         {"answer_pre": answer, "evidence_pages": pages},

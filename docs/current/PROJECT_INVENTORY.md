@@ -23,11 +23,11 @@
 
 | 路径 | 用途 | 行数 | SHA-256 |
 | --- | --- | ---: | --- |
-| `.gitignore` | 项目配置或入口：.gitignore | 178 | `ae85f31cd193` |
+| `.gitignore` | 项目配置或入口：.gitignore | 181 | `b89d60b64a37` |
 | `CONTRIBUTORS.md` | 项目配置或入口：CONTRIBUTORS | 20 | `b84c7afd6165` |
 | `README.en.md` | 项目配置或入口：README.en | 4 | `d61ad80987bb` |
-| `README.md` | 项目配置或入口：README | 110 | `622bc0b58ab8` |
-| `README.zh-CN.md` | 项目配置或入口：README.zh-CN | 125 | `b3cd95516fff` |
+| `README.md` | 项目配置或入口：README | 114 | `e2d602eadf2a` |
+| `README.zh-CN.md` | 项目配置或入口：README.zh-CN | 125 | `6a60d0fef051` |
 | `deploy/systemd/pku-data-manager-api.service` | 本地 systemd 服务与健康守护部署单元 | 17 | `c6dac49af915` |
 | `deploy/systemd/pku-task-queue-api.service` | 本地 systemd 服务与健康守护部署单元 | 15 | `27796a52b576` |
 | `deploy/systemd/pku-task-queue-daemon.service` | 本地 systemd 服务与健康守护部署单元 | 15 | `0e84f267087a` |
@@ -35,12 +35,12 @@
 | `deploy/systemd/pku-web-health.service` | 本地 systemd 服务与健康守护部署单元 | 9 | `d1efa505031c` |
 | `deploy/systemd/pku-web-health.timer` | 本地 systemd 服务与健康守护部署单元 | 10 | `4874bd250b0d` |
 | `deploy/systemd/pku-web-tunnel.service` | 本地 systemd 服务与健康守护部署单元 | 14 | `7ef0af37b291` |
-| `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 415 | `315117c4679e` |
-| `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 69 | `b77445197732` |
+| `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 416 | `957877681140` |
+| `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 69 | `14ac48e42dad` |
 | `docs/current/DATASET_CATALOG.md` | 项目文档：DATASET CATALOG | 33 | `a8b83f7b7a4a` |
-| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 261 | `37ecc507e615` |
+| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 282 | `c6f62147d219` |
 | `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 678 | `cf611e006c26` |
-| `docs/current/README.md` | 项目文档：README | 126 | `307579b7ddb5` |
+| `docs/current/README.md` | 项目文档：README | 126 | `41c52fb458a4` |
 | `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `7ab162dbb736` |
 | `docs/prompts/MAINTENANCE_REMEDIATION.md` | 项目文档：MAINTENANCE REMEDIATION | 26 | `7640aa7c9528` |
 | `docs/releases/PDF_DISTRIBUTION.md` | 项目文档：PDF DISTRIBUTION | 50 | `2c5375f7eb60` |
@@ -50,10 +50,18 @@
 | `docs/reports/README.md` | 项目文档：README | 14 | `ce204a6418e8` |
 | `docs/reports/SCIDOC_MIGRATION_20260920.md` | 项目文档：SCIDOC MIGRATION 20260920 | 78 | `e4073f071a5c` |
 | `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 69 | `0ee565793a91` |
-| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 208 | `2bf5f74296d0` |
+| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 213 | `b2885c5e91d3` |
 | `docs/reports/official_evaluation/LOCAL_MODEL_TEST.md` | 项目文档：LOCAL MODEL TEST | 90 | `16c8baa69bac` |
+| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 116 | `7851cb5c0e6c` |
 | `docs/reports/official_evaluation/claude_subject_discrepancy.json` | 项目文档：claude subject discrepancy | 118 | `4fd535e724eb` |
 | `docs/reports/official_evaluation/dataset_preflight.json` | 项目文档：dataset preflight | 1624 | `2fcf32ae8f4e` |
+| `docs/reports/official_evaluation/fast_reproduction_check/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 31 | `39be229403ba` |
+| `docs/reports/official_evaluation/fast_reproduction_check/feasibility.json` | 项目文档：feasibility | 932 | `5f17d34fd9cd` |
+| `docs/reports/official_evaluation/fast_reproduction_check/local_decisions.json` | 项目文档：local decisions | 122 | `bdf413487a18` |
+| `docs/reports/official_evaluation/fast_reproduction_check/local_jobs.json` | 项目文档：local jobs | 256 | `01766086cd11` |
+| `docs/reports/official_evaluation/fast_reproduction_check/local_judge_config.json` | 项目文档：local judge config | 108 | `d3ce7365dc44` |
+| `docs/reports/official_evaluation/fast_reproduction_check/local_summary.json` | 项目文档：local summary | 109 | `35a575355b8f` |
+| `docs/reports/official_evaluation/fast_reproduction_check/qa_hashes.json` | 项目文档：qa hashes | 29 | `29fdb517e43d` |
 | `docs/reports/official_evaluation/local_smoke/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 28 | `c7f21f2e8f4b` |
 | `docs/reports/official_evaluation/local_smoke/controls.json` | 项目文档：controls | 206 | `ea6abc83bd7a` |
 | `docs/reports/official_evaluation/local_smoke/judge_config.json` | 项目文档：judge config | 117 | `158cdeca0fd7` |
@@ -67,8 +75,9 @@
 | `docs/reports/official_evaluation/reproduction_audit.json` | 项目文档：reproduction audit | 5120 | `0f17d4df501c` |
 | `docs/reports/official_evaluation/verification.json` | 项目文档：verification | 63 | `fa808b6ac98c` |
 | `environment.yml` | 项目配置或入口：environment | 8 | `1dc4df61202c` |
-| `evaluation/README.md` | 项目配置或入口：README | 286 | `c0b231383c34` |
+| `evaluation/README.md` | 项目配置或入口：README | 292 | `0b637b15e51a` |
 | `evaluation/__init__.py` | 项目配置或入口：  init   | 3 | `b51a76f50781` |
+| `evaluation/check_reproduction.py` | 项目配置或入口：check reproduction | 117 | `cc397aa8b9dc` |
 | `evaluation/evaluate.py` | 项目配置或入口：evaluate | 83 | `cdff69d6256c` |
 | `evaluation/judge.py` | 项目配置或入口：judge | 125 | `c6a08c4ff9fd` |
 | `evaluation/metrics.py` | 项目配置或入口：metrics | 87 | `328f11cbcdd3` |
@@ -77,7 +86,7 @@
 | `evaluation/prompts.py` | 项目配置或入口：prompts | 12 | `694a63ed56b5` |
 | `evaluation/prompts/provenance.json` | 项目配置或入口：provenance | 7 | `069ca54dd7b3` |
 | `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 13 | `f13a46c70ff1` |
-| `evaluation/reproduce.py` | 项目配置或入口：reproduce | 234 | `9dd83e97d104` |
+| `evaluation/reproduce.py` | 项目配置或入口：reproduce | 243 | `7b9a87fe3721` |
 | `evaluation/validation.py` | 项目配置或入口：validation | 255 | `db009a6b4d27` |
 | `provider_config.example.json` | 项目配置或入口：provider config.example | 16 | `1ed1d13e6268` |
 | `pyproject.toml` | 项目配置或入口：pyproject | 27 | `7678f6ba4aa5` |
@@ -87,6 +96,7 @@
 | `scripts/dataset_construction/phase1_paper_acquisition/README.md` | 项目配置或入口：README | 62 | `1d9e8bfeca84` |
 | `scripts/dataset_construction/phase1_paper_acquisition/arxiv_download_backend.py` | 项目配置或入口：arxiv download backend | 86 | `a67bf7499717` |
 | `scripts/generate_dataset_catalog.py` | 项目配置或入口：generate dataset catalog | 52 | `58d7107827ed` |
+| `scripts/judge_reproduction_jobs.py` | 项目配置或入口：judge reproduction jobs | 138 | `92cd6ddfcb03` |
 | `scripts/smoke_local_evaluation.py` | 项目配置或入口：smoke local evaluation | 213 | `05629f8cac9b` |
 | `scripts/validate_submission.py` | 项目配置或入口：validate submission | 29 | `7684e9e25bb3` |
 | `src/pku_qa/__init__.py` | 项目配置或入口：  init   | 23 | `5ec76212d2b6` |
@@ -94,16 +104,15 @@
 | `src/pku_qa/evaluation/adaptive_gpu_pool.py` | 统一评测核心：adaptive gpu pool | 611 | `c4aedbbb59d5` |
 | `src/pku_qa/evaluation/calculate_evidence_weighted_accuracy.py` | 统一评测核心：calculate evidence weighted accuracy | 360 | `7e394ed0574e` |
 | `src/pku_qa/evaluation/durable_work_queue.py` | 统一评测核心：durable work queue | 510 | `0e38dd574f56` |
-| `src/pku_qa/evaluation/eval_framework.py` | 统一评测核心：eval framework | 881 | `5f663ecd2ee2` |
-| `src/pku_qa/evaluation/evaluation_protocol.py` | 统一评测核心：evaluation protocol | 794 | `0048f0898b3f` |
+| `src/pku_qa/evaluation/eval_framework.py` | 统一评测核心：eval framework | 881 | `80834ef40edc` |
+| `src/pku_qa/evaluation/evaluation_protocol.py` | 统一评测核心：evaluation protocol | 809 | `b7ddd0fd3028` |
 | `src/pku_qa/evaluation/gpu_reservation.py` | 统一评测核心：gpu reservation | 355 | `daa7cce39404` |
 | `src/pku_qa/evaluation/model_paths.py` | 统一评测核心：model paths | 69 | `732aac67f3bb` |
 | `src/pku_qa/evaluation/progress_logging.py` | 统一评测核心：progress logging | 22 | `39a607f715b4` |
-| `src/pku_qa/evaluation/qa_scoring.py` | 统一评测核心：qa scoring | 179 | `975e65aa3f40` |
 | `src/pku_qa/evaluation/run_eval_pipeline.py` | 统一评测核心：run eval pipeline | 309 | `715d05ade3ba` |
 | `src/pku_qa/evaluation/run_hard_eval.py` | 统一评测核心：run hard eval | 894 | `bad05dbe21b6` |
 | `src/pku_qa/evaluation/run_inference.py` | 统一评测核心：run inference | 1434 | `e04401b045c0` |
-| `src/pku_qa/evaluation/run_judge.py` | 统一评测核心：run judge | 875 | `88f5ffbb6b9b` |
+| `src/pku_qa/evaluation/run_judge.py` | 统一评测核心：run judge | 804 | `5b6cc76430c4` |
 | `src/pku_qa/evaluation/run_report.py` | 统一评测核心：run report | 1005 | `8c6d3eee64c0` |
 | `src/pku_qa/pdf_assets.py` | 项目配置或入口：pdf assets | 155 | `3d0339ec71b7` |
 | `src/pku_qa/services/__init__.py` | 本地服务：  init   | 0 | `e3b0c44298fc` |
@@ -180,7 +189,7 @@
 | `tests/__init__.py` | 公共支持 测试：  init   | 0 | `e3b0c44298fc` |
 | `tests/conftest.py` | 公共支持 测试：conftest | 18 | `22580724449b` |
 | `tests/integration/__init__.py` | integration 测试：  init   | 0 | `e3b0c44298fc` |
-| `tests/integration/test_adaptive_gpu_queue.py` | integration 测试：adaptive gpu queue | 1307 | `c2956615a052` |
+| `tests/integration/test_adaptive_gpu_queue.py` | integration 测试：adaptive gpu queue | 1311 | `25f691132548` |
 | `tests/integration/test_apply_hard_cross_pdf_review_fixes.py` | integration 测试：apply hard cross pdf review fixes | 46 | `a0e823eb3677` |
 | `tests/integration/test_audit_reasoning_pdf_dependency.py` | integration 测试：audit reasoning pdf dependency | 152 | `25c39d89341c` |
 | `tests/integration/test_build_cross_pdf_gemini_fix_rereview.py` | integration 测试：build cross pdf gemini fix rereview | 60 | `2c5707a4827e` |
@@ -217,6 +226,7 @@
 | `tests/test_judge.py` | 公共支持 测试：judge | 109 | `5db380bf1138` |
 | `tests/test_local_smoke.py` | 公共支持 测试：local smoke | 47 | `6c50957d7743` |
 | `tests/test_metrics.py` | 公共支持 测试：metrics | 11 | `4fe3911315ab` |
+| `tests/test_reproduction_bounds.py` | 公共支持 测试：reproduction bounds | 35 | `286bff79ff4f` |
 | `tests/test_validation.py` | 公共支持 测试：validation | 73 | `f9c76c857561` |
 | `tests/unit/__init__.py` | unit 测试：  init   | 0 | `e3b0c44298fc` |
 | `tests/unit/test_bootstrap_data_review_service.py` | unit 测试：bootstrap data review service | 34 | `8915b1841caa` |
@@ -229,13 +239,13 @@
 | `tests/unit/test_final_2200_contract.py` | unit 测试：final 2200 contract | 74 | `12a8d43552fa` |
 | `tests/unit/test_hard_eval_report_commands.py` | unit 测试：hard eval report commands | 56 | `3d94d5a6b194` |
 | `tests/unit/test_inspect_final_2200.py` | unit 测试：inspect final 2200 | 57 | `2b40d156e2e5` |
-| `tests/unit/test_judge_rules.py` | unit 测试：judge rules | 411 | `fb41aa3efb06` |
+| `tests/unit/test_judge_rules.py` | unit 测试：judge rules | 414 | `316aa194ac08` |
 | `tests/unit/test_model_paths.py` | unit 测试：model paths | 100 | `8c66cfcfeede` |
 | `tests/unit/test_normalize_final_2200_release.py` | unit 测试：normalize final 2200 release | 33 | `9430c309387d` |
+| `tests/unit/test_paper_judge_alignment.py` | unit 测试：paper judge alignment | 87 | `808d35d94271` |
 | `tests/unit/test_pdf_assets.py` | unit 测试：pdf assets | 51 | `e4e565121d23` |
 | `tests/unit/test_progress_logging.py` | unit 测试：progress logging | 23 | `d3bfe0099a66` |
 | `tests/unit/test_protocol_fingerprints.py` | unit 测试：protocol fingerprints | 130 | `8a54890c63c7` |
-| `tests/unit/test_qa_scoring.py` | unit 测试：qa scoring | 113 | `2da749336b6f` |
 | `tests/unit/test_reclassify_cross_pdf_modalities_api.py` | unit 测试：reclassify cross pdf modalities api | 112 | `f5a8cbab74a9` |
 | `tests/unit/test_run_claude_pdf_selection.py` | unit 测试：run claude pdf selection | 25 | `af8b1f8e56f4` |
 | `tests/unit/test_run_final_2200_evaluation.py` | unit 测试：run final 2200 evaluation | 39 | `0b4168e3d025` |

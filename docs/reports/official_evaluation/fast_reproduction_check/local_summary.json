@@ -1,0 +1,109 @@
+{
+  "models": {
+    "MiniCPM-V 2.6": {
+      "total": 2200,
+      "missing": 2,
+      "illegal": 2198,
+      "technical_failures": 0,
+      "answer_metrics": {
+        "All": {
+          "count": 2200,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "General": {
+          "count": 1000,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "Unanswerable": {
+          "count": 200,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "Reasoning": {
+          "count": 200,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "Multi-Document": {
+          "count": 800,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      }
+    },
+    "InternVL2.5-8B": {
+      "total": 2200,
+      "missing": 2,
+      "illegal": 2190,
+      "technical_failures": 5,
+      "answer_metrics": {
+        "All": {
+          "count": 2200,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "General": {
+          "count": 1000,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "Unanswerable": {
+          "count": 200,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "Reasoning": {
+          "count": 200,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "Multi-Document": {
+          "count": 800,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      }
+    },
+    "Gemma 3 27B": {
+      "total": 2200,
+      "missing": 2,
+      "illegal": 2057,
+      "technical_failures": 139,
+      "answer_metrics": {
+        "All": {
+          "count": 2200,
+          "correct": 1,
+          "accuracy": 0.045454545454545456
+        },
+        "General": {
+          "count": 1000,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "Unanswerable": {
+          "count": 200,
+          "correct": 1,
+          "accuracy": 0.5
+        },
+        "Reasoning": {
+          "count": 200,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "Multi-Document": {
+          "count": 800,
+          "correct": 0,
+          "accuracy": 0.0
+        }
+      }
+    }
+  },
+  "real_judge_items": 4,
+  "judge_failures": 0,
+  "qa_files_unchanged": 27,
+  "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+  "official_reproduction_verified": false,
+  "result": "mismatch confirmed; not 11-model full rescore"
+}

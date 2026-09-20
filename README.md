@@ -72,6 +72,10 @@ Reaggregating historical v4 records matches all 99 displayed Table 2 cells;
 Table 3 matches 98/99 cells, with a discrepancy in Claude's All value.
 See the [complete audit and remaining reproducibility items](docs/reports/official_evaluation/FINAL_REPORT.md).
 
+The [subsequent full-artifact check and local Judge verification](docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md)
+demonstrate concrete mismatches with the current paper protocol. Old rule-first
+answer scoring has been removed; QA and historical artifacts remain unchanged.
+
 ```bash
 python evaluation/evaluate.py --predictions predictions.jsonl \
   --judge-config judge-config.json --judge-cache .cache/sciencedoc_judge.jsonl \

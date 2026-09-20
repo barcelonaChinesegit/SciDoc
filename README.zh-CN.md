@@ -97,7 +97,7 @@ JSON 顶层为 `{paper_id: paper}`，每个 paper 内的 `QA` 为 `{qa_id: qa}`�
 
 Full、Oracle、证据页消融仅改变 `pdf` 的页面选择。所有页码从 1 开始，采用 PDF 文件物理页；Cross-PDF 使用合并文件页码。拒答标签精确为 `Unanswerable`；PDF 模式必须返回 `{"answer_pre":"Unanswerable","evidence_pages":[]}`。
 
-论文主指标为语义 Judge Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages，固定分母为 2,200。完全页集合匹配和联合正确性仅是审计诊断，不是主指标。`evaluation/` 按论文实现，不使用字符串、别名或数值预匹配；`src/pku_qa/evaluation/` 保留内部历史实验流程，不能将其规则优先评分当成论文 official evaluator。历史 Table 2 的 99 个两位小数单元格可由 v4 记录重聚合，但旧输出和当前金标存在版本差异，不能声称新评测器已经复现论文。
+论文主指标为语义 Judge Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages，固定分母为 2,200。完全页集合匹配和联合正确性仅是审计诊断，不是主指标。`evaluation/` 按论文实现，不使用字符串、别名或数值预匹配；`src/pku_qa/evaluation/` 的旧规则优先评分已删除，Judge 统一使用论文原版提示词；内部流程仍不构成论文结果复现。历史 Table 2 的 99 个两位小数单元格可由 v4 记录重聚合，但旧输出和当前金标存在版本差异，不能声称新评测器已经复现论文。
 
 ## 人工审核与文档
 

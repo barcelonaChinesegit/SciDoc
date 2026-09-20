@@ -46,57 +46,66 @@ def read_csv(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def audit_baselines(results: Path, gold, output: Path) -> dict:
+def load_baseline(results: Path, gold, directory: str):
+    """Read one historical run without repairing raw outputs or changing gold."""
     index = {(g.legacy_paper_id, g.legacy_qa_id): qid for qid, g in gold.items()}
+    model = MODELS[directory]
+    predictions, counts, details, source_hashes = {}, Counter(), [], {}
+    for dataset in DATASETS:
+        path = results / directory / (dataset + ".json")
+        if not path.exists():
+            counts["missing_result_files"] += 1
+            continue
+        source_hashes[str(path.relative_to(results))] = file_hash(path)
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for paper_id, paper in data.items():
+            for legacy_qa, qa in paper.get("QA", {}).items():
+                counts["historical_records"] += 1
+                qid = index.get((str(paper_id), str(legacy_qa)))
+                if qid is None:
+                    counts["unmapped_legacy_ids"] += 1
+                    details.append({"model": model, "dataset": dataset, "legacy_paper": paper_id,
+                        "legacy_qa": legacy_qa, "qa_id": "", "status": "unmapped", "differences": "identity", "raw_sha256": ""})
+                    continue
+                if qid in predictions:
+                    raise ValueError(f"{model}: duplicate baseline binding for {qid}")
+                g = gold[qid]
+                differences = [field for field, old, new in (
+                    ("question", qa.get("question"), g.question), ("answer", qa.get("answer"), g.answer),
+                    ("evidence_pages", qa.get("evidence_pages"), list(g.evidence_pages))) if old != new]
+                counts.update("changed_" + field for field in differences)
+                # Claude's original ordinary file stores the raw JSON in answer_pre.
+                # Do not reconstruct absent raw JSON from already-parsed answer/pages.
+                raw = qa.get("answer_pre_raw")
+                source_field = "answer_pre_raw"
+                if raw is None and directory == "Claude-sonncet-5" and dataset == "ordinary1190":
+                    raw, source_field = qa.get("answer_pre"), "answer_pre"
+                if isinstance(raw, str):
+                    p = validate_raw(qid, raw, g.page_count)
+                else:
+                    p = Prediction(qid, "technical_failure", errors=[{"type": "raw_output_unavailable", "message": "No original model bytes available"}])
+                p.audit["historical_source"] = {"file": str(path.relative_to(results)), "field": source_field,
+                    "legacy_paper": str(paper_id), "legacy_qa": str(legacy_qa), "dataset_differences": differences}
+                counts["strict_raw_" + p.status] += 1
+                if differences:
+                    counts["dataset_version_mismatch"] += 1
+                    # A prediction to another question/reference version cannot certify this release.
+                    p.audit["raw_validation_status"] = p.status
+                    p.status = "technical_failure"
+                    p.errors.append({"type": "dataset_version_mismatch", "message": ", ".join(differences)})
+                predictions[qid] = p
+                details.append({"model": model, "dataset": dataset, "legacy_paper": paper_id,
+                    "legacy_qa": legacy_qa, "qa_id": qid, "status": p.status,
+                    "differences": ";".join(differences), "raw_sha256": digest(raw) if isinstance(raw, str) else ""})
+    return predictions, counts, details, source_hashes
+
+
+def audit_baselines(results: Path, gold, output: Path) -> dict:
     summaries, details, source_hashes = {}, [], {}
     for directory, model in MODELS.items():
-        predictions, counts = {}, Counter()
-        for dataset in DATASETS:
-            path = results / directory / (dataset + ".json")
-            if not path.exists():
-                counts["missing_result_files"] += 1
-                continue
-            source_hashes[str(path.relative_to(results))] = file_hash(path)
-            data = json.loads(path.read_text(encoding="utf-8"))
-            for paper_id, paper in data.items():
-                for legacy_qa, qa in paper.get("QA", {}).items():
-                    counts["historical_records"] += 1
-                    qid = index.get((str(paper_id), str(legacy_qa)))
-                    if qid is None:
-                        counts["unmapped_legacy_ids"] += 1
-                        details.append({"model": model, "dataset": dataset, "legacy_paper": paper_id,
-                            "legacy_qa": legacy_qa, "qa_id": "", "status": "unmapped", "differences": "identity", "raw_sha256": ""})
-                        continue
-                    if qid in predictions:
-                        raise ValueError(f"{model}: duplicate baseline binding for {qid}")
-                    g = gold[qid]
-                    differences = [field for field, old, new in (
-                        ("question", qa.get("question"), g.question), ("answer", qa.get("answer"), g.answer),
-                        ("evidence_pages", qa.get("evidence_pages"), list(g.evidence_pages))) if old != new]
-                    counts.update("changed_" + field for field in differences)
-                    # Claude's original ordinary file stores the raw JSON in answer_pre.
-                    # Do not reconstruct absent raw JSON from already-parsed answer/pages.
-                    raw = qa.get("answer_pre_raw")
-                    source_field = "answer_pre_raw"
-                    if raw is None and directory == "Claude-sonncet-5" and dataset == "ordinary1190":
-                        raw, source_field = qa.get("answer_pre"), "answer_pre"
-                    if isinstance(raw, str):
-                        p = validate_raw(qid, raw, g.page_count)
-                    else:
-                        p = Prediction(qid, "technical_failure", errors=[{"type": "raw_output_unavailable", "message": "No original model bytes available"}])
-                    p.audit["historical_source"] = {"file": str(path.relative_to(results)), "field": source_field,
-                        "legacy_paper": str(paper_id), "legacy_qa": str(legacy_qa), "dataset_differences": differences}
-                    counts["strict_raw_" + p.status] += 1
-                    if differences:
-                        counts["dataset_version_mismatch"] += 1
-                        # A prediction to another question/reference version cannot certify this release.
-                        p.audit["raw_validation_status"] = p.status
-                        p.status = "technical_failure"
-                        p.errors.append({"type": "dataset_version_mismatch", "message": ", ".join(differences)})
-                    predictions[qid] = p
-                    details.append({"model": model, "dataset": dataset, "legacy_paper": paper_id,
-                        "legacy_qa": legacy_qa, "qa_id": qid, "status": p.status,
-                        "differences": ";".join(differences), "raw_sha256": digest(raw) if isinstance(raw, str) else ""})
+        predictions, counts, model_details, hashes = load_baseline(results, gold, directory)
+        details.extend(model_details)
+        source_hashes.update(hashes)
         result = score(gold, predictions, Judge({}), detailed=True)
         counts["mapped_predictions"] = len(predictions)
         counts["missing_current_ids"] = len(gold) - len(predictions)

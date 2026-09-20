@@ -1,0 +1,932 @@
+{
+  "claim": "Stored historical predictions cannot reproduce all current paper cells under the paper contract",
+  "official_reproduction_verified": false,
+  "models": {
+    "MiniCPM-V 2.6": {
+      "historical_counts": {
+        "historical_records": 2198,
+        "strict_raw_illegal": 2198
+      },
+      "received": 2198,
+      "missing": 2,
+      "illegal": 2198,
+      "pending_judge": 0,
+      "error_counts": {
+        "invalid_json": 2198
+      },
+      "complete_model_selected_for_local_judge": true,
+      "witnesses": [
+        {
+          "qa_id": "QA0001",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "<|endoftext|>Based on the information provided in the PDF, the two-step approach the buyer uses to design the robustly optimal mechanism is as follows:\n\n1. **Step 1: Mechanism Selection**\n   - The buyer selects a mechanism from the set of all possible mechanisms.\n   \n2. **Step 2: Quantity Adjustment**\n   - After selecting the mechanism, the buyer adjusts the quantity to the efficient output level.\n\nThis approach ensures that the selected mechanism provides a robust guarantee against the possibility of over-procurement at low or high costs.\n\nTherefore, the answer to the question is:\n{\"answer_pre\":\"The two-step approach the buyer uses to design the robustly optimal mechanism involves first selecting a mechanism from the set of all possible mechanisms and then adjusting the quantity to the efficient output level.\"}\n\nThe evidence for this answer can be found in the section titled \"2.3 Short-list characterization\" in the provided PDF.",
+          "raw_sha256": "e136dbb957160d2b7158ac609632280f8a170c5862eff444e975b3b7ad1da612",
+          "source": {
+            "file": "MiniCPM-V-2.6/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA1",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0002",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "<|endoftext|>Based on the information provided in the PDF, when the Baron-Myerson-with-quantity-floor mechanism is not robustly optimal and D*(\\bar{\\theta})=\\underline{D}(\\bar{\\theta}), price regulation strictly dominates.\n\nTherefore, the answer is:\n{\"answer_pre\":\"Price regulation strictly dominates\",\"evidence_pages\":[23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 12",
+          "raw_sha256": "59ad08c935d8674f8378b7018607d0e6c198524ce2572b5ca231c4cb692e2fcd",
+          "source": {
+            "file": "MiniCPM-V-2.6/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA7",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0003",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "<|endoftext|>Based on the information provided in the PDF, the key feature of robustly optimal price mechanisms is that they maximize the expected welfare under the lowest demand guarantee. This means that these mechanisms are designed to ensure that the buyer's welfare is maximized even when the actual demand is lower than the expected demand. The robustness of the mechanism is measured by its ability to guarantee a certain level of welfare under uncertainty about the demand.\n\nTherefore, the answer is:\n{\"answer_pre\":\"The key feature of robustly optimal price mechanisms is that they maximize the expected welfare under the lowest demand guarantee.\", \"evidence_pages\":[13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108",
+          "raw_sha256": "5b69573f9774bf7b3607b480b2994dcd84d285cf4de1c5d28856b8cb98e5622c",
+          "source": {
+            "file": "MiniCPM-V-2.6/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA8",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "InternVL2.5-8B": {
+      "historical_counts": {
+        "historical_records": 2198,
+        "strict_raw_illegal": 2195,
+        "changed_evidence_pages": 2,
+        "dataset_version_mismatch": 5,
+        "changed_answer": 3,
+        "strict_raw_legal": 3
+      },
+      "received": 2198,
+      "missing": 2,
+      "illegal": 2190,
+      "pending_judge": 3,
+      "error_counts": {
+        "invalid_json": 2195,
+        "dataset_version_mismatch": 5
+      },
+      "complete_model_selected_for_local_judge": true,
+      "witnesses": [
+        {
+          "qa_id": "QA0001",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\n  \"answer_pre\": \"The buyer first selects a set of mechanisms that are individually rational and incentive compatible. Then, the buyer computes a short list of mechanisms that deliver the highest welfare guarantee.\",\n  \"evidence_pages\": [10, 11]\n}\n```",
+          "raw_sha256": "3fb568b500a45b7882b79373019fbfaeb5f695e0b3c924cea010f2020aaaf994",
+          "source": {
+            "file": "InternVL25-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA1",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0002",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\n  \"answer_pre\": \"Price regulation strictly dominates.\",\n  \"evidence_pages\": [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]\n}\n```",
+          "raw_sha256": "df61af718c1f9cfcd3916c88857438df24a98612b859233bafe2f2cc7888e334",
+          "source": {
+            "file": "InternVL25-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA7",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0003",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\n  \"answer_pre\": \"Robustly optimal price mechanisms are characterized by their ability to maximize welfare under uncertainty. They ensure that the welfare guarantee is not violated under any demand realization, providing a robust solution to the procurement problem.\",\n  \"evidence_pages\": [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]\n}\n```",
+          "raw_sha256": "1583cc6df02b64576ee0e3d902ecade1bab416a699f950904a5a5293828db99b",
+          "source": {
+            "file": "InternVL25-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA8",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "MiniCPM-V 4.5": {
+      "historical_counts": {
+        "historical_records": 2200,
+        "strict_raw_legal": 1446,
+        "strict_raw_illegal": 752,
+        "changed_evidence_pages": 173,
+        "dataset_version_mismatch": 208,
+        "changed_question": 43,
+        "changed_answer": 59,
+        "unmapped_legacy_ids": 2
+      },
+      "received": 2198,
+      "missing": 2,
+      "illegal": 712,
+      "pending_judge": 1093,
+      "error_counts": {
+        "page_type": 100,
+        "invalid_json": 602,
+        "dataset_version_mismatch": 208,
+        "wrong_fields": 44,
+        "pages_type": 44,
+        "page_out_of_range": 12,
+        "refusal_with_pages": 2
+      },
+      "complete_model_selected_for_local_judge": false,
+      "witnesses": [
+        {
+          "qa_id": "QA1005",
+          "errors": [
+            {
+              "type": "page_type",
+              "message": "each evidence page must be an integer; bool/string/float are not allowed"
+            }
+          ],
+          "raw": "{\"answer_pre\": \"10%\", \"evidence_pages\": [\"Doc 2\", \"Doc 5\"]}",
+          "raw_sha256": "8930a12268e55b913049d2ea1e0a0b150e47b9af2e95bab76559d64c5b89343d",
+          "source": {
+            "file": "MiniCPM-V-4.5/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "UQA0195",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0009",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting property name enclosed in double quotes: line 3 column 2 (char 155)"
+            }
+          ],
+          "raw": "{\n  \"answer_pre\": \"Right-handle risk aversion is stronger than weak risk aversion, while left-handle risk aversion is weaker than strong risk aversion.\",\n 1,\n  \"evidence_pages\": [8]\n}",
+          "raw_sha256": "32f589a006249888a8dccf9ba328353679a3453631b3d40ee5dc624b0eecf0db",
+          "source": {
+            "file": "MiniCPM-V-4.5/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "4",
+            "legacy_qa": "QA8",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0020",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Invalid \\escape: line 2 column 45 (char 46)"
+            }
+          ],
+          "raw": "{\n  \"answer_pre\": \"The cardinal freedom index \\Delta_{i|i}^{\\phi}(R_{-i}) is defined as the size of the set of possible outcomes that agent i can bring about by varying her own strategy.\",\n  \"evidence_pages\": [6]\n}",
+          "raw_sha256": "8dcdd047b6c075461e603f6a6c6994ac66fc203f4f08791f3fcf832488cdc700",
+          "source": {
+            "file": "MiniCPM-V-4.5/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "8",
+            "legacy_qa": "QA4",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "InternVL3.5-8B": {
+      "historical_counts": {
+        "historical_records": 2190,
+        "strict_raw_legal": 1707,
+        "strict_raw_illegal": 481,
+        "changed_evidence_pages": 171,
+        "dataset_version_mismatch": 205,
+        "changed_question": 43,
+        "changed_answer": 58,
+        "unmapped_legacy_ids": 2
+      },
+      "received": 2188,
+      "missing": 12,
+      "illegal": 437,
+      "pending_judge": 1399,
+      "error_counts": {
+        "invalid_json": 429,
+        "dataset_version_mismatch": 205,
+        "page_out_of_range": 1,
+        "page_type": 50,
+        "answer_without_evidence": 1
+      },
+      "complete_model_selected_for_local_judge": false,
+      "witnesses": [
+        {
+          "qa_id": "QA0006",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "source": {
+            "file": "InternVL35-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "3",
+            "legacy_qa": "QA7",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0013",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "source": {
+            "file": "InternVL35-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "6",
+            "legacy_qa": "QA5",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0014",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "source": {
+            "file": "InternVL35-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "6",
+            "legacy_qa": "QA7",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "Gemma 3 27B": {
+      "historical_counts": {
+        "historical_records": 2198,
+        "strict_raw_illegal": 2196,
+        "changed_answer": 43,
+        "dataset_version_mismatch": 139,
+        "changed_question": 25,
+        "changed_evidence_pages": 110,
+        "strict_raw_legal": 2
+      },
+      "received": 2198,
+      "missing": 2,
+      "illegal": 2057,
+      "pending_judge": 1,
+      "error_counts": {
+        "invalid_json": 2196,
+        "dataset_version_mismatch": 139
+      },
+      "complete_model_selected_for_local_judge": true,
+      "witnesses": [
+        {
+          "qa_id": "QA0001",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\"answer_pre\":\"The buyer uses a two-step approach: first, they identify mechanisms that maximize the worst-case payoff across a set of plausible models. Second, they select the mechanism from this set that maximizes expected payoff under the conjectured model.\",\"evidence_pages\":[2,3,9,10]}\n```",
+          "raw_sha256": "cbf5b21b61879c154a8838a97e075ca2aff366192f9f487add14732e7526221b",
+          "source": {
+            "file": "Gemma3-27B-IT/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA1",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0002",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\"answer_pre\":\"When the Baron-Myerson-with-quantity-floor mechanism is not robustly optimal and D*(\\bar{\\theta})=\\underline{D}(\\bar{\\theta}), price regulation strictly dominates.\", \"evidence_pages\":[23]}\n```",
+          "raw_sha256": "2069b60cc7688ee61a1fbfb1cfd64f70454688dd984ac705ddb10c80329ec75f",
+          "source": {
+            "file": "Gemma3-27B-IT/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA7",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0003",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\"answer_pre\":\"The key feature of robustly optimal price mechanisms is that they require the price mechanism to be individually rational and incentive compatible no matter the firm's beliefs over the demand.\",\"evidence_pages\":[4]}\n```",
+          "raw_sha256": "a48ff657be555aefc38f3c705a8c9190878004bf5929eedb7587aefecc581504",
+          "source": {
+            "file": "Gemma3-27B-IT/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA8",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "Mistral-Small-3.1-24B": {
+      "historical_counts": {
+        "historical_records": 2198,
+        "strict_raw_illegal": 1192,
+        "strict_raw_legal": 1006,
+        "changed_evidence_pages": 2,
+        "dataset_version_mismatch": 5,
+        "changed_answer": 3
+      },
+      "received": 2198,
+      "missing": 2,
+      "illegal": 1190,
+      "pending_judge": 835,
+      "error_counts": {
+        "invalid_json": 1188,
+        "answer_without_evidence": 4,
+        "dataset_version_mismatch": 5
+      },
+      "complete_model_selected_for_local_judge": false,
+      "witnesses": [
+        {
+          "qa_id": "QA0001",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\n  \"answer_pre\": \"The buyer uses a two-step approach to design the robustly optimal mechanism. First, the buyer identifies all mechanisms that maximize the worst-case payoff over a set of plausible models. Then, the buyer selects the mechanism from this set that maximizes the expected payoff under the conjectured model.\",\n  \"evidence_pages\": [2, 10]\n}\n```",
+          "raw_sha256": "58db96e20264120c8ee946e9155e3737e945800d998b07fe537b42ae5bcbdee5",
+          "source": {
+            "file": "Mistral-Small3.1-24B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA1",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0002",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\n  \"answer_pre\": \"When the Baron-Myerson-with-quantity-floor mechanism is robustly optimal, quantity regulation dominates price regulation.\",\n  \"evidence_pages\": [4, 23]\n}\n```",
+          "raw_sha256": "6c5d1829663563fe8e450180ed30164fb95ee8409379b3e18b23e9b5e0a873b1",
+          "source": {
+            "file": "Mistral-Small3.1-24B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA7",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0003",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\n  \"answer_pre\": \"The key feature of robustly optimal price mechanisms is that they set a markup of F*(θ)/f*(θ) at each cost θ, capped at θ.\",\n  \"evidence_pages\": [12, 22]\n}\n```",
+          "raw_sha256": "6a798046043ac64d89d297ab847149983c03e3334499049adec380bc0ff31b7e",
+          "source": {
+            "file": "Mistral-Small3.1-24B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA8",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "Qwen3-VL-4B": {
+      "historical_counts": {
+        "historical_records": 2190,
+        "strict_raw_legal": 2163,
+        "changed_evidence_pages": 171,
+        "dataset_version_mismatch": 205,
+        "changed_question": 43,
+        "changed_answer": 58,
+        "strict_raw_illegal": 25,
+        "unmapped_legacy_ids": 2
+      },
+      "received": 2188,
+      "missing": 12,
+      "illegal": 23,
+      "pending_judge": 1772,
+      "error_counts": {
+        "dataset_version_mismatch": 205,
+        "answer_without_evidence": 2,
+        "invalid_json": 12,
+        "page_out_of_range": 1,
+        "page_type": 6,
+        "wrong_fields": 4,
+        "answer_type": 4,
+        "pages_type": 4
+      },
+      "complete_model_selected_for_local_judge": false,
+      "witnesses": [
+        {
+          "qa_id": "QA1018",
+          "errors": [
+            {
+              "type": "answer_without_evidence",
+              "message": "Only exact \"Unanswerable\" may have empty evidence_pages"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"L3 regularization is not mentioned in the paper.\",\"evidence_pages\":[]}",
+          "raw_sha256": "47f3b5a0fcc231fd9dabcf733b7b96f688c6dfd45d2b8279d78a0b401b811db1",
+          "source": {
+            "file": "Qwen3-VL-4B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "57",
+            "legacy_qa": "UQA0147",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0696",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Invalid \\escape: line 1 column 90 (char 89)"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"Because the flattening procedure preserves the topological invariants, as \\Pi_{k} is a smooth deformation of the original band projector \\hat{P}{k} and carries identical topological invariants.\",\"evidence_pages\":[5, 5]}",
+          "raw_sha256": "f801be38d4cc1a030113ff52c4edadd2fe92ac3e8c23f99e13bcc43d2609bd44",
+          "source": {
+            "file": "Qwen3-VL-4B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "430",
+            "legacy_qa": "QA10",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA1135",
+          "errors": [
+            {
+              "type": "page_out_of_range",
+              "message": "evidence page 196 exceeds evaluation PDF page count 16"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"10%\",\"evidence_pages\":[196]}",
+          "raw_sha256": "a7a41df237b5c3c53eb306b19a5025df10f241a9ddf6e20f52c527c0de287f9b",
+          "source": {
+            "file": "Qwen3-VL-4B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "475",
+            "legacy_qa": "UQA0125",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "Qwen3-VL-8B": {
+      "historical_counts": {
+        "historical_records": 2190,
+        "strict_raw_legal": 2163,
+        "changed_evidence_pages": 171,
+        "dataset_version_mismatch": 205,
+        "strict_raw_illegal": 25,
+        "changed_question": 43,
+        "changed_answer": 58,
+        "unmapped_legacy_ids": 2
+      },
+      "received": 2188,
+      "missing": 12,
+      "illegal": 20,
+      "pending_judge": 1775,
+      "error_counts": {
+        "dataset_version_mismatch": 205,
+        "invalid_json": 24,
+        "answer_without_evidence": 1
+      },
+      "complete_model_selected_for_local_judge": false,
+      "witnesses": [
+        {
+          "qa_id": "QA0020",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Invalid \\escape: line 1 column 26 (char 25)"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"|M_{i|i}^{\\phi}(R_{-i})|\",\"evidence_pages\":[8]}",
+          "raw_sha256": "2d95f000352e8cac9a7400fee7af9fbf8d05f2a6917a0e3d778a750e7c319003",
+          "source": {
+            "file": "Qwen3-VL-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "8",
+            "legacy_qa": "QA4",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0197",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Invalid \\escape: line 1 column 34 (char 33)"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"The dual variable \\pi^{*} represents a shadow carbon price, interpreted as the marginal reduction in risk-adjusted performance the investor is willing to accept per unit increase in the emissions ambiguity budget \\Gamma.\",\"evidence_pages\":[8]}",
+          "raw_sha256": "ee8927405d98efaba82befc714172513ff24ce2530b7f40af80ecdcfccf1fd64",
+          "source": {
+            "file": "Qwen3-VL-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "105",
+            "legacy_qa": "QA8",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0328",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Invalid \\escape: line 1 column 87 (char 86)"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"Because if D_{qc}(X) is Brown, then by Proposition 4.22, pgdim(O_{X,x})\\leq 1 for all x\\in X, as the Brown condition implies the pure global dimension of the local ring O_{X,x} is at most one.\",\"evidence_pages\":[14]}",
+          "raw_sha256": "f6f09ce1c7484c70c27479c82b71bb3b15352f192cc1e042932d874e70fcad35",
+          "source": {
+            "file": "Qwen3-VL-8B/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "182",
+            "legacy_qa": "QA10",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "Claude Sonnet 5": {
+      "historical_counts": {
+        "historical_records": 2190,
+        "strict_raw_legal": 1602,
+        "changed_evidence_pages": 167,
+        "dataset_version_mismatch": 197,
+        "unmapped_legacy_ids": 30,
+        "changed_question": 41,
+        "changed_answer": 53,
+        "strict_raw_illegal": 558
+      },
+      "received": 2160,
+      "missing": 40,
+      "illegal": 544,
+      "pending_judge": 1230,
+      "error_counts": {
+        "dataset_version_mismatch": 197,
+        "answer_without_evidence": 4,
+        "page_out_of_range": 1,
+        "invalid_json": 553
+      },
+      "complete_model_selected_for_local_judge": false,
+      "witnesses": [
+        {
+          "qa_id": "QA0960",
+          "errors": [
+            {
+              "type": "answer_without_evidence",
+              "message": "Only exact \"Unanswerable\" may have empty evidence_pages"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"<answer>\",\"evidence_pages\":[]}",
+          "raw_sha256": "580331b08ed8582c6b84c9b8035e39014610515d77ca9e3c862e64d25df6a241",
+          "source": {
+            "file": "Claude-sonncet-5/ordinary1190.json",
+            "field": "answer_pre",
+            "legacy_paper": "665",
+            "legacy_qa": "QA7",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0965",
+          "errors": [
+            {
+              "type": "answer_without_evidence",
+              "message": "Only exact \"Unanswerable\" may have empty evidence_pages"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"<answer>\",\"evidence_pages\":[]}",
+          "raw_sha256": "580331b08ed8582c6b84c9b8035e39014610515d77ca9e3c862e64d25df6a241",
+          "source": {
+            "file": "Claude-sonncet-5/ordinary1190.json",
+            "field": "answer_pre",
+            "legacy_paper": "669",
+            "legacy_qa": "QA5",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0995",
+          "errors": [
+            {
+              "type": "answer_without_evidence",
+              "message": "Only exact \"Unanswerable\" may have empty evidence_pages"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"⚠️ 请求内容过大，已超出模型上下文窗口\\n\\n当前请求即使经过历史裁剪和压缩，仍超过模型可处理的最大上下文。常见原因：\\n\\n- 单条消息粘贴了超长文本（如完整反汇编代码、大文件全文）\\n- tool_result 返回的文件/日志内容过大\\n- 系统提示词或工具定义过多\\n\\n建议处理方式：\\n\\n1. 将超长内容拆分为多段，分批发送\\n2. 仅粘贴关键片段（如出错的函数、相关行附近 ±50 行）\\n3. 大文件使用 Read 工具按 offset/limit 分页读取\\n4. 清理或压缩 tool_result（如 grep 过滤、head/tail 截取）\\n5. 切换到上下文窗口更大的模型（如 Sonnet/Opus）\\n\\n请减少输入长度后重试。\",\"evidence_pages\":[]}",
+          "raw_sha256": "08caa72a0157273cf1f3ebd85dedb828264b0e53659ad35fa5711b8d7469da2f",
+          "source": {
+            "file": "Claude-sonncet-5/ordinary1190.json",
+            "field": "answer_pre",
+            "legacy_paper": "696",
+            "legacy_qa": "QA6",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "DeepSeek-V4-Flash": {
+      "historical_counts": {
+        "historical_records": 2198,
+        "strict_raw_legal": 2155,
+        "changed_answer": 43,
+        "dataset_version_mismatch": 139,
+        "changed_question": 25,
+        "changed_evidence_pages": 110,
+        "strict_raw_illegal": 43
+      },
+      "received": 2198,
+      "missing": 2,
+      "illegal": 43,
+      "pending_judge": 1818,
+      "error_counts": {
+        "dataset_version_mismatch": 139,
+        "invalid_json": 35,
+        "answer_without_evidence": 2,
+        "wrong_fields": 6,
+        "pages_type": 6
+      },
+      "complete_model_selected_for_local_judge": false,
+      "witnesses": [
+        {
+          "qa_id": "QA0468",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Invalid \\escape: line 1 column 60 (char 59)"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"The OR gadget is used to model each OR node \\( v \\) of an NCL configuration, consisting of a clique on 3 vertices \\( v_1, v_2, v_3 \\).\",\"evidence_pages\":[6]}",
+          "raw_sha256": "c978586b0163cef2ee17ed18e98ecc8b58be003fb0cef58152495791f9b907a5",
+          "source": {
+            "file": "DeepSeek-V4-flash-Vision-Exp/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "279",
+            "legacy_qa": "QA9",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA1092",
+          "errors": [
+            {
+              "type": "answer_without_evidence",
+              "message": "Only exact \"Unanswerable\" may have empty evidence_pages"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"The question asks about Theorem 4.1, but the document contains no such theorem. The theorems presented in the supplied PDF are Theorem 3.1, Theorem 3.2, and Theorem 3.3.\",\"evidence_pages\":[]}",
+          "raw_sha256": "594a22f10fdf9b50fab4b4314bd8293c61ee52ca39ab8c0bdf29bb0ad29be187",
+          "source": {
+            "file": "DeepSeek-V4-flash-Vision-Exp/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "366",
+            "legacy_qa": "UQA0082",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA1111",
+          "errors": [
+            {
+              "type": "answer_without_evidence",
+              "message": "Only exact \"Unanswerable\" may have empty evidence_pages"
+            }
+          ],
+          "raw": "{\"answer_pre\":\"Theorem 2.11 does not exist in the provided PDF. The relevant theorems are 1.11, 1.12, and 1.13.\",\"evidence_pages\":[]}",
+          "raw_sha256": "d400bc7999bf45b89b05b467dcd59dc99dd201ab37ad8b1ff962cc08d4707a9b",
+          "source": {
+            "file": "DeepSeek-V4-flash-Vision-Exp/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "400",
+            "legacy_qa": "UQA0101",
+            "dataset_differences": []
+          }
+        }
+      ]
+    },
+    "GLM-4.6V": {
+      "historical_counts": {
+        "historical_records": 2198,
+        "strict_raw_illegal": 274,
+        "strict_raw_legal": 1924,
+        "changed_answer": 43,
+        "dataset_version_mismatch": 136,
+        "changed_question": 25,
+        "changed_evidence_pages": 107
+      },
+      "received": 2198,
+      "missing": 2,
+      "illegal": 255,
+      "pending_judge": 1628,
+      "error_counts": {
+        "invalid_json": 273,
+        "dataset_version_mismatch": 136,
+        "wrong_fields": 1,
+        "pages_type": 1
+      },
+      "complete_model_selected_for_local_judge": false,
+      "witnesses": [
+        {
+          "qa_id": "QA0001",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "```json\n{\"answer_pre\":\"Step 1 (guarantee maximization): The buyer computes a short list of mechanisms comprising those with the highest welfare guarantee. Step 2 (selection under conjectured model): Among mechanisms in the short list, the buyer selects the one that maximizes expected welfare under the conjectured model.\", \"evidence_pages\":[1, 2, 10, 11, 25]}\n```",
+          "raw_sha256": "037486b895c974003754d53ddf4ccbf5f74b4de9dafe62ffba4f10851774c148",
+          "source": {
+            "file": "GLM-4.6V/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "1",
+            "legacy_qa": "QA1",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA1008",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "The answer is {\"answer_pre\":\"112\",\"evidence_pages\":[5,8]}",
+          "raw_sha256": "e52d5ce62041ca049c0c5eddd3eb870317b02aa17e029c9da8f6451354200d21",
+          "source": {
+            "file": "GLM-4.6V/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "2",
+            "legacy_qa": "UQA0198",
+            "dataset_differences": []
+          }
+        },
+        {
+          "qa_id": "QA0011",
+          "errors": [
+            {
+              "type": "invalid_json",
+              "message": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "raw": "The core statistical idea behind Mike West's predictive synthesis framework is Bayesian predictive synthesis (BPS), which involves combining multiple models for prediction, explicitly addressing defined predictive goals, and incorporating decision aspects. This framework builds on formal, rational statistical foundations, including Bayesian synthesis and outcome-dependent model weighting, and extends to Bayesian predictive decision synthesis (BPDS) by integrating decision outcomes.\nThe answer is {\"answer_pre\":\"Bayesian predictive synthesis (BPS), combining multiple models for prediction with defined goals and decision integration, building on Bayesian synthesis and outcome-dependent weighting.\",\"evidence_pages\":[18,19]}",
+          "raw_sha256": "4c620b2595bf6ea2a7af58f7fd6c31a95489f3d3e1f164cbea2984035263daab",
+          "source": {
+            "file": "GLM-4.6V/ordinary1190.json",
+            "field": "answer_pre_raw",
+            "legacy_paper": "5",
+            "legacy_qa": "QA9",
+            "dataset_differences": []
+          }
+        }
+      ]
+    }
+  },
+  "dataset_hashes": {
+    "ordinary_qa.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+    "unanswerable_qa.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+    "reasoning_qa.json": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+    "cross_pdf_qa.json": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82"
+  },
+  "paper_sha256": "cd15abe0fa53fda4f9ceadab33fe9ff10e7214fcbd07004e0509305cada66056",
+  "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+  "source_hashes": {
+    "MiniCPM-V-2.6/ordinary1190.json": "eaded30e9d26e7e3939e028141a9665608195128fe7b85d359b3398c5a6f6464",
+    "MiniCPM-V-2.6/cross_old400.json": "bbe0db0af4cc87f0b1fe87664263018a66f2c5632c599f8bb033c861cd3f932e",
+    "MiniCPM-V-2.6/cross_hard400.json": "4b7c5ed245cca5858d690dc8ec0c531c7bd2d7a52bf7e9cc391ce06e09561184",
+    "MiniCPM-V-2.6/reasoning_old100.json": "e480295a96add908c5e96e58b73b1093e4b3ab17b882f2af501637ea1f1eb5d8",
+    "MiniCPM-V-2.6/reasoning_hard100.json": "3c83f882fd2788fe210caad04a1f2c0411969cb131092732b0297aceb8ecd63e",
+    "InternVL25-8B/ordinary1190.json": "ca6d3f8af4dc9545c542038463e983b7860e462f10d2404860f804d294fd66fc",
+    "InternVL25-8B/cross_old400.json": "5fd9e049f921714f53bb7585e9120b8b61223645e7aa1f6247448446cdbe29dd",
+    "InternVL25-8B/cross_hard400.json": "902efe855a76d4488b8537f5db714661273cdf53d514c25f853966aebf53eabd",
+    "InternVL25-8B/reasoning_old100.json": "cd8b05ecf076a46dca5b32425bc2f8ada838f453a5a9f7d1bc2076192bd4ae1b",
+    "InternVL25-8B/reasoning_hard100.json": "73747579839b537e762ac95277f2e8c614e4906b113feba8911272244a8a22a4",
+    "MiniCPM-V-4.5/ordinary1190.json": "6503dd406a5e792e7ffcd4f1cbd1f5e33a27f6183fd38d1cd3a9dcb63f7778bf",
+    "MiniCPM-V-4.5/cross_old400.json": "14cb6acdd039e33d9e98a2e5a9774585ffce58f80e91f76aef42c10ede1adc0d",
+    "MiniCPM-V-4.5/cross_hard400.json": "d9c9436bd68787af563c1814f943c8b3532b27e323842304356adde305618af4",
+    "MiniCPM-V-4.5/reasoning_old100.json": "1316d20af51eca85a3251ad2227ad6bbc2464e335d42e37acd2637281197571e",
+    "MiniCPM-V-4.5/reasoning_hard100.json": "87d984991ec43b430e55a79c9989af3216596f26145b27bd11c0f904566e3655",
+    "InternVL35-8B/ordinary1190.json": "d53edf52b55259bd4966884aa727434e1518b54bff07450f203d6c3a6baaeca2",
+    "InternVL35-8B/cross_old400.json": "935f195a9a621e8f96007c5e545c06441730304472fb7277ddff9e4ef344160d",
+    "InternVL35-8B/cross_hard400.json": "13bcad1f9df0ab412c54a11bc805f3bfac293994a1df3a08a88613ae7d9091f9",
+    "InternVL35-8B/reasoning_old100.json": "357092f64025df8e3885b98fe83ce4a50ef0c1129889badfe5338bbfda04c2bb",
+    "InternVL35-8B/reasoning_hard100.json": "16ba0bbe3757aacc33f74cb1ffab2318a86f3f0228c43e1a87cfb80a905c88fa",
+    "Gemma3-27B-IT/ordinary1190.json": "acf57780167a72d69897253576c76670e558d641b3cb4ee00c9c87062b77c0c3",
+    "Gemma3-27B-IT/cross_old400.json": "d48877116ac6037bc68ba992c40d66520d06c96060be1b5ae9a178453e8ea236",
+    "Gemma3-27B-IT/cross_hard400.json": "990accd2fae72f70d9b1d9b3724f9be1b61be73dd3563cd8cc8050787d5c5321",
+    "Gemma3-27B-IT/reasoning_old100.json": "0686466ef9eb30d725ec14167fa48c203795838bef5043f95143f4355f5f293d",
+    "Gemma3-27B-IT/reasoning_hard100.json": "9e1f1bb73db64719f934efab4ce01bb11479bd06e1f39189885326fc15f7d282",
+    "Mistral-Small3.1-24B/ordinary1190.json": "38a6b6bee6b06ba3fa563b73d400689eb06da6de2b7250af4ebdbe794a266960",
+    "Mistral-Small3.1-24B/cross_old400.json": "6013cc3579c4174cfbcbc939e6b56f8270d0fa8ee4e194a4053ede2dc915cf26",
+    "Mistral-Small3.1-24B/cross_hard400.json": "cfe39c0ef4bbbcdd606bd8891c7af0510f5065ad8efbf73c9f2f8645e983fa9f",
+    "Mistral-Small3.1-24B/reasoning_old100.json": "0dde77abd4c7b541706e947d1ce928f15552b4f7980355a0c61b20f4f31606d6",
+    "Mistral-Small3.1-24B/reasoning_hard100.json": "44f65ca9bfd3d4206410e974b5f9c92ab588a451f33afe8a5c58163a89939fac",
+    "Qwen3-VL-4B/ordinary1190.json": "d64a90504e4e3a1e142450a0c3ba52bc8d21eb796340734f8198ddd7ddfd230f",
+    "Qwen3-VL-4B/cross_old400.json": "07b98c50c1e367064c87abc497ab653d3060929c3fcba595ee917c97e3a6cbc9",
+    "Qwen3-VL-4B/cross_hard400.json": "2ddb04e52900ed825901ebfe3c4bfb0fe20c9626b66345cf1f7aaf7db3743204",
+    "Qwen3-VL-4B/reasoning_old100.json": "b303309e1cfbe172d356b1c49bedb115cda80bdb301681fd20939647d6987c78",
+    "Qwen3-VL-4B/reasoning_hard100.json": "7bb429d47f7575202a9e0b6d59b2eae3557a04b113f34e8d95b78310f4cfd702",
+    "Qwen3-VL-8B/ordinary1190.json": "2b5404729c2e7dac8ab6505a74984e22632eb4124d811cadc6ab8b88472717ab",
+    "Qwen3-VL-8B/cross_old400.json": "9fc0229443add67c8e8f394eb9c684625505dd297c56a5b4e9e86a36b2606827",
+    "Qwen3-VL-8B/cross_hard400.json": "44c20b238bb9364f74e5cf0627c33234a853be04f453bc138f141a6342634602",
+    "Qwen3-VL-8B/reasoning_old100.json": "ef9966efe36f64bdffe3a2fe841d801f20e0577d5eebb187e9eeff7d1668f703",
+    "Qwen3-VL-8B/reasoning_hard100.json": "74e3523da23fcc3e580396b7dd45179a77791bb480af7b7a2bd10fe25b23f963",
+    "Claude-sonncet-5/ordinary1190.json": "01460810682b7d820a6d68dd86945bfc9790cf2174a86639597eaeb0e6bdfdfc",
+    "Claude-sonncet-5/cross_old400.json": "480ab4da422a0f2d0363b3859619c0f53fb8e43ee59c3c84f45a6901412069a7",
+    "Claude-sonncet-5/cross_hard400.json": "53462829cfa661e922bbd3bdff84338692065e258650059adc17fef678713cf0",
+    "Claude-sonncet-5/reasoning_old100.json": "9dd2d291e0966030dca76ca18535bdb6eebccda94c602685cd3ad723b68f44f3",
+    "Claude-sonncet-5/reasoning_hard100.json": "926e017ac4c16c77bf5f1c2767a6f943178779d8379ee08d3d5fdd5608fdec42",
+    "DeepSeek-V4-flash-Vision-Exp/ordinary1190.json": "c673e7d4315bf6b0a4530b5f9a0b3bb00733c79506ad7ff2267ac2773c55fe72",
+    "DeepSeek-V4-flash-Vision-Exp/cross_old400.json": "ff95ad81c031c79f3505fb619daf712eb1e7d8d6f73603d2207e8df109ff116b",
+    "DeepSeek-V4-flash-Vision-Exp/cross_hard400.json": "a4c28c2d81390e38dba69c5522c6f7044dfd71a7cd6adfbe6b8711e8b969c2cd",
+    "DeepSeek-V4-flash-Vision-Exp/reasoning_old100.json": "aacdbed458b2bda602fa127e41d972e8eb1c22edc06ed87e3ddd45e58fb0d552",
+    "DeepSeek-V4-flash-Vision-Exp/reasoning_hard100.json": "f2352329d5a0c3659fcb759ce93611200e6d0257366856139eb1b182781dc958",
+    "GLM-4.6V/ordinary1190.json": "c73e11b152f1aa8973a69920f74a7c6f8cef7a93540d4681475ec9f9615d256c",
+    "GLM-4.6V/cross_old400.json": "8bd3aef2f4f92228bdc211dc06dbd63a82dc8d1b2a310c253f33f69a70c61951",
+    "GLM-4.6V/cross_hard400.json": "309d3a3496fe15dcbc1cfdb5e3dd505e16d1c2fdfa82b496026342816e866595",
+    "GLM-4.6V/reasoning_old100.json": "e5e0013247bd90b79c279755a99d3a549f778f8ae5c8edadfa14aaaf43c3ee5c",
+    "GLM-4.6V/reasoning_hard100.json": "b42df6e8a8162c7fc19901ff429407d9b82058459b2b6d03b99c40ac95e36ac8"
+  },
+  "table2_proven_mismatches": 30,
+  "table3_proven_mismatches": 47,
+  "local_jobs": 4,
+  "semantic_jobs_not_run": 11550,
+  "limitations": "Bounds are not full rescoring. Version-mismatched predictions are technical failures, not current-release answers. Evidence ambiguity remains explicit."
+}

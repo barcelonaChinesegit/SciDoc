@@ -10,8 +10,8 @@
 
 公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
 论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
-精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 的规则优先匹配与
-内部报告属于历史实验实现，不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
+精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 已移除规则优先匹配，Judge 统一使用论文原版提示词、
+严格标签解析和原始输出；内部报告仍不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
 99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
 差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
 本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
@@ -59,6 +59,8 @@ python -m pip install -e .
 仅检查 PDF 可只安装 `pypdf==6.10.2`；完整 requirements 用于模型推理、API 和测试。
 
 Git 中提供最终 QA 和资产索引，PDF、权重、历史归档压缩包、审核数据库与密钥单独管理。
+本机可直接上传的完整资源包及校验、恢复说明位于 `data/exports/google_drive/`，
+目录约定见 [资源包说明](../../data/exports/README.md)。
 向维护者取得与 `data/pdf_assets_manifest.json` 匹配的 PDF，平铺到 `data/pdfs/`。
 最终输入使用其中 474 份单论文和 238 份合并 PDF；完整资产目录还包含生成源论文和历史合订本，
 不能把资产总数写成 benchmark 的论文数。
@@ -110,7 +112,7 @@ PYTHONPATH=src python -m pku_qa.workflows.reporting.run_final_2200_evaluation \
 ```
 
 `--component` 可重复；缺省按 ordinary、unanswerable、reasoning、cross_pdf 顺序执行。
-该内部运行器每个组件执行 4B → 8B → 历史 Judge 4B → 历史 Judge 8B → 内部报告，输出在
+该内部运行器每个组件执行 4B → 8B → 论文提示词 Judge 4B → 论文提示词 Judge 8B → 内部报告，输出在
 `data/results/evaluations/final_2200/<component>/`。推理负责记录 PDF corpus 哈希与协议指纹，
 正式报告重新核验 QA/PDF、原始输出和推理到 Judge 的绑定。
 
@@ -259,3 +261,22 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.check_web_stack
 
 健康检查必须确认三个本地端点、VPS 隧道后端及公网应用页面均返回 200；localhost 成功
 不足以完成 Web 变更。`sxz/` 始终严格只读。
+
+## 快速核验论文表格是否可由现存记录复现
+
+```bash
+python evaluation/check_reproduction.py --output-dir data/results/paper_check
+python scripts/judge_reproduction_jobs.py --audit-dir data/results/paper_check \
+  --model-dir models/Qwen3.6-27B --gpu 2
+```
+
+第一步检查全部 11 模型的历史原始输出，保留 2200 分母并给出 Answer Accuracy
+上下界。第二步用论文指定本地 Judge 批量完成预算内的完整模型核验；默认仅需 4 条
+语义判断，这三个模型的其余记录已由格式/版本/缺失检查确定；其他八个模型仍有
+11,550 条语义判断未运行，以免在已证明不一致后继续耗费 GPU。返回 2 表示存在表格差异，不能当作
+复现成功。目录必须是新目录。报告见
+[确定性反例与本地核验](../reports/official_evaluation/REPRODUCTION_DISCREPANCY.md)。
+
+旧类型化评分模块已删除，内部 Judge 不再做数值、别名、文本预匹配，也不再修复
+Judge 标签。PDF 解析只允许 JSON 外部空白和证据页排序去重；答案原文不变。
+推理协议版本升至 7、评分协议版本升至 6，旧指纹缓存不可作为新协议结果复用。

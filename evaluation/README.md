@@ -13,6 +13,12 @@ See [the audit](../docs/reports/official_evaluation/FINAL_REPORT.md) and
 [unresolved items](reconciliation.json). No historical tri-class decision is
 silently reused as a paper-prompt binary decision.
 
+The subsequent [exhaustive feasibility check and real local Judge verification](../docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md)
+prove that available stored outputs cannot reproduce all current table cells.
+It checks all eleven models, derives explicit bounds, and completes three model
+diagnostics with four real local Qwen3.6-27B judgments. It does not claim a full
+eleven-model rescore. The internal rule-first scoring helpers have been removed.
+
 ## Installation and frozen inputs
 
 Python 3.10+ is sufficient for this standalone package. The internal `pku_qa`

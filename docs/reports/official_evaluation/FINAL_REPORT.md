@@ -7,6 +7,11 @@ Follow-up: [real local Qwen3.6-27B evaluation test](LOCAL_MODEL_TEST.md) passed
 The updated regression suite has 486 passing tests. This diagnostic does not
 change the historical reproduction status below.
 
+Later follow-up: [exhaustive feasibility checks and local discrepancy verification](REPRODUCTION_DISCREPANCY.md)
+prove that the available predictions cannot match all current paper cells.
+The old main-project rule-first scoring helpers listed in this historical audit
+have since been removed; the collaborator-owned `sxz/` references remain read-only.
+
 **Status: engineering implementation and historical audit delivered; an official rescore reproducing the paper is not established.** Historical reaggregation is explicitly distinguished from new semantic evaluation. No numbers, gold answers, or evidence pages were changed to conceal discrepancies.
 
 ## A. Repository audit

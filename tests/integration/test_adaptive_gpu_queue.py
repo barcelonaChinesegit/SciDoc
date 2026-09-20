@@ -1087,12 +1087,16 @@ class RetryAndOutputValidationTests(unittest.TestCase):
             '{"answer":"ok","evidence_pages":[1]}',
             '{"answer_pre":"ok","evidence_pages":[1],"extra":true}',
             '{"answer_pre":"ok","evidence_pages":["1"]}',
-            '{"answer_pre":"ok","evidence_pages":[1,1]}',
             '{"answer_pre":"ok","evidence_pages":[0]}',
         )
         for output in invalid_outputs:
             with self.subTest(output=output):
                 self.assertFalse(structured_output_is_valid(output, True))
+
+    def test_strict_validator_accepts_duplicate_integer_evidence_pages(self) -> None:
+        self.assertTrue(structured_output_is_valid(
+            '{"answer_pre":"ok","evidence_pages":[1,1]}', True
+        ))
 
     def test_more_than_eight_evidence_pages_is_scored_without_retry(self) -> None:
         class Provider:

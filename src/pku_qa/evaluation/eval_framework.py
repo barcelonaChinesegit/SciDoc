@@ -386,7 +386,7 @@ class LocalTransformersProvider(BaseChatProvider):
                 self.spec.get("generation_mode") == "pdf_qwen_vl_utils"
             ),
         )
-        return output_text[0].strip() if output_text else ""
+        return output_text[0] if output_text else ""
 
 
 class OpenAICompatibleProvider(BaseChatProvider):
@@ -474,14 +474,14 @@ class OpenAICompatibleProvider(BaseChatProvider):
             raise ProviderError(f"Unexpected API response schema: {body}") from exc
 
         if isinstance(content, str):
-            return content.strip()
+            return content
         if isinstance(content, list):
             chunks = []
             for item in content:
                 if isinstance(item, dict) and item.get("type") in {"text", "output_text"}:
                     chunks.append(item.get("text", ""))
-            return "".join(chunks).strip()
-        return str(content).strip()
+            return "".join(chunks)
+        return str(content)
 
 
 def configure_hf_environment(use_mirror: bool = True, cuda_visible_devices: str | None = None) -> None:

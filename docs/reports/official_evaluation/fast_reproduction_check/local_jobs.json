@@ -1,0 +1,256 @@
+[
+  {
+    "model": "InternVL2.5-8B",
+    "gold": {
+      "qa_id": "QA1373",
+      "question": "What is the physical nature of the mechanism that serves as the primary driver for the acceleration of slow solar wind streams?",
+      "answer": "The mechanism is the electric potential, which functions as the ambipolar term in generalized Ohm's law to couple electron pressure to protons.",
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "task": "Reasoning",
+      "discipline": "Physics",
+      "field": "Instrumentation and Methods for Astrophysics",
+      "pdf_id": "paper_0484",
+      "page_count": 11,
+      "legacy_paper_id": "484",
+      "legacy_qa_id": "RQA_REFRESH_43e5ea9f4117125c"
+    },
+    "prediction": {
+      "qa_id": "QA1373",
+      "status": "legal",
+      "answer_pre": "The primary driver for the acceleration of slow solar wind streams is the electric potential. This is supported by the findings that the electric potential contains enough energy to fully explain the acceleration of the lower-speed streams, and the wave energy appears to play a minor role in the acceleration of the faster wind streams.",
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "errors": [],
+      "audit": {
+        "original_raw_output": "{\n  \"answer_pre\": \"The primary driver for the acceleration of slow solar wind streams is the electric potential. This is supported by the findings that the electric potential contains enough energy to fully explain the acceleration of the lower-speed streams, and the wave energy appears to play a minor role in the acceleration of the faster wind streams.\",\n  \"evidence_pages\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n}",
+        "raw_output_sha256": "5eea8f479261dc8ac5cad7e50a08c17e1f527340e1b7d17b61ca052b13dc6c53",
+        "correction_trigger": null,
+        "retry_outputs": [],
+        "deterministic_normalizations": [],
+        "parse_status": "parsed",
+        "format_status": "valid",
+        "semantic_contract_status": "valid",
+        "final_normalized_output": {
+          "answer_pre": "The primary driver for the acceleration of slow solar wind streams is the electric potential. This is supported by the findings that the electric potential contains enough energy to fully explain the acceleration of the lower-speed streams, and the wave energy appears to play a minor role in the acceleration of the faster wind streams.",
+          "evidence_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "final_parse_status": "legal",
+        "historical_source": {
+          "file": "InternVL25-8B/reasoning_old100.json",
+          "field": "answer_pre_raw",
+          "legacy_paper": "484",
+          "legacy_qa": "RQA_REFRESH_43e5ea9f4117125c",
+          "dataset_differences": []
+        }
+      }
+    },
+    "prompt": "You are grading a short-answer QA item for a scientific paper\nevaluation.\nQuestion:\nWhat is the physical nature of the mechanism that serves as the primary driver for the acceleration of slow solar wind streams?\nReference answer:\nThe mechanism is the electric potential, which functions as the ambipolar term in generalized Ohm's law to couple electron pressure to protons.\nModel answer:\nThe primary driver for the acceleration of slow solar wind streams is the electric potential. This is supported by the findings that the electric potential contains enough energy to fully explain the acceleration of the lower-speed streams, and the wave energy appears to play a minor role in the acceleration of the faster wind streams.\nJudge whether the model answer is semantically equivalent to the\nreference answer for this question.\nRules:\n1. Mark CORRECT if the model answer gives the same essential information\nas the reference answer, even if the\n   wording is different.\n2. Mark INCORRECT if the model answer is missing the key fact, changes a\nnumber/unit/name/direction/comparison,\n   is too vague, or gives a different answer.\n3. Unanswerable items are handled by a deterministic exact-label rule\nbefore this judge is called. Never reinterpret a\n   synonym as the label \"Unanswerable\".\n4. For numeric answers, model names, dataset names, method names, years,\npage/figure/table identifiers, metrics,\n   and experimental settings, require the exact intended value unless\n   the difference is only formatting.\n5. Ignore harmless capitalization, punctuation, article, plural, and\nabbreviation differences when the meaning is\n   unchanged.\n6. If the model answer contains both correct and conflicting incorrect\ninformation, mark INCORRECT unless the final\n   answer is unambiguous and correct.\nReply with exactly one word: CORRECT or INCORRECT.\n"
+  },
+  {
+    "model": "InternVL2.5-8B",
+    "gold": {
+      "qa_id": "QA1469",
+      "question": "Paper 1 implemented a custom-built 3-week baseline-then-intervention longitudinal study to measure behavioral adaptation over time. Which native UXLab feature from Paper 2 was purpose-built to support exactly this kind of design, and what would be needed to run Paper 1's study within it?",
+      "answer": "Paper 1's evaluation used a bespoke procedure: a one-week baseline phase with suggestions disabled to collect natural behavior, followed by a two-week intervention phase with suggestions enabled, comparing behavioral and subjective metrics across the phase boundary with paired t-tests. Paper 2's UXLab natively supports this exact structure through its Interrupted Time-Series design, implemented via a configurable Pause element in the Procedure Builder that can be time-based (e.g., 'continue in 3 days') and can gate an intervention, such as re-training a model with the participant's data, before allowing the participant to proceed. To run Paper 1's study inside UXLab, the researcher would configure a Backend Configurator condition wrapping the in-browser SLM/probabilistic model as a Service Connector, build a procedure with a baseline block, a Pause element spanning the desired duration, then an intervention block with suggestions enabled, letting UXLab's backend handle logging and phase transition instead of custom study infrastructure.",
+      "evidence_pages": [
+        3,
+        4,
+        8
+      ],
+      "task": "Multi-Document",
+      "discipline": "Computer Science",
+      "field": "Databases",
+      "pdf_id": "z_cross_hvp_0032",
+      "page_count": 10,
+      "legacy_paper_id": "hxf_0092",
+      "legacy_qa_id": "CQA_77ebffd4e698cca5"
+    },
+    "prediction": {
+      "qa_id": "QA1469",
+      "status": "legal",
+      "answer_pre": "The native UXLab feature from Paper 2 that was purpose-built to support exactly the kind of design described in Paper 1 is the 'Within-Subject Design'. This feature allows researchers to create studies where each participant experiences all conditions, which is essential for longitudinal studies like the one in Paper 1. To run Paper 1's study within UXLab, the following steps would be needed:\n\n1. Create a new study using the 'Within-Subject Design' feature.\n2. Define the study conditions, including the baseline and intervention phases.\n3. Configure the study flow, including the tasks, questionnaires, and participant management.\n4. Set up the 'Pause' element to control the timing of the intervention phase.\n5. Deploy the study and monitor participant progress.\n6. Collect and analyze the data using the 'Data Export' feature to export the data as a CSV file for further analysis.",
+      "evidence_pages": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "errors": [],
+      "audit": {
+        "original_raw_output": "{\n  \"answer_pre\": \"The native UXLab feature from Paper 2 that was purpose-built to support exactly the kind of design described in Paper 1 is the 'Within-Subject Design'. This feature allows researchers to create studies where each participant experiences all conditions, which is essential for longitudinal studies like the one in Paper 1. To run Paper 1's study within UXLab, the following steps would be needed:\\n\\n1. Create a new study using the 'Within-Subject Design' feature.\\n2. Define the study conditions, including the baseline and intervention phases.\\n3. Configure the study flow, including the tasks, questionnaires, and participant management.\\n4. Set up the 'Pause' element to control the timing of the intervention phase.\\n5. Deploy the study and monitor participant progress.\\n6. Collect and analyze the data using the 'Data Export' feature to export the data as a CSV file for further analysis.\",\n  \"evidence_pages\": [6, 7, 8, 9]\n}",
+        "raw_output_sha256": "2a094015b456a3dc6aa2f9e833867d1836c929e682908a0bdd1fe6415d4a8d59",
+        "correction_trigger": null,
+        "retry_outputs": [],
+        "deterministic_normalizations": [],
+        "parse_status": "parsed",
+        "format_status": "valid",
+        "semantic_contract_status": "valid",
+        "final_normalized_output": {
+          "answer_pre": "The native UXLab feature from Paper 2 that was purpose-built to support exactly the kind of design described in Paper 1 is the 'Within-Subject Design'. This feature allows researchers to create studies where each participant experiences all conditions, which is essential for longitudinal studies like the one in Paper 1. To run Paper 1's study within UXLab, the following steps would be needed:\n\n1. Create a new study using the 'Within-Subject Design' feature.\n2. Define the study conditions, including the baseline and intervention phases.\n3. Configure the study flow, including the tasks, questionnaires, and participant management.\n4. Set up the 'Pause' element to control the timing of the intervention phase.\n5. Deploy the study and monitor participant progress.\n6. Collect and analyze the data using the 'Data Export' feature to export the data as a CSV file for further analysis.",
+          "evidence_pages": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        "final_parse_status": "legal",
+        "historical_source": {
+          "file": "InternVL25-8B/cross_hard400.json",
+          "field": "answer_pre_raw",
+          "legacy_paper": "hxf_0092",
+          "legacy_qa": "CQA_77ebffd4e698cca5",
+          "dataset_differences": []
+        }
+      }
+    },
+    "prompt": "You are grading a short-answer QA item for a scientific paper\nevaluation.\nQuestion:\nPaper 1 implemented a custom-built 3-week baseline-then-intervention longitudinal study to measure behavioral adaptation over time. Which native UXLab feature from Paper 2 was purpose-built to support exactly this kind of design, and what would be needed to run Paper 1's study within it?\nReference answer:\nPaper 1's evaluation used a bespoke procedure: a one-week baseline phase with suggestions disabled to collect natural behavior, followed by a two-week intervention phase with suggestions enabled, comparing behavioral and subjective metrics across the phase boundary with paired t-tests. Paper 2's UXLab natively supports this exact structure through its Interrupted Time-Series design, implemented via a configurable Pause element in the Procedure Builder that can be time-based (e.g., 'continue in 3 days') and can gate an intervention, such as re-training a model with the participant's data, before allowing the participant to proceed. To run Paper 1's study inside UXLab, the researcher would configure a Backend Configurator condition wrapping the in-browser SLM/probabilistic model as a Service Connector, build a procedure with a baseline block, a Pause element spanning the desired duration, then an intervention block with suggestions enabled, letting UXLab's backend handle logging and phase transition instead of custom study infrastructure.\nModel answer:\nThe native UXLab feature from Paper 2 that was purpose-built to support exactly the kind of design described in Paper 1 is the 'Within-Subject Design'. This feature allows researchers to create studies where each participant experiences all conditions, which is essential for longitudinal studies like the one in Paper 1. To run Paper 1's study within UXLab, the following steps would be needed:\n\n1. Create a new study using the 'Within-Subject Design' feature.\n2. Define the study conditions, including the baseline and intervention phases.\n3. Configure the study flow, including the tasks, questionnaires, and participant management.\n4. Set up the 'Pause' element to control the timing of the intervention phase.\n5. Deploy the study and monitor participant progress.\n6. Collect and analyze the data using the 'Data Export' feature to export the data as a CSV file for further analysis.\nJudge whether the model answer is semantically equivalent to the\nreference answer for this question.\nRules:\n1. Mark CORRECT if the model answer gives the same essential information\nas the reference answer, even if the\n   wording is different.\n2. Mark INCORRECT if the model answer is missing the key fact, changes a\nnumber/unit/name/direction/comparison,\n   is too vague, or gives a different answer.\n3. Unanswerable items are handled by a deterministic exact-label rule\nbefore this judge is called. Never reinterpret a\n   synonym as the label \"Unanswerable\".\n4. For numeric answers, model names, dataset names, method names, years,\npage/figure/table identifiers, metrics,\n   and experimental settings, require the exact intended value unless\n   the difference is only formatting.\n5. Ignore harmless capitalization, punctuation, article, plural, and\nabbreviation differences when the meaning is\n   unchanged.\n6. If the model answer contains both correct and conflicting incorrect\ninformation, mark INCORRECT unless the final\n   answer is unambiguous and correct.\nReply with exactly one word: CORRECT or INCORRECT.\n"
+  },
+  {
+    "model": "InternVL2.5-8B",
+    "gold": {
+      "qa_id": "QA1470",
+      "question": "Paper 2's case study found that agentic search improves satisfaction and trust but lowers perceived user control compared to RAG. How does Paper 1's architectural design choice for delivering assistance avoid reproducing this same control loss?",
+      "answer": "Paper 2's agentic condition let the system autonomously execute multi-step plans via its search tool, and while this raised satisfaction (4.4 vs 3.6) and trust (4.2 vs 3.3) ratings, it also lowered participants' sense of being in control of the search process (3.1 vs 4.5), revealing a trust-versus-control trade-off inherent to autonomous agentic execution. Paper 1 avoids this trade-off by design: its SLM never acts autonomously, it only generates a suggestion grounded by the probabilistic model's predicted next action, and the user must explicitly accept or discard the suggestion, with a measured acceptance rate of only 36.4%, meaning the user retains decision authority over every action. Because Paper 1 keeps the human in the loop as the executor while Paper 2's agentic condition removes the human from execution, Paper 1's suggestion-based grounding architecture structurally preserves the perceived control that Paper 2 shows autonomous agentic execution erodes.",
+      "evidence_pages": [
+        3,
+        4,
+        9
+      ],
+      "task": "Multi-Document",
+      "discipline": "Computer Science",
+      "field": "Databases",
+      "pdf_id": "z_cross_hvp_0032",
+      "page_count": 10,
+      "legacy_paper_id": "hxf_0092",
+      "legacy_qa_id": "CQA_447248f8285ee6a7"
+    },
+    "prediction": {
+      "qa_id": "QA1470",
+      "status": "legal",
+      "answer_pre": "Paper 1's architectural design choice for delivering assistance avoids reproducing the same control loss by using a fully client-side architecture. This design allows the system to operate entirely within the user's browser, without transmitting any user data to external services. This approach maintains user control over their data and interactions, ensuring that the system's assistance is grounded in the user's context and preferences without compromising their privacy or autonomy.",
+      "evidence_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "errors": [],
+      "audit": {
+        "original_raw_output": "{\n  \"answer_pre\": \"Paper 1's architectural design choice for delivering assistance avoids reproducing the same control loss by using a fully client-side architecture. This design allows the system to operate entirely within the user's browser, without transmitting any user data to external services. This approach maintains user control over their data and interactions, ensuring that the system's assistance is grounded in the user's context and preferences without compromising their privacy or autonomy.\",\n  \"evidence_pages\": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n}",
+        "raw_output_sha256": "78c3a4d74cd5dd3bb707e2021e1b220a4c28088177bffe8622b9791114bbd9d4",
+        "correction_trigger": null,
+        "retry_outputs": [],
+        "deterministic_normalizations": [],
+        "parse_status": "parsed",
+        "format_status": "valid",
+        "semantic_contract_status": "valid",
+        "final_normalized_output": {
+          "answer_pre": "Paper 1's architectural design choice for delivering assistance avoids reproducing the same control loss by using a fully client-side architecture. This design allows the system to operate entirely within the user's browser, without transmitting any user data to external services. This approach maintains user control over their data and interactions, ensuring that the system's assistance is grounded in the user's context and preferences without compromising their privacy or autonomy.",
+          "evidence_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "final_parse_status": "legal",
+        "historical_source": {
+          "file": "InternVL25-8B/cross_hard400.json",
+          "field": "answer_pre_raw",
+          "legacy_paper": "hxf_0092",
+          "legacy_qa": "CQA_447248f8285ee6a7",
+          "dataset_differences": []
+        }
+      }
+    },
+    "prompt": "You are grading a short-answer QA item for a scientific paper\nevaluation.\nQuestion:\nPaper 2's case study found that agentic search improves satisfaction and trust but lowers perceived user control compared to RAG. How does Paper 1's architectural design choice for delivering assistance avoid reproducing this same control loss?\nReference answer:\nPaper 2's agentic condition let the system autonomously execute multi-step plans via its search tool, and while this raised satisfaction (4.4 vs 3.6) and trust (4.2 vs 3.3) ratings, it also lowered participants' sense of being in control of the search process (3.1 vs 4.5), revealing a trust-versus-control trade-off inherent to autonomous agentic execution. Paper 1 avoids this trade-off by design: its SLM never acts autonomously, it only generates a suggestion grounded by the probabilistic model's predicted next action, and the user must explicitly accept or discard the suggestion, with a measured acceptance rate of only 36.4%, meaning the user retains decision authority over every action. Because Paper 1 keeps the human in the loop as the executor while Paper 2's agentic condition removes the human from execution, Paper 1's suggestion-based grounding architecture structurally preserves the perceived control that Paper 2 shows autonomous agentic execution erodes.\nModel answer:\nPaper 1's architectural design choice for delivering assistance avoids reproducing the same control loss by using a fully client-side architecture. This design allows the system to operate entirely within the user's browser, without transmitting any user data to external services. This approach maintains user control over their data and interactions, ensuring that the system's assistance is grounded in the user's context and preferences without compromising their privacy or autonomy.\nJudge whether the model answer is semantically equivalent to the\nreference answer for this question.\nRules:\n1. Mark CORRECT if the model answer gives the same essential information\nas the reference answer, even if the\n   wording is different.\n2. Mark INCORRECT if the model answer is missing the key fact, changes a\nnumber/unit/name/direction/comparison,\n   is too vague, or gives a different answer.\n3. Unanswerable items are handled by a deterministic exact-label rule\nbefore this judge is called. Never reinterpret a\n   synonym as the label \"Unanswerable\".\n4. For numeric answers, model names, dataset names, method names, years,\npage/figure/table identifiers, metrics,\n   and experimental settings, require the exact intended value unless\n   the difference is only formatting.\n5. Ignore harmless capitalization, punctuation, article, plural, and\nabbreviation differences when the meaning is\n   unchanged.\n6. If the model answer contains both correct and conflicting incorrect\ninformation, mark INCORRECT unless the final\n   answer is unambiguous and correct.\nReply with exactly one word: CORRECT or INCORRECT.\n"
+  },
+  {
+    "model": "Gemma 3 27B",
+    "gold": {
+      "qa_id": "QA0843",
+      "question": "What is the alpha value used in the final zero-mean perturbation analysis?",
+      "answer": "0",
+      "evidence_pages": [
+        7,
+        8
+      ],
+      "task": "General",
+      "discipline": "Statistics",
+      "field": "Other Statistics",
+      "pdf_id": "paper_0560",
+      "page_count": 26,
+      "legacy_paper_id": "560",
+      "legacy_qa_id": "QA7"
+    },
+    "prediction": {
+      "qa_id": "QA0843",
+      "status": "legal",
+      "answer_pre": "Unanswerable",
+      "evidence_pages": [],
+      "errors": [],
+      "audit": {
+        "original_raw_output": "{\"answer_pre\":\"Unanswerable\",\"evidence_pages\":[]}",
+        "raw_output_sha256": "ce518005010f535a3c46ff3b0d24ae6c93fd08f909f908c8c9d5999a4510191b",
+        "correction_trigger": null,
+        "retry_outputs": [],
+        "deterministic_normalizations": [],
+        "parse_status": "parsed",
+        "format_status": "valid",
+        "semantic_contract_status": "valid",
+        "final_normalized_output": {
+          "answer_pre": "Unanswerable",
+          "evidence_pages": []
+        },
+        "final_parse_status": "legal",
+        "historical_source": {
+          "file": "Gemma3-27B-IT/ordinary1190.json",
+          "field": "answer_pre_raw",
+          "legacy_paper": "560",
+          "legacy_qa": "QA7",
+          "dataset_differences": []
+        }
+      }
+    },
+    "prompt": "You are grading a short-answer QA item for a scientific paper\nevaluation.\nQuestion:\nWhat is the alpha value used in the final zero-mean perturbation analysis?\nReference answer:\n0\nModel answer:\nUnanswerable\nJudge whether the model answer is semantically equivalent to the\nreference answer for this question.\nRules:\n1. Mark CORRECT if the model answer gives the same essential information\nas the reference answer, even if the\n   wording is different.\n2. Mark INCORRECT if the model answer is missing the key fact, changes a\nnumber/unit/name/direction/comparison,\n   is too vague, or gives a different answer.\n3. Unanswerable items are handled by a deterministic exact-label rule\nbefore this judge is called. Never reinterpret a\n   synonym as the label \"Unanswerable\".\n4. For numeric answers, model names, dataset names, method names, years,\npage/figure/table identifiers, metrics,\n   and experimental settings, require the exact intended value unless\n   the difference is only formatting.\n5. Ignore harmless capitalization, punctuation, article, plural, and\nabbreviation differences when the meaning is\n   unchanged.\n6. If the model answer contains both correct and conflicting incorrect\ninformation, mark INCORRECT unless the final\n   answer is unambiguous and correct.\nReply with exactly one word: CORRECT or INCORRECT.\n"
+  }
+]

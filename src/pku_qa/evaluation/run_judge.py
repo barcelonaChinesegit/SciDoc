@@ -3,23 +3,22 @@
 答案评判脚本 (支持多卡并发分片版)
 
 评判脚本
-- 选择题：直接从模型输出中提取选项字母与标准答案比对
-- 简答题：优先做规则匹配，无法直接判定时调用 Qwen3.6-27B 或其他 provider 做语义判定
+- 非法输出与不可回答题：按严格 contract 判定
+- 可回答题：统一使用论文原版提示词和 Qwen3.6-27B 语义判定
 """
 from __future__ import annotations
-import argparse, json, os, re, time
+import argparse, json, os, time
 import hashlib
 from pathlib import Path
 
 from durable_work_queue import DurablePaperQueue
 from eval_framework import (
     ProviderError, atomic_write_json, configure_hf_environment, create_provider,
-    is_numeric_match, iter_paper_items, load_json, looks_like_error_output,
-    load_provider_specs, normalize_loose_text, normalize_text,
+    iter_paper_items, load_json, looks_like_error_output,
+    load_provider_specs,
 )
 from gpu_reservation import managed_gpu_reservation
 from progress_logging import progress_fields
-from qa_scoring import typed_answer_match
 from evaluation_protocol import (
     JUDGE_INFERENCE_BINDING_FIELDS,
     PDF_INPUT_MODE,
@@ -83,36 +82,6 @@ def parse_args():
     )
     return parser.parse_args()
 
-def parse_mcq_response(text: str) -> str | None:
-    text = str(text or "").strip()
-    for pattern in [r"\\boxed\{([A-Da-d])\}", r"[Aa]nswer\s*[:：]\s*([A-Da-d])", r"^[\s\(\[]*([A-Da-d])[\)\.\]\s]", r"\b([A-Da-d])\b"]:
-        match = re.search(pattern, text)
-        if match: return match.group(1).upper()
-    return None
-
-
-def normalize_pages(raw_pages) -> list[int]:
-    if raw_pages is None or isinstance(raw_pages, bool):
-        return []
-    if isinstance(raw_pages, list):
-        candidates = raw_pages
-    else:
-        candidates = [raw_pages]
-
-    pages = []
-    for page in candidates:
-        if isinstance(page, bool):
-            continue
-        if isinstance(page, int):
-            values = [page]
-        else:
-            values = [int(value) for value in re.findall(r"\d+", str(page))]
-        for value in values:
-            if value > 0 and value not in pages:
-                pages.append(value)
-    return sorted(pages)
-
-
 def parse_structured_response(text: str) -> tuple[str, list[int], str]:
     try:
         answer, pages = parse_canonical_pdf_output(text)
@@ -135,46 +104,25 @@ def qa_type(qa_data: dict) -> str:
     return "mcq" if qa_data.get("options") else "fill"
 
 def direct_fill_match(reference: str, prediction: str) -> tuple[bool | None, str]:
-    ref, pred = str(reference or ""), str(prediction or "")
-    if not pred.strip(): return False, "empty_prediction"
-    if looks_like_error_output(pred): return False, "error_output"
-    ref_loose = normalize_loose_text(ref)
-    pred_loose = normalize_loose_text(pred)
-    if ref_loose == "unanswerable":
-        matched = pred.strip() == "Unanswerable"
-        return matched, "unanswerable_exact_label"
-    if pred_loose == "unanswerable" and ref_loose != "unanswerable":
-        return False, "unanswerable_mismatch"
-    if normalize_text(ref) == normalize_text(pred): return True, "exact_normalized"
-    if ref_loose == pred_loose: return True, "loose_normalized"
-    if is_numeric_match(ref, pred): return True, "numeric_match"
+    """Only empty/error output and exact refusal are deterministic decisions.
+
+    Every answerable response goes to the paper semantic judge, including
+    identical text, numeric equivalents and aliases. Never normalize answers.
+    """
+    if not prediction.strip():
+        return False, "empty_prediction"
+    if looks_like_error_output(prediction):
+        return False, "error_output"
+    if reference == "Unanswerable":
+        return prediction == "Unanswerable", "unanswerable_exact_label"
     return None, "needs_llm_judge"
 
+
 def build_judge_prompt(question: str, correct: str, model_answer: str) -> str:
-    return f"""You are grading a short-answer QA item for a scientific paper evaluation.
-
-Question:
-{question}
-
-Reference answer:
-{correct}
-
-Model answer:
-{model_answer}
-
-Judge whether the model answer is semantically equivalent to the reference answer for this question.
-
-Rules:
-1. Mark CORRECT if the model answer gives the same essential information as the reference answer, even if the wording is different.
-2. Mark INCORRECT if the model answer is missing the key fact, changes a number/unit/name/direction/comparison, is too vague, or gives a different answer.
-3. Unanswerable items are handled by a deterministic exact-label rule before
-   this judge is called. Never reinterpret a synonym as the label
-   "Unanswerable".
-4. For numeric answers, model names, dataset names, method names, years, page/figure/table identifiers, metrics, and experimental settings, require the exact intended value unless the difference is only formatting.
-5. Ignore harmless capitalization, punctuation, article, plural, and abbreviation differences when the meaning is unchanged.
-6. If the model answer contains both correct and conflicting incorrect information, mark INCORRECT unless the final answer is unambiguous and correct.
-
-Reply with exactly one word: CORRECT or INCORRECT."""
+    path = Path(__file__).resolve().parents[3] / "evaluation/prompts/semantic_judge.txt"
+    return path.read_text(encoding="utf-8").format(
+        question=question, correct=correct, model_answer=model_answer
+    )
 
 
 def judge_fill(provider, question: str, correct: str, model_answer: str, max_new_tokens: int) -> tuple[str, str]:
@@ -182,18 +130,15 @@ def judge_fill(provider, question: str, correct: str, model_answer: str, max_new
     response = provider.generate(
         [{"role": "user", "content": [{"type": "text", "text": prompt}]}],
         max_new_tokens,
-    ).strip().upper()
+    )
     if response not in {"CORRECT", "INCORRECT"}:
-        raise ProviderError(
-            "Judge returned an invalid response; expected exactly CORRECT or "
-            f"INCORRECT, got {response!r}"
-        )
+        error = ProviderError("Judge returned an invalid exact binary label")
+        error.raw_response = response
+        raise error
     return response, response
 
 
 def fill_needs_llm_judge(qa: dict) -> bool:
-    if qa_type(qa) != "fill":
-        return False
     output = qa.get("model_output", "")
     try:
         protocol = protocol_from_inference_record(qa)
@@ -522,32 +467,10 @@ def process_judge_paper(
                     ),
                 }
             )
-        elif q_type == "mcq":
-            extracted = parse_mcq_response(parsed_answer)
-            answer_is_correct = extracted == ans.upper() if extracted else False
-            qa_judge.update(
-                {
-                    "extracted_choice": extracted,
-                    "answer_is_correct": answer_is_correct,
-                    "is_correct": answer_is_correct
-                    and evidence_pages_is_correct,
-                    "match_method": "choice_parse",
-                }
-            )
-        elif q_type == "fill":
+        else:
             typed_score = None
-            if gold_qa.get("answer_format"):
-                direct_res, method, typed_score = typed_answer_match(
-                    ans,
-                    parsed_answer,
-                    answer_format=gold_qa.get("answer_format"),
-                    aliases=gold_qa.get("answer_aliases"),
-                    expected_unit=gold_qa.get("answer_unit"),
-                    tolerance=gold_qa.get("numeric_tolerance"),
-                    string_metric=gold_qa.get(
-                        "string_metric", "exact_or_alias"
-                    ),
-                )
+            if not output_is_legal:
+                direct_res, method = False, "illegal_output"
             else:
                 direct_res, method = direct_fill_match(ans, parsed_answer)
             if direct_res is not None:
@@ -563,7 +486,7 @@ def process_judge_paper(
                     }
                 )
             elif judge_provider:
-                last_error: BaseException | None = None
+                qa_judge["judge_attempts"] = []
                 for attempt in range(1, args.max_judge_retries + 1):
                     try:
                         verdict, judge_response = judge_fill(
@@ -573,6 +496,7 @@ def process_judge_paper(
                             parsed_answer,
                             args.max_new_tokens,
                         )
+                        qa_judge["judge_attempts"].append({"raw": judge_response})
                         answer_is_correct = verdict == "CORRECT"
                         qa_judge.update(
                             {
@@ -586,14 +510,19 @@ def process_judge_paper(
                         )
                         break
                     except Exception as exc:
-                        last_error = exc
+                        qa_judge["judge_attempts"].append({"error_type": type(exc).__name__,
+                            "raw": getattr(exc, "raw_response", None)})
                         if attempt < args.max_judge_retries:
                             time.sleep(2 ** (attempt - 1))
                 else:
-                    assert last_error is not None
-                    raise RuntimeError(
-                        "LLM judge failed after retries"
-                    ) from last_error
+                    qa_judge.update(judge_verdict="ERROR", match_method="llm_judge_error",
+                                    answer_is_correct=False, is_correct=False,
+                                    technical_failure=True)
+            else:
+                qa_judge.update(judge_verdict="ERROR", match_method="llm_judge_error",
+                                answer_is_correct=False, is_correct=False,
+                                technical_failure=True,
+                                judge_attempts=[{"error_type": "JudgeProviderUnavailable"}])
 
         existing_paper["QA"][qa_id] = qa_judge
         if checkpoint is not None:

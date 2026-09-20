@@ -101,6 +101,9 @@ tools/internal/experiment_console/web/out/
 /data/final_2200/
 /data/eval_outputs
 /data/results/
+# Upload-ready resource bundles are local exports, separate from evaluations.
+/data/exports/*
+!/data/exports/README.md
 /data/web/**
 !/data/web/
 !/data/web/README.md

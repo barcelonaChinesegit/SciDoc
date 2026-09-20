@@ -7,7 +7,8 @@ from argparse import Namespace
 from eval_framework import is_numeric_match, parse_simple_numeric_answer
 from run_judge import (
     direct_fill_match,
-    normalize_pages,
+    build_judge_prompt,
+    judge_fill,
     parse_structured_response,
     process_judge_paper,
     judge_row_matches_inference,
@@ -82,10 +83,10 @@ class DirectFillMatchTests(unittest.TestCase):
             (False, "error_output"),
         )
 
-    def test_exact_unanswerable_is_directly_incorrect(self) -> None:
+    def test_answerable_refusal_needs_semantic_judge(self) -> None:
         self.assertEqual(
             direct_fill_match("AdamW", "(Unanswerable)."),
-            (False, "unanswerable_mismatch"),
+            (None, "needs_llm_judge"),
         )
 
     def test_gold_unanswerable_requires_canonical_label(self) -> None:
@@ -98,16 +99,16 @@ class DirectFillMatchTests(unittest.TestCase):
             (False, "unanswerable_exact_label"),
         )
 
-    def test_normalized_equal_answer_is_directly_correct(self) -> None:
+    def test_normalized_equal_answer_requires_judge(self) -> None:
         self.assertEqual(
             direct_fill_match("Qwen3-VL-8B", "  qwen3-vl-8b\n"),
-            (True, "exact_normalized"),
+            (None, "needs_llm_judge"),
         )
 
-    def test_loose_equal_answer_is_directly_correct(self) -> None:
+    def test_loose_equal_answer_requires_judge(self) -> None:
         self.assertEqual(
             direct_fill_match("(AdamW)", "AdamW."),
-            (True, "loose_normalized"),
+            (None, "needs_llm_judge"),
         )
 
     def test_unsafe_numeric_answer_falls_through_to_llm(self) -> None:
@@ -134,11 +135,6 @@ class StructuredSxzResponseTests(unittest.TestCase):
         self.assertEqual(pages, [])
         self.assertEqual(method, "invalid_pdf_output")
 
-    def test_normalizes_and_deduplicates_page_labels(self) -> None:
-        self.assertEqual(
-            normalize_pages(["Page 7", 2, "pages 7 and 3", 0, True]),
-            [2, 3, 7],
-        )
 
 
 class SelectiveRetryTests(unittest.TestCase):
@@ -334,15 +330,22 @@ class EndToEndProtocolJudgeTests(unittest.TestCase):
             max_judge_retries=1,
             max_new_tokens=8,
         )
+        class Provider:
+            calls = []
+            def generate(self, messages, max_tokens):
+                self.calls.append(messages)
+                return "CORRECT"
+        provider = Provider()
         judged = process_judge_paper(
             "P",
             inference,
             gold,
             None,
-            judge_provider=None,
+            judge_provider=provider,
             args=args,
             retry_match_methods=set(),
         )["QA"]
+        self.assertEqual(len(provider.calls), 1)
         self.assertTrue(judged["Q1"]["answer_is_correct"])
         self.assertFalse(judged["Q1"]["evidence_pages_is_correct"])
         self.assertFalse(judged["Q1"]["is_correct"])

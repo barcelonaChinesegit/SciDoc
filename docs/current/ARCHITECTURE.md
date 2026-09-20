@@ -4,8 +4,8 @@
 
 公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
 论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
-精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 的规则优先匹配与
-内部报告属于历史实验实现，不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
+精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 已移除规则优先匹配，Judge 统一使用论文原版提示词、
+严格标签解析和原始输出；内部报告仍不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
 99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
 差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
 本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
@@ -35,7 +35,7 @@
 run_inference.py ── 4B/8B 原始输出、规范化审计、协议指纹
         │  每篇论文原子检查点
         ▼
-run_judge.py ── 规则判分；必要时调用 27B 语义 Judge
+run_judge.py ── 精确拒答；所有合法可回答题调用 27B 语义 Judge
         │  inference_binding_sha256 + judge_protocol_fingerprint
         ▼
 run_report.py ── 分母、键集合、原始输出、PDF 清单重新核验
@@ -75,7 +75,7 @@ Node 所在目录加入子进程 `PATH`，因此 systemd 无交互环境不依�
 `src/pku_qa/evaluation/evaluation_protocol.py` 是这些规则、版本号、强制字段、哈希和队列 contract 的
 唯一真源。CLI 只接收 `--input-mode`，证据要求由协议派生，不能由调用者覆盖。
 
-PDF 原始 JSON 若仅有外层空白或页码顺序可确定性规范化，系统同时保存
+PDF 原始 JSON 可规范化 JSON 外层空白，并对整数证据页排序去重；答案原文保持不变。系统同时保存
 `raw_model_output`、其 SHA-256、规范化后的 `model_output` 和
 `deterministic_normalizations`。推理只做有限次格式纠错；仍然非法时逐字保存最后一次
 模型输出及其哈希，让整批实验继续并由 Judge 计错。非法 JSON、越界页、拒答携带
@@ -85,9 +85,9 @@ PDF 原始 JSON 若仅有外层空白或页码顺序可确定性规范化，系�
 
 | 模块组 | 文件 | 职责 |
 | --- | --- | --- |
-| 协议与评分 | `src/pku_qa/evaluation/evaluation_protocol.py`, `src/pku_qa/evaluation/qa_scoring.py` | 输入/输出 contract、精确拒答、类型化字符串/数值匹配、哈希绑定 |
+| 协议与评分 | `src/pku_qa/evaluation/evaluation_protocol.py` | 输入/输出 contract、精确拒答、有限规范化、哈希绑定 |
 | 模型与 PDF | `src/pku_qa/evaluation/eval_framework.py`, `src/pku_qa/evaluation/run_inference.py` | provider、模型身份、PDF 渲染/页预算、提示、逐题推理 |
-| Judge 与报告 | `src/pku_qa/evaluation/run_judge.py`, `src/pku_qa/evaluation/run_report.py`, `src/pku_qa/evaluation/calculate_evidence_weighted_accuracy.py` | 规则优先判分、27B 语义判分、严格汇总、证据加权指标 |
+| Judge 与报告 | `src/pku_qa/evaluation/run_judge.py`, `src/pku_qa/evaluation/run_report.py`, `src/pku_qa/evaluation/calculate_evidence_weighted_accuracy.py` | 论文原版 27B 语义判分、严格汇总、内部历史诊断 |
 | 实验调度 | `src/pku_qa/evaluation/run_hard_eval.py`, `src/pku_qa/evaluation/run_eval_pipeline.py` | 动态或静态 GPU 的完整实验阶段编排 |
 | 断点与 GPU | `src/pku_qa/evaluation/durable_work_queue.py`, `src/pku_qa/evaluation/adaptive_gpu_pool.py`, `src/pku_qa/evaluation/gpu_reservation.py`, `src/pku_qa/evaluation/progress_logging.py` | 原子检查点、worker 重启、A800 显存门禁、心跳 |
 | 外层任务队列 | `src/pku_qa/services/task_queue/task_queue_manager.py`, `src/pku_qa/services/task_queue/task_queue_daemon.py`, `src/pku_qa/services/task_queue/task_queue_runner.py`, `src/pku_qa/services/task_queue/task_queue_cli.py`, `src/pku_qa/services/task_queue/task_queue_api.py`, `src/pku_qa/services/task_queue/task_queue_tui.py`, `src/pku_qa/services/task_queue/task_queue_supervisor.py` | 实验依赖、SQLite 状态、日志、重试、API/TUI/Web 服务 |
@@ -154,6 +154,7 @@ QA1816 和真实物理 PDF 页 16/57，不写账户、审核事件或正式数�
 | `data/pdfs/` | 全部 PDF 的唯一平铺目录：`paper_*` 主论文、`source_*` 生成源论文、排序最后的 `z_cross_*` 合订本 | 外部资产 |
 | `data/pdf_assets_manifest.json` | 旧路径/旧 ID 到规范 PDF 名称的映射、内容哈希和重复副本审计 | 生成 |
 | `data/results/` | 评测运行时创建的推理、Judge、状态和报告输出 | 是 |
+| `data/exports/` | 对外分发资源包及校验、恢复说明；Google Drive 完整资源包位于 `google_drive/` | 是 |
 | `data/web/review/` | Web 用户/会话/审核 SQLite、内部令牌、审计事件和可逆快照 | 是 |
 | `data/web/task_queue/` | 外层任务队列 SQLite、日志、incident 和 Web 健康状态 | 是 |
 | `models/` | Qwen、Gemma、Mistral、InternVL、MiniCPM 九套本地权重的唯一真实目录 | 外部资产 |
@@ -369,8 +370,8 @@ Judge 行复制所有用于绑定的推理字段，另加：
 | `answer_is_correct` | 只看答案的布尔分数 |
 | `evidence_pages_is_correct` | 页集合完全一致；闭卷为 true |
 | `is_correct` | 合法且答案、证据均正确的联合分数 |
-| `match_method` | exact/alias/numeric/choice/LLM Judge 等实际路径 |
-| `typed_score` | 类型化评分诊断，可为空 |
+| `match_method` | exact_unanswerable / illegal_output / llm_judge / llm_judge_error 等实际路径 |
+| `typed_score` | 历史字段；新评分不做类型化预匹配，值为 null |
 | `judge_verdict`, `judge_response` | 规则或 27B Judge 结论与可选原文 |
 | `inference_binding_sha256` | 该 Judge 行绑定的精确推理行哈希 |
 | `judge_protocol_fingerprint` | Judge 代码、模型身份和参数哈希 |
