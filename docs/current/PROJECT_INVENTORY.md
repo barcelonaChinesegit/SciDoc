@@ -52,7 +52,7 @@
 | `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 69 | `0ee565793a91` |
 | `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 213 | `b2885c5e91d3` |
 | `docs/reports/official_evaluation/LOCAL_MODEL_TEST.md` | 项目文档：LOCAL MODEL TEST | 90 | `16c8baa69bac` |
-| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 116 | `7851cb5c0e6c` |
+| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 121 | `54dc7609a811` |
 | `docs/reports/official_evaluation/claude_subject_discrepancy.json` | 项目文档：claude subject discrepancy | 118 | `4fd535e724eb` |
 | `docs/reports/official_evaluation/dataset_preflight.json` | 项目文档：dataset preflight | 1624 | `2fcf32ae8f4e` |
 | `docs/reports/official_evaluation/fast_reproduction_check/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 31 | `39be229403ba` |
@@ -62,6 +62,7 @@
 | `docs/reports/official_evaluation/fast_reproduction_check/local_judge_config.json` | 项目文档：local judge config | 108 | `d3ce7365dc44` |
 | `docs/reports/official_evaluation/fast_reproduction_check/local_summary.json` | 项目文档：local summary | 109 | `35a575355b8f` |
 | `docs/reports/official_evaluation/fast_reproduction_check/qa_hashes.json` | 项目文档：qa hashes | 29 | `29fdb517e43d` |
+| `docs/reports/official_evaluation/fast_reproduction_check/verification.json` | 项目文档：verification | 17 | `fafb573a6178` |
 | `docs/reports/official_evaluation/local_smoke/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 28 | `c7f21f2e8f4b` |
 | `docs/reports/official_evaluation/local_smoke/controls.json` | 项目文档：controls | 206 | `ea6abc83bd7a` |
 | `docs/reports/official_evaluation/local_smoke/judge_config.json` | 项目文档：judge config | 117 | `158cdeca0fd7` |
@@ -85,7 +86,7 @@
 | `evaluation/preflight.py` | 项目配置或入口：preflight | 108 | `b3d8dbf81dd3` |
 | `evaluation/prompts.py` | 项目配置或入口：prompts | 12 | `694a63ed56b5` |
 | `evaluation/prompts/provenance.json` | 项目配置或入口：provenance | 7 | `069ca54dd7b3` |
-| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 13 | `f13a46c70ff1` |
+| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 22 | `b56e4060f6f8` |
 | `evaluation/reproduce.py` | 项目配置或入口：reproduce | 243 | `7b9a87fe3721` |
 | `evaluation/validation.py` | 项目配置或入口：validation | 255 | `db009a6b4d27` |
 | `provider_config.example.json` | 项目配置或入口：provider config.example | 16 | `1ed1d13e6268` |

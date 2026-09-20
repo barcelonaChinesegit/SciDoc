@@ -1,0 +1,17 @@
+{
+  "test_count": 508,
+  "tests_passed": 508,
+  "tests_failed": 0,
+  "qa_original_snapshot_unchanged": true,
+  "qa_files_checked": 27,
+  "dataset_preflight_status": "valid",
+  "pdf_count": 712,
+  "credential_pattern_findings": 0,
+  "fresh_feasibility_rerun_identical": true,
+  "local_judge_items": 4,
+  "local_judge_failures": 0,
+  "table2_proven_cell_mismatches": 30,
+  "table3_proven_cell_mismatches": 47,
+  "remaining_semantic_jobs_not_run": 11550,
+  "official_reproduction_verified": false
+}

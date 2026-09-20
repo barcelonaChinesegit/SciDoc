@@ -93,6 +93,11 @@ prompt did not change. Historical result files and read-only `sxz/` were not
 modified or deleted. Internal historical report tools remain identified as
 diagnostics; they do not certify current paper tables.
 
+Validation: **508 tests passed**; a fresh run of the feasibility checker produced
+byte-identical tables and audit records. The 2,200-QA/712-PDF preflight passed,
+and all 27 QA JSON hashes match the original task snapshot. See the
+[verification record](fast_reproduction_check/verification.json).
+
 ## Repeat the checks
 
 ```bash
