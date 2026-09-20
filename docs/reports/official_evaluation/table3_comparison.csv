@@ -1,0 +1,100 @@
+model,metric,paper,historical_reaggregated_full_precision,historical_display,historical_display_difference,new_official_evaluator,new_difference,status
+MiniCPM-V 2.6,All,15.59,15.590909090909092,15.59,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Computer Science,16.51,16.51006711409396,16.51,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Physics,18.73,18.733509234828496,18.73,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Statistics,15.85,15.846994535519126,15.85,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Mathematics,10.2,10.204081632653061,10.20,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Electrical Engineering and Systems Science,10.16,10.15625,10.16,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Economics,16.06,16.05839416058394,16.06,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Quantitative Biology,15.79,15.789473684210526,15.79,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Quantitative Finance,15.12,15.116279069767442,15.12,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,All,22.32,22.318181818181817,22.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Computer Science,21.34,21.34228187919463,21.34,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Physics,26.39,26.385224274406333,26.39,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Statistics,24.32,24.316939890710383,24.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Mathematics,13.88,13.877551020408163,13.88,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Electrical Engineering and Systems Science,17.97,17.96875,17.97,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Economics,32.12,32.11678832116788,32.12,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Quantitative Biology,19.3,19.29824561403509,19.30,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Quantitative Finance,23.26,23.25581395348837,23.26,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,All,34.32,34.31818181818182,34.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Computer Science,25.91,25.906040268456376,25.91,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Physics,44.85,44.854881266490764,44.85,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Statistics,33.88,33.87978142076503,33.88,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Mathematics,30.2,30.20408163265306,30.20,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Electrical Engineering and Systems Science,30.47,30.46875,30.47,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Economics,40.88,40.87591240875913,40.88,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Quantitative Biology,51.75,51.75438596491228,51.75,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Quantitative Finance,46.51,46.51162790697674,46.51,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,All,34.95,34.95454545454545,34.95,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Computer Science,37.99,37.986577181208055,37.99,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Physics,30.34,30.34300791556728,30.34,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Statistics,36.07,36.0655737704918,36.07,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Mathematics,20.82,20.816326530612244,20.82,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Electrical Engineering and Systems Science,38.28,38.28125,38.28,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Economics,43.8,43.7956204379562,43.80,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Quantitative Biology,36.84,36.8421052631579,36.84,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Quantitative Finance,43.02,43.02325581395349,43.02,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,All,47.32,47.31818181818182,47.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Computer Science,50.34,50.33557046979866,50.34,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Physics,51.72,51.715039577836414,51.72,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Statistics,47.81,47.814207650273225,47.81,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Mathematics,32.24,32.244897959183675,32.24,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Electrical Engineering and Systems Science,41.41,41.40625,41.41,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Economics,57.66,57.66423357664234,57.66,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Quantitative Biology,38.6,38.59649122807018,38.60,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Quantitative Finance,46.51,46.51162790697674,46.51,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,All,49.0,49.0,49.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Computer Science,40.13,40.13422818791946,40.13,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Physics,60.95,60.949868073878626,60.95,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Statistics,45.08,45.08196721311475,45.08,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Mathematics,45.71,45.714285714285715,45.71,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Electrical Engineering and Systems Science,50.78,50.78125,50.78,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Economics,63.5,63.503649635036496,63.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Quantitative Biology,64.91,64.91228070175438,64.91,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Quantitative Finance,52.33,52.325581395348834,52.33,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,All,64.91,64.9090909090909,64.91,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Computer Science,63.89,63.89261744966443,63.89,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Physics,71.24,71.2401055408971,71.24,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Statistics,55.46,55.46448087431694,55.46,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Mathematics,62.04,62.04081632653061,62.04,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Electrical Engineering and Systems Science,64.06,64.0625,64.06,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Economics,67.88,67.88321167883211,67.88,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Quantitative Biology,80.7,80.70175438596492,80.70,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Quantitative Finance,69.77,69.76744186046511,69.77,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,All,68.32,68.31818181818181,68.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Computer Science,67.11,67.11409395973155,67.11,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Physics,70.98,70.97625329815304,70.98,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Statistics,66.12,66.12021857923497,66.12,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Mathematics,62.45,62.44897959183673,62.45,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Electrical Engineering and Systems Science,71.88,71.875,71.88,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Economics,70.8,70.8029197080292,70.80,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Quantitative Biology,76.32,76.3157894736842,76.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Quantitative Finance,73.26,73.25581395348837,73.26,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,All,69.32,68.04545454545455,68.05,-1.269999999999996,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Computer Science,69.93,69.93288590604027,69.93,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Physics,71.5,71.50395778364116,71.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Statistics,59.84,59.83606557377049,59.84,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Mathematics,60.0,60.0,60.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Electrical Engineering and Systems Science,76.56,76.5625,76.56,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Economics,66.42,66.42335766423358,66.42,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Quantitative Biology,77.19,77.19298245614036,77.19,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Quantitative Finance,72.09,72.09302325581395,72.09,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,All,79.45,79.45454545454545,79.45,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Computer Science,80.54,80.53691275167785,80.54,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Physics,77.57,77.57255936675462,77.57,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Statistics,83.06,83.06010928961749,83.06,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Mathematics,71.84,71.83673469387755,71.84,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Electrical Engineering and Systems Science,79.69,79.6875,79.69,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Economics,83.94,83.94160583941606,83.94,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Quantitative Biology,78.95,78.94736842105263,78.95,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Quantitative Finance,77.91,77.90697674418605,77.91,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,All,80.95,80.95454545454545,80.95,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Computer Science,80.67,80.67114093959732,80.67,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Physics,82.59,82.58575197889182,82.59,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Statistics,80.05,80.05464480874316,80.05,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Mathematics,74.29,74.28571428571429,74.29,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Electrical Engineering and Systems Science,85.16,85.15625,85.16,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Economics,86.86,86.86131386861314,86.86,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Quantitative Biology,82.46,82.45614035087719,82.46,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Quantitative Finance,81.4,81.3953488372093,81.40,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences

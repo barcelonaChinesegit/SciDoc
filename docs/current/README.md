@@ -1,5 +1,16 @@
 # SciDoc 项目文档
 
+## 2026-09-20 论文协议审计更新
+
+公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
+论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
+精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 的规则优先匹配与
+内部报告属于历史实验实现，不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
+99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
+差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
+本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
+
+
 当前发布、人工审核和正式评测统一使用 `data/qa/7.final_2200/` 的四文件集合：
 普通 1,000、不可回答 200、Reasoning 200、Cross-PDF 800，共 2,200 条简答 QA。
 全局 ID 为 `QA0001`–`QA2200`；最终评测使用 474 份单论文 PDF 和 238 份合并 PDF。
@@ -24,7 +35,7 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.inspect_final_2200
 | 区分最终四文件与上游、过程材料 | [QA 数据集目录](DATASET_CATALOG.md) |
 | 历史证据定位诊断的适用范围 | [报告索引](../reports/README.md) |
 
-正式评测由 `pku_qa.workflows.reporting.run_final_2200_evaluation` 按 manifest 构建
+内部推理编排由 `pku_qa.workflows.reporting.run_final_2200_evaluation` 按 manifest 构建
 四个锁定路径、数量、QA 哈希的 PDF 评测命令；每个组件依次运行 4B、8B、Judge 和严格报告。
 `question_only` 用于闭卷对照；Full、Oracle 和消融是 `pdf` 页选择策略。
 `Unanswerable` 必须精确拼写，PDF 拒答证据页为空。严格报告不接收不完整或失去绑定的结果。

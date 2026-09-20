@@ -33,7 +33,7 @@ export default function ConsoleNav({
         <strong>QA Final Review</strong>
       </Link>
       <div className="console-nav-links">
-        {entries.map(({ href, label, icon: Icon, id }) => (
+        {entries.filter(({ id }) => id !== "queue" || hasRole(user, "admin")).map(({ href, label, icon: Icon, id }) => (
           <Link className={active === id ? "active" : ""} href={href} key={id}>
             <Icon size={16} strokeWidth={1.8} />
             <span>{label}</span>

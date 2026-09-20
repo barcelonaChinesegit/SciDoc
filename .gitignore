@@ -12,7 +12,7 @@ id_ed25519*
 /AGENTS.md
 /.agents/
 /docs/prompts/
-/task_queue_web/.openai/
+/tools/internal/experiment_console/web/.openai/
 
 # Python caches, environments, and test artifacts
 __pycache__/
@@ -41,11 +41,11 @@ dist/
 /build/
 **/build/
 # Vite imports these handwritten build helpers; they are source, not output.
-!/task_queue_web/build/
-/task_queue_web/build/*
-!/task_queue_web/build/*.ts
-!/task_queue_web/build/*.mjs
-task_queue_web/out/
+!/tools/internal/experiment_console/web/build/
+/tools/internal/experiment_console/web/build/*
+!/tools/internal/experiment_console/web/build/*.ts
+!/tools/internal/experiment_console/web/build/*.mjs
+tools/internal/experiment_console/web/out/
 
 # Local model weights and downloaded model repositories
 /models/
@@ -136,9 +136,9 @@ nohup.out
 
 # Tool and local service caches not useful in source control.
 **/.cache/
-task_queue_web/.vinext/
-task_queue_web/.wrangler/
-task_queue_web/db/
+tools/internal/experiment_console/web/.vinext/
+tools/internal/experiment_console/web/.wrangler/
+tools/internal/experiment_console/web/db/
 
 # Accidental root files produced by malformed CLI invocations
 /--*

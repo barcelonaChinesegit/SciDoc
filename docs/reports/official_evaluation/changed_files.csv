@@ -1,0 +1,83 @@
+status,old_path,path,reason
+M,,.gitignore,"Support validation entrypoint, environment, directory move or deployment"
+A,,CONTRIBUTORS.md,Requested contributor acknowledgments and GitHub attribution instructions
+M,,README.en.md,English default README and language navigation; paper-aligned evaluation description
+M,,README.md,English default README and language navigation; paper-aligned evaluation description
+A,,README.zh-CN.md,English default README and language navigation; paper-aligned evaluation description
+M,,deploy/systemd/pku-task-queue-web.service,"Support validation entrypoint, environment, directory move or deployment"
+M,,docs/current/ARCHITECTURE.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/current/CURRENT_STATUS.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/current/GETTING_STARTED.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/current/MANUAL_REVIEW_GUIDE.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/current/PROJECT_INVENTORY.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/current/README.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/current/WEB_CONSOLE.md,"Correct current protocol, field, path or historical-scope documentation"
+A,,docs/releases/PDF_DISTRIBUTION.md,Exact PDF distribution inventories and Google Drive packaging instructions
+A,,docs/releases/pdf_upload_all.csv,Exact PDF distribution inventories and Google Drive packaging instructions
+A,,docs/releases/pdf_upload_benchmark.csv,Exact PDF distribution inventories and Google Drive packaging instructions
+M,,docs/reports/CROSS_PDF_EVIDENCE_AUDIT.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/reports/DOCUMENTATION_AUDIT.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/reports/FIGURE_RECOVERY_20260916.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/reports/README.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/reports/SCIDOC_MIGRATION_20260920.md,"Correct current protocol, field, path or historical-scope documentation"
+M,,docs/reports/SCIDOC_PATH_AUDIT_20260920.md,"Correct current protocol, field, path or historical-scope documentation"
+A,,docs/reports/official_evaluation/FINAL_REPORT.md,"Reproducible audit, comparisons and verification records"
+A,,docs/reports/official_evaluation/baseline_item_audit.csv,"Reproducible audit, comparisons and verification records"
+A,,docs/reports/official_evaluation/claude_subject_discrepancy.json,"Reproducible audit, comparisons and verification records"
+A,,docs/reports/official_evaluation/dataset_preflight.json,"Reproducible audit, comparisons and verification records"
+A,,docs/reports/official_evaluation/markdown_audit.csv,"Reproducible audit, comparisons and verification records"
+A,,docs/reports/official_evaluation/reproduction_audit.json,"Reproducible audit, comparisons and verification records"
+A,,docs/reports/official_evaluation/table2_comparison.csv,"Reproducible audit, comparisons and verification records"
+A,,docs/reports/official_evaluation/table3_comparison.csv,"Reproducible audit, comparisons and verification records"
+A,,docs/reports/official_evaluation/verification.json,"Reproducible audit, comparisons and verification records"
+A,,evaluation/README.md,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/__init__.py,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/evaluate.py,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/judge.py,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/metrics.py,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/paper_reference.json,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/preflight.py,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/prompts.py,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/prompts/provenance.json,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/prompts/semantic_judge.txt,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/reconciliation.json,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/reproduce.py,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,evaluation/validation.py,"Paper-contract evaluation, validation, cache or reproducibility evidence"
+A,,examples/predictions.example.jsonl,"Support validation entrypoint, environment, directory move or deployment"
+A,,requirements-eval.txt,"Support validation entrypoint, environment, directory move or deployment"
+A,,scripts/validate_submission.py,"Support validation entrypoint, environment, directory move or deployment"
+A,,tests/test_e2e.py,Mocked evaluation and protocol regression coverage
+A,,tests/test_judge.py,Mocked evaluation and protocol regression coverage
+A,,tests/test_metrics.py,Mocked evaluation and protocol regression coverage
+A,,tests/test_validation.py,Mocked evaluation and protocol regression coverage
+A,,tools/internal/experiment_console/README.md,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/.gitignore,tools/internal/experiment_console/web/.gitignore,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/admin/users/page.tsx,tools/internal/experiment_console/web/app/admin/users/page.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/api/[...path]/route.ts,tools/internal/experiment_console/web/app/api/[...path]/route.ts,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R094,task_queue_web/app/components/ConsoleNav.tsx,tools/internal/experiment_console/web/app/components/ConsoleNav.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/components/LoginScreen.tsx,tools/internal/experiment_console/web/app/components/LoginScreen.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/data-api/[...path]/route.ts,tools/internal/experiment_console/web/app/data-api/[...path]/route.ts,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/data/page.tsx,tools/internal/experiment_console/web/app/data/page.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/globals.css,tools/internal/experiment_console/web/app/globals.css,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/guide/page.tsx,tools/internal/experiment_console/web/app/guide/page.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/layout.tsx,tools/internal/experiment_console/web/app/layout.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/lib/auth.ts,tools/internal/experiment_console/web/app/lib/auth.ts,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/login/page.tsx,tools/internal/experiment_console/web/app/login/page.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R089,task_queue_web/app/page.tsx,tools/internal/experiment_console/web/app/page.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/profile/page.tsx,tools/internal/experiment_console/web/app/profile/page.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/queue/page.tsx,tools/internal/experiment_console/web/app/queue/page.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/app/register/page.tsx,tools/internal/experiment_console/web/app/register/page.tsx,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/build/font-cache.mjs,tools/internal/experiment_console/web/build/font-cache.mjs,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/build/sites-vite-plugin.ts,tools/internal/experiment_console/web/build/sites-vite-plugin.ts,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/eslint.config.mjs,tools/internal/experiment_console/web/eslint.config.mjs,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/next.config.ts,tools/internal/experiment_console/web/next.config.ts,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/package-lock.json,tools/internal/experiment_console/web/package-lock.json,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/package.json,tools/internal/experiment_console/web/package.json,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/postcss.config.mjs,tools/internal/experiment_console/web/postcss.config.mjs,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/public/favicon.svg,tools/internal/experiment_console/web/public/favicon.svg,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/public/review-paper.png,tools/internal/experiment_console/web/public/review-paper.png,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/tests/rendered-html.test.mjs,tools/internal/experiment_console/web/tests/rendered-html.test.mjs,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/tsconfig.json,tools/internal/experiment_console/web/tsconfig.json,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/vite.config.ts,tools/internal/experiment_console/web/vite.config.ts,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+R100,task_queue_web/worker/index.ts,tools/internal/experiment_console/web/worker/index.ts,Move optional maintainer console below internal tools; hide queue navigation from reviewers
+A,,docs/reports/official_evaluation/changed_files.csv,Complete public file-change inventory

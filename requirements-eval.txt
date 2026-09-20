@@ -1,0 +1,5 @@
+# Standalone public evaluator supports Python 3.10+; the internal package needs 3.12+.
+pypdf==6.10.2
+pytest>=8,<9
+# Needed only for historical workbook audits, not submission scoring.
+openpyxl>=3.1,<4

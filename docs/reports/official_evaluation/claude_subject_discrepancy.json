@@ -1,0 +1,118 @@
+{
+  "ordinary_workbook_correct": 855,
+  "ordinary_subject_join_correct": 827,
+  "correct_outside_subject_keys": [
+    {
+      "paper": "24",
+      "qa": "QA4"
+    },
+    {
+      "paper": "24",
+      "qa": "QA8"
+    },
+    {
+      "paper": "134",
+      "qa": "QA3"
+    },
+    {
+      "paper": "155",
+      "qa": "QA9"
+    },
+    {
+      "paper": "155",
+      "qa": "QA5"
+    },
+    {
+      "paper": "167",
+      "qa": "QA8"
+    },
+    {
+      "paper": "167",
+      "qa": "QA5"
+    },
+    {
+      "paper": "167",
+      "qa": "QA6"
+    },
+    {
+      "paper": "208",
+      "qa": "QA5"
+    },
+    {
+      "paper": "272",
+      "qa": "QA6"
+    },
+    {
+      "paper": "276",
+      "qa": "QA6"
+    },
+    {
+      "paper": "314",
+      "qa": "QA5"
+    },
+    {
+      "paper": "673",
+      "qa": "QA3"
+    },
+    {
+      "paper": "673",
+      "qa": "QA6"
+    },
+    {
+      "paper": "676",
+      "qa": "QA1"
+    },
+    {
+      "paper": "685",
+      "qa": "QA1"
+    },
+    {
+      "paper": "685",
+      "qa": "QA6"
+    },
+    {
+      "paper": "700",
+      "qa": "QA5"
+    },
+    {
+      "paper": "700",
+      "qa": "QA6"
+    },
+    {
+      "paper": "703",
+      "qa": "QA9"
+    },
+    {
+      "paper": "3",
+      "qa": "QA5"
+    },
+    {
+      "paper": "3",
+      "qa": "QA9"
+    },
+    {
+      "paper": "241",
+      "qa": "QA1"
+    },
+    {
+      "paper": "241",
+      "qa": "QA8"
+    },
+    {
+      "paper": "263",
+      "qa": "QA5"
+    },
+    {
+      "paper": "701",
+      "qa": "QA3"
+    },
+    {
+      "paper": "701",
+      "qa": "QA5"
+    },
+    {
+      "paper": "701",
+      "qa": "QA9"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+path,scope,review,bytes_at_review
+.agents/skills/pku-qa-maintainer/SKILL.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,5293
+AGENTS.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,4523
+CONTRIBUTORS.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,1030
+README.en.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,148
+README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,5543
+README.zh-CN.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,9131
+data/archive/README.md,immutable historical archive documentation,read; field/metric/count/path/interface descriptions checked,535
+data/archive/final_2200_cleanup_20260911/README.md,immutable historical archive documentation,read; field/metric/count/path/interface descriptions checked,2832
+data/qa/2.unanswerable/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,443
+data/qa/3.reasoning/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,718
+data/qa/4.cross_pdf/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,458
+data/qa/4.cross_pdf/hard_expansion/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,612
+data/qa/6.review/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,502
+data/qa/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,5635
+data/web/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,792
+docs/current/ARCHITECTURE.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,30268
+docs/current/CURRENT_STATUS.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,3957
+docs/current/DATASET_CATALOG.md,generated dataset catalog; checked against unchanged QA,read; field/metric/count/path/interface descriptions checked,9195
+docs/current/GETTING_STARTED.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,12774
+docs/current/MANUAL_REVIEW_GUIDE.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,46660
+docs/current/PROJECT_INVENTORY.md,generated source inventory; synchronized separately,read; field/metric/count/path/interface descriptions checked,31860
+docs/current/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,9836
+docs/current/WEB_CONSOLE.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,13378
+docs/prompts/MAINTENANCE_REMEDIATION.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,1557
+docs/releases/PDF_DISTRIBUTION.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,2629
+docs/reports/CROSS_PDF_EVIDENCE_AUDIT.md,historical report; dated context retained; current protocol notes checked,read; field/metric/count/path/interface descriptions checked,29340
+docs/reports/DOCUMENTATION_AUDIT.md,historical report; dated context retained; current protocol notes checked,read; field/metric/count/path/interface descriptions checked,4008
+docs/reports/FIGURE_RECOVERY_20260916.md,historical report; dated context retained; current protocol notes checked,read; field/metric/count/path/interface descriptions checked,4480
+docs/reports/README.md,historical report; dated context retained; current protocol notes checked,read; field/metric/count/path/interface descriptions checked,910
+docs/reports/SCIDOC_MIGRATION_20260920.md,historical report; dated context retained; current protocol notes checked,read; field/metric/count/path/interface descriptions checked,4906
+docs/reports/SCIDOC_PATH_AUDIT_20260920.md,historical report; dated context retained; current protocol notes checked,read; field/metric/count/path/interface descriptions checked,5373
+docs/reports/official_evaluation/FINAL_REPORT.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,19324
+evaluation/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,12131
+scripts/dataset_construction/phase1_paper_acquisition/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,5306
+tools/internal/experiment_console/README.md,current source/documentation,read; field/metric/count/path/interface descriptions checked,912
+论文/写作材料/图/图表生成代码/README.md,local manuscript figure documentation; manuscript is authoritative,read; field/metric/count/path/interface descriptions checked,15243
+论文/写作材料/图/附录/提示词方框_drawio/README.md,local manuscript figure documentation; manuscript is authoritative,read; field/metric/count/path/interface descriptions checked,2656

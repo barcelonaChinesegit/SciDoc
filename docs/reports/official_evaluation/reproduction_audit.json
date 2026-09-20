@@ -1,0 +1,5120 @@
+{
+  "official_reproduction_verified": false,
+  "dataset_hashes": {
+    "ordinary_qa.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+    "unanswerable_qa.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+    "reasoning_qa.json": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+    "cross_pdf_qa.json": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82"
+  },
+  "baselines": {
+    "models": {
+      "MiniCPM-V 2.6": {
+        "counts": {
+          "historical_records": 2198,
+          "strict_raw_illegal": 2198,
+          "mapped_predictions": 2198,
+          "missing_current_ids": 2,
+          "unavailable_binary_judge_decisions": 0
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2198,
+          "missing": 2,
+          "legal": 0,
+          "illegal": 2198,
+          "technical_failures": 0,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 99.9090909090909,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 0.0,
+            "unresolved_illegal_evidence_items": 2198,
+            "judge_failures_counted_zero": 0
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "InternVL2.5-8B": {
+        "counts": {
+          "historical_records": 2198,
+          "strict_raw_illegal": 2195,
+          "changed_evidence_pages": 2,
+          "dataset_version_mismatch": 5,
+          "changed_answer": 3,
+          "strict_raw_legal": 3,
+          "mapped_predictions": 2198,
+          "missing_current_ids": 2,
+          "unavailable_binary_judge_decisions": 3
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2198,
+          "missing": 2,
+          "legal": 3,
+          "illegal": 2190,
+          "technical_failures": 8,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 99.54545454545455,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 0.0,
+            "unresolved_illegal_evidence_items": 2190,
+            "judge_failures_counted_zero": 3
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "MiniCPM-V 4.5": {
+        "counts": {
+          "historical_records": 2200,
+          "strict_raw_legal": 1446,
+          "strict_raw_illegal": 752,
+          "changed_evidence_pages": 173,
+          "dataset_version_mismatch": 208,
+          "changed_question": 43,
+          "changed_answer": 59,
+          "unmapped_legacy_ids": 2,
+          "mapped_predictions": 2198,
+          "missing_current_ids": 2,
+          "unavailable_binary_judge_decisions": 1093
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2198,
+          "missing": 2,
+          "legal": 1278,
+          "illegal": 712,
+          "technical_failures": 1301,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 28,
+              "accuracy": 1.2727272727272727
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 28,
+              "accuracy": 14.0
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 7,
+              "accuracy": 0.9421265141318977
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 4,
+              "accuracy": 1.0554089709762533
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 3,
+              "accuracy": 0.8174386920980926
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 10,
+              "accuracy": 4.081632653061225
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 1,
+              "accuracy": 0.7751937984496124
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 3,
+              "accuracy": 2.18978102189781
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 32.36363636363637,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 1.2727272727272727,
+            "unresolved_illegal_evidence_items": 712,
+            "judge_failures_counted_zero": 1093
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 1,
+              "accuracy": 3.4482758620689653
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 2,
+              "accuracy": 13.333333333333334
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 2,
+              "accuracy": 4.444444444444445
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 1,
+              "accuracy": 0.45871559633027525
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 1,
+              "accuracy": 3.8461538461538463
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 2,
+              "accuracy": 4.878048780487805
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 1,
+              "accuracy": 3.4482758620689653
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 1,
+              "accuracy": 0.8620689655172413
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 1,
+              "accuracy": 7.6923076923076925
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 3,
+              "accuracy": 13.636363636363637
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 1,
+              "accuracy": 8.333333333333334
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 1,
+              "accuracy": 7.142857142857143
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 1,
+              "accuracy": 0.7246376811594203
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 3,
+              "accuracy": 9.375
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 1,
+              "accuracy": 8.333333333333334
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 1,
+              "accuracy": 3.0303030303030303
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 1,
+              "accuracy": 3.7037037037037037
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 1,
+              "accuracy": 0.9433962264150944
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 3,
+              "accuracy": 3.2967032967032965
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "InternVL3.5-8B": {
+        "counts": {
+          "historical_records": 2190,
+          "strict_raw_legal": 1707,
+          "strict_raw_illegal": 481,
+          "changed_evidence_pages": 171,
+          "dataset_version_mismatch": 205,
+          "changed_question": 43,
+          "changed_answer": 58,
+          "unmapped_legacy_ids": 2,
+          "mapped_predictions": 2188,
+          "missing_current_ids": 12,
+          "unavailable_binary_judge_decisions": 1399
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2188,
+          "missing": 12,
+          "legal": 1546,
+          "illegal": 437,
+          "technical_failures": 1604,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 5,
+              "accuracy": 0.22727272727272727
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 5,
+              "accuracy": 2.5
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 2,
+              "accuracy": 0.2691790040376851
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 2,
+              "accuracy": 0.5449591280653951
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 1,
+              "accuracy": 0.40816326530612246
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 19.863636363636363,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 0.22727272727272727,
+            "unresolved_illegal_evidence_items": 437,
+            "judge_failures_counted_zero": 1399
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 1,
+              "accuracy": 0.45871559633027525
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 1,
+              "accuracy": 2.7027027027027026
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 1,
+              "accuracy": 5.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 1,
+              "accuracy": 3.0303030303030303
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 1,
+              "accuracy": 3.7037037037037037
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "Gemma 3 27B": {
+        "counts": {
+          "historical_records": 2198,
+          "strict_raw_illegal": 2196,
+          "changed_answer": 43,
+          "dataset_version_mismatch": 139,
+          "changed_question": 25,
+          "changed_evidence_pages": 110,
+          "strict_raw_legal": 2,
+          "mapped_predictions": 2198,
+          "missing_current_ids": 2,
+          "unavailable_binary_judge_decisions": 1
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2198,
+          "missing": 2,
+          "legal": 2,
+          "illegal": 2057,
+          "technical_failures": 140,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 1,
+              "accuracy": 0.045454545454545456
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 1,
+              "accuracy": 0.5
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 1,
+              "accuracy": 0.2638522427440633
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 93.5,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 0.045454545454545456,
+            "unresolved_illegal_evidence_items": 2057,
+            "judge_failures_counted_zero": 1
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 1,
+              "accuracy": 2.3255813953488373
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "Mistral-Small-3.1-24B": {
+        "counts": {
+          "historical_records": 2198,
+          "strict_raw_illegal": 1192,
+          "strict_raw_legal": 1006,
+          "changed_evidence_pages": 2,
+          "dataset_version_mismatch": 5,
+          "changed_answer": 3,
+          "mapped_predictions": 2198,
+          "missing_current_ids": 2,
+          "unavailable_binary_judge_decisions": 835
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2198,
+          "missing": 2,
+          "legal": 1003,
+          "illegal": 1190,
+          "technical_failures": 840,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 11,
+              "accuracy": 0.5
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 11,
+              "accuracy": 5.5
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 3,
+              "accuracy": 0.4037685060565276
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 5,
+              "accuracy": 1.3192612137203166
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 1,
+              "accuracy": 0.2724795640326976
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 2,
+              "accuracy": 1.4598540145985401
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 54.09090909090909,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 0.5,
+            "unresolved_illegal_evidence_items": 1190,
+            "judge_failures_counted_zero": 835
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 1,
+              "accuracy": 3.8461538461538463
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 1,
+              "accuracy": 0.9174311926605505
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 1,
+              "accuracy": 3.7037037037037037
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 1,
+              "accuracy": 3.4482758620689653
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 1,
+              "accuracy": 7.142857142857143
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 1,
+              "accuracy": 14.285714285714286
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 1,
+              "accuracy": 3.125
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 1,
+              "accuracy": 3.0303030303030303
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 1,
+              "accuracy": 2.3255813953488373
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 2,
+              "accuracy": 2.197802197802198
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "Qwen3-VL-4B": {
+        "counts": {
+          "historical_records": 2190,
+          "strict_raw_legal": 2163,
+          "changed_evidence_pages": 171,
+          "dataset_version_mismatch": 205,
+          "changed_question": 43,
+          "changed_answer": 58,
+          "strict_raw_illegal": 25,
+          "unmapped_legacy_ids": 2,
+          "mapped_predictions": 2188,
+          "missing_current_ids": 12,
+          "unavailable_binary_judge_decisions": 1772
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2188,
+          "missing": 12,
+          "legal": 1960,
+          "illegal": 23,
+          "technical_failures": 1977,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 119,
+              "accuracy": 5.409090909090909
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 119,
+              "accuracy": 59.5
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 38,
+              "accuracy": 5.114401076716016
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 27,
+              "accuracy": 7.124010554089709
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 14,
+              "accuracy": 3.8147138964577656
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 27,
+              "accuracy": 11.020408163265307
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 4,
+              "accuracy": 3.10077519379845
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 9,
+              "accuracy": 7.894736842105263
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 1.0454545454545454,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 5.409090909090909,
+            "unresolved_illegal_evidence_items": 23,
+            "judge_failures_counted_zero": 1772
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 3,
+              "accuracy": 10.344827586206897
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 4,
+              "accuracy": 26.666666666666668
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 9,
+              "accuracy": 20.0
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 5,
+              "accuracy": 2.293577981651376
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 1,
+              "accuracy": 3.8461538461538463
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 4,
+              "accuracy": 9.75609756097561
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 1,
+              "accuracy": 0.9174311926605505
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 1,
+              "accuracy": 2.5641025641025643
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 2,
+              "accuracy": 7.407407407407407
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 2,
+              "accuracy": 9.523809523809524
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 2,
+              "accuracy": 6.0606060606060606
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 2,
+              "accuracy": 1.1049723756906078
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 3,
+              "accuracy": 10.344827586206897
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 3,
+              "accuracy": 21.428571428571427
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 2,
+              "accuracy": 1.7241379310344827
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 1,
+              "accuracy": 2.5
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 5,
+              "accuracy": 13.513513513513514
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 6,
+              "accuracy": 28.571428571428573
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 2,
+              "accuracy": 28.571428571428573
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 4,
+              "accuracy": 18.181818181818183
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 1,
+              "accuracy": 3.125
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 3,
+              "accuracy": 25.0
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 2,
+              "accuracy": 10.526315789473685
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 4,
+              "accuracy": 28.571428571428573
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 1,
+              "accuracy": 5.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 2,
+              "accuracy": 6.666666666666667
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 2,
+              "accuracy": 9.523809523809524
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 2,
+              "accuracy": 14.285714285714286
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 4,
+              "accuracy": 30.76923076923077
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 3,
+              "accuracy": 2.1739130434782608
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 1,
+              "accuracy": 2.857142857142857
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 7,
+              "accuracy": 21.875
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 2,
+              "accuracy": 10.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 2,
+              "accuracy": 10.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 2,
+              "accuracy": 16.666666666666668
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 5,
+              "accuracy": 11.11111111111111
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 7,
+              "accuracy": 21.21212121212121
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 1,
+              "accuracy": 5.555555555555555
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 2,
+              "accuracy": 7.407407407407407
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 2,
+              "accuracy": 1.8867924528301887
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 2,
+              "accuracy": 4.651162790697675
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "Qwen3-VL-8B": {
+        "counts": {
+          "historical_records": 2190,
+          "strict_raw_legal": 2163,
+          "changed_evidence_pages": 171,
+          "dataset_version_mismatch": 205,
+          "strict_raw_illegal": 25,
+          "changed_question": 43,
+          "changed_answer": 58,
+          "unmapped_legacy_ids": 2,
+          "mapped_predictions": 2188,
+          "missing_current_ids": 12,
+          "unavailable_binary_judge_decisions": 1775
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2188,
+          "missing": 12,
+          "legal": 1963,
+          "illegal": 20,
+          "technical_failures": 1980,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 85,
+              "accuracy": 3.8636363636363638
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 85,
+              "accuracy": 42.5
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 28,
+              "accuracy": 3.768506056527591
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 18,
+              "accuracy": 4.74934036939314
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 9,
+              "accuracy": 2.4523160762942777
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 21,
+              "accuracy": 8.571428571428571
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 4,
+              "accuracy": 3.10077519379845
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 5,
+              "accuracy": 4.385964912280702
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 0.9090909090909091,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 3.8636363636363638,
+            "unresolved_illegal_evidence_items": 20,
+            "judge_failures_counted_zero": 1775
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 3,
+              "accuracy": 10.344827586206897
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 2,
+              "accuracy": 13.333333333333334
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 8,
+              "accuracy": 17.77777777777778
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 3,
+              "accuracy": 1.3761467889908257
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 1,
+              "accuracy": 3.8461538461538463
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 2,
+              "accuracy": 4.878048780487805
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 1,
+              "accuracy": 2.5641025641025643
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 2,
+              "accuracy": 7.407407407407407
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 1,
+              "accuracy": 4.761904761904762
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 2,
+              "accuracy": 1.1049723756906078
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 3,
+              "accuracy": 10.344827586206897
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 2,
+              "accuracy": 14.285714285714286
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 5,
+              "accuracy": 13.513513513513514
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 4,
+              "accuracy": 19.047619047619047
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 3,
+              "accuracy": 13.636363636363637
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 2,
+              "accuracy": 16.666666666666668
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 1,
+              "accuracy": 5.2631578947368425
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 1,
+              "accuracy": 2.4390243902439024
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 3,
+              "accuracy": 21.428571428571427
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 2,
+              "accuracy": 6.666666666666667
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 2,
+              "accuracy": 9.523809523809524
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 2,
+              "accuracy": 14.285714285714286
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 4,
+              "accuracy": 30.76923076923077
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 6,
+              "accuracy": 18.75
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 2,
+              "accuracy": 10.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 1,
+              "accuracy": 8.333333333333334
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 4,
+              "accuracy": 8.88888888888889
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 6,
+              "accuracy": 18.181818181818183
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 2,
+              "accuracy": 11.11111111111111
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 2,
+              "accuracy": 7.407407407407407
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 2,
+              "accuracy": 1.8867924528301887
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 1,
+              "accuracy": 2.3255813953488373
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "Claude Sonnet 5": {
+        "counts": {
+          "historical_records": 2190,
+          "strict_raw_legal": 1602,
+          "changed_evidence_pages": 167,
+          "dataset_version_mismatch": 197,
+          "unmapped_legacy_ids": 30,
+          "changed_question": 41,
+          "changed_answer": 53,
+          "strict_raw_illegal": 558,
+          "mapped_predictions": 2160,
+          "missing_current_ids": 40,
+          "unavailable_binary_judge_decisions": 1230
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2160,
+          "missing": 40,
+          "legal": 1419,
+          "illegal": 544,
+          "technical_failures": 1427,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 136,
+              "accuracy": 6.181818181818182
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 136,
+              "accuracy": 68.0
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 41,
+              "accuracy": 5.518169582772543
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 30,
+              "accuracy": 7.915567282321899
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 15,
+              "accuracy": 4.087193460490464
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 34,
+              "accuracy": 13.877551020408163
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 4,
+              "accuracy": 3.10077519379845
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 2,
+              "accuracy": 1.4598540145985401
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 10,
+              "accuracy": 8.771929824561404
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 24.727272727272727,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 6.181818181818182,
+            "unresolved_illegal_evidence_items": 544,
+            "judge_failures_counted_zero": 1230
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 3,
+              "accuracy": 10.344827586206897
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 4,
+              "accuracy": 26.666666666666668
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 13,
+              "accuracy": 28.88888888888889
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 4,
+              "accuracy": 1.834862385321101
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 3,
+              "accuracy": 11.538461538461538
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 5,
+              "accuracy": 12.195121951219512
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 1,
+              "accuracy": 2.5641025641025643
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 2,
+              "accuracy": 7.407407407407407
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 3,
+              "accuracy": 14.285714285714286
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 1,
+              "accuracy": 3.5714285714285716
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 2,
+              "accuracy": 6.0606060606060606
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 3,
+              "accuracy": 1.6574585635359116
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 2,
+              "accuracy": 6.896551724137931
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 1,
+              "accuracy": 12.5
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 2,
+              "accuracy": 14.285714285714286
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 5,
+              "accuracy": 4.310344827586207
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 1,
+              "accuracy": 2.5
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 4,
+              "accuracy": 10.81081081081081
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 7,
+              "accuracy": 33.333333333333336
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 2,
+              "accuracy": 28.571428571428573
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 1,
+              "accuracy": 7.6923076923076925
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 5,
+              "accuracy": 22.727272727272727
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 2,
+              "accuracy": 6.25
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 1,
+              "accuracy": 2.1739130434782608
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 2,
+              "accuracy": 16.666666666666668
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 1,
+              "accuracy": 5.2631578947368425
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 2,
+              "accuracy": 4.878048780487805
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 4,
+              "accuracy": 28.571428571428573
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 1,
+              "accuracy": 5.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 2,
+              "accuracy": 6.666666666666667
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 2,
+              "accuracy": 9.523809523809524
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 3,
+              "accuracy": 21.428571428571427
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 5,
+              "accuracy": 38.46153846153846
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 2,
+              "accuracy": 1.4492753623188406
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 5,
+              "accuracy": 15.625
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 1,
+              "accuracy": 5.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 2,
+              "accuracy": 10.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 3,
+              "accuracy": 25.0
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 5,
+              "accuracy": 11.11111111111111
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 6,
+              "accuracy": 18.181818181818183
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 2,
+              "accuracy": 11.11111111111111
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 2,
+              "accuracy": 7.407407407407407
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 2,
+              "accuracy": 1.8867924528301887
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 6,
+              "accuracy": 13.953488372093023
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 1,
+              "accuracy": 1.098901098901099
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "DeepSeek-V4-Flash": {
+        "counts": {
+          "historical_records": 2198,
+          "strict_raw_legal": 2155,
+          "changed_answer": 43,
+          "dataset_version_mismatch": 139,
+          "changed_question": 25,
+          "changed_evidence_pages": 110,
+          "strict_raw_illegal": 43,
+          "mapped_predictions": 2198,
+          "missing_current_ids": 2,
+          "unavailable_binary_judge_decisions": 1818
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2198,
+          "missing": 2,
+          "legal": 2016,
+          "illegal": 43,
+          "technical_failures": 1957,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 28,
+              "accuracy": 1.2727272727272727
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 28,
+              "accuracy": 14.0
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 11,
+              "accuracy": 1.4804845222072678
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 5,
+              "accuracy": 1.3192612137203166
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 5,
+              "accuracy": 1.3623978201634876
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 2,
+              "accuracy": 0.8163265306122449
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 5,
+              "accuracy": 3.6496350364963503
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 1.9545454545454546,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 1.2727272727272727,
+            "unresolved_illegal_evidence_items": 43,
+            "judge_failures_counted_zero": 1818
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 1,
+              "accuracy": 2.2222222222222223
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 2,
+              "accuracy": 0.9174311926605505
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 1,
+              "accuracy": 3.8461538461538463
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 1,
+              "accuracy": 2.4390243902439024
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 1,
+              "accuracy": 3.4482758620689653
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 1,
+              "accuracy": 0.8620689655172413
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 1,
+              "accuracy": 2.7027027027027026
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 2,
+              "accuracy": 9.523809523809524
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 1,
+              "accuracy": 4.545454545454546
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 1,
+              "accuracy": 3.8461538461538463
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 2,
+              "accuracy": 14.285714285714286
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 1,
+              "accuracy": 7.142857142857143
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 1,
+              "accuracy": 7.6923076923076925
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 1,
+              "accuracy": 3.125
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 2,
+              "accuracy": 10.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 2,
+              "accuracy": 6.0606060606060606
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 2,
+              "accuracy": 4.651162790697675
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 5,
+              "accuracy": 5.4945054945054945
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      },
+      "GLM-4.6V": {
+        "counts": {
+          "historical_records": 2198,
+          "strict_raw_illegal": 274,
+          "strict_raw_legal": 1924,
+          "changed_answer": 43,
+          "dataset_version_mismatch": 136,
+          "changed_question": 25,
+          "changed_evidence_pages": 107,
+          "mapped_predictions": 2198,
+          "missing_current_ids": 2,
+          "unavailable_binary_judge_decisions": 1628
+        },
+        "current_gold_offline_diagnostic": {
+          "total": 2200,
+          "received": 2198,
+          "missing": 2,
+          "legal": 1807,
+          "illegal": 255,
+          "technical_failures": 1764,
+          "answer_metrics": {
+            "All": {
+              "count": 2200,
+              "correct": 81,
+              "accuracy": 3.6818181818181817
+            },
+            "General": {
+              "count": 1000,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Unanswerable": {
+              "count": 200,
+              "correct": 81,
+              "accuracy": 40.5
+            },
+            "Reasoning": {
+              "count": 200,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multi-Document": {
+              "count": 800,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "evidence_metrics": {
+            "E-Precision": null,
+            "E-Recall": null,
+            "E-F1": null,
+            "A-Pages": null
+          },
+          "discipline_breakdown": {
+            "Computer Science": {
+              "count": 743,
+              "correct": 22,
+              "accuracy": 2.9609690444145356
+            },
+            "Physics": {
+              "count": 379,
+              "correct": 12,
+              "accuracy": 3.1662269129287597
+            },
+            "Statistics": {
+              "count": 367,
+              "correct": 6,
+              "accuracy": 1.6348773841961852
+            },
+            "Mathematics": {
+              "count": 245,
+              "correct": 26,
+              "accuracy": 10.612244897959183
+            },
+            "Electrical Engineering and Systems Science": {
+              "count": 129,
+              "correct": 2,
+              "accuracy": 1.550387596899225
+            },
+            "Economics": {
+              "count": 137,
+              "correct": 9,
+              "accuracy": 6.569343065693431
+            },
+            "Quantitative Biology": {
+              "count": 114,
+              "correct": 4,
+              "accuracy": 3.508771929824561
+            },
+            "Quantitative Finance": {
+              "count": 86,
+              "correct": 0,
+              "accuracy": 0.0
+            }
+          },
+          "audit_diagnostics": {
+            "illegal_output_rate": 11.590909090909092,
+            "exact_page_set_match": null,
+            "joint_answer_evidence_correctness": 3.6818181818181817,
+            "unresolved_illegal_evidence_items": 255,
+            "judge_failures_counted_zero": 1628
+          },
+          "field_breakdown": {
+            "Algebraic Geometry": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Algebraic Topology": {
+              "count": 29,
+              "correct": 2,
+              "accuracy": 6.896551724137931
+            },
+            "Algebras": {
+              "count": 15,
+              "correct": 3,
+              "accuracy": 20.0
+            },
+            "Analysis of PDEs": {
+              "count": 45,
+              "correct": 9,
+              "accuracy": 20.0
+            },
+            "Applications and Methodology": {
+              "count": 218,
+              "correct": 2,
+              "accuracy": 0.9174311926605505
+            },
+            "Applied Plasma Physics": {
+              "count": 26,
+              "correct": 1,
+              "accuracy": 3.8461538461538463
+            },
+            "Applied Probability": {
+              "count": 41,
+              "correct": 4,
+              "accuracy": 9.75609756097561
+            },
+            "Artificial Intelligence": {
+              "count": 109,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Astrophysics of Galaxies": {
+              "count": 39,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Atomic and Molecular Clusters": {
+              "count": 27,
+              "correct": 2,
+              "accuracy": 7.407407407407407
+            },
+            "Audio and Speech Processing": {
+              "count": 2,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Biomolecules": {
+              "count": 21,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Category Theory": {
+              "count": 9,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cell Behavior": {
+              "count": 28,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Classical Physics": {
+              "count": 33,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computation and Language": {
+              "count": 181,
+              "correct": 1,
+              "accuracy": 0.5524861878453039
+            },
+            "Computational Complexity": {
+              "count": 29,
+              "correct": 2,
+              "accuracy": 6.896551724137931
+            },
+            "Computational Engineering, Finance, and Science": {
+              "count": 8,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Finance": {
+              "count": 16,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Computational Geometry": {
+              "count": 14,
+              "correct": 1,
+              "accuracy": 7.142857142857143
+            },
+            "Computational Statistics": {
+              "count": 116,
+              "correct": 2,
+              "accuracy": 1.7241379310344827
+            },
+            "Computer Science and Game Theory": {
+              "count": 40,
+              "correct": 1,
+              "accuracy": 2.5
+            },
+            "Computer Vision and Pattern Recognition": {
+              "count": 37,
+              "correct": 2,
+              "accuracy": 5.405405405405405
+            },
+            "Computers and Society": {
+              "count": 21,
+              "correct": 2,
+              "accuracy": 9.523809523809524
+            },
+            "Cosmology and Nongalactic Astrophysics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Cryptography and Security": {
+              "count": 13,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Data Structures and Algorithms": {
+              "count": 22,
+              "correct": 4,
+              "accuracy": 18.181818181818183
+            },
+            "Databases": {
+              "count": 26,
+              "correct": 1,
+              "accuracy": 3.8461538461538463
+            },
+            "Distributed Systems": {
+              "count": 32,
+              "correct": 2,
+              "accuracy": 6.25
+            },
+            "Econometrics": {
+              "count": 46,
+              "correct": 1,
+              "accuracy": 2.1739130434782608
+            },
+            "General Mathematics": {
+              "count": 12,
+              "correct": 3,
+              "accuracy": 25.0
+            },
+            "General Relativity and Quantum Cosmology": {
+              "count": 19,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Geometry": {
+              "count": 41,
+              "correct": 1,
+              "accuracy": 2.4390243902439024
+            },
+            "Hardware Architecture": {
+              "count": 14,
+              "correct": 3,
+              "accuracy": 21.428571428571427
+            },
+            "High Energy Astrophysical Phenomena": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "High Energy Physics": {
+              "count": 30,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Image and Video Processing": {
+              "count": 21,
+              "correct": 2,
+              "accuracy": 9.523809523809524
+            },
+            "Information Theory": {
+              "count": 14,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Instrumentation and Methods for Astrophysics": {
+              "count": 13,
+              "correct": 2,
+              "accuracy": 15.384615384615385
+            },
+            "Machine Learning": {
+              "count": 138,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Finance": {
+              "count": 26,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mathematical Physics": {
+              "count": 35,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Mesoscale and Nanoscale Physics": {
+              "count": 32,
+              "correct": 6,
+              "accuracy": 18.75
+            },
+            "Molecular Networks": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Multimedia": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Neural and Evolutionary Computing": {
+              "count": 20,
+              "correct": 1,
+              "accuracy": 5.0
+            },
+            "Nuclear Physics": {
+              "count": 7,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Number Theory": {
+              "count": 12,
+              "correct": 3,
+              "accuracy": 25.0
+            },
+            "Other Quantitative Biology": {
+              "count": 45,
+              "correct": 4,
+              "accuracy": 8.88888888888889
+            },
+            "Other Statistics": {
+              "count": 33,
+              "correct": 2,
+              "accuracy": 6.0606060606060606
+            },
+            "Portfolio and Risk Management": {
+              "count": 24,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Programming Languages": {
+              "count": 18,
+              "correct": 2,
+              "accuracy": 11.11111111111111
+            },
+            "Quantum Physics": {
+              "count": 6,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Representation Theory": {
+              "count": 27,
+              "correct": 1,
+              "accuracy": 3.7037037037037037
+            },
+            "Signal Processing": {
+              "count": 106,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Social and Information Networks": {
+              "count": 1,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Soft Condensed Matter": {
+              "count": 17,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Space Biophysics": {
+              "count": 43,
+              "correct": 1,
+              "accuracy": 2.3255813953488373
+            },
+            "Statistical Finance": {
+              "count": 20,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Statistical Mechanics": {
+              "count": 25,
+              "correct": 0,
+              "accuracy": 0.0
+            },
+            "Theoretical Economics": {
+              "count": 91,
+              "correct": 8,
+              "accuracy": 8.791208791208792
+            }
+          }
+        },
+        "official_rescore_status": "not_reproduced_no_bound_binary_judge_decisions"
+      }
+    },
+    "source_hashes": {
+      "MiniCPM-V-2.6/ordinary1190.json": "eaded30e9d26e7e3939e028141a9665608195128fe7b85d359b3398c5a6f6464",
+      "MiniCPM-V-2.6/cross_old400.json": "bbe0db0af4cc87f0b1fe87664263018a66f2c5632c599f8bb033c861cd3f932e",
+      "MiniCPM-V-2.6/cross_hard400.json": "4b7c5ed245cca5858d690dc8ec0c531c7bd2d7a52bf7e9cc391ce06e09561184",
+      "MiniCPM-V-2.6/reasoning_old100.json": "e480295a96add908c5e96e58b73b1093e4b3ab17b882f2af501637ea1f1eb5d8",
+      "MiniCPM-V-2.6/reasoning_hard100.json": "3c83f882fd2788fe210caad04a1f2c0411969cb131092732b0297aceb8ecd63e",
+      "InternVL25-8B/ordinary1190.json": "ca6d3f8af4dc9545c542038463e983b7860e462f10d2404860f804d294fd66fc",
+      "InternVL25-8B/cross_old400.json": "5fd9e049f921714f53bb7585e9120b8b61223645e7aa1f6247448446cdbe29dd",
+      "InternVL25-8B/cross_hard400.json": "902efe855a76d4488b8537f5db714661273cdf53d514c25f853966aebf53eabd",
+      "InternVL25-8B/reasoning_old100.json": "cd8b05ecf076a46dca5b32425bc2f8ada838f453a5a9f7d1bc2076192bd4ae1b",
+      "InternVL25-8B/reasoning_hard100.json": "73747579839b537e762ac95277f2e8c614e4906b113feba8911272244a8a22a4",
+      "MiniCPM-V-4.5/ordinary1190.json": "6503dd406a5e792e7ffcd4f1cbd1f5e33a27f6183fd38d1cd3a9dcb63f7778bf",
+      "MiniCPM-V-4.5/cross_old400.json": "14cb6acdd039e33d9e98a2e5a9774585ffce58f80e91f76aef42c10ede1adc0d",
+      "MiniCPM-V-4.5/cross_hard400.json": "d9c9436bd68787af563c1814f943c8b3532b27e323842304356adde305618af4",
+      "MiniCPM-V-4.5/reasoning_old100.json": "1316d20af51eca85a3251ad2227ad6bbc2464e335d42e37acd2637281197571e",
+      "MiniCPM-V-4.5/reasoning_hard100.json": "87d984991ec43b430e55a79c9989af3216596f26145b27bd11c0f904566e3655",
+      "InternVL35-8B/ordinary1190.json": "d53edf52b55259bd4966884aa727434e1518b54bff07450f203d6c3a6baaeca2",
+      "InternVL35-8B/cross_old400.json": "935f195a9a621e8f96007c5e545c06441730304472fb7277ddff9e4ef344160d",
+      "InternVL35-8B/cross_hard400.json": "13bcad1f9df0ab412c54a11bc805f3bfac293994a1df3a08a88613ae7d9091f9",
+      "InternVL35-8B/reasoning_old100.json": "357092f64025df8e3885b98fe83ce4a50ef0c1129889badfe5338bbfda04c2bb",
+      "InternVL35-8B/reasoning_hard100.json": "16ba0bbe3757aacc33f74cb1ffab2318a86f3f0228c43e1a87cfb80a905c88fa",
+      "Gemma3-27B-IT/ordinary1190.json": "acf57780167a72d69897253576c76670e558d641b3cb4ee00c9c87062b77c0c3",
+      "Gemma3-27B-IT/cross_old400.json": "d48877116ac6037bc68ba992c40d66520d06c96060be1b5ae9a178453e8ea236",
+      "Gemma3-27B-IT/cross_hard400.json": "990accd2fae72f70d9b1d9b3724f9be1b61be73dd3563cd8cc8050787d5c5321",
+      "Gemma3-27B-IT/reasoning_old100.json": "0686466ef9eb30d725ec14167fa48c203795838bef5043f95143f4355f5f293d",
+      "Gemma3-27B-IT/reasoning_hard100.json": "9e1f1bb73db64719f934efab4ce01bb11479bd06e1f39189885326fc15f7d282",
+      "Mistral-Small3.1-24B/ordinary1190.json": "38a6b6bee6b06ba3fa563b73d400689eb06da6de2b7250af4ebdbe794a266960",
+      "Mistral-Small3.1-24B/cross_old400.json": "6013cc3579c4174cfbcbc939e6b56f8270d0fa8ee4e194a4053ede2dc915cf26",
+      "Mistral-Small3.1-24B/cross_hard400.json": "cfe39c0ef4bbbcdd606bd8891c7af0510f5065ad8efbf73c9f2f8645e983fa9f",
+      "Mistral-Small3.1-24B/reasoning_old100.json": "0dde77abd4c7b541706e947d1ce928f15552b4f7980355a0c61b20f4f31606d6",
+      "Mistral-Small3.1-24B/reasoning_hard100.json": "44f65ca9bfd3d4206410e974b5f9c92ab588a451f33afe8a5c58163a89939fac",
+      "Qwen3-VL-4B/ordinary1190.json": "d64a90504e4e3a1e142450a0c3ba52bc8d21eb796340734f8198ddd7ddfd230f",
+      "Qwen3-VL-4B/cross_old400.json": "07b98c50c1e367064c87abc497ab653d3060929c3fcba595ee917c97e3a6cbc9",
+      "Qwen3-VL-4B/cross_hard400.json": "2ddb04e52900ed825901ebfe3c4bfb0fe20c9626b66345cf1f7aaf7db3743204",
+      "Qwen3-VL-4B/reasoning_old100.json": "b303309e1cfbe172d356b1c49bedb115cda80bdb301681fd20939647d6987c78",
+      "Qwen3-VL-4B/reasoning_hard100.json": "7bb429d47f7575202a9e0b6d59b2eae3557a04b113f34e8d95b78310f4cfd702",
+      "Qwen3-VL-8B/ordinary1190.json": "2b5404729c2e7dac8ab6505a74984e22632eb4124d811cadc6ab8b88472717ab",
+      "Qwen3-VL-8B/cross_old400.json": "9fc0229443add67c8e8f394eb9c684625505dd297c56a5b4e9e86a36b2606827",
+      "Qwen3-VL-8B/cross_hard400.json": "44c20b238bb9364f74e5cf0627c33234a853be04f453bc138f141a6342634602",
+      "Qwen3-VL-8B/reasoning_old100.json": "ef9966efe36f64bdffe3a2fe841d801f20e0577d5eebb187e9eeff7d1668f703",
+      "Qwen3-VL-8B/reasoning_hard100.json": "74e3523da23fcc3e580396b7dd45179a77791bb480af7b7a2bd10fe25b23f963",
+      "Claude-sonncet-5/ordinary1190.json": "01460810682b7d820a6d68dd86945bfc9790cf2174a86639597eaeb0e6bdfdfc",
+      "Claude-sonncet-5/cross_old400.json": "480ab4da422a0f2d0363b3859619c0f53fb8e43ee59c3c84f45a6901412069a7",
+      "Claude-sonncet-5/cross_hard400.json": "53462829cfa661e922bbd3bdff84338692065e258650059adc17fef678713cf0",
+      "Claude-sonncet-5/reasoning_old100.json": "9dd2d291e0966030dca76ca18535bdb6eebccda94c602685cd3ad723b68f44f3",
+      "Claude-sonncet-5/reasoning_hard100.json": "926e017ac4c16c77bf5f1c2767a6f943178779d8379ee08d3d5fdd5608fdec42",
+      "DeepSeek-V4-flash-Vision-Exp/ordinary1190.json": "c673e7d4315bf6b0a4530b5f9a0b3bb00733c79506ad7ff2267ac2773c55fe72",
+      "DeepSeek-V4-flash-Vision-Exp/cross_old400.json": "ff95ad81c031c79f3505fb619daf712eb1e7d8d6f73603d2207e8df109ff116b",
+      "DeepSeek-V4-flash-Vision-Exp/cross_hard400.json": "a4c28c2d81390e38dba69c5522c6f7044dfd71a7cd6adfbe6b8711e8b969c2cd",
+      "DeepSeek-V4-flash-Vision-Exp/reasoning_old100.json": "aacdbed458b2bda602fa127e41d972e8eb1c22edc06ed87e3ddd45e58fb0d552",
+      "DeepSeek-V4-flash-Vision-Exp/reasoning_hard100.json": "f2352329d5a0c3659fcb759ce93611200e6d0257366856139eb1b182781dc958",
+      "GLM-4.6V/ordinary1190.json": "c73e11b152f1aa8973a69920f74a7c6f8cef7a93540d4681475ec9f9615d256c",
+      "GLM-4.6V/cross_old400.json": "8bd3aef2f4f92228bdc211dc06dbd63a82dc8d1b2a310c253f33f69a70c61951",
+      "GLM-4.6V/cross_hard400.json": "309d3a3496fe15dcbc1cfdb5e3dd505e16d1c2fdfa82b496026342816e866595",
+      "GLM-4.6V/reasoning_old100.json": "e5e0013247bd90b79c279755a99d3a549f778f8ae5c8edadfa14aaaf43c3ee5c",
+      "GLM-4.6V/reasoning_hard100.json": "b42df6e8a8162c7fc19901ff429407d9b82058459b2b6d03b99c40ac95e36ac8"
+    }
+  },
+  "historical_table2": {
+    "MiniCPM-V 2.6": {
+      "All": 15.590909090909092,
+      "General": 14.7,
+      "Unanswerable": 38.5,
+      "Reasoning": 9.5,
+      "Multi-Document": 12.5,
+      "E-Precision": 9.36904761904762,
+      "E-Recall": 9.243290043290044,
+      "E-F1": 9.259776334776335,
+      "A-Pages": 0.10727272727272727
+    },
+    "InternVL2.5-8B": {
+      "All": 22.318181818181817,
+      "General": 24.4,
+      "Unanswerable": 32.0,
+      "Reasoning": 34.5,
+      "Multi-Document": 14.25,
+      "E-Precision": 15.391350351292118,
+      "E-Recall": 31.88317099567099,
+      "E-F1": 16.745781919981404,
+      "A-Pages": 6.6854545454545455
+    },
+    "MiniCPM-V 4.5": {
+      "All": 34.31818181818182,
+      "General": 54.6,
+      "Unanswerable": 15.0,
+      "Reasoning": 46.5,
+      "Multi-Document": 10.75,
+      "E-Precision": 20.029169184993638,
+      "E-Recall": 15.915530303030305,
+      "E-F1": 16.47234581712181,
+      "A-Pages": 1.415
+    },
+    "InternVL3.5-8B": {
+      "All": 34.95454545454545,
+      "General": 36.3,
+      "Unanswerable": 2.5,
+      "Reasoning": 53.0,
+      "Multi-Document": 36.875,
+      "E-Precision": 30.860720650472928,
+      "E-Recall": 31.197113366431545,
+      "E-F1": 28.044271179368867,
+      "A-Pages": 3.72
+    },
+    "Gemma 3 27B": {
+      "All": 47.31818181818182,
+      "General": 57.0,
+      "Unanswerable": 14.0,
+      "Reasoning": 47.0,
+      "Multi-Document": 43.625,
+      "E-Precision": 34.02228030554067,
+      "E-Recall": 30.845024293887928,
+      "E-F1": 30.3570234896041,
+      "A-Pages": 1.9772727272727273
+    },
+    "Mistral-Small-3.1-24B": {
+      "All": 49.0,
+      "General": 72.4,
+      "Unanswerable": 9.0,
+      "Reasoning": 68.5,
+      "Multi-Document": 24.875,
+      "E-Precision": 34.50938916331468,
+      "E-Recall": 36.39229848434394,
+      "E-F1": 32.39265525522798,
+      "A-Pages": 3.5795454545454546
+    },
+    "Qwen3-VL-4B": {
+      "All": 64.9090909090909,
+      "General": 80.0,
+      "Unanswerable": 60.0,
+      "Reasoning": 64.5,
+      "Multi-Document": 47.375,
+      "E-Precision": 39.35198086442059,
+      "E-Recall": 53.00593724457361,
+      "E-F1": 39.22261513043638,
+      "A-Pages": 9.25590909090909
+    },
+    "Qwen3-VL-8B": {
+      "All": 68.31818181818181,
+      "General": 83.2,
+      "Unanswerable": 42.5,
+      "Reasoning": 71.5,
+      "Multi-Document": 55.375,
+      "E-Precision": 43.33971742021875,
+      "E-Recall": 49.63076923076923,
+      "E-F1": 40.664217879496846,
+      "A-Pages": 8.442272727272726
+    },
+    "Claude Sonnet 5": {
+      "All": 69.31818181818181,
+      "General": 71.9,
+      "Unanswerable": 68.0,
+      "Reasoning": 91.0,
+      "Multi-Document": 61.0,
+      "E-Precision": 35.657289986048795,
+      "E-Recall": 43.96992918697464,
+      "E-F1": 36.49487881796741,
+      "A-Pages": 3.6586363636363637
+    },
+    "DeepSeek-V4-Flash": {
+      "All": 79.45454545454545,
+      "General": 88.2,
+      "Unanswerable": 15.5,
+      "Reasoning": 83.0,
+      "Multi-Document": 83.625,
+      "E-Precision": 44.48917615049053,
+      "E-Recall": 49.220924403878946,
+      "E-F1": 43.61052572285685,
+      "A-Pages": 2.5736363636363637
+    },
+    "GLM-4.6V": {
+      "All": 80.95454545454545,
+      "General": 88.5,
+      "Unanswerable": 46.0,
+      "Reasoning": 83.5,
+      "Multi-Document": 79.625,
+      "E-Precision": 51.03771645021645,
+      "E-Recall": 50.474305744760294,
+      "E-F1": 47.81021276703095,
+      "A-Pages": 1.9736363636363636
+    }
+  },
+  "historical_table2_source_hashes": {
+    "data/results/evaluations/summary_11models_77rows_calibrated_fixed_denominator.csv": "85779b0cdabde94b51d5e4cc0f5703137dc160deddc8e31d75182661a40569fc"
+  },
+  "historical_table3": {
+    "MiniCPM-V 2.6": {
+      "All": 15.590909090909092,
+      "Computer Science": 16.51006711409396,
+      "Physics": 18.733509234828496,
+      "Statistics": 15.846994535519126,
+      "Mathematics": 10.204081632653061,
+      "Electrical Engineering and Systems Science": 10.15625,
+      "Economics": 16.05839416058394,
+      "Quantitative Biology": 15.789473684210526,
+      "Quantitative Finance": 15.116279069767442
+    },
+    "InternVL2.5-8B": {
+      "All": 22.318181818181817,
+      "Computer Science": 21.34228187919463,
+      "Physics": 26.385224274406333,
+      "Statistics": 24.316939890710383,
+      "Mathematics": 13.877551020408163,
+      "Electrical Engineering and Systems Science": 17.96875,
+      "Economics": 32.11678832116788,
+      "Quantitative Biology": 19.29824561403509,
+      "Quantitative Finance": 23.25581395348837
+    },
+    "MiniCPM-V 4.5": {
+      "All": 34.31818181818182,
+      "Computer Science": 25.906040268456376,
+      "Physics": 44.854881266490764,
+      "Statistics": 33.87978142076503,
+      "Mathematics": 30.20408163265306,
+      "Electrical Engineering and Systems Science": 30.46875,
+      "Economics": 40.87591240875913,
+      "Quantitative Biology": 51.75438596491228,
+      "Quantitative Finance": 46.51162790697674
+    },
+    "InternVL3.5-8B": {
+      "All": 34.95454545454545,
+      "Computer Science": 37.986577181208055,
+      "Physics": 30.34300791556728,
+      "Statistics": 36.0655737704918,
+      "Mathematics": 20.816326530612244,
+      "Electrical Engineering and Systems Science": 38.28125,
+      "Economics": 43.7956204379562,
+      "Quantitative Biology": 36.8421052631579,
+      "Quantitative Finance": 43.02325581395349
+    },
+    "Gemma 3 27B": {
+      "All": 47.31818181818182,
+      "Computer Science": 50.33557046979866,
+      "Physics": 51.715039577836414,
+      "Statistics": 47.814207650273225,
+      "Mathematics": 32.244897959183675,
+      "Electrical Engineering and Systems Science": 41.40625,
+      "Economics": 57.66423357664234,
+      "Quantitative Biology": 38.59649122807018,
+      "Quantitative Finance": 46.51162790697674
+    },
+    "Mistral-Small-3.1-24B": {
+      "All": 49.0,
+      "Computer Science": 40.13422818791946,
+      "Physics": 60.949868073878626,
+      "Statistics": 45.08196721311475,
+      "Mathematics": 45.714285714285715,
+      "Electrical Engineering and Systems Science": 50.78125,
+      "Economics": 63.503649635036496,
+      "Quantitative Biology": 64.91228070175438,
+      "Quantitative Finance": 52.325581395348834
+    },
+    "Qwen3-VL-4B": {
+      "All": 64.9090909090909,
+      "Computer Science": 63.89261744966443,
+      "Physics": 71.2401055408971,
+      "Statistics": 55.46448087431694,
+      "Mathematics": 62.04081632653061,
+      "Electrical Engineering and Systems Science": 64.0625,
+      "Economics": 67.88321167883211,
+      "Quantitative Biology": 80.70175438596492,
+      "Quantitative Finance": 69.76744186046511
+    },
+    "Qwen3-VL-8B": {
+      "All": 68.31818181818181,
+      "Computer Science": 67.11409395973155,
+      "Physics": 70.97625329815304,
+      "Statistics": 66.12021857923497,
+      "Mathematics": 62.44897959183673,
+      "Electrical Engineering and Systems Science": 71.875,
+      "Economics": 70.8029197080292,
+      "Quantitative Biology": 76.3157894736842,
+      "Quantitative Finance": 73.25581395348837
+    },
+    "Claude Sonnet 5": {
+      "All": 68.04545454545455,
+      "Computer Science": 69.93288590604027,
+      "Physics": 71.50395778364116,
+      "Statistics": 59.83606557377049,
+      "Mathematics": 60.0,
+      "Electrical Engineering and Systems Science": 76.5625,
+      "Economics": 66.42335766423358,
+      "Quantitative Biology": 77.19298245614036,
+      "Quantitative Finance": 72.09302325581395
+    },
+    "DeepSeek-V4-Flash": {
+      "All": 79.45454545454545,
+      "Computer Science": 80.53691275167785,
+      "Physics": 77.57255936675462,
+      "Statistics": 83.06010928961749,
+      "Mathematics": 71.83673469387755,
+      "Electrical Engineering and Systems Science": 79.6875,
+      "Economics": 83.94160583941606,
+      "Quantitative Biology": 78.94736842105263,
+      "Quantitative Finance": 77.90697674418605
+    },
+    "GLM-4.6V": {
+      "All": 80.95454545454545,
+      "Computer Science": 80.67114093959732,
+      "Physics": 82.58575197889182,
+      "Statistics": 80.05464480874316,
+      "Mathematics": 74.28571428571429,
+      "Electrical Engineering and Systems Science": 85.15625,
+      "Economics": 86.86131386861314,
+      "Quantitative Biology": 82.45614035087719,
+      "Quantitative Finance": 81.3953488372093
+    }
+  },
+  "historical_table3_metadata": {
+    "subject_counts": {
+      "Economics": 137,
+      "Statistics": 366,
+      "Electrical Engineering and Systems Science": 128,
+      "Quantitative Biology": 114,
+      "Quantitative Finance": 86,
+      "Computer Science": 745,
+      "Mathematics": 245,
+      "Physics": 379
+    },
+    "unmatched_historical_items": 0,
+    "source_hashes": {
+      "sxz/final_2200_classification_statistics.xlsx": "9d893502dcab48557eada8874234f4f54352ef5026112956e0084aff039819d7",
+      "data/results/evaluations/detail_11models_5datasets.xlsx": "c933f539f7d7f64c776762055dcc21a221be372376b8e36c2aad95704adcad0f"
+    }
+  },
+  "historical_table2_rounded_matches": 99,
+  "historical_table3_rounded_matches": 98,
+  "paper_reference": {
+    "paper_sha256": "cd15abe0fa53fda4f9ceadab33fe9ff10e7214fcbd07004e0509305cada66056",
+    "source": "论文/ICLR2027_ScienceDoc/iclr2027_conference.tex",
+    "precision": "Paper tables contain two decimal places; full-precision reference unavailable.",
+    "table2": {
+      "MiniCPM-V 2.6": {
+        "All": 15.59,
+        "General": 14.7,
+        "Unanswerable": 38.5,
+        "Multi-Document": 12.5,
+        "Reasoning": 9.5,
+        "E-Precision": 9.37,
+        "E-Recall": 9.24,
+        "E-F1": 9.26,
+        "A-Pages": 0.11
+      },
+      "InternVL2.5-8B": {
+        "All": 22.32,
+        "General": 24.4,
+        "Unanswerable": 32.0,
+        "Multi-Document": 14.25,
+        "Reasoning": 34.5,
+        "E-Precision": 15.39,
+        "E-Recall": 31.88,
+        "E-F1": 16.75,
+        "A-Pages": 6.69
+      },
+      "MiniCPM-V 4.5": {
+        "All": 34.32,
+        "General": 54.6,
+        "Unanswerable": 15.0,
+        "Multi-Document": 10.75,
+        "Reasoning": 46.5,
+        "E-Precision": 20.03,
+        "E-Recall": 15.92,
+        "E-F1": 16.47,
+        "A-Pages": 1.42
+      },
+      "InternVL3.5-8B": {
+        "All": 34.95,
+        "General": 36.3,
+        "Unanswerable": 2.5,
+        "Multi-Document": 36.88,
+        "Reasoning": 53.0,
+        "E-Precision": 30.86,
+        "E-Recall": 31.2,
+        "E-F1": 28.04,
+        "A-Pages": 3.72
+      },
+      "Gemma 3 27B": {
+        "All": 47.32,
+        "General": 57.0,
+        "Unanswerable": 14.0,
+        "Multi-Document": 43.62,
+        "Reasoning": 47.0,
+        "E-Precision": 34.02,
+        "E-Recall": 30.85,
+        "E-F1": 30.36,
+        "A-Pages": 1.98
+      },
+      "Mistral-Small-3.1-24B": {
+        "All": 49.0,
+        "General": 72.4,
+        "Unanswerable": 9.0,
+        "Multi-Document": 24.88,
+        "Reasoning": 68.5,
+        "E-Precision": 34.51,
+        "E-Recall": 36.39,
+        "E-F1": 32.39,
+        "A-Pages": 3.58
+      },
+      "Qwen3-VL-4B": {
+        "All": 64.91,
+        "General": 80.0,
+        "Unanswerable": 60.0,
+        "Multi-Document": 47.38,
+        "Reasoning": 64.5,
+        "E-Precision": 39.35,
+        "E-Recall": 53.01,
+        "E-F1": 39.22,
+        "A-Pages": 9.26
+      },
+      "Qwen3-VL-8B": {
+        "All": 68.32,
+        "General": 83.2,
+        "Unanswerable": 42.5,
+        "Multi-Document": 55.38,
+        "Reasoning": 71.5,
+        "E-Precision": 43.34,
+        "E-Recall": 49.63,
+        "E-F1": 40.66,
+        "A-Pages": 8.44
+      },
+      "Claude Sonnet 5": {
+        "All": 69.32,
+        "General": 71.9,
+        "Unanswerable": 68.0,
+        "Multi-Document": 61.0,
+        "Reasoning": 91.0,
+        "E-Precision": 35.66,
+        "E-Recall": 43.97,
+        "E-F1": 36.49,
+        "A-Pages": 3.66
+      },
+      "DeepSeek-V4-Flash": {
+        "All": 79.45,
+        "General": 88.2,
+        "Unanswerable": 15.5,
+        "Multi-Document": 83.62,
+        "Reasoning": 83.0,
+        "E-Precision": 44.49,
+        "E-Recall": 49.22,
+        "E-F1": 43.61,
+        "A-Pages": 2.57
+      },
+      "GLM-4.6V": {
+        "All": 80.95,
+        "General": 88.5,
+        "Unanswerable": 46.0,
+        "Multi-Document": 79.62,
+        "Reasoning": 83.5,
+        "E-Precision": 51.04,
+        "E-Recall": 50.47,
+        "E-F1": 47.81,
+        "A-Pages": 1.97
+      }
+    },
+    "table3": {
+      "MiniCPM-V 2.6": {
+        "All": 15.59,
+        "Computer Science": 16.51,
+        "Physics": 18.73,
+        "Statistics": 15.85,
+        "Mathematics": 10.2,
+        "Electrical Engineering and Systems Science": 10.16,
+        "Economics": 16.06,
+        "Quantitative Biology": 15.79,
+        "Quantitative Finance": 15.12
+      },
+      "InternVL2.5-8B": {
+        "All": 22.32,
+        "Computer Science": 21.34,
+        "Physics": 26.39,
+        "Statistics": 24.32,
+        "Mathematics": 13.88,
+        "Electrical Engineering and Systems Science": 17.97,
+        "Economics": 32.12,
+        "Quantitative Biology": 19.3,
+        "Quantitative Finance": 23.26
+      },
+      "MiniCPM-V 4.5": {
+        "All": 34.32,
+        "Computer Science": 25.91,
+        "Physics": 44.85,
+        "Statistics": 33.88,
+        "Mathematics": 30.2,
+        "Electrical Engineering and Systems Science": 30.47,
+        "Economics": 40.88,
+        "Quantitative Biology": 51.75,
+        "Quantitative Finance": 46.51
+      },
+      "InternVL3.5-8B": {
+        "All": 34.95,
+        "Computer Science": 37.99,
+        "Physics": 30.34,
+        "Statistics": 36.07,
+        "Mathematics": 20.82,
+        "Electrical Engineering and Systems Science": 38.28,
+        "Economics": 43.8,
+        "Quantitative Biology": 36.84,
+        "Quantitative Finance": 43.02
+      },
+      "Gemma 3 27B": {
+        "All": 47.32,
+        "Computer Science": 50.34,
+        "Physics": 51.72,
+        "Statistics": 47.81,
+        "Mathematics": 32.24,
+        "Electrical Engineering and Systems Science": 41.41,
+        "Economics": 57.66,
+        "Quantitative Biology": 38.6,
+        "Quantitative Finance": 46.51
+      },
+      "Mistral-Small-3.1-24B": {
+        "All": 49.0,
+        "Computer Science": 40.13,
+        "Physics": 60.95,
+        "Statistics": 45.08,
+        "Mathematics": 45.71,
+        "Electrical Engineering and Systems Science": 50.78,
+        "Economics": 63.5,
+        "Quantitative Biology": 64.91,
+        "Quantitative Finance": 52.33
+      },
+      "Qwen3-VL-4B": {
+        "All": 64.91,
+        "Computer Science": 63.89,
+        "Physics": 71.24,
+        "Statistics": 55.46,
+        "Mathematics": 62.04,
+        "Electrical Engineering and Systems Science": 64.06,
+        "Economics": 67.88,
+        "Quantitative Biology": 80.7,
+        "Quantitative Finance": 69.77
+      },
+      "Qwen3-VL-8B": {
+        "All": 68.32,
+        "Computer Science": 67.11,
+        "Physics": 70.98,
+        "Statistics": 66.12,
+        "Mathematics": 62.45,
+        "Electrical Engineering and Systems Science": 71.88,
+        "Economics": 70.8,
+        "Quantitative Biology": 76.32,
+        "Quantitative Finance": 73.26
+      },
+      "Claude Sonnet 5": {
+        "All": 69.32,
+        "Computer Science": 69.93,
+        "Physics": 71.5,
+        "Statistics": 59.84,
+        "Mathematics": 60.0,
+        "Electrical Engineering and Systems Science": 76.56,
+        "Economics": 66.42,
+        "Quantitative Biology": 77.19,
+        "Quantitative Finance": 72.09
+      },
+      "DeepSeek-V4-Flash": {
+        "All": 79.45,
+        "Computer Science": 80.54,
+        "Physics": 77.57,
+        "Statistics": 83.06,
+        "Mathematics": 71.84,
+        "Electrical Engineering and Systems Science": 79.69,
+        "Economics": 83.94,
+        "Quantitative Biology": 78.95,
+        "Quantitative Finance": 77.91
+      },
+      "GLM-4.6V": {
+        "All": 80.95,
+        "Computer Science": 80.67,
+        "Physics": 82.59,
+        "Statistics": 80.05,
+        "Mathematics": 74.29,
+        "Electrical Engineering and Systems Science": 85.16,
+        "Economics": 86.86,
+        "Quantitative Biology": 82.46,
+        "Quantitative Finance": 81.4
+      }
+    }
+  },
+  "note": "Historical reaggregation is NOT a binary-paper-protocol rescore. No old decisions enter the new judge cache."
+}

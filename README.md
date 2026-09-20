@@ -1,123 +1,110 @@
-# SciDoc：多模态科学论文问答基准
+# ScienceDoc: Scientific-Document Multimodal Question Answering
 
-**简体中文** | [English](README.en.md)
+**English** | [简体中文](README.zh-CN.md)
 
-SciDoc 面向科学论文 PDF 的阅读理解、证据定位和跨论文推理。问题覆盖正文、图像、表格与公式，要求模型给出简短答案及其 PDF 物理证据页；对论文无法支持的问题，模型应准确拒答。
+ScienceDoc is a scientific-document multimodal QA benchmark being prepared for
+ICLR 2027. It contains **2,200 questions across 8 disciplines and 61 scientific
+fields**, covering text, figures, tables, and equations. Models return concise
+answers with supporting physical PDF pages, or the exact label `Unanswerable`.
 
-项目提供 **2,200 条人工终审简答 QA**、数据校验工具、可恢复的推理与判分流水线，以及多人审核 Web 控制台。数据制作方法与论文 Dataset、附录中的问题构建、独立复审、人工核验和证据评估相对应。
+## Dataset
 
-## 数据集
+| Component | Release file | Questions | Global IDs |
+| --- | --- | ---: | --- |
+| General | [ordinary_qa.json](data/qa/7.final_2200/ordinary_qa.json) | 1,000 | QA0001–QA1000 |
+| Unanswerable | [unanswerable_qa.json](data/qa/7.final_2200/unanswerable_qa.json) | 200 | QA1001–QA1200 |
+| Reasoning | [reasoning_qa.json](data/qa/7.final_2200/reasoning_qa.json) | 200 | QA1201–QA1400 |
+| Multi-Document | [cross_pdf_qa.json](data/qa/7.final_2200/cross_pdf_qa.json) | 800 | QA1401–QA2200 |
 
-当前发布输入只有 [`data/qa/7.final_2200/`](data/qa/7.final_2200/) 下的四个 QA 文件：
+The [release manifest](data/qa/7.final_2200/rel__collection__final_2200__manifest.json)
+binds these files by SHA-256. The final evaluation uses **712 PDF assets**:
+474 single-paper PDFs and 238 merged PDFs. Merged PDFs are evaluation inputs,
+not additional original papers. Multi-Document evidence refers to physical page
+indices in the frozen merged PDF, not page numbers within a source paper.
 
-| 文件 | QA 数 | PDF 数¹ | 任务 |
-| --- | ---: | ---: | --- |
-| [ordinary_qa.json](data/qa/7.final_2200/ordinary_qa.json) | 1,000 | 398 | 单论文事实理解、比较和计算 |
-| [unanswerable_qa.json](data/qa/7.final_2200/unanswerable_qa.json) | 200 | 132 | 识别论文证据不足，准确拒答 |
-| [reasoning_qa.json](data/qa/7.final_2200/reasoning_qa.json) | 200 | 87 | 联合多个必要事实进行单论文多步推理 |
-| [cross_pdf_qa.json](data/qa/7.final_2200/cross_pdf_qa.json) | 800 | 238 | 联合两篇或三篇论文的信息回答 |
+PDFs and model weights are stored separately from Git. See the exact
+[benchmark PDF inventory](docs/releases/pdf_upload_benchmark.csv) and
+[Google Drive packaging guide](docs/releases/PDF_DISTRIBUTION.md).
+A public Drive download link has not yet been configured. Obtain the frozen
+assets from the maintainers and preserve their filenames under `data/pdfs/`.
 
-¹ PDF 数是各组件中的文件数，组件间存在重复。最终评测共使用 **712 份不同 PDF：474 份单论文 PDF、238 份合并 PDF**。合并 PDF 不是新增的原始论文。Cross-PDF 中 621 题依赖两篇论文，179 题依赖三篇论文。
+## Quick start
 
-所有题目使用全局 ID `QA0001`–`QA2200`，Cross-PDF 占最后 800 个 ID。最终数据覆盖八个一级领域、21 个问题小类；单模态题 1,053 道，多模态题 1,147 道。模态组合中，纯文本 982 道，文本＋公式 609 道，文本＋图像 192 道，文本＋表格 189 道，其余为其他组合。
-
-[发布 manifest](data/qa/7.final_2200/rel__collection__final_2200__manifest.json) 固定四文件的数量、身份与内容哈希；[分类统计工作簿](data/qa/7.final_2200/final_2200_classification_statistics.xlsx) 提供分组件统计和逐题明细。上游 6,204 条原始 QA、4,211 条清洗基线及分批源组件属于构建谱系，不与最终 2,200 条相加。
-
-## Quick Start
-
-### 1. 获取项目并检查发布数据
-
-需要 Python 3.12 或更新版本。以下步骤不需要 GPU、PDF、API 密钥或第三方 Python 包：
+The standalone evaluation package supports Python 3.10+ and requires no GPU
+for validation. Run these commands from the repository root:
 
 ```bash
 git clone https://github.com/barcelonaChinesegit/SciDoc.git
 cd SciDoc
-PYTHONPATH=src python -m pku_qa.workflows.operations.inspect_final_2200
-```
-
-成功时输出 `"status": "valid"`、`"qa_count": 2200`、四组件数量和 `"evaluation_pdfs": 712`。该命令只读四个正式 JSON，核验共享字段、全局 ID、数量和 manifest 哈希，并重算模态及文档组合统计。`pdf_check: "not_requested"` 表示此步尚未检查外部 PDF。
-
-读取一道真实题目：
-
-```python
-import json
-from pathlib import Path
-
-data = json.loads(Path("data/qa/7.final_2200/ordinary_qa.json").read_text())
-paper_id, paper = next(iter(data.items()))
-qa_id, qa = next(iter(paper["QA"].items()))
-print(paper_id, qa_id)
-print(qa["question"])
-print(qa["answer"])
-print(qa["evidence_pages"])
-```
-
-### 2. 准备 PDF 并检查证据页
-
-PDF 是单独管理的外部资产，Git 克隆不含 PDF 和模型权重。向项目维护者取得与 [PDF 资产清单](data/pdf_assets_manifest.json) 匹配的文件，平铺到 `data/pdfs/`。请按清单使用 `paper_*`、`source_*`、`z_cross_*` 文件名；重新下载的另一版本不能替代被冻结的 PDF。
-
-```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install pypdf==6.10.2
-PYTHONPATH=src python -m pku_qa.workflows.operations.inspect_final_2200 --check-pdfs
+python -m pip install -r requirements-eval.txt
+# After placing the frozen PDFs in data/pdfs/:
+python evaluation/preflight.py --output preflight.json
+python scripts/validate_submission.py --predictions predictions.jsonl
 ```
 
-此步核验最终 712 份 PDF 的 SHA-256、可读性和全部金证据页范围。成功时 `pdf_check` 为 `hashes_readability_and_evidence_bounds_valid`。
+Recommended submission format: one record per line, with a binding `qa_id`:
 
-### 3. 运行正式评测
+```json
+{"qa_id":"QA0001","answer_pre":"First maximize worst-case payoff, then maximize expected payoff under conjectured model","evidence_pages":[1,9]}
+```
 
-完整推理需要 CUDA 环境和本地模型。安装及显存要求见 [上手指南](docs/current/GETTING_STARTED.md)。准备 `models/Qwen3-VL-4B-Instruct/`、`models/Qwen3-VL-8B-Instruct/` 和 `models/Qwen3.6-27B/` 后，先打印计划：
+The model's **raw output** contains only `answer_pre` and `evidence_pages`.
+`qa_id` is added by the submission writer. Page values must be positive JSON
+integers in the PDF's physical range; booleans and page strings are illegal.
+The only refusal is `{"answer_pre":"Unanswerable","evidence_pages":[]}`.
+See the full [evaluation contract and commands](evaluation/README.md).
+
+## Evaluation and reproduction status
+
+The paper defines semantic **Answer Accuracy**, macro **E-Precision**, **E-Recall**,
+**E-F1**, and **A-Pages**, with a fixed full-benchmark denominator of 2,200.
+Answerable items use the paper's Qwen3.6-27B binary semantic judge; Unanswerable
+items use deterministic exact-label validation. Exact page-set match and joint
+correctness are audit diagnostics. There is no composite Overall Score.
+
+The new package preserves the paper prompt verbatim and does not normalize
+answer meanings. Historical experiment artifacts use a different tri-class
+judge and permissive parsing, and some predictions target older gold versions.
+**An official rescore reproducing the paper has not been established.**
+Reaggregating historical v4 records matches all 99 displayed Table 2 cells;
+Table 3 matches 98/99 cells, with a discrepancy in Claude's All value.
+See the [complete audit and remaining reproducibility items](docs/reports/official_evaluation/FINAL_REPORT.md).
 
 ```bash
-python -m pip install -r requirements.txt
-python -m pip install -e .
-PYTHONPATH=src python -m pku_qa.workflows.reporting.run_final_2200_evaluation \
-  --print-plan -- --dynamic-a800 --a800-gpus 2 3 4 5
+python evaluation/evaluate.py --predictions predictions.jsonl \
+  --judge-config judge-config.json --judge-cache .cache/sciencedoc_judge.jsonl \
+  --output results.json
+python -m pytest -q tests/test_validation.py tests/test_metrics.py tests/test_judge.py tests/test_e2e.py
 ```
 
-GPU 编号必须按本机情况调整。确认资源和输入后，移除 `--print-plan` 执行；可用 `--component reasoning` 仅运行一个组件。默认依次运行 ordinary、unanswerable、reasoning、cross_pdf，各自执行 4B → 8B → Judge → 严格报告，结果写入 `data/results/evaluations/final_2200/<component>/`。计划打印不会启动推理或调用付费 API。
+Judge configuration must be explicitly supplied; unavailable historical settings
+are not guessed. Use `--offline` for cache-only diagnostics. Incomplete or
+unresolved evaluations return nonzero and are clearly labeled.
 
-## 构建方法
+## Repository layout
 
-基础构建从 arXiv 论文检索、分类整理和 PDF 检查开始，得到 703 篇论文的 6,204 条原始 QA；格式清洗、去重、简答化和证据修正后形成 693 篇论文的 4,211 条单论文基线。随后构造主题相关但证据不足的不可回答题、多事实 Reasoning 题，以及多文档 Cross-PDF 题。
-
-生成流程包括基于已核验 QA 事实的组合生成和全文 PDF 生成。程序检查字段、页码、重复、答案泄漏及必要依赖；专项候选经过 Claude Sonnet 5 与 Gemini 2.5 Flash 独立复审和证据恢复，再经人工逐题核验。最终四文件的全部 2,200 条另完成了基于 PDF 页图的模态复核。生成、审核和历史诊断记录用于追溯，不能替代当前独立金标准。
-
-## 数据与评测约定
-
-JSON 顶层为 `{paper_id: paper}`，每个 paper 内的 `QA` 为 `{qa_id: qa}`。六个共享必填字段为 `question`、`answer`、`evidence_pages`、`modal_types`、`question_type`、`question_category`，完整定义见 [最终 QA Schema](schemas/final_2200_qa.schema.json)。最终题目没有选择题 `options`；专项来源和审核字段保留在各 QA 中。
-
-| 协议 | 输入 | 模型输出 |
-| --- | --- | --- |
-| `question_only` | 仅问题；闭卷对照与难度检查 | 答案纯文本 |
-| `pdf` | 问题和带 `[Page N]` 标签的页面图像 | `{"answer_pre":"…","evidence_pages":[1,3]}` |
-
-Full、Oracle、证据页消融仅改变 `pdf` 的页面选择。所有页码从 1 开始，采用 PDF 文件物理页；Cross-PDF 使用合并文件页码。拒答标签精确为 `Unanswerable`；PDF 模式必须返回 `{"answer_pre":"Unanswerable","evidence_pages":[]}`。
-
-评测分别报告答案正确性、证据页集合完全匹配及联合正确性；证据 Precision、Recall、F1 用于补充定位分析。规则优先判分，无法确定的答案交给统一语义 Judge。格式非法输出计错，严格报告要求完整题目覆盖及 QA、PDF、协议、原始输出和 Judge 绑定一致。旧版本结果和抽样人工结果必须单独标明输入及分母，不能当作当前 2,200 条整集结果。
-
-## 人工审核与文档
-
-[打开 Web 控制台](https://pku.chenzijian.com/)。使用个人应用账户登录，管理员按稳定 QA 身份分配范围；审核者对照 PDF 核验问题、答案和证据，修改与删除保留快照及审计记录。公网入口经过 VPS HTTPS 反向隧道连接学校内网服务。
-
-- [项目架构](docs/current/ARCHITECTURE.md)：协议、模块、目录和字段约束。
-- [上手指南](docs/current/GETTING_STARTED.md)：安装、预检、评测和排查命令。
-- [人工审核手册](docs/current/MANUAL_REVIEW_GUIDE.md)：逐题标准、界面说明与审核流程。
-- [Web 控制台](docs/current/WEB_CONSOLE.md)：账户、分配、权限和部署。
-- [QA 数据集目录](docs/current/DATASET_CATALOG.md)：最终输入、上游来源和过程材料的用途及权限。
-
-## 项目目录
-
-| 路径 | 用途 |
+| Path | Purpose |
 | --- | --- |
-| `data/qa/7.final_2200/` | 四文件发布集、manifest、分类工作簿 |
-| `data/qa/1.base/` 至 `6.review/` | 基础题源、不可回答镜像、Reasoning/Cross-PDF 源组件、人工审核来源与复核证据 |
-| `src/pku_qa/evaluation/` | 协议、推理、Judge、报告和断点恢复 |
-| `src/pku_qa/workflows/` | 生成、清洗、复审、选择、统计和运维入口 |
-| `task_queue_web/`、`src/pku_qa/services/` | Web 控制台与后端 |
-| `tests/`、`schemas/` | 自动测试和数据结构约束 |
-| `scripts/dataset_construction/` | 早期论文获取、基础 QA Notebook 与提示词 |
-| `data/archive/` | 历史实验与构建记录；Git 中只提供说明和清单 |
+| `data/qa/7.final_2200/` | Immutable evaluation inputs and existing release manifest |
+| `evaluation/` | Paper-contract validation, semantic judge cache, macro metrics, preflight, and reproduction audit |
+| `scripts/validate_submission.py` | Submission checking without semantic judging |
+| `examples/` | Public submission example |
+| `src/pku_qa/` | Internal construction, inference, review, and historical experiment workflows |
+| `tests/`, `schemas/` | Tests and dataset schemas |
+| `docs/releases/` | External PDF packaging and file inventories |
+| `docs/current/` | Maintainer and review documentation |
 
-PDF 与模型遵循各自来源许可；仓库不包含个人账户数据库、会话或 API 密钥。`sxz/` 属于其他协作者，只可读取参考。
+The optional internal experiment console is documented separately in the
+[maintainer guide](docs/current/WEB_CONSOLE.md). It is not needed to evaluate
+benchmark submissions.
+
+## Contributors
+
+Thanks to [yuetanbupt](https://github.com/yuetanbupt) and
+[ElephantsGit](https://github.com/ElephantsGit) for contributing to ScienceDoc.
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for GitHub attribution and access details.
+
+PDFs and model weights remain subject to their original licenses. Account
+databases, session material, API keys, and local model weights are not published.

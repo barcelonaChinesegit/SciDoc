@@ -1,0 +1,13 @@
+{
+  "status": "unresolved",
+  "official_reproduction_verified": false,
+  "unresolved_items": [
+    "The binary paper prompt has no recovered, bound historical execution configuration or decisions. Historical v4/v10 use different tri-class prompts.",
+    "Historical checkpoint revision and weight hashes were not bound to cached decisions. Current local files cannot prove past checkpoint bytes.",
+    "Historical prediction parsing repairs fences, extracts strings/pages and scores embedded gold; paper requires strict raw JSON and independent immutable gold.",
+    "Historical evidence scoring precedes output validity checks. The paper does not specify a recoverable page set for every illegal raw output; illegal evidence headline metrics remain null pending reconciliation.",
+    "The 55 baseline files contain missing items and question/reference/evidence version differences relative to the current four-file release.",
+    "No uniform format-correction retry count or complete retry trail is recoverable across all 11 historical baseline pipelines. Submission scoring does not rerun inference or invent retries.",
+    "Paper tables provide two-decimal values, not full-precision references; compare recovered historical full-precision artifacts separately."
+  ]
+}

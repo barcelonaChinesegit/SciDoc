@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import ConsoleNav from "./components/ConsoleNav";
 import LoginScreen from "./components/LoginScreen";
-import { useCurrentUser } from "./lib/auth";
+import { hasRole, useCurrentUser } from "./lib/auth";
 
 export default function PortalPage() {
   const { user, loading } = useCurrentUser(false);
@@ -31,7 +31,7 @@ export default function PortalPage() {
             action is attributed to the current account.
           </p>
           <div className="portal-state">
-            <span><CheckCircle2 size={16} />5 dataset files</span>
+            <span><CheckCircle2 size={16} />4 dataset files</span>
             <span><ShieldCheck size={16} />Fully auditable</span>
             <span><Users size={16} />Individual reviewer accounts</span>
           </div>
@@ -57,15 +57,15 @@ export default function PortalPage() {
           </div>
           <ArrowRight size={20} />
         </a>
-        <a className="destination" href="/queue">
+        {hasRole(user, "admin") && <a className="destination" href="/queue">
           <span className="destination-icon"><ListChecks size={23} /></span>
           <div>
             <p className="eyebrow">ADMIN OPERATIONS</p>
             <h2>View the Task Queue</h2>
-            <p>Track experiment progress and logs. Write operations are restricted to administrators.</p>
+            <p>Internal experiment monitoring for maintainers.</p>
           </div>
           <ArrowRight size={20} />
-        </a>
+        </a>}
       </section>
     </main>
   );

@@ -1,5 +1,9 @@
 # SciDoc 本机目录与 GitHub 仓库迁移（2026-09-20）
 
+> 历史记录：文中旧路径与当时测试结果保留用于追溯。当前 Web 源码在
+> `tools/internal/experiment_console/web/`；当前论文协议和复现结论见
+> [2026-09-20 评测审计](official_evaluation/FINAL_REPORT.md)。
+
 实际工作目录：`/data/czj/SciDoc`。远程仓库：
 <https://github.com/barcelonaChinesegit/SciDoc>。
 

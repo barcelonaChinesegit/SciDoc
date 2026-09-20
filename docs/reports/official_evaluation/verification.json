@@ -1,0 +1,63 @@
+{
+  "standalone_clean_environment": {
+    "python": "3.12",
+    "environment": "isolated venv; no editable pku_qa package; PYTHONPATH empty",
+    "install": "requirements-eval.txt; proxy variables unset because machine pip proxy needed uninstalled SOCKS support",
+    "unit_tests": 56,
+    "passed": 56
+  },
+  "full_repository_tests": {
+    "passed": 480,
+    "failed": 0,
+    "seconds": 13.52
+  },
+  "web": {
+    "frontend_tests_passed": 8,
+    "build": "passed",
+    "service_path": "tools/internal/experiment_console/web",
+    "local_data_api": 200,
+    "local_queue_api": 200,
+    "local_web": 200,
+    "vps_tunnel_backend": 200,
+    "public_https_front": 200,
+    "healthy": true
+  },
+  "example_validator": {
+    "exit_code": 1,
+    "received": 2,
+    "missing": 2198,
+    "legal": 2,
+    "illegal": 0,
+    "expected_incomplete_example": true
+  },
+  "example_offline_evaluator": {
+    "exit_code": 2,
+    "total": 2200,
+    "received": 2,
+    "missing": 2198,
+    "judge_failures": 1,
+    "expected_provisional_result": true
+  },
+  "reproduction": {
+    "exit_code": 2,
+    "table2_historical_rounded_matches": 99,
+    "table3_historical_rounded_matches": 98,
+    "official_rescore_verified": false
+  },
+  "qa_integrity": {
+    "json_files": 27,
+    "all_sha256_unchanged": true,
+    "canonical_gold_modified": false
+  },
+  "secret_scan": {
+    "candidate_text_files_scanned": 281,
+    "credential_pattern_findings": 0,
+    "example_sha256": "87298f4e77fb4b0ea4d6f714a313a23f239e05cd50dbc2c5963a28b99729a569",
+    "scope": "Git-tracked and nonignored candidate text files; pattern scan, not a proof of absence"
+  },
+  "markdown": {
+    "project_owned_files_reviewed": 37,
+    "broken_current_reader_links": 0,
+    "excluded_ownership": "sxz read-only; third-party model/vendor/cache files excluded from edits"
+  }
+}

@@ -1,0 +1,100 @@
+model,metric,paper,historical_reaggregated_full_precision,historical_display,historical_display_difference,new_official_evaluator,new_difference,status
+MiniCPM-V 2.6,All,15.59,15.590909090909092,15.59,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,General,14.7,14.7,14.70,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Unanswerable,38.5,38.5,38.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Multi-Document,12.5,12.5,12.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,Reasoning,9.5,9.5,9.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,E-Precision,9.37,9.36904761904762,9.37,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,E-Recall,9.24,9.243290043290044,9.24,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,E-F1,9.26,9.259776334776335,9.26,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 2.6,A-Pages,0.11,0.10727272727272727,0.11,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,All,22.32,22.318181818181817,22.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,General,24.4,24.4,24.40,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Unanswerable,32.0,32.0,32.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Multi-Document,14.25,14.25,14.25,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,Reasoning,34.5,34.5,34.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,E-Precision,15.39,15.391350351292118,15.39,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,E-Recall,31.88,31.88317099567099,31.88,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,E-F1,16.75,16.745781919981404,16.75,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL2.5-8B,A-Pages,6.69,6.6854545454545455,6.69,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,All,34.32,34.31818181818182,34.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,General,54.6,54.6,54.60,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Unanswerable,15.0,15.0,15.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Multi-Document,10.75,10.75,10.75,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,Reasoning,46.5,46.5,46.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,E-Precision,20.03,20.029169184993638,20.03,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,E-Recall,15.92,15.915530303030305,15.92,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,E-F1,16.47,16.47234581712181,16.47,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+MiniCPM-V 4.5,A-Pages,1.42,1.415,1.42,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,All,34.95,34.95454545454545,34.95,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,General,36.3,36.3,36.30,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Unanswerable,2.5,2.5,2.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Multi-Document,36.88,36.875,36.88,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,Reasoning,53.0,53.0,53.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,E-Precision,30.86,30.860720650472928,30.86,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,E-Recall,31.2,31.197113366431545,31.20,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,E-F1,28.04,28.044271179368867,28.04,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+InternVL3.5-8B,A-Pages,3.72,3.72,3.72,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,All,47.32,47.31818181818182,47.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,General,57.0,57.0,57.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Unanswerable,14.0,14.0,14.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Multi-Document,43.62,43.625,43.62,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,Reasoning,47.0,47.0,47.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,E-Precision,34.02,34.02228030554067,34.02,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,E-Recall,30.85,30.845024293887928,30.85,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,E-F1,30.36,30.3570234896041,30.36,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Gemma 3 27B,A-Pages,1.98,1.9772727272727273,1.98,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,All,49.0,49.0,49.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,General,72.4,72.4,72.40,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Unanswerable,9.0,9.0,9.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Multi-Document,24.88,24.875,24.88,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,Reasoning,68.5,68.5,68.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,E-Precision,34.51,34.50938916331468,34.51,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,E-Recall,36.39,36.39229848434394,36.39,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,E-F1,32.39,32.39265525522798,32.39,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Mistral-Small-3.1-24B,A-Pages,3.58,3.5795454545454546,3.58,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,All,64.91,64.9090909090909,64.91,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,General,80.0,80.0,80.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Unanswerable,60.0,60.0,60.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Multi-Document,47.38,47.375,47.38,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,Reasoning,64.5,64.5,64.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,E-Precision,39.35,39.35198086442059,39.35,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,E-Recall,53.01,53.00593724457361,53.01,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,E-F1,39.22,39.22261513043638,39.22,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-4B,A-Pages,9.26,9.25590909090909,9.26,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,All,68.32,68.31818181818181,68.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,General,83.2,83.2,83.20,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Unanswerable,42.5,42.5,42.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Multi-Document,55.38,55.375,55.38,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,Reasoning,71.5,71.5,71.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,E-Precision,43.34,43.33971742021875,43.34,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,E-Recall,49.63,49.63076923076923,49.63,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,E-F1,40.66,40.664217879496846,40.66,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Qwen3-VL-8B,A-Pages,8.44,8.442272727272726,8.44,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,All,69.32,69.31818181818181,69.32,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,General,71.9,71.9,71.90,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Unanswerable,68.0,68.0,68.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Multi-Document,61.0,61.0,61.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,Reasoning,91.0,91.0,91.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,E-Precision,35.66,35.657289986048795,35.66,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,E-Recall,43.97,43.96992918697464,43.97,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,E-F1,36.49,36.49487881796741,36.49,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+Claude Sonnet 5,A-Pages,3.66,3.6586363636363637,3.66,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,All,79.45,79.45454545454545,79.45,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,General,88.2,88.2,88.20,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Unanswerable,15.5,15.5,15.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Multi-Document,83.62,83.625,83.62,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,Reasoning,83.0,83.0,83.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,E-Precision,44.49,44.48917615049053,44.49,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,E-Recall,49.22,49.220924403878946,49.22,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,E-F1,43.61,43.61052572285685,43.61,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+DeepSeek-V4-Flash,A-Pages,2.57,2.5736363636363637,2.57,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,All,80.95,80.95454545454545,80.95,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,General,88.5,88.5,88.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Unanswerable,46.0,46.0,46.00,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Multi-Document,79.62,79.625,79.62,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,Reasoning,83.5,83.5,83.50,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,E-Precision,51.04,51.03771645021645,51.04,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,E-Recall,50.47,50.474305744760294,50.47,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,E-F1,47.81,47.81021276703095,47.81,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences
+GLM-4.6V,A-Pages,1.97,1.9736363636363636,1.97,0.0,,,UNRESOLVED: see baseline audit and paper/history protocol differences

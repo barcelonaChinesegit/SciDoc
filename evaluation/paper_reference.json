@@ -1,0 +1,251 @@
+{
+  "paper_sha256": "cd15abe0fa53fda4f9ceadab33fe9ff10e7214fcbd07004e0509305cada66056",
+  "source": "论文/ICLR2027_ScienceDoc/iclr2027_conference.tex",
+  "precision": "Paper tables contain two decimal places; full-precision reference unavailable.",
+  "table2": {
+    "MiniCPM-V 2.6": {
+      "All": 15.59,
+      "General": 14.7,
+      "Unanswerable": 38.5,
+      "Multi-Document": 12.5,
+      "Reasoning": 9.5,
+      "E-Precision": 9.37,
+      "E-Recall": 9.24,
+      "E-F1": 9.26,
+      "A-Pages": 0.11
+    },
+    "InternVL2.5-8B": {
+      "All": 22.32,
+      "General": 24.4,
+      "Unanswerable": 32.0,
+      "Multi-Document": 14.25,
+      "Reasoning": 34.5,
+      "E-Precision": 15.39,
+      "E-Recall": 31.88,
+      "E-F1": 16.75,
+      "A-Pages": 6.69
+    },
+    "MiniCPM-V 4.5": {
+      "All": 34.32,
+      "General": 54.6,
+      "Unanswerable": 15.0,
+      "Multi-Document": 10.75,
+      "Reasoning": 46.5,
+      "E-Precision": 20.03,
+      "E-Recall": 15.92,
+      "E-F1": 16.47,
+      "A-Pages": 1.42
+    },
+    "InternVL3.5-8B": {
+      "All": 34.95,
+      "General": 36.3,
+      "Unanswerable": 2.5,
+      "Multi-Document": 36.88,
+      "Reasoning": 53.0,
+      "E-Precision": 30.86,
+      "E-Recall": 31.2,
+      "E-F1": 28.04,
+      "A-Pages": 3.72
+    },
+    "Gemma 3 27B": {
+      "All": 47.32,
+      "General": 57.0,
+      "Unanswerable": 14.0,
+      "Multi-Document": 43.62,
+      "Reasoning": 47.0,
+      "E-Precision": 34.02,
+      "E-Recall": 30.85,
+      "E-F1": 30.36,
+      "A-Pages": 1.98
+    },
+    "Mistral-Small-3.1-24B": {
+      "All": 49.0,
+      "General": 72.4,
+      "Unanswerable": 9.0,
+      "Multi-Document": 24.88,
+      "Reasoning": 68.5,
+      "E-Precision": 34.51,
+      "E-Recall": 36.39,
+      "E-F1": 32.39,
+      "A-Pages": 3.58
+    },
+    "Qwen3-VL-4B": {
+      "All": 64.91,
+      "General": 80.0,
+      "Unanswerable": 60.0,
+      "Multi-Document": 47.38,
+      "Reasoning": 64.5,
+      "E-Precision": 39.35,
+      "E-Recall": 53.01,
+      "E-F1": 39.22,
+      "A-Pages": 9.26
+    },
+    "Qwen3-VL-8B": {
+      "All": 68.32,
+      "General": 83.2,
+      "Unanswerable": 42.5,
+      "Multi-Document": 55.38,
+      "Reasoning": 71.5,
+      "E-Precision": 43.34,
+      "E-Recall": 49.63,
+      "E-F1": 40.66,
+      "A-Pages": 8.44
+    },
+    "Claude Sonnet 5": {
+      "All": 69.32,
+      "General": 71.9,
+      "Unanswerable": 68.0,
+      "Multi-Document": 61.0,
+      "Reasoning": 91.0,
+      "E-Precision": 35.66,
+      "E-Recall": 43.97,
+      "E-F1": 36.49,
+      "A-Pages": 3.66
+    },
+    "DeepSeek-V4-Flash": {
+      "All": 79.45,
+      "General": 88.2,
+      "Unanswerable": 15.5,
+      "Multi-Document": 83.62,
+      "Reasoning": 83.0,
+      "E-Precision": 44.49,
+      "E-Recall": 49.22,
+      "E-F1": 43.61,
+      "A-Pages": 2.57
+    },
+    "GLM-4.6V": {
+      "All": 80.95,
+      "General": 88.5,
+      "Unanswerable": 46.0,
+      "Multi-Document": 79.62,
+      "Reasoning": 83.5,
+      "E-Precision": 51.04,
+      "E-Recall": 50.47,
+      "E-F1": 47.81,
+      "A-Pages": 1.97
+    }
+  },
+  "table3": {
+    "MiniCPM-V 2.6": {
+      "All": 15.59,
+      "Computer Science": 16.51,
+      "Physics": 18.73,
+      "Statistics": 15.85,
+      "Mathematics": 10.2,
+      "Electrical Engineering and Systems Science": 10.16,
+      "Economics": 16.06,
+      "Quantitative Biology": 15.79,
+      "Quantitative Finance": 15.12
+    },
+    "InternVL2.5-8B": {
+      "All": 22.32,
+      "Computer Science": 21.34,
+      "Physics": 26.39,
+      "Statistics": 24.32,
+      "Mathematics": 13.88,
+      "Electrical Engineering and Systems Science": 17.97,
+      "Economics": 32.12,
+      "Quantitative Biology": 19.3,
+      "Quantitative Finance": 23.26
+    },
+    "MiniCPM-V 4.5": {
+      "All": 34.32,
+      "Computer Science": 25.91,
+      "Physics": 44.85,
+      "Statistics": 33.88,
+      "Mathematics": 30.2,
+      "Electrical Engineering and Systems Science": 30.47,
+      "Economics": 40.88,
+      "Quantitative Biology": 51.75,
+      "Quantitative Finance": 46.51
+    },
+    "InternVL3.5-8B": {
+      "All": 34.95,
+      "Computer Science": 37.99,
+      "Physics": 30.34,
+      "Statistics": 36.07,
+      "Mathematics": 20.82,
+      "Electrical Engineering and Systems Science": 38.28,
+      "Economics": 43.8,
+      "Quantitative Biology": 36.84,
+      "Quantitative Finance": 43.02
+    },
+    "Gemma 3 27B": {
+      "All": 47.32,
+      "Computer Science": 50.34,
+      "Physics": 51.72,
+      "Statistics": 47.81,
+      "Mathematics": 32.24,
+      "Electrical Engineering and Systems Science": 41.41,
+      "Economics": 57.66,
+      "Quantitative Biology": 38.6,
+      "Quantitative Finance": 46.51
+    },
+    "Mistral-Small-3.1-24B": {
+      "All": 49.0,
+      "Computer Science": 40.13,
+      "Physics": 60.95,
+      "Statistics": 45.08,
+      "Mathematics": 45.71,
+      "Electrical Engineering and Systems Science": 50.78,
+      "Economics": 63.5,
+      "Quantitative Biology": 64.91,
+      "Quantitative Finance": 52.33
+    },
+    "Qwen3-VL-4B": {
+      "All": 64.91,
+      "Computer Science": 63.89,
+      "Physics": 71.24,
+      "Statistics": 55.46,
+      "Mathematics": 62.04,
+      "Electrical Engineering and Systems Science": 64.06,
+      "Economics": 67.88,
+      "Quantitative Biology": 80.7,
+      "Quantitative Finance": 69.77
+    },
+    "Qwen3-VL-8B": {
+      "All": 68.32,
+      "Computer Science": 67.11,
+      "Physics": 70.98,
+      "Statistics": 66.12,
+      "Mathematics": 62.45,
+      "Electrical Engineering and Systems Science": 71.88,
+      "Economics": 70.8,
+      "Quantitative Biology": 76.32,
+      "Quantitative Finance": 73.26
+    },
+    "Claude Sonnet 5": {
+      "All": 69.32,
+      "Computer Science": 69.93,
+      "Physics": 71.5,
+      "Statistics": 59.84,
+      "Mathematics": 60.0,
+      "Electrical Engineering and Systems Science": 76.56,
+      "Economics": 66.42,
+      "Quantitative Biology": 77.19,
+      "Quantitative Finance": 72.09
+    },
+    "DeepSeek-V4-Flash": {
+      "All": 79.45,
+      "Computer Science": 80.54,
+      "Physics": 77.57,
+      "Statistics": 83.06,
+      "Mathematics": 71.84,
+      "Electrical Engineering and Systems Science": 79.69,
+      "Economics": 83.94,
+      "Quantitative Biology": 78.95,
+      "Quantitative Finance": 77.91
+    },
+    "GLM-4.6V": {
+      "All": 80.95,
+      "Computer Science": 80.67,
+      "Physics": 82.59,
+      "Statistics": 80.05,
+      "Mathematics": 74.29,
+      "Electrical Engineering and Systems Science": 85.16,
+      "Economics": 86.86,
+      "Quantitative Biology": 82.46,
+      "Quantitative Finance": 81.4
+    }
+  }
+}

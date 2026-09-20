@@ -1,5 +1,16 @@
 # SciDoc 上手指南
 
+## 2026-09-20 论文协议审计更新
+
+公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
+论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
+精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 的规则优先匹配与
+内部报告属于历史实验实现，不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
+99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
+差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
+本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
+
+
 本机唯一实际工作目录为 `/data/czj/SciDoc`，远程仓库为
 <https://github.com/barcelonaChinesegit/SciDoc>。首次克隆使用：
 
@@ -68,7 +79,7 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.flatten_pdf_assets --check
 并包含模型自己的 config/tokenizer 等文件。Hugging Face、ModelScope、Torch 缓存统一在
 `models/.cache/`。根据实际 GPU 调整命令，动态 A800 配置不是任意 CUDA GPU 的通用配置。
 
-## 3. 四文件正式评测
+## 3. 内部四文件推理编排（不证明论文分数复现）
 
 先做第 1、2 节的只读预检，再打印 manifest 驱动计划：
 
@@ -93,7 +104,7 @@ PYTHONPATH=src python -m pku_qa.workflows.reporting.run_final_2200_evaluation \
 ```
 
 `--component` 可重复；缺省按 ordinary、unanswerable、reasoning、cross_pdf 顺序执行。
-每个组件执行 4B → 8B → Judge 4B → Judge 8B → 严格报告，输出在
+该内部运行器每个组件执行 4B → 8B → 历史 Judge 4B → 历史 Judge 8B → 内部报告，输出在
 `data/results/evaluations/final_2200/<component>/`。推理负责记录 PDF corpus 哈希与协议指纹，
 正式报告重新核验 QA/PDF、原始输出和推理到 Judge 的绑定。
 
@@ -179,7 +190,7 @@ Reasoning/Cross-PDF 的生成、双审、证据恢复与难度筛选入口保留
 本地开发需要 Node 22.13+：
 
 ```bash
-cd task_queue_web
+cd tools/internal/experiment_console/web
 npm ci
 npm run dev
 ```
@@ -223,7 +234,7 @@ PYTHONPATH=src python -m pku_qa.services.task_queue.task_queue_cli logs <TASK_ID
 
 迁移后路径检查结果见 [路径与引用审计](../reports/SCIDOC_PATH_AUDIT_20260920.md)。
 Web 构建会重新定位 `.vinext/fonts` 缓存中的磁盘路径，避免搬迁后字体 URL 返回 404；
-`task_queue_web/build/` 中的手写构建辅助文件必须随源码提交。
+`tools/internal/experiment_console/web/build/` 中的手写构建辅助文件必须随源码提交。
 迁移回归测试会在独立临时目录验证正式数据检查与评测计划，不依赖本机 editable 安装。
 
 ## 8. 修改后的验证
@@ -235,7 +246,7 @@ python -m pytest -q
 Web 或其后端变更还要执行 Web 构建测试、重启相关本地服务，再验收公网：
 
 ```bash
-(cd task_queue_web && env -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY -u http_proxy -u https_proxy -u all_proxy npm test)
+(cd tools/internal/experiment_console/web && env -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY -u http_proxy -u https_proxy -u all_proxy npm test)
 systemctl --user restart pku-task-queue-web.service
 PYTHONPATH=src python -m pku_qa.workflows.operations.check_web_stack
 ```

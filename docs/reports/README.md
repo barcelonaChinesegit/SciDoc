@@ -9,3 +9,6 @@
 报告列出的旧输出已按用途归档，使用前按归档清单核对原路径与哈希。
 
 [2026-09-13 文档核对记录](DOCUMENTATION_AUDIT.md) 记录本次扫描范围、统计修正与验证入口。
+
+最新：[2026-09-20 official evaluation 审计与最终报告](official_evaluation/FINAL_REPORT.md)。
+论文主证据指标为宏平均 PRF 与 A-Pages；完全页集合匹配仅为诊断。

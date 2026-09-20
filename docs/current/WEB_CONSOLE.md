@@ -1,7 +1,7 @@
 # 本地任务与人工校验控制台
 
-`task_queue_web/` 是最终 2,200 条 QA 的多人校验入口，同时保留任务队列、GPU、
-断点和日志控制。根路径是入口封面，人工校验优先于任务队列：
+`tools/internal/experiment_console/web/` 是最终 2,200 条 QA 的多人校验入口，同时保留任务队列、GPU、
+断点和日志控制。源码位于内部维护工具目录，不是 benchmark 使用依赖。任务队列导航和首页卡片仅向管理员展示；根路径是审核入口封面：
 
 学校服务器是内网源站，直接访问需要学校 VPN；公网用户只能通过项目自有 VPS 的反向
 隧道访问。公网入口 `https://pku.chenzijian.com/` 是 Web 控制台的正式验收地址，DNS
@@ -14,13 +14,13 @@
 
 - `/data`：逐题人工校验、问题/答案/证据页修改、QA 序号/PDF 物理页跳转、可逆删除和撤销。
 - `/guide`：英文人工校验指南，覆盖权限边界、四类正式数据、逐题流程和故障处理。
-- `/queue`：实验任务、GPU、进度、日志和断点。
+- `/queue`：维护者实验任务、GPU、进度、日志和断点；仅管理员看到导航入口。
 - `/admin/users`：管理员创建/停用用户、分别添加/删除管理员和校验员身份、重置密码、分配 QA 范围并查看统一审计。
 - `/profile`：个人中心；用户可修改真实姓名、用户名、验证邮箱和密码，邮箱换绑需要验证码。
 - `/login`、`/register`：应用账户登录和公开注册；注册账户默认只有校验员身份。
 
 当前 Web 界面采用英文单语，包括登录、导航、人工校验、用户管理、个人中心、任务队列、
-错误提示和无障碍文本。`task_queue_web/tests/rendered-html.test.mjs` 会递归扫描 `app/` 下的
+错误提示和无障碍文本。`tools/internal/experiment_console/web/tests/rendered-html.test.mjs` 会递归扫描 `app/` 下的
 源码并拒绝汉字，防止后续界面文案回退为中文。数据 API 返回的目录元数据在前端转换为
 英文展示文本；QA 问题、标准答案和证据事实仍按数据真源原样呈现。账户姓名、任务名称、
 任务说明和日志若含汉字，则由展示层改用英文用户名或英文占位，不改写数据库与审计真源。
@@ -107,7 +107,7 @@ VPS Nginx 只负责 HTTPS 和到 loopback 隧道后端的反向代理。应用�
 系统会把范围固化为 `dataset_id + paper_id + qa_id` 成员清单，因此前序题被删除后不会
 把后续题的写权限错误地移给其他人。不同分配不能覆盖同一 QA。
 
-任务队列读操作对所有登录用户可见，新增、编辑、暂停、恢复、重试、排序、删除、
+任务队列入口仅管理员可见；已有读 API 权限仍向登录用户开放，新增、编辑、暂停、恢复、重试、排序、删除、
 结果删除和恢复记录仅管理员可用。
 
 ## 审计与真源
@@ -150,7 +150,7 @@ PYTHONPATH=src python -m pku_qa.workflows.selection.sync_final_2200_manifest --c
 ## 本地运行与测试
 
 ```bash
-cd task_queue_web
+cd tools/internal/experiment_console/web
 npm install
 npm run dev
 env -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY npm test

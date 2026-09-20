@@ -1,6 +1,17 @@
 # 当前项目状态
 
-核对日期：2026-09-13。本文件用于维护；论文统计引用最终发布文件及分类工作簿。
+## 2026-09-20 论文协议审计更新
+
+公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
+论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
+精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 的规则优先匹配与
+内部报告属于历史实验实现，不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
+99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
+差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
+本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
+
+
+核对日期：2026-09-20。本文件用于维护；论文统计引用最终发布文件及分类工作簿。
 
 ## 当前发布
 

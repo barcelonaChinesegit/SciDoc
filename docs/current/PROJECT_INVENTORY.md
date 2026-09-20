@@ -15,7 +15,7 @@
 | `models/` | Qwen、Gemma、Mistral、InternVL、MiniCPM 九套本地模型的唯一真实目录。 |
 | `docs/` | 全部项目说明、指南、报告说明与提示词。 |
 | `deploy/systemd/` | 本地服务的可复现 systemd 单元。 |
-| `task_queue_web/` | 本地任务与数据审核 Web 控制台。 |
+| `tools/internal/experiment_console/web/` | 本地任务与数据审核 Web 控制台。 |
 | `schemas/` | 数据结构 JSON Schema。 |
 | `sxz/` | 其他同学独立目录；本清单和维护工具永远排除。 |
 
@@ -23,36 +23,60 @@
 
 | 路径 | 用途 | 行数 | SHA-256 |
 | --- | --- | ---: | --- |
-| `.gitignore` | 项目配置或入口：.gitignore | 178 | `f724ee2e3fa1` |
-| `README.en.md` | 项目配置或入口：README.en | 125 | `7963b2ebf694` |
-| `README.md` | 项目配置或入口：README | 123 | `432e43e5ed0d` |
+| `.gitignore` | 项目配置或入口：.gitignore | 178 | `ae85f31cd193` |
+| `CONTRIBUTORS.md` | 项目配置或入口：CONTRIBUTORS | 20 | `b84c7afd6165` |
+| `README.en.md` | 项目配置或入口：README.en | 4 | `d61ad80987bb` |
+| `README.md` | 项目配置或入口：README | 110 | `622bc0b58ab8` |
+| `README.zh-CN.md` | 项目配置或入口：README.zh-CN | 125 | `b3cd95516fff` |
 | `deploy/systemd/pku-data-manager-api.service` | 本地 systemd 服务与健康守护部署单元 | 17 | `c6dac49af915` |
 | `deploy/systemd/pku-task-queue-api.service` | 本地 systemd 服务与健康守护部署单元 | 15 | `27796a52b576` |
 | `deploy/systemd/pku-task-queue-daemon.service` | 本地 systemd 服务与健康守护部署单元 | 15 | `0e84f267087a` |
-| `deploy/systemd/pku-task-queue-web.service` | 本地 systemd 服务与健康守护部署单元 | 18 | `37dcb1e9d0b5` |
+| `deploy/systemd/pku-task-queue-web.service` | 本地 systemd 服务与健康守护部署单元 | 18 | `60533b690c37` |
 | `deploy/systemd/pku-web-health.service` | 本地 systemd 服务与健康守护部署单元 | 9 | `d1efa505031c` |
 | `deploy/systemd/pku-web-health.timer` | 本地 systemd 服务与健康守护部署单元 | 10 | `4874bd250b0d` |
 | `deploy/systemd/pku-web-tunnel.service` | 本地 systemd 服务与健康守护部署单元 | 14 | `7ef0af37b291` |
-| `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 404 | `d006678a1b3c` |
-| `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 58 | `5d255c580fed` |
+| `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 415 | `315117c4679e` |
+| `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 69 | `b77445197732` |
 | `docs/current/DATASET_CATALOG.md` | 项目文档：DATASET CATALOG | 33 | `a8b83f7b7a4a` |
-| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 244 | `bbcd1c84f37f` |
-| `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 680 | `07ed990ba970` |
-| `docs/current/README.md` | 项目文档：README | 115 | `f05f8421998a` |
-| `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `6653bb4d77de` |
+| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 255 | `fc2bc340710a` |
+| `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 678 | `cf611e006c26` |
+| `docs/current/README.md` | 项目文档：README | 126 | `307579b7ddb5` |
+| `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `7ab162dbb736` |
 | `docs/prompts/MAINTENANCE_REMEDIATION.md` | 项目文档：MAINTENANCE REMEDIATION | 26 | `7640aa7c9528` |
-| `docs/reports/CROSS_PDF_EVIDENCE_AUDIT.md` | 项目文档：CROSS PDF EVIDENCE AUDIT | 305 | `800ce0107ccb` |
-| `docs/reports/DOCUMENTATION_AUDIT.md` | 项目文档：DOCUMENTATION AUDIT | 48 | `b704bd4f30fb` |
-| `docs/reports/FIGURE_RECOVERY_20260916.md` | 项目文档：FIGURE RECOVERY 20260916 | 34 | `f58693905128` |
-| `docs/reports/README.md` | 项目文档：README | 11 | `4e7295847a84` |
-| `docs/reports/SCIDOC_MIGRATION_20260920.md` | 项目文档：SCIDOC MIGRATION 20260920 | 74 | `6b70426b188a` |
-| `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 65 | `c9115669f845` |
+| `docs/releases/PDF_DISTRIBUTION.md` | 项目文档：PDF DISTRIBUTION | 50 | `2c5375f7eb60` |
+| `docs/reports/CROSS_PDF_EVIDENCE_AUDIT.md` | 项目文档：CROSS PDF EVIDENCE AUDIT | 305 | `f1b33be43190` |
+| `docs/reports/DOCUMENTATION_AUDIT.md` | 项目文档：DOCUMENTATION AUDIT | 52 | `67582a68d2eb` |
+| `docs/reports/FIGURE_RECOVERY_20260916.md` | 项目文档：FIGURE RECOVERY 20260916 | 38 | `17b41b8be827` |
+| `docs/reports/README.md` | 项目文档：README | 14 | `ce204a6418e8` |
+| `docs/reports/SCIDOC_MIGRATION_20260920.md` | 项目文档：SCIDOC MIGRATION 20260920 | 78 | `e4073f071a5c` |
+| `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 69 | `0ee565793a91` |
+| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 203 | `829462b9e552` |
+| `docs/reports/official_evaluation/claude_subject_discrepancy.json` | 项目文档：claude subject discrepancy | 118 | `4fd535e724eb` |
+| `docs/reports/official_evaluation/dataset_preflight.json` | 项目文档：dataset preflight | 1624 | `2fcf32ae8f4e` |
+| `docs/reports/official_evaluation/reproduction_audit.json` | 项目文档：reproduction audit | 5120 | `0f17d4df501c` |
+| `docs/reports/official_evaluation/verification.json` | 项目文档：verification | 63 | `fa808b6ac98c` |
 | `environment.yml` | 项目配置或入口：environment | 8 | `1dc4df61202c` |
+| `evaluation/README.md` | 项目配置或入口：README | 237 | `53e4fded06d3` |
+| `evaluation/__init__.py` | 项目配置或入口：  init   | 3 | `b51a76f50781` |
+| `evaluation/evaluate.py` | 项目配置或入口：evaluate | 83 | `cdff69d6256c` |
+| `evaluation/judge.py` | 项目配置或入口：judge | 125 | `c6a08c4ff9fd` |
+| `evaluation/metrics.py` | 项目配置或入口：metrics | 87 | `328f11cbcdd3` |
+| `evaluation/paper_reference.json` | 项目配置或入口：paper reference | 251 | `0ae6486571cc` |
+| `evaluation/preflight.py` | 项目配置或入口：preflight | 108 | `b3d8dbf81dd3` |
+| `evaluation/prompts.py` | 项目配置或入口：prompts | 12 | `694a63ed56b5` |
+| `evaluation/prompts/provenance.json` | 项目配置或入口：provenance | 7 | `069ca54dd7b3` |
+| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 13 | `f13a46c70ff1` |
+| `evaluation/reproduce.py` | 项目配置或入口：reproduce | 234 | `9dd83e97d104` |
+| `evaluation/validation.py` | 项目配置或入口：validation | 255 | `db009a6b4d27` |
 | `provider_config.example.json` | 项目配置或入口：provider config.example | 16 | `1ed1d13e6268` |
 | `pyproject.toml` | 项目配置或入口：pyproject | 27 | `7678f6ba4aa5` |
 | `requirements.txt` | 项目配置或入口：requirements | 34 | `b1d620c6158e` |
 | `schemas/final_2200_qa.schema.json` | QA 数据结构约束 | 56 | `8ac0c9e1049b` |
 | `schemas/single_pdf_qa.schema.json` | QA 数据结构约束 | 110 | `b4e168585abf` |
+| `scripts/dataset_construction/phase1_paper_acquisition/README.md` | 项目配置或入口：README | 62 | `1d9e8bfeca84` |
+| `scripts/dataset_construction/phase1_paper_acquisition/arxiv_download_backend.py` | 项目配置或入口：arxiv download backend | 86 | `a67bf7499717` |
+| `scripts/generate_dataset_catalog.py` | 项目配置或入口：generate dataset catalog | 52 | `58d7107827ed` |
+| `scripts/validate_submission.py` | 项目配置或入口：validate submission | 29 | `7684e9e25bb3` |
 | `src/pku_qa/__init__.py` | 项目配置或入口：  init   | 23 | `5ec76212d2b6` |
 | `src/pku_qa/evaluation/__init__.py` | 统一评测核心：  init   | 0 | `e3b0c44298fc` |
 | `src/pku_qa/evaluation/adaptive_gpu_pool.py` | 统一评测核心：adaptive gpu pool | 611 | `c4aedbbb59d5` |
@@ -141,33 +165,6 @@
 | `src/pku_qa/workflows/selection/normalize_final_2200_release.py` | selection：normalize final 2200 release | 284 | `7e90ea9e8455` |
 | `src/pku_qa/workflows/selection/single_pdf_release_views.py` | selection：single pdf release views | 202 | `b5214a5ce86f` |
 | `src/pku_qa/workflows/selection/sync_final_2200_manifest.py` | selection：sync final 2200 manifest | 149 | `d5d3b086f0e6` |
-| `task_queue_web/.openai/hosting.json` | 本地任务与数据审核控制台组件 | 4 | `d2841f8a91a9` |
-| `task_queue_web/app/admin/users/page.tsx` | 本地任务与数据审核控制台组件 | 580 | `31bc4421bfd4` |
-| `task_queue_web/app/api/[...path]/route.ts` | 本地任务与数据审核控制台组件 | 90 | `c096d908057d` |
-| `task_queue_web/app/components/ConsoleNav.tsx` | 本地任务与数据审核控制台组件 | 64 | `e36e4ca9fb64` |
-| `task_queue_web/app/components/LoginScreen.tsx` | 本地任务与数据审核控制台组件 | 100 | `c2da92fe5e54` |
-| `task_queue_web/app/data-api/[...path]/route.ts` | 本地任务与数据审核控制台组件 | 77 | `a8d49c3298c0` |
-| `task_queue_web/app/data/page.tsx` | 本地任务与数据审核控制台组件 | 921 | `0d3b6b5631ba` |
-| `task_queue_web/app/globals.css` | 本地任务与数据审核控制台组件 | 641 | `da234cf094d3` |
-| `task_queue_web/app/guide/page.tsx` | 本地任务与数据审核控制台组件 | 97 | `2a3d322def47` |
-| `task_queue_web/app/layout.tsx` | 本地任务与数据审核控制台组件 | 38 | `60bac5933866` |
-| `task_queue_web/app/lib/auth.ts` | 本地任务与数据审核控制台组件 | 83 | `9120042a949e` |
-| `task_queue_web/app/login/page.tsx` | 本地任务与数据审核控制台组件 | 5 | `803d942e469e` |
-| `task_queue_web/app/page.tsx` | 本地任务与数据审核控制台组件 | 72 | `75f69318fa82` |
-| `task_queue_web/app/profile/page.tsx` | 本地任务与数据审核控制台组件 | 119 | `9f798102618e` |
-| `task_queue_web/app/queue/page.tsx` | 本地任务与数据审核控制台组件 | 905 | `bdc7efa36968` |
-| `task_queue_web/app/register/page.tsx` | 本地任务与数据审核控制台组件 | 5 | `c40a3749a7fc` |
-| `task_queue_web/build/font-cache.mjs` | 本地任务与数据审核控制台组件 | 40 | `d95fee0156dd` |
-| `task_queue_web/build/sites-vite-plugin.ts` | 本地任务与数据审核控制台组件 | 45 | `0c788fe80191` |
-| `task_queue_web/eslint.config.mjs` | 本地任务与数据审核控制台组件 | 18 | `275a07c13fc7` |
-| `task_queue_web/next.config.ts` | 本地任务与数据审核控制台组件 | 7 | `a972c4f0ffa6` |
-| `task_queue_web/package-lock.json` | 本地任务与数据审核控制台组件 | 10152 | `0b81ee0ffc1b` |
-| `task_queue_web/package.json` | 本地任务与数据审核控制台组件 | 40 | `6d2fe6196940` |
-| `task_queue_web/postcss.config.mjs` | 本地任务与数据审核控制台组件 | 7 | `7b299d3d3b16` |
-| `task_queue_web/tests/rendered-html.test.mjs` | 本地任务与数据审核控制台组件 | 196 | `7fa85f54cf6d` |
-| `task_queue_web/tsconfig.json` | 本地任务与数据审核控制台组件 | 34 | `fbff01604d6c` |
-| `task_queue_web/vite.config.ts` | 本地任务与数据审核控制台组件 | 62 | `c43063c7c594` |
-| `task_queue_web/worker/index.ts` | 本地任务与数据审核控制台组件 | 47 | `5f9565e5505c` |
 | `tests/__init__.py` | 公共支持 测试：  init   | 0 | `e3b0c44298fc` |
 | `tests/conftest.py` | 公共支持 测试：conftest | 18 | `22580724449b` |
 | `tests/integration/__init__.py` | integration 测试：  init   | 0 | `e3b0c44298fc` |
@@ -204,6 +201,10 @@
 | `tests/system/test_project_docs.py` | system 测试：project docs | 24 | `6b25945572f2` |
 | `tests/system/test_relocated_checkout.py` | system 测试：relocated checkout | 48 | `d002c12a5563` |
 | `tests/system/test_web_stack_health.py` | system 测试：web stack health | 15 | `8feea5f78e59` |
+| `tests/test_e2e.py` | 公共支持 测试：e2e | 50 | `86d45e9716ed` |
+| `tests/test_judge.py` | 公共支持 测试：judge | 109 | `5db380bf1138` |
+| `tests/test_metrics.py` | 公共支持 测试：metrics | 11 | `4fe3911315ab` |
+| `tests/test_validation.py` | 公共支持 测试：validation | 73 | `f9c76c857561` |
 | `tests/unit/__init__.py` | unit 测试：  init   | 0 | `e3b0c44298fc` |
 | `tests/unit/test_bootstrap_data_review_service.py` | unit 测试：bootstrap data review service | 34 | `8915b1841caa` |
 | `tests/unit/test_build_final_2200_classification.py` | unit 测试：build final 2200 classification | 60 | `90a847f8c37a` |
@@ -227,6 +228,34 @@
 | `tests/unit/test_run_final_2200_evaluation.py` | unit 测试：run final 2200 evaluation | 39 | `0b4168e3d025` |
 | `tests/unit/test_sync_final_2200_manifest.py` | unit 测试：sync final 2200 manifest | 59 | `3ad5f544bf8c` |
 | `tests/unit/test_task_queue_api.py` | unit 测试：task queue api | 60 | `312dda8c4d37` |
+| `tools/internal/experiment_console/README.md` | 项目配置或入口：README | 23 | `a2646004dd6f` |
+| `tools/internal/experiment_console/web/.openai/hosting.json` | 本地任务与数据审核控制台组件 | 4 | `d2841f8a91a9` |
+| `tools/internal/experiment_console/web/app/admin/users/page.tsx` | 本地任务与数据审核控制台组件 | 580 | `31bc4421bfd4` |
+| `tools/internal/experiment_console/web/app/api/[...path]/route.ts` | 本地任务与数据审核控制台组件 | 90 | `c096d908057d` |
+| `tools/internal/experiment_console/web/app/components/ConsoleNav.tsx` | 本地任务与数据审核控制台组件 | 64 | `e1e4ff0b39f2` |
+| `tools/internal/experiment_console/web/app/components/LoginScreen.tsx` | 本地任务与数据审核控制台组件 | 100 | `c2da92fe5e54` |
+| `tools/internal/experiment_console/web/app/data-api/[...path]/route.ts` | 本地任务与数据审核控制台组件 | 77 | `a8d49c3298c0` |
+| `tools/internal/experiment_console/web/app/data/page.tsx` | 本地任务与数据审核控制台组件 | 921 | `0d3b6b5631ba` |
+| `tools/internal/experiment_console/web/app/globals.css` | 本地任务与数据审核控制台组件 | 641 | `da234cf094d3` |
+| `tools/internal/experiment_console/web/app/guide/page.tsx` | 本地任务与数据审核控制台组件 | 97 | `2a3d322def47` |
+| `tools/internal/experiment_console/web/app/layout.tsx` | 本地任务与数据审核控制台组件 | 38 | `60bac5933866` |
+| `tools/internal/experiment_console/web/app/lib/auth.ts` | 本地任务与数据审核控制台组件 | 83 | `9120042a949e` |
+| `tools/internal/experiment_console/web/app/login/page.tsx` | 本地任务与数据审核控制台组件 | 5 | `803d942e469e` |
+| `tools/internal/experiment_console/web/app/page.tsx` | 本地任务与数据审核控制台组件 | 72 | `027971c9c720` |
+| `tools/internal/experiment_console/web/app/profile/page.tsx` | 本地任务与数据审核控制台组件 | 119 | `9f798102618e` |
+| `tools/internal/experiment_console/web/app/queue/page.tsx` | 本地任务与数据审核控制台组件 | 905 | `bdc7efa36968` |
+| `tools/internal/experiment_console/web/app/register/page.tsx` | 本地任务与数据审核控制台组件 | 5 | `c40a3749a7fc` |
+| `tools/internal/experiment_console/web/build/font-cache.mjs` | 本地任务与数据审核控制台组件 | 40 | `d95fee0156dd` |
+| `tools/internal/experiment_console/web/build/sites-vite-plugin.ts` | 本地任务与数据审核控制台组件 | 45 | `0c788fe80191` |
+| `tools/internal/experiment_console/web/eslint.config.mjs` | 本地任务与数据审核控制台组件 | 18 | `275a07c13fc7` |
+| `tools/internal/experiment_console/web/next.config.ts` | 本地任务与数据审核控制台组件 | 7 | `a972c4f0ffa6` |
+| `tools/internal/experiment_console/web/package-lock.json` | 本地任务与数据审核控制台组件 | 10152 | `0b81ee0ffc1b` |
+| `tools/internal/experiment_console/web/package.json` | 本地任务与数据审核控制台组件 | 40 | `6d2fe6196940` |
+| `tools/internal/experiment_console/web/postcss.config.mjs` | 本地任务与数据审核控制台组件 | 7 | `7b299d3d3b16` |
+| `tools/internal/experiment_console/web/tests/rendered-html.test.mjs` | 本地任务与数据审核控制台组件 | 196 | `7fa85f54cf6d` |
+| `tools/internal/experiment_console/web/tsconfig.json` | 本地任务与数据审核控制台组件 | 34 | `fbff01604d6c` |
+| `tools/internal/experiment_console/web/vite.config.ts` | 本地任务与数据审核控制台组件 | 62 | `c43063c7c594` |
+| `tools/internal/experiment_console/web/worker/index.ts` | 本地任务与数据审核控制台组件 | 47 | `5f9565e5505c` |
 
 ## 正式任务的规范数据
 

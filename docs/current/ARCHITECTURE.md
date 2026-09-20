@@ -1,5 +1,16 @@
 # 项目架构、目录与字段说明
 
+## 2026-09-20 论文协议审计更新
+
+公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
+论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
+精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 的规则优先匹配与
+内部报告属于历史实验实现，不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
+99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
+差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
+本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
+
+
 ## 1. 系统边界
 
 本项目负责本仓库中除 `sxz/` 外的 QA 数据审计、模型推理、统一判分、报告、
@@ -15,7 +26,7 @@
 5. 金标准永远来自独立 `--qa-json`，不得从模型输出反推。
 6. 论文报告只接受完整指纹与逐题绑定；没有“旧产物兼容/宽松报告”开关。
 
-## 2. 端到端数据流
+## 2. 内部历史实验数据流
 
 ```text
 规范 QA JSON + PDF 文件
@@ -59,7 +70,7 @@ Node 所在目录加入子进程 `PATH`，因此 systemd 无交互环境不依�
 | `require_structured_output` | `false` | `true` |
 | 答案题证据要求 | 不适用 | 至少一个直接支持页 |
 | 不可回答输出 | `Unanswerable` | `{"answer_pre":"Unanswerable","evidence_pages":[]}` |
-| 证据页得分 | 固定为可用，不参与主指标 | 与金标页集合完全相等 |
+| 内部精确页集合诊断 | 固定为可用，不参与主指标 | 与金标页集合完全相等 |
 
 `src/pku_qa/evaluation/evaluation_protocol.py` 是这些规则、版本号、强制字段、哈希和队列 contract 的
 唯一真源。CLI 只接收 `--input-mode`，证据要求由协议派生，不能由调用者覆盖。
@@ -126,7 +137,7 @@ QA1816 和真实物理 PDF 页 16/57，不写账户、审核事件或正式数�
 | `src/pku_qa/workflows/` | 按 cleaning/generation/review/selection/reporting/operations 分类的入口 | 否 |
 | `tests/{unit,integration,system}/` | 三层 Python 自动测试 | 否 |
 | `scripts/dataset_construction/` | 早期论文获取与基础 QA Notebook、辅助下载器和提示词 | 否 |
-| `task_queue_web/` | 本地 Next/vinext 任务与数据审核控制台 | 构建产物生成 |
+| `tools/internal/experiment_console/web/` | 本地 Next/vinext 任务与数据审核控制台 | 构建产物生成 |
 | `deploy/systemd/` | 本地 Web/API/daemon 健康守护的可复现 user units | 否 |
 | `data/qa/1.base/` | 上游基础数据及最终普通 1000 的只读分类镜像 | 否 |
 | `data/qa/2.unanswerable/` | 最终不可回答 200 的只读分类镜像 | 否 |
@@ -249,7 +260,7 @@ HttpOnly 会话；`czj-web` 也使用应用密码。公网 Next 代理明确拒�
 `stable_members` 并保持精确成员集合，不能直接改写为连续区间；需要调整时删除后重建。
 校验员可读取全部 QA/PDF，
 但后端只允许修改自己的分配成员；仅有 admin 身份的账户可全量运维，兼任 reviewer 的管理员仍受本人分配范围限制。所有审核/撤销、分配、账户管理和
-任务队列写操作都记录操作者。任务队列 GET 对登录用户可见，写操作仅管理员，人工审核
+任务队列写操作都记录操作者。任务队列入口只向管理员展示；现有任务队列 GET 仍对登录用户可见，写操作仅管理员，人工审核
 的原有可逆 JSON 快照逻辑不变。网页修改 `question`、`answer` 或 `evidence_pages` 前会保存
 完整文件快照，随后原子写回规范 JSON；证据页会校验为正整数、排序去重并同步
 `oracle_pages`、`evidence_span`、`evidence_span_ratio` 及已有 `evidence_items` 页映射。
@@ -296,11 +307,11 @@ HttpOnly 会话；`czj-web` 也使用应用密码。公网 Next 代理明确拒�
 | `question` | 非空字符串 | 模型看到的问题 |
 | `answer` | 非空字符串 | 唯一独立金答案；拒答必须精确为 `Unanswerable` |
 | `options` | 历史原始/混合文件才可出现 | 旧 MCQ 的 `{id,text}` 选项；最终 2,200 条禁止出现，构建预检会拒绝 |
-| `answer_format` | Integer/Float/String/List/Unanswerable | 类型化评分分支 |
+| `answer_format` | Integer/Float/String/List/Unanswerable（非所有题都有） | 历史构建元数据；公开评测不做类型化预匹配 |
 | `answer_aliases` | 数组 | 可接受别名，不改变主金答案 |
 | `answer_unit` | 字符串或 null | 数值答案单位 |
 | `numeric_tolerance` | null 或 `{type,value}` | absolute/relative 数值容差 |
-| `string_metric` | 可选字符串 | 字符串匹配策略，默认 exact_or_alias |
+| `string_metric` | 旧数据可选字符串 | 最终四文件不存在；公开评测不使用字符串预匹配 |
 | `evidence_pages` | 唯一正整数数组 | 物理 PDF 页金标；拒答必须为空 |
 | `evidence_items` | 数组 | 页内证据对象 |
 | `evidence_hops` | 非负整数 | 推理需要的证据跳数 |
@@ -344,7 +355,7 @@ SHA、PDF SHA/页界、证据合并和双模型审核，以便重建 `evidence_p
 | `pdf_corpus_sha256`, `pdf_sha256` | PDF 清单聚合哈希与本篇 PDF 哈希 |
 | `generation_status` | 可选异常生成状态；不把非法输出变成答案 |
 
-## 8. Judge 结果字段
+## 8. 内部历史 Judge 结果字段
 
 Judge 行复制所有用于绑定的推理字段，另加：
 
@@ -366,7 +377,7 @@ Judge 行复制所有用于绑定的推理字段，另加：
 | `publication_eligible` | 正式代码恒为 true；缺失即拒绝报告 |
 | `protocol_validation` | 正式代码恒为 `publication_strict` |
 
-三项核心指标分别聚合 `answer_is_correct`、`evidence_pages_is_correct` 和
+内部历史报告的三项诊断分别聚合 `answer_is_correct`、`evidence_pages_is_correct` 和
 `is_correct`。非法输出保留在固定全集分母中，另报告非法率，不能从分母剔除。
 
 ## 9. 断点和任务字段
@@ -398,7 +409,7 @@ scheduler state 和合并产物。contract 或 required field/value 不匹配时
 
 `PYTHONPATH=src python -m pytest -q` 覆盖纯函数单元测试、数据 contract、Reasoning 证据恢复、
 Challenge 预检、端到端 Judge/Report、防篡改指纹、断点队列、GPU 调度、人工审核和
-文档清单。`task_queue_web` 中的 `npm test` 先构建再检查渲染 HTML。
+文档清单。`tools/internal/experiment_console/web` 中的 `npm test` 先构建再检查渲染 HTML。
 
 `docs/current/PROJECT_INVENTORY.md` 是不含 `sxz/` 的逐文件哈希清单。任何代码变化后，
 都应重新生成清单并同步本文件及上手指南。
