@@ -1,5 +1,11 @@
 # ScienceDoc official evaluation — final audit report
 
+Update: the later [gap investigation](GAP_INVESTIGATION.md) corrects the historical
+adapter's over-rejection of reference-only revisions and reports a complete
+Qwen3-VL-8B local rescore. Earlier bounds/counts below describe the pre-fix audit;
+use the new investigation for current values. QA and raw-output rules are unchanged.
+
+
 Audit date: 2026-09-20. The manuscript is authoritative; QA and PDF contents are immutable.
 
 Latest implementation, PDF-to-Judge pilot, test results and publication status:

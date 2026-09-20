@@ -15,7 +15,7 @@
 普通 1,000、不可回答 200、Reasoning 200、Cross-PDF 800，共 2,200 条简答 QA。
 全局 ID 为 `QA0001`–`QA2200`；最终评测使用 474 份单论文 PDF 和 238 份合并 PDF。
 
-项目介绍与 Quick Start 提供 [简体中文](../../README.md) 和 [English](../../README.en.md) 两个版本；数据规模、命令和协议说明保持一致。
+项目介绍与 Quick Start 提供 [简体中文](../../README.zh-CN.md) 和 [English](../../README.md) 两个版本；数据规模、命令和协议说明保持一致。
 
 从 [README Quick Start](../../README.md#quick-start) 开始，无 GPU 的首次数据检查为：
 

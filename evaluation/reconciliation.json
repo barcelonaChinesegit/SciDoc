@@ -12,11 +12,17 @@
   ],
   "current_artifact_verification": {
     "status": "stored_predictions_proven_inconsistent_with_current_paper_tables",
-    "report": "docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md",
-    "table2_proven_answer_cell_mismatches": 30,
-    "table3_proven_cell_mismatches": 47,
+    "report": "docs/reports/official_evaluation/GAP_INVESTIGATION.md",
+    "table2_proven_answer_cell_mismatches": 31,
+    "table3_proven_cell_mismatches": 51,
     "local_judge": "Qwen/Qwen3.6-27B",
-    "local_semantic_decisions": 4,
-    "full_11_model_rescore": false
+    "local_semantic_decisions": 1938,
+    "full_11_model_rescore": false,
+    "full_qwen8b_current_release_rescore": true,
+    "qwen8b_paper_all": 68.32,
+    "qwen8b_current_all": 55.31818181818182,
+    "reference_only_adapter_bug_fixed": true,
+    "single_item_disagreement_checks": 12,
+    "controls": 6
   }
 }

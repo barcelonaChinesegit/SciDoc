@@ -1,0 +1,629 @@
+{
+  "selection": "first four identical-workbook-input old-correct/new-incorrect rows per task; not an unbiased error-rate estimate",
+  "rows": [
+    {
+      "qa_id": "QA0005",
+      "task": "General",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "db6c95c125d7adb9cde66518e7fc56814ff222f2b36b8b5da3a528c6981e9d9f",
+        "binding": {
+          "qa_id": "QA0005",
+          "question_sha256": "ce5b0effde553f0bb51c6686fd1a969fd3bf9efa374be15fe1deba9d8460deda",
+          "reference_answer_sha256": "0095043b1a83392f27ec1d89c2078196fd7909adc05e8595fb8fd0d45c03f0e1",
+          "model_prediction_sha256": "477f477ddcfba962206bb111e417f8832861fe520aed3c31c199f87a0d310346",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:51.290843+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA0038",
+      "task": "General",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "a35fd27f50d4e93315d8b29bcb175bbc51e06f4e73ce8f5a82245a64155ecf77",
+        "binding": {
+          "qa_id": "QA0038",
+          "question_sha256": "e5ea0ef4925b6b1e47748ace887911151d977d6c29a36e437127e71566f957bc",
+          "reference_answer_sha256": "f9406002cefefec52bc058e8a583feeb8196c9efb1080655fb396cc4c264d13e",
+          "model_prediction_sha256": "ddaa698308f1f48cf9278c114d06d57ff60f94900d2f1a4d8518d493d6dc2647",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:51.961556+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA0054",
+      "task": "General",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "44d2a0069386798fe57e737d4e8b4375d9116e65b39bfd32c205a23ea50a8cfd",
+        "binding": {
+          "qa_id": "QA0054",
+          "question_sha256": "992231e032520a734652f2420b7ea8649fbdbc8b205d3059b9f12f891a3f865f",
+          "reference_answer_sha256": "3f2d2c5d41833891154730840ffb6cc4b29706cbc9af7a4d401c998e480335c2",
+          "model_prediction_sha256": "bba1853e7e154fea42d8854f42e2cec1b264e9fa19c2cb0f8a133b836ba2f4ed",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:52.603175+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA0074",
+      "task": "General",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "9c83d8ce9d18f7539470b649389029978922091dafefc80ec7bf6dd3323dd333",
+        "binding": {
+          "qa_id": "QA0074",
+          "question_sha256": "89c051fce9d69d3f1d0e0ae1c3c23c6f0349f3420a78d6e964e6383d1245b789",
+          "reference_answer_sha256": "cf845a83bb371d85a5bc46a21fb400c96c9613edf9970fd29cd2d1e1e11036e4",
+          "model_prediction_sha256": "2596f188cc7e773a68e94e4690cd1becbce3f5c99c827e26d25a4c5a1a66c9d6",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:53.215038+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1208",
+      "task": "Reasoning",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "2dbba16a20fb7d640f1c517e059d25604db277bc45a6cae926deb1efe68f3501",
+        "binding": {
+          "qa_id": "QA1208",
+          "question_sha256": "d2ee236ae6db615f47cfc2126cd1980228251026d2184c1f2068d1fabd1ad1b8",
+          "reference_answer_sha256": "9cd9708645635fee5690501835473da0750bcd4cbe9976e0c731dc47db808162",
+          "model_prediction_sha256": "b3346f0aa6551c940ac93b4cc05f889307bcf426b3ffc092ded11611407ae540",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:53.855289+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1209",
+      "task": "Reasoning",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "47a0309147b88e956053ae4210b09b32f7a8d2b08a693f96081f4ec1b470330a",
+        "binding": {
+          "qa_id": "QA1209",
+          "question_sha256": "f5f0f9209f5ffbf4aac31edcde3a098c209d8e3cfd35e2f497baad648008671f",
+          "reference_answer_sha256": "d3f784b41873d74c3b7309c54a366a8869bebe2c639a9bd3331d4de35d6eca11",
+          "model_prediction_sha256": "88cf05b57e3ea13b590ad8a937da3da150499154fb33c1335caca8a855945cf7",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:54.478063+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1218",
+      "task": "Reasoning",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "0ae995ce7e287598b17d3170bd9780caea8f5b7950244e72cd756007105f435f",
+        "binding": {
+          "qa_id": "QA1218",
+          "question_sha256": "cddc0bcb2779b91a224d250e3166bf7c2e015db563897bcc8c8c3a6daf7c8f62",
+          "reference_answer_sha256": "79aaa7736482fea096a3bd9ee9ee1c1dda3fb69c4bc5c9493d281720121c22b7",
+          "model_prediction_sha256": "f2b0b9820f5b6f9623d18b9e58aeecda962ccc325a7b5c11403a5bbb2573ed0c",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:55.100703+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1241",
+      "task": "Reasoning",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "30baaabea43f77fa83c9059dc1dda13695ca779e810304a2a6435e27d8040377",
+        "binding": {
+          "qa_id": "QA1241",
+          "question_sha256": "71ae8ad1dc50952ef8caf7084410056b3db7be8b49d2c7e9e4e2a42ed1dd3b10",
+          "reference_answer_sha256": "65b76ace927c0bbe2154f39531203505de403b5d684c8342dec254af86c58d0d",
+          "model_prediction_sha256": "ce20b690a29a72948e6a226454bb08bc9498b24d6479f1056f793ab3ef85d760",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:55.739344+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1403",
+      "task": "Multi-Document",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "7cb8d9e2d4f842a1f9ab7d0f3af94f6d5c6059b17c2c74615278dd563b9977a6",
+        "binding": {
+          "qa_id": "QA1403",
+          "question_sha256": "70485dc50fb1fccab26dc9ffc908a2af41c6f2e83cf1269838cd4abbc3261895",
+          "reference_answer_sha256": "b6a253170932fcfa733835201faa90ea9c16274670d615dea4e3f6e9a8ddb385",
+          "model_prediction_sha256": "52caec46cd3141ea68756ed73440afee45bea6d60879b54e50b769ff3cde71eb",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:56.542454+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1409",
+      "task": "Multi-Document",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "c214268c470fee2d90ef871cb164f359ccb49d04d0a3f52c7275ddeb401ea97a",
+        "binding": {
+          "qa_id": "QA1409",
+          "question_sha256": "685d400289595712d6aae71ffe872300bc0f4fae1787c1bfdb32390dd043d0c9",
+          "reference_answer_sha256": "510c2c5355894a20eda03540d4b654de597de05e74c4072906bb3f61ebf0b30f",
+          "model_prediction_sha256": "dabd77c91d2c5e0a8530e2d7e51d20d91cb4eb45c25397c06651c9c6e359bead",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:57.273443+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1411",
+      "task": "Multi-Document",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "7900d6afa2f5c7d81a53d379b963f23cd3d5bca023e891f33b9663f787252ee8",
+        "binding": {
+          "qa_id": "QA1411",
+          "question_sha256": "60d7904d2b9c54b4a7462efb9470d770509354cdb8f7322e79bac3d5cbdd2eaa",
+          "reference_answer_sha256": "58dd5f76d45d214086084bbaf57c462f811d39b652632f60ca98b67674f318f5",
+          "model_prediction_sha256": "26e18869ac9ab60004bfb793a170c532820640f9226992a75f78805a000f1d74",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:58.004190+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1421",
+      "task": "Multi-Document",
+      "kind": "paired_disagreement",
+      "batched": "INCORRECT",
+      "single": "INCORRECT",
+      "stable": true,
+      "judge": {
+        "key": "5d642d607fcee79b606b08df49b0d08ca12ca79878399273e8ce218fa894147b",
+        "binding": {
+          "qa_id": "QA1421",
+          "question_sha256": "22bb6f33ad4c5fd368ca51256df58cb0f88721d53e038e0e1414449535807dbf",
+          "reference_answer_sha256": "ebfcf54f926304474db9c46c8024d8e19598b2d0a4a1f85d8a42051bb57970f6",
+          "model_prediction_sha256": "19499356c6b2f8752344f8179e02b86d4dd1414bef89868ddc9c98b94a74a2a3",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:58.822197+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA0005",
+      "task": "General",
+      "kind": "reference_control",
+      "expected": "CORRECT",
+      "single": "CORRECT",
+      "passed": true,
+      "judge": {
+        "key": "3a3b7bbe59b2dd1597428946f43d47e30498d9c36f4503246ccf5eeb782dde9b",
+        "binding": {
+          "qa_id": "QA0005",
+          "question_sha256": "ce5b0effde553f0bb51c6686fd1a969fd3bf9efa374be15fe1deba9d8460deda",
+          "reference_answer_sha256": "0095043b1a83392f27ec1d89c2078196fd7909adc05e8595fb8fd0d45c03f0e1",
+          "model_prediction_sha256": "8d34c5ec214ad0e3f19818a5bba9a29f4c432ac8aca04ce37b5d454c6431ae12",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:59.364842+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA0005",
+      "task": "General",
+      "kind": "unrelated_control",
+      "expected": "INCORRECT",
+      "single": "INCORRECT",
+      "passed": true,
+      "judge": {
+        "key": "d6ad66f87bdeceb46113c7c215bd88ba73cb77a9d3d459a1fe319e4524be9749",
+        "binding": {
+          "qa_id": "QA0005",
+          "question_sha256": "ce5b0effde553f0bb51c6686fd1a969fd3bf9efa374be15fe1deba9d8460deda",
+          "reference_answer_sha256": "0095043b1a83392f27ec1d89c2078196fd7909adc05e8595fb8fd0d45c03f0e1",
+          "model_prediction_sha256": "3c25676e6d5cd9f73f00b6cd6a3372fd742aa79a422058bba7399226727c9e78",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:40:59.997050+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1208",
+      "task": "Reasoning",
+      "kind": "reference_control",
+      "expected": "CORRECT",
+      "single": "CORRECT",
+      "passed": true,
+      "judge": {
+        "key": "4d675da345093b5bab0f9059444cf6091c33c9cc7bacf1405d6300e00a4e833d",
+        "binding": {
+          "qa_id": "QA1208",
+          "question_sha256": "d2ee236ae6db615f47cfc2126cd1980228251026d2184c1f2068d1fabd1ad1b8",
+          "reference_answer_sha256": "9cd9708645635fee5690501835473da0750bcd4cbe9976e0c731dc47db808162",
+          "model_prediction_sha256": "da547f2341d3c8362874f6475405b8762e72a5a533cfa0a08b4224be03502e68",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:41:00.585620+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1208",
+      "task": "Reasoning",
+      "kind": "unrelated_control",
+      "expected": "INCORRECT",
+      "single": "INCORRECT",
+      "passed": true,
+      "judge": {
+        "key": "a989da4cb7f53e423b86152a61ea4beb7b3c1864e493688ce92e5874cf14f9bc",
+        "binding": {
+          "qa_id": "QA1208",
+          "question_sha256": "d2ee236ae6db615f47cfc2126cd1980228251026d2184c1f2068d1fabd1ad1b8",
+          "reference_answer_sha256": "9cd9708645635fee5690501835473da0750bcd4cbe9976e0c731dc47db808162",
+          "model_prediction_sha256": "dab5cadb07c5bec3b9d0214883b061a7a1a33996e21725ee3e735db0643b67c1",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:41:01.223308+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1403",
+      "task": "Multi-Document",
+      "kind": "reference_control",
+      "expected": "CORRECT",
+      "single": "CORRECT",
+      "passed": true,
+      "judge": {
+        "key": "1a436134c632e12a16b9173b0cf14d60ff3eb57c58677cfe54137853cf013341",
+        "binding": {
+          "qa_id": "QA1403",
+          "question_sha256": "70485dc50fb1fccab26dc9ffc908a2af41c6f2e83cf1269838cd4abbc3261895",
+          "reference_answer_sha256": "b6a253170932fcfa733835201faa90ea9c16274670d615dea4e3f6e9a8ddb385",
+          "model_prediction_sha256": "2371052108b5ea373c253c528c7b3221b70d34c9cfe432b35a59d1faa0187a26",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:41:02.010457+00:00",
+        "cache_hit": false
+      }
+    },
+    {
+      "qa_id": "QA1403",
+      "task": "Multi-Document",
+      "kind": "unrelated_control",
+      "expected": "INCORRECT",
+      "single": "INCORRECT",
+      "passed": true,
+      "judge": {
+        "key": "e6baa6307a1d5fc3e31fbb908b8519c7b0fadfe1d4da4d847520386fda74d225",
+        "binding": {
+          "qa_id": "QA1403",
+          "question_sha256": "70485dc50fb1fccab26dc9ffc908a2af41c6f2e83cf1269838cd4abbc3261895",
+          "reference_answer_sha256": "b6a253170932fcfa733835201faa90ea9c16274670d615dea4e3f6e9a8ddb385",
+          "model_prediction_sha256": "490a754c8ced02f3aa08e59e4aecaaa122e326fb4eb1eb4480ecafcfc9eb258b",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:c066f6afae4a170e3515565d3c945626fc9e302298e01a93712313cf8f0b48d8",
+            "revision": null,
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "66aaf83cc2297b3ab3a30f13b99be845a00dbcafc3a7b387f11513dc0c3fea99"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T18:41:02.746035+00:00",
+        "cache_hit": false
+      }
+    }
+  ],
+  "paired_count": 12,
+  "paired_stable": 12,
+  "controls_passed": 6,
+  "controls": 6,
+  "dataset_hashes": {
+    "ordinary_qa.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+    "unanswerable_qa.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+    "reasoning_qa.json": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+    "cross_pdf_qa.json": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82"
+  },
+  "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+  "baseline_scores_modified": false
+}

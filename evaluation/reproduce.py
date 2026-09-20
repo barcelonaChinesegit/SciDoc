@@ -46,9 +46,36 @@ def read_csv(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def load_baseline(results: Path, gold, directory: str):
+def reference_revision_is_rescorable(qa: dict, gold, asset: dict | None) -> bool:
+    """A changed scoring reference is not itself a changed model input.
+
+    Require an unchanged question, explicit no-gold-input provenance, and the
+    release manifest's PDF identity. This permits a *new* current-gold rescore;
+    it does not establish historical checkpoint/prompt/PDF-byte provenance.
+    """
+    if (qa.get("question") != gold.question or qa.get("gold_answer_sent") is not False
+            or qa.get("gold_evidence_pages_sent") is not False or not asset):
+        return False
+    path = qa.get("pdf_path_resolved")
+    if not isinstance(path, str) or ".." in Path(path).parts:
+        return False
+    aliases = [*asset.get("legacy_paths", []), "data/pdfs/" + asset["filename"]]
+    if not any(path == alias or path.endswith("/" + alias) for alias in aliases):
+        return False
+    if "pdf_total_pages" in qa and (type(qa["pdf_total_pages"]) is not int
+                                    or qa["pdf_total_pages"] != gold.page_count):
+        return False
+    if "pdf_sha256" in qa and qa["pdf_sha256"] != asset["sha256"]:
+        return False
+    return True
+
+
+def load_baseline(results: Path, gold, directory: str, *, pdf_assets: dict | None = None):
     """Read one historical run without repairing raw outputs or changing gold."""
     index = {(g.legacy_paper_id, g.legacy_qa_id): qid for qid, g in gold.items()}
+    if pdf_assets is None:
+        pdf_assets = {a["pdf_id"]: a for a in json.loads(
+            (ROOT / "data/pdf_assets_manifest.json").read_text(encoding="utf-8"))["assets"]}
     model = MODELS[directory]
     predictions, counts, details, source_hashes = {}, Counter(), [], {}
     for dataset in DATASETS:
@@ -89,10 +116,18 @@ def load_baseline(results: Path, gold, directory: str):
                 counts["strict_raw_" + p.status] += 1
                 if differences:
                     counts["dataset_version_mismatch"] += 1
-                    # A prediction to another question/reference version cannot certify this release.
-                    p.audit["raw_validation_status"] = p.status
-                    p.status = "technical_failure"
-                    p.errors.append({"type": "dataset_version_mismatch", "message": ", ".join(differences)})
+                    rescorable = reference_revision_is_rescorable(qa, g, pdf_assets.get(g.pdf_id))
+                    p.audit["historical_source"]["reference_revision_rescorable"] = rescorable
+                    if rescorable:
+                        # Never import the old answer/decision. Judge against
+                        # the independent current reference; raw validity stays.
+                        counts["reference_only_revision_rescored"] += 1
+                        p.audit["historical_source"]["historical_reproduction_verified"] = False
+                    else:
+                        counts["unresolved_input_version_mismatch"] += 1
+                        p.audit["raw_validation_status"] = p.status
+                        p.status = "technical_failure"
+                        p.errors.append({"type": "dataset_version_mismatch", "message": ", ".join(differences)})
                 predictions[qid] = p
                 details.append({"model": model, "dataset": dataset, "legacy_paper": paper_id,
                     "legacy_qa": legacy_qa, "qa_id": qid, "status": p.status,

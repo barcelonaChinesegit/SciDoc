@@ -1,5 +1,11 @@
 # Current paper and stored predictions: conclusive reproduction discrepancies
 
+Update: the later [gap investigation](GAP_INVESTIGATION.md) corrects the historical
+adapter's over-rejection of reference-only revisions and reports a complete
+Qwen3-VL-8B local rescore. Earlier bounds/counts below describe the pre-fix audit;
+use the new investigation for current values. QA and raw-output rules are unchanged.
+
+
 Date: 2026-09-20. The current paper is authoritative; all 27 QA JSON files are
 unchanged. **The stored predictions cannot reproduce both paper tables under
 the paper's strict contract.** This is a verified counterexample to equality,

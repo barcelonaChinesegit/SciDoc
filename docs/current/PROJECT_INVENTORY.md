@@ -35,12 +35,12 @@
 | `deploy/systemd/pku-web-health.service` | 本地 systemd 服务与健康守护部署单元 | 9 | `d1efa505031c` |
 | `deploy/systemd/pku-web-health.timer` | 本地 systemd 服务与健康守护部署单元 | 10 | `4874bd250b0d` |
 | `deploy/systemd/pku-web-tunnel.service` | 本地 systemd 服务与健康守护部署单元 | 14 | `7ef0af37b291` |
-| `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 423 | `99d6f7ecfdbb` |
+| `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 434 | `796f348407fe` |
 | `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 69 | `14ac48e42dad` |
 | `docs/current/DATASET_CATALOG.md` | 项目文档：DATASET CATALOG | 33 | `a8b83f7b7a4a` |
-| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 297 | `641648af3f1b` |
+| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 298 | `0702955182b4` |
 | `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 678 | `cf611e006c26` |
-| `docs/current/README.md` | 项目文档：README | 126 | `41c52fb458a4` |
+| `docs/current/README.md` | 项目文档：README | 126 | `414750d04da2` |
 | `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `7ab162dbb736` |
 | `docs/prompts/MAINTENANCE_REMEDIATION.md` | 项目文档：MAINTENANCE REMEDIATION | 26 | `7640aa7c9528` |
 | `docs/releases/PDF_DISTRIBUTION.md` | 项目文档：PDF DISTRIBUTION | 50 | `2c5375f7eb60` |
@@ -50,12 +50,13 @@
 | `docs/reports/README.md` | 项目文档：README | 14 | `ce204a6418e8` |
 | `docs/reports/SCIDOC_MIGRATION_20260920.md` | 项目文档：SCIDOC MIGRATION 20260920 | 78 | `e4073f071a5c` |
 | `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 69 | `0ee565793a91` |
-| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 217 | `cf4f48dbf46c` |
-| `docs/reports/official_evaluation/FOLLOWTHROUGH_REPORT.md` | 项目文档：FOLLOWTHROUGH REPORT | 183 | `f1dc73fb6e2b` |
+| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 223 | `ce918f71f4a0` |
+| `docs/reports/official_evaluation/FOLLOWTHROUGH_REPORT.md` | 项目文档：FOLLOWTHROUGH REPORT | 189 | `dec9e5574237` |
+| `docs/reports/official_evaluation/GAP_INVESTIGATION.md` | 项目文档：GAP INVESTIGATION | 226 | `cd7748b0f6d6` |
 | `docs/reports/official_evaluation/IMPLEMENTATION_PLAN.md` | 项目文档：IMPLEMENTATION PLAN | 59 | `710585ba6671` |
 | `docs/reports/official_evaluation/LOCAL_MODEL_TEST.md` | 项目文档：LOCAL MODEL TEST | 90 | `16c8baa69bac` |
 | `docs/reports/official_evaluation/RECOVERY_ARTIFACT_INVENTORY.json` | 项目文档：RECOVERY ARTIFACT INVENTORY | 5059 | `91423d0e4f51` |
-| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 122 | `cc1c57edae36` |
+| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 128 | `16059db8b165` |
 | `docs/reports/official_evaluation/claude_subject_discrepancy.json` | 项目文档：claude subject discrepancy | 118 | `4fd535e724eb` |
 | `docs/reports/official_evaluation/dataset_preflight.json` | 项目文档：dataset preflight | 1624 | `2fcf32ae8f4e` |
 | `docs/reports/official_evaluation/fast_reproduction_check/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 31 | `39be229403ba` |
@@ -68,6 +69,16 @@
 | `docs/reports/official_evaluation/fast_reproduction_check/verification.json` | 项目文档：verification | 17 | `fafb573a6178` |
 | `docs/reports/official_evaluation/followthrough_preflight.json` | 项目文档：followthrough preflight | 1624 | `0d5b2262e6e4` |
 | `docs/reports/official_evaluation/followthrough_verification.json` | 项目文档：followthrough verification | 78 | `b871404aa052` |
+| `docs/reports/official_evaluation/gap_investigation/gap_analysis.json` | 项目文档：gap analysis | 1898 | `3362461625e8` |
+| `docs/reports/official_evaluation/gap_investigation/qwen8b/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 31 | `0dc8a1b8e549` |
+| `docs/reports/official_evaluation/gap_investigation/qwen8b/input_binding.json` | 项目文档：input binding | 25 | `c8aa33adcbb2` |
+| `docs/reports/official_evaluation/gap_investigation/qwen8b/judge_config.json` | 项目文档：judge config | 111 | `d971b6a3001e` |
+| `docs/reports/official_evaluation/gap_investigation/qwen8b/single_item_checks/judge_config.json` | 项目文档：judge config | 111 | `3919a0164c53` |
+| `docs/reports/official_evaluation/gap_investigation/qwen8b/single_item_checks/summary.json` | 项目文档：summary | 629 | `50d37fdc9091` |
+| `docs/reports/official_evaluation/gap_investigation/qwen8b/summary.json` | 项目文档：summary | 443 | `3e3c00f4a8a6` |
+| `docs/reports/official_evaluation/gap_investigation/qwen8b/timing.json` | 项目文档：timing | 5 | `34d3c8fbed88` |
+| `docs/reports/official_evaluation/gap_investigation/qwen8b_attribution.json` | 项目文档：qwen8b attribution | 23604 | `f64fc380af8a` |
+| `docs/reports/official_evaluation/gap_investigation/verification.json` | 项目文档：verification | 58 | `8257744e7bef` |
 | `docs/reports/official_evaluation/local_pdf_pipeline/README.md` | 项目文档：README | 15 | `048c5a0a28b8` |
 | `docs/reports/official_evaluation/local_pdf_pipeline/inference_binding.json` | 项目文档：inference binding | 38 | `c701820f4d1f` |
 | `docs/reports/official_evaluation/local_pdf_pipeline/inference_generation_defaults.json` | 项目文档：inference generation defaults | 74 | `158e1ff42eb4` |
@@ -91,10 +102,11 @@
 | `docs/reports/official_evaluation/reproduction_audit.json` | 项目文档：reproduction audit | 5120 | `0f17d4df501c` |
 | `docs/reports/official_evaluation/verification.json` | 项目文档：verification | 63 | `fa808b6ac98c` |
 | `environment.yml` | 项目配置或入口：environment | 8 | `1dc4df61202c` |
-| `evaluation/README.md` | 项目配置或入口：README | 340 | `a0e491879d38` |
+| `evaluation/README.md` | 项目配置或入口：README | 369 | `226dac47382c` |
 | `evaluation/__init__.py` | 项目配置或入口：  init   | 3 | `b51a76f50781` |
 | `evaluation/check_reproduction.py` | 项目配置或入口：check reproduction | 117 | `cc397aa8b9dc` |
 | `evaluation/evaluate.py` | 项目配置或入口：evaluate | 83 | `cdff69d6256c` |
+| `evaluation/investigate_gaps.py` | 项目配置或入口：investigate gaps | 134 | `bd1c847a165e` |
 | `evaluation/judge.py` | 项目配置或入口：judge | 125 | `c6a08c4ff9fd` |
 | `evaluation/metrics.py` | 项目配置或入口：metrics | 87 | `328f11cbcdd3` |
 | `evaluation/paper_reference.json` | 项目配置或入口：paper reference | 251 | `0ae6486571cc` |
@@ -102,18 +114,20 @@
 | `evaluation/prompts.py` | 项目配置或入口：prompts | 12 | `694a63ed56b5` |
 | `evaluation/prompts/pdf_provenance.json` | 项目配置或入口：pdf provenance | 7 | `6d630b4a5cb5` |
 | `evaluation/prompts/provenance.json` | 项目配置或入口：provenance | 7 | `069ca54dd7b3` |
-| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 22 | `b56e4060f6f8` |
-| `evaluation/reproduce.py` | 项目配置或入口：reproduce | 243 | `7b9a87fe3721` |
+| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 28 | `15eebac73590` |
+| `evaluation/reproduce.py` | 项目配置或入口：reproduce | 278 | `88a60888cb42` |
 | `evaluation/validation.py` | 项目配置或入口：validation | 298 | `f6fbdd425d0b` |
 | `provider_config.example.json` | 项目配置或入口：provider config.example | 16 | `1ed1d13e6268` |
 | `pyproject.toml` | 项目配置或入口：pyproject | 27 | `7678f6ba4aa5` |
 | `requirements.txt` | 项目配置或入口：requirements | 34 | `b1d620c6158e` |
 | `schemas/final_2200_qa.schema.json` | QA 数据结构约束 | 56 | `8ac0c9e1049b` |
 | `schemas/single_pdf_qa.schema.json` | QA 数据结构约束 | 110 | `b4e168585abf` |
+| `scripts/check_local_judge_disagreements.py` | 项目配置或入口：check local judge disagreements | 88 | `1dbe58919e2b` |
 | `scripts/dataset_construction/phase1_paper_acquisition/README.md` | 项目配置或入口：README | 62 | `1d9e8bfeca84` |
 | `scripts/dataset_construction/phase1_paper_acquisition/arxiv_download_backend.py` | 项目配置或入口：arxiv download backend | 86 | `a67bf7499717` |
 | `scripts/generate_dataset_catalog.py` | 项目配置或入口：generate dataset catalog | 52 | `58d7107827ed` |
 | `scripts/judge_reproduction_jobs.py` | 项目配置或入口：judge reproduction jobs | 138 | `92cd6ddfcb03` |
+| `scripts/rescore_baseline_local.py` | 项目配置或入口：rescore baseline local | 192 | `20681c39798a` |
 | `scripts/run_local_pipeline.py` | 项目配置或入口：run local pipeline | 231 | `ecb2d807aa2c` |
 | `scripts/smoke_local_evaluation.py` | 项目配置或入口：smoke local evaluation | 213 | `05629f8cac9b` |
 | `scripts/validate_submission.py` | 项目配置或入口：validate submission | 29 | `7684e9e25bb3` |
@@ -245,6 +259,7 @@
 | `tests/test_judge.py` | 公共支持 测试：judge | 109 | `5db380bf1138` |
 | `tests/test_local_smoke.py` | 公共支持 测试：local smoke | 47 | `6c50957d7743` |
 | `tests/test_metrics.py` | 公共支持 测试：metrics | 11 | `4fe3911315ab` |
+| `tests/test_reference_revision.py` | 公共支持 测试：reference revision | 74 | `ffe2a947133c` |
 | `tests/test_reproduction_bounds.py` | 公共支持 测试：reproduction bounds | 35 | `286bff79ff4f` |
 | `tests/test_validation.py` | 公共支持 测试：validation | 73 | `f9c76c857561` |
 | `tests/unit/__init__.py` | unit 测试：  init   | 0 | `e3b0c44298fc` |

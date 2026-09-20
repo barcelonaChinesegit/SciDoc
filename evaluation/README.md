@@ -338,3 +338,32 @@ Internal `src/pku_qa/evaluation/run_report.py` reports are explicitly marked
 `official_reproduction_verified=false`. Public headline reporting uses this
 package's macro metrics. Internal exact-page and joint diagnostics do not certify
 paper-table reproduction.
+
+## Investigating historical score gaps
+
+```bash
+python evaluation/investigate_gaps.py --output-dir data/results/gap_audit_new
+python scripts/rescore_baseline_local.py --model Qwen3-VL-8B \
+  --output-dir data/results/qwen8b_rescore_new --gpu 2 --batch-size 32
+python scripts/rescore_baseline_local.py --model Qwen3-VL-8B \
+  --output-dir data/results/qwen8b_rescore_new --offline
+```
+
+The first command attributes format and input-version failures and compares
+mathematical score bounds with the paper. Historical correctness flags are
+counted only for diagnosis, never reused as binary Judge decisions. The second
+command completes all eligible semantic decisions for the selected historical
+baseline with the unchanged paper Judge; the last command regenerates its report
+from the content-bound cache. Comparison exits 2 when the paper does not match
+or evidence headlines remain unresolved. All 2,200 gold slots are retained.
+
+A correction to the historical adapter distinguishes model inputs from scoring
+references. A change only to an embedded reference answer/evidence annotation
+no longer automatically zeros a prediction when the question is byte-identical,
+the record explicitly states both gold fields were not sent to the model, and
+its PDF path maps to the current manifest asset (any supplied page count/hash
+must agree). That raw prediction can be newly judged against independent current
+gold. Raw schema validity is still enforced. Changed questions, ambiguous PDF
+identity and unverified gold-input provenance remain unresolved input failures.
+This does not certify the historical model/prompt/PDF-byte configuration, repair
+predictions, reuse old judgments, or mutate either version of the QA.

@@ -1,0 +1,25 @@
+{
+  "model": "Qwen3-VL-8B",
+  "source_hashes": {
+    "Qwen3-VL-8B/ordinary1190.json": "2b5404729c2e7dac8ab6505a74984e22632eb4124d811cadc6ab8b88472717ab",
+    "Qwen3-VL-8B/cross_old400.json": "9fc0229443add67c8e8f394eb9c684625505dd297c56a5b4e9e86a36b2606827",
+    "Qwen3-VL-8B/cross_hard400.json": "44c20b238bb9364f74e5cf0627c33234a853be04f453bc138f141a6342634602",
+    "Qwen3-VL-8B/reasoning_old100.json": "ef9966efe36f64bdffe3a2fe841d801f20e0577d5eebb187e9eeff7d1668f703",
+    "Qwen3-VL-8B/reasoning_hard100.json": "74e3523da23fcc3e580396b7dd45179a77791bb480af7b7a2bd10fe25b23f963"
+  },
+  "dataset_hashes": {
+    "ordinary_qa.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+    "unanswerable_qa.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+    "reasoning_qa.json": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+    "cross_pdf_qa.json": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82"
+  },
+  "pdf_manifest_sha256": "c00a419a56bf8713c349b4c13a0456c224ef86436cdbf91caf7ec8e953d04a10",
+  "judge_prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+  "code_hashes": {
+    "evaluation/reproduce.py": "88a60888cb42126c0ce809b0d844e7774df0a70db561ca314da450c686967133",
+    "evaluation/metrics.py": "328f11cbcdd32891dbc914dc3d49b064efef65660a714ebd8250f04438653774",
+    "evaluation/validation.py": "f6fbdd425d0b386107839c1e94d3dff34a7c460caa4b0a62d2e7460fc4ebf6ac",
+    "evaluation/judge.py": "c6a08c4ff9fd4290723e0a4330860a4c8c0b3b8d9040cb8ac3ddaedd3573bdf9",
+    "scripts/rescore_baseline_local.py": "20681c39798a1b29d6d673e4d9c34d7aaaf516fc4f695c8bf8494991d9a16cf8"
+  }
+}
