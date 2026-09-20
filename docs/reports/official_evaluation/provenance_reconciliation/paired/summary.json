@@ -1,0 +1,1093 @@
+{
+  "scope": "paired input-version sensitivity diagnostic; no official score or cache replacement",
+  "rows": [
+    {
+      "qa_id": "QA0057",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA0077",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0136",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA0183",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0184",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0190",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0213",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0248",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA0252",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA0266",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0327",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0377",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0386",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0420",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0421",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA0443",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA0446",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0471",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA0495",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0498",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0578",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA0680",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA0937",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": false
+    },
+    {
+      "qa_id": "QA1404",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1542",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1558",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "partial",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1574",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1577",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1583",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1588",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1676",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1818",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1819",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "partial",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1820",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA1950",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2008",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2009",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2010",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2015",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2016",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "partial",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2045",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2046",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2050",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2069",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2070",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "CORRECT",
+      "current": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "CORRECT",
+        "attempts": [
+          "CORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2072",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2084",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2174",
+      "differences": [
+        "prediction"
+      ],
+      "historical_recorded_decision": "correct",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    },
+    {
+      "qa_id": "QA2179",
+      "differences": [
+        "reference"
+      ],
+      "historical_recorded_decision": "wrong",
+      "previous_current_decision": "INCORRECT",
+      "current": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "historical_text_paper_prompt": {
+        "decision": "INCORRECT",
+        "attempts": [
+          "INCORRECT"
+        ]
+      },
+      "current_repeat_agrees": true,
+      "pair_agrees": true
+    }
+  ],
+  "pairs": 49,
+  "current_repeat_agrees": 49,
+  "pair_agrees": 40,
+  "failures": 0,
+  "retries": 0,
+  "seconds": 136.27900161710568,
+  "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+  "input_jobs_sha256": "83b8ebcdbacc0c2176e83abf220f499fde23ad427fa626ea86d10a47c28f660f",
+  "config_sha256": "033f65759e180214a373297a341171b8e77086694f9aa00e7d171f93044c252a",
+  "qa_unchanged": true
+}

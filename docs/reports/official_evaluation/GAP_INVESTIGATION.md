@@ -1,5 +1,7 @@
 # Table 2/3 gap investigation and adapter correction
 
+> **2026-09-20 provenance clarification:** [PROVENANCE_RECONCILIATION.md](PROVENANCE_RECONCILIATION.md) is the latest interpretation. Historical experiments and their aggregates are traceable. Current-release strict diagnostics use different input/protocol combinations and do not disprove those experiments. Earlier “cannot reproduce” wording applies only to those diagnostic assumptions; newly generated Judge labels are not human ground truth.
+
 Date: 2026-09-20. Current QA and PDFs remain immutable. This investigation
 supersedes the earlier adapter's treatment of all reference revisions as input
 failures. The paper's raw-output rules and semantic prompt are unchanged.

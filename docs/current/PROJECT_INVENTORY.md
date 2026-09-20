@@ -40,7 +40,7 @@
 | `docs/current/DATASET_CATALOG.md` | 项目文档：DATASET CATALOG | 33 | `a8b83f7b7a4a` |
 | `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 298 | `0702955182b4` |
 | `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 678 | `cf611e006c26` |
-| `docs/current/README.md` | 项目文档：README | 126 | `414750d04da2` |
+| `docs/current/README.md` | 项目文档：README | 128 | `69dd80eac029` |
 | `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `7ab162dbb736` |
 | `docs/prompts/MAINTENANCE_REMEDIATION.md` | 项目文档：MAINTENANCE REMEDIATION | 26 | `7640aa7c9528` |
 | `docs/releases/PDF_DISTRIBUTION.md` | 项目文档：PDF DISTRIBUTION | 50 | `2c5375f7eb60` |
@@ -50,13 +50,14 @@
 | `docs/reports/README.md` | 项目文档：README | 14 | `ce204a6418e8` |
 | `docs/reports/SCIDOC_MIGRATION_20260920.md` | 项目文档：SCIDOC MIGRATION 20260920 | 78 | `e4073f071a5c` |
 | `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 69 | `0ee565793a91` |
-| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 223 | `ce918f71f4a0` |
-| `docs/reports/official_evaluation/FOLLOWTHROUGH_REPORT.md` | 项目文档：FOLLOWTHROUGH REPORT | 189 | `dec9e5574237` |
-| `docs/reports/official_evaluation/GAP_INVESTIGATION.md` | 项目文档：GAP INVESTIGATION | 226 | `cd7748b0f6d6` |
+| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 225 | `3d464383d463` |
+| `docs/reports/official_evaluation/FOLLOWTHROUGH_REPORT.md` | 项目文档：FOLLOWTHROUGH REPORT | 191 | `444dbfa25b44` |
+| `docs/reports/official_evaluation/GAP_INVESTIGATION.md` | 项目文档：GAP INVESTIGATION | 228 | `47148d01b8c6` |
 | `docs/reports/official_evaluation/IMPLEMENTATION_PLAN.md` | 项目文档：IMPLEMENTATION PLAN | 59 | `710585ba6671` |
 | `docs/reports/official_evaluation/LOCAL_MODEL_TEST.md` | 项目文档：LOCAL MODEL TEST | 90 | `16c8baa69bac` |
+| `docs/reports/official_evaluation/PROVENANCE_RECONCILIATION.md` | 项目文档：PROVENANCE RECONCILIATION | 177 | `419df7ae0471` |
 | `docs/reports/official_evaluation/RECOVERY_ARTIFACT_INVENTORY.json` | 项目文档：RECOVERY ARTIFACT INVENTORY | 5059 | `91423d0e4f51` |
-| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 128 | `16059db8b165` |
+| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 130 | `c428fd3d71f3` |
 | `docs/reports/official_evaluation/claude_subject_discrepancy.json` | 项目文档：claude subject discrepancy | 118 | `4fd535e724eb` |
 | `docs/reports/official_evaluation/dataset_preflight.json` | 项目文档：dataset preflight | 1624 | `2fcf32ae8f4e` |
 | `docs/reports/official_evaluation/fast_reproduction_check/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 31 | `39be229403ba` |
@@ -99,12 +100,19 @@
 | `docs/reports/official_evaluation/local_smoke/selection.json` | 项目文档：selection | 17 | `a9f307d24afa` |
 | `docs/reports/official_evaluation/local_smoke/summary.json` | 项目文档：summary | 47 | `9bcbf653ffaa` |
 | `docs/reports/official_evaluation/local_smoke/verification.json` | 项目文档：verification | 11 | `1118dfef59aa` |
+| `docs/reports/official_evaluation/provenance_reconciliation/audit.json` | 项目文档：audit | 1021 | `9f887bac66df` |
+| `docs/reports/official_evaluation/provenance_reconciliation/paired/config.json` | 项目文档：config | 111 | `e035941403ff` |
+| `docs/reports/official_evaluation/provenance_reconciliation/paired/summary.json` | 项目文档：summary | 1093 | `0e619c23e253` |
+| `docs/reports/official_evaluation/provenance_reconciliation/paired_jobs.json` | 项目文档：paired jobs | 4764 | `83b8ebcdbacc` |
+| `docs/reports/official_evaluation/provenance_reconciliation/qualitative_cases.json` | 项目文档：qualitative cases | 204 | `c753343115f7` |
+| `docs/reports/official_evaluation/provenance_reconciliation/verification.json` | 项目文档：verification | 229 | `c25a739c557d` |
 | `docs/reports/official_evaluation/reproduction_audit.json` | 项目文档：reproduction audit | 5120 | `0f17d4df501c` |
 | `docs/reports/official_evaluation/verification.json` | 项目文档：verification | 63 | `fa808b6ac98c` |
 | `environment.yml` | 项目配置或入口：environment | 8 | `1dc4df61202c` |
-| `evaluation/README.md` | 项目配置或入口：README | 369 | `226dac47382c` |
+| `evaluation/README.md` | 项目配置或入口：README | 386 | `9200c556fbd2` |
 | `evaluation/__init__.py` | 项目配置或入口：  init   | 3 | `b51a76f50781` |
-| `evaluation/check_reproduction.py` | 项目配置或入口：check reproduction | 117 | `cc397aa8b9dc` |
+| `evaluation/audit_score_provenance.py` | 项目配置或入口：audit score provenance | 327 | `aebfdf6bd513` |
+| `evaluation/check_reproduction.py` | 项目配置或入口：check reproduction | 117 | `60fed1bd7583` |
 | `evaluation/evaluate.py` | 项目配置或入口：evaluate | 83 | `cdff69d6256c` |
 | `evaluation/investigate_gaps.py` | 项目配置或入口：investigate gaps | 134 | `bd1c847a165e` |
 | `evaluation/judge.py` | 项目配置或入口：judge | 125 | `c6a08c4ff9fd` |
@@ -114,7 +122,7 @@
 | `evaluation/prompts.py` | 项目配置或入口：prompts | 12 | `694a63ed56b5` |
 | `evaluation/prompts/pdf_provenance.json` | 项目配置或入口：pdf provenance | 7 | `6d630b4a5cb5` |
 | `evaluation/prompts/provenance.json` | 项目配置或入口：provenance | 7 | `069ca54dd7b3` |
-| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 28 | `15eebac73590` |
+| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 41 | `033a76f18dcd` |
 | `evaluation/reproduce.py` | 项目配置或入口：reproduce | 278 | `88a60888cb42` |
 | `evaluation/validation.py` | 项目配置或入口：validation | 298 | `f6fbdd425d0b` |
 | `provider_config.example.json` | 项目配置或入口：provider config.example | 16 | `1ed1d13e6268` |
@@ -122,6 +130,7 @@
 | `requirements.txt` | 项目配置或入口：requirements | 34 | `b1d620c6158e` |
 | `schemas/final_2200_qa.schema.json` | QA 数据结构约束 | 56 | `8ac0c9e1049b` |
 | `schemas/single_pdf_qa.schema.json` | QA 数据结构约束 | 110 | `b4e168585abf` |
+| `scripts/check_judge_input_versions.py` | 项目配置或入口：check judge input versions | 139 | `b8e3e83d61e5` |
 | `scripts/check_local_judge_disagreements.py` | 项目配置或入口：check local judge disagreements | 88 | `1dbe58919e2b` |
 | `scripts/dataset_construction/phase1_paper_acquisition/README.md` | 项目配置或入口：README | 62 | `1d9e8bfeca84` |
 | `scripts/dataset_construction/phase1_paper_acquisition/arxiv_download_backend.py` | 项目配置或入口：arxiv download backend | 86 | `a67bf7499717` |
@@ -261,6 +270,7 @@
 | `tests/test_metrics.py` | 公共支持 测试：metrics | 11 | `4fe3911315ab` |
 | `tests/test_reference_revision.py` | 公共支持 测试：reference revision | 74 | `ffe2a947133c` |
 | `tests/test_reproduction_bounds.py` | 公共支持 测试：reproduction bounds | 35 | `286bff79ff4f` |
+| `tests/test_score_provenance.py` | 公共支持 测试：score provenance | 56 | `e8e3051111bb` |
 | `tests/test_validation.py` | 公共支持 测试：validation | 73 | `f9c76c857561` |
 | `tests/unit/__init__.py` | unit 测试：  init   | 0 | `e3b0c44298fc` |
 | `tests/unit/test_bootstrap_data_review_service.py` | unit 测试：bootstrap data review service | 34 | `8915b1841caa` |

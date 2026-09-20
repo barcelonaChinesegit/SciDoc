@@ -1,0 +1,204 @@
+{
+  "selection": "First three SHA256(qa_id)-ordered correct-to-incorrect identical-input cases per answerable task; plus both reverse cases. Not human adjudication or an unbiased accuracy estimate.",
+  "scores_modified": false,
+  "cases": [
+    {
+      "qa_id": "QA0608",
+      "task": "General",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "efebc9c7d5763c39dc09ad2ea0ade0f6a92874f35b412c02bf5e9c3095282321",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "ordinary1190",
+        "question": "What property ensures genericity of G-bumpy metrics?",
+        "gold_answer": "Baire category theorem",
+        "pred_answer": "The set of G-bumpy metrics is generic in the Baire sense.",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA0630",
+      "task": "General",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "835ffc56f37f728e3994b94c055427a87d155992d3c892b2f1e6b9edb4557f43",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "ordinary1190",
+        "question": "What is a geometrically characteristic cover?",
+        "gold_answer": "A cover corresponding to a subgroup of π_1(X) invariant under all geometric automorphisms",
+        "pred_answer": "An unbranched covering map p: S → X where S is a surface and X is a surface of finite type, such that the induced homomorphism Map(X;{x}) → Map(S;p⁻¹(x)) is injective, and the cover is geometrically characteristic if it corresponds to a geometrically characteristic subgroup of π₁(X,x).",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA0231",
+      "task": "General",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "a95dfb28ddd4c89872415eae0cc1e036e3ae373104e0c1e3e8d322c6a870b2b5",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "ordinary1190",
+        "question": "Which model is rejected during crisis periods in the empirical study?",
+        "gold_answer": "CCC-GARCH with Gaussian innovations",
+        "pred_answer": "CCC-GARCH model",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA1302",
+      "task": "Reasoning",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "df1436ee633c6827e081a8f1ce05d95cbb6550d5114e48156abddae5444764d5",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "reasoning_hard100",
+        "question": "What is the minimum percentage-point increase in the share of offensive matches when transitioning from the traditional group stage to the new incomplete round-robin format, and how does this format compare regarding the prevalence of stakeless matches?",
+        "gold_answer": "The proportion of offensive matches increases by at least 12.5 percentage points (from <4.5% to >17%), and the new incomplete round-robin league format is superior as it exhibits a lower proportion of stakeless matches.",
+        "pred_answer": "The minimum percentage-point increase in the share of offensive matches is from less than 4.5% to more than 17%. The new format reduces the prevalence of stakeless matches compared to the previous group stage.",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA1299",
+      "task": "Reasoning",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "1f63c2e3b589d4e674bc01ba18775b7631d07cff36edf120af7f3169b216c3ce",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "reasoning_hard100",
+        "question": "What is the evolutionary origin of the binary system composed of Nasser 1 and Czernik 38, given that their cluster mass distribution is best described by the specific statistical model identified as the most representative in the literature?",
+        "gold_answer": "The cluster mass distribution is represented by the Gaussian mass function, which implies that the binary system originated from a single cluster torn apart by tidal forces.",
+        "pred_answer": "a single cluster that has been violently torn apart by strong tidal forces during its orbital journey",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA1318",
+      "task": "Reasoning",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "94ccdf67db1f2bf609593ec59a6e13ab5662b74e1df3a385b13651e7b9e96eef",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "reasoning_hard100",
+        "question": "What physical phenomenon limits the validity of the mathematical framework commonly employed to compute the effective Floquet Hamiltonian when the system enters the universal localization regime?",
+        "gold_answer": "The framework is Van Vleck perturbation theory, which fails because resonant hybridization proliferates in the universal localization regime.",
+        "pred_answer": "Resonant hybridization",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA2184",
+      "task": "Multi-Document",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "c187be5bcab6d0b56661278cc4ee04722b2bb2ca1b7517a3e3d7e5f6ce3c027a",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "cross_old400",
+        "question": "How do Doc 1 and Doc 3 both utilize 'grounding' or 'retrieval' to enhance their respective language model outputs?",
+        "gold_answer": "Doc 1 uses a 'structured race store' as a grounding source, verifying every generated claim in the briefings against the simulation engine state before publication to ensure faithfulness. Doc 3 uses Retrieval-Augmented Generation (RAG) to retrieve relevant public health guidance chunks from a corpus and appends them as a context block to guide the LLM's answer generation.",
+        "pred_answer": "Doc 1 uses 'grounding' to ensure the generated natural-language race-strategy briefings are faithful by verifying each claim against the probabilistic race state that prompted it. Doc 3 uses'retrieval' to ground responses in an explicitly maintained corpus, mitigating hallucinations and ensuring responses are based on trusted evidence.",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA1632",
+      "task": "Multi-Document",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "9ad51ab6906bc8806076514eb3cc48fc455c53ecb9d5ec13cb8f81f6b1874e98",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "cross_hard400",
+        "question": "Each paper claims a dynamic or personalized system statistically outperforms a static or single-turn baseline, but the underlying sample sizes differ enormously. What does the pattern across these three evaluations imply about the robustness of 'dynamic beats static' claims in this research area, and what caveat is most pressing for the smallest of the three studies?",
+        "gold_answer": "CMA's advantage over RAG is established with permutation tests and McNemar's test (p<0.01) across roughly 92 decisive trials spanning four behavioral probes. The in-browser assistant's personalization advantage is shown via next-action accuracy and MRR gains plus paired t-tests (p<0.05) on behavioral metrics from an 18-participant, three-week study. UXLab's case study shows an agentic system beating RAG on time, follow-ups, and query length with paired t-tests (p<0.001 and p<0.01) from only 8 participants. The convergence of statistically significant, consistent-direction results across studies differing by an order of magnitude in scale (dozens of trials vs. tens of users vs. single digits of participants) suggests the 'dynamic/agentic beats static' pattern is not an artifact of any one sample size or evaluation protocol. However, the UXLab case study, explicitly framed as a proof-of-concept micro study with N=8, is the most fragile: its t-tests rest on only 23 degrees of freedom, so its effect estimates are far more sensitive to individual participants than the larger CMA or in-browser evaluations, and it should be read as a demonstration of the platform's capability rather than a generalizable behavioral finding.",
+        "pred_answer": "The pattern across the three evaluations implies that while 'dynamic beats static' claims are supported in each case, the robustness of these claims is not uniform and depends heavily on the sample size. The smallest study, with only 8 participants, is most vulnerable to sampling error and lacks statistical power to generalize findings, making its results less reliable than those from larger studies.",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA2051",
+      "task": "Multi-Document",
+      "group": "identical_judge_inputs",
+      "old_correct": "True",
+      "new_correct": "False",
+      "historical_cache_key": "13472d0dfd3ad9203a1a7b5890496ad29d31bfecfdf6d453648e9dd6cc791fe6",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "cross_old400",
+        "question": "How do the evaluation metrics in the Diffusion RLHF paper (Doc 2) differ from the evaluation approach in the ECG paper (Doc 3) regarding the type of output being assessed?",
+        "gold_answer": "Doc 2 evaluates generative model outputs using aesthetic scores, CLIP scores, and image rewards. Doc 3 evaluates diagnostic classification performance using SHAP attribution maps to interpret model decisions for myocardial infarction screening.",
+        "pred_answer": "The Diffusion RLHF paper evaluates the model's ability to generate images based on prompts, using metrics like Aesthetic Score, JPEG Compression, and HPS V2, which assess the quality and preference of the generated images. In contrast, the ECG paper evaluates the model's ability to classify and interpret ECG signals, using metrics like accuracy, precision, recall, and F1-score, which assess the correctness of the diagnostic predictions.",
+        "answer_verdict": "correct",
+        "judge_raw": "CORRECT",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA0042",
+      "task": "General",
+      "group": "identical_judge_inputs",
+      "old_correct": "False",
+      "new_correct": "True",
+      "historical_cache_key": "b604cc1b763c25d616bf83c25c822450762d28a64a44a7265978965eeeabde4e",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "ordinary1190",
+        "question": "How does the B-H procedure perform compared to the B-Y procedure in simulations?",
+        "gold_answer": "Lower FNP and FDP closer to target",
+        "pred_answer": "The B-H procedure yields lower FNP and FDPs closer to the target level, while the B-Y procedure achieves lower FDPs but with a higher FNP.",
+        "answer_verdict": "wrong",
+        "judge_raw": "WRONG",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    },
+    {
+      "qa_id": "QA0407",
+      "task": "General",
+      "group": "identical_judge_inputs",
+      "old_correct": "False",
+      "new_correct": "True",
+      "historical_cache_key": "0584032b094ee9a2c4c87f834948fa154c6f3e1794561f562f64b179bc2cb3c0",
+      "historical_input_differences": "",
+      "actual_historical_judge_inputs": {
+        "dataset_id": "ordinary1190",
+        "question": "Why is a quantum fan cobordism stable under deformation?",
+        "gold_answer": "Moduli space \\Omega(d,n,D) is open",
+        "pred_answer": "The paper does not state that a quantum fan cobordism is stable under deformation. It only mentions that in the classical case, cobordisms are easily deformed, but in the quantum framework, deformations of cobordisms and simplicial fans are possible due to the open subset property of Ω(d,n,D).",
+        "answer_verdict": "wrong",
+        "judge_raw": "WRONG",
+        "judge_rules_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278"
+      }
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+table,model,metric,paper,recorded_items_reaggregated,display_match
+table2,MiniCPM-V 2.6,All,15.59,15.590909090909092,True
+table2,MiniCPM-V 2.6,General,14.7,14.7,True
+table2,MiniCPM-V 2.6,Unanswerable,38.5,38.5,True
+table2,MiniCPM-V 2.6,Multi-Document,12.5,12.5,True
+table2,MiniCPM-V 2.6,Reasoning,9.5,9.5,True
+table2,MiniCPM-V 2.6,E-Precision,9.37,9.36904761904762,True
+table2,MiniCPM-V 2.6,E-Recall,9.24,9.243290043290044,True
+table2,MiniCPM-V 2.6,E-F1,9.26,9.259776334776335,True
+table2,MiniCPM-V 2.6,A-Pages,0.11,0.10727272727272727,True
+table3,MiniCPM-V 2.6,All,15.59,15.590909090909092,True
+table3,MiniCPM-V 2.6,Computer Science,16.51,16.51006711409396,True
+table3,MiniCPM-V 2.6,Physics,18.73,18.733509234828496,True
+table3,MiniCPM-V 2.6,Statistics,15.85,15.846994535519126,True
+table3,MiniCPM-V 2.6,Mathematics,10.2,10.204081632653061,True
+table3,MiniCPM-V 2.6,Electrical Engineering and Systems Science,10.16,10.15625,True
+table3,MiniCPM-V 2.6,Economics,16.06,16.05839416058394,True
+table3,MiniCPM-V 2.6,Quantitative Biology,15.79,15.789473684210526,True
+table3,MiniCPM-V 2.6,Quantitative Finance,15.12,15.116279069767442,True
+table2,InternVL2.5-8B,All,22.32,22.318181818181817,True
+table2,InternVL2.5-8B,General,24.4,24.4,True
+table2,InternVL2.5-8B,Unanswerable,32.0,32.0,True
+table2,InternVL2.5-8B,Multi-Document,14.25,14.25,True
+table2,InternVL2.5-8B,Reasoning,34.5,34.5,True
+table2,InternVL2.5-8B,E-Precision,15.39,15.391350351292118,True
+table2,InternVL2.5-8B,E-Recall,31.88,31.88317099567099,True
+table2,InternVL2.5-8B,E-F1,16.75,16.745781919981404,True
+table2,InternVL2.5-8B,A-Pages,6.69,6.6854545454545455,True
+table3,InternVL2.5-8B,All,22.32,22.318181818181817,True
+table3,InternVL2.5-8B,Computer Science,21.34,21.34228187919463,True
+table3,InternVL2.5-8B,Physics,26.39,26.385224274406333,True
+table3,InternVL2.5-8B,Statistics,24.32,24.316939890710383,True
+table3,InternVL2.5-8B,Mathematics,13.88,13.877551020408163,True
+table3,InternVL2.5-8B,Electrical Engineering and Systems Science,17.97,17.96875,True
+table3,InternVL2.5-8B,Economics,32.12,32.11678832116788,True
+table3,InternVL2.5-8B,Quantitative Biology,19.3,19.29824561403509,True
+table3,InternVL2.5-8B,Quantitative Finance,23.26,23.25581395348837,True
+table2,MiniCPM-V 4.5,All,34.32,34.31818181818182,True
+table2,MiniCPM-V 4.5,General,54.6,54.6,True
+table2,MiniCPM-V 4.5,Unanswerable,15.0,15.0,True
+table2,MiniCPM-V 4.5,Multi-Document,10.75,10.75,True
+table2,MiniCPM-V 4.5,Reasoning,46.5,46.5,True
+table2,MiniCPM-V 4.5,E-Precision,20.03,20.029169184993638,True
+table2,MiniCPM-V 4.5,E-Recall,15.92,15.915530303030302,True
+table2,MiniCPM-V 4.5,E-F1,16.47,16.47234581712181,True
+table2,MiniCPM-V 4.5,A-Pages,1.42,1.415,True
+table3,MiniCPM-V 4.5,All,34.32,34.31818181818182,True
+table3,MiniCPM-V 4.5,Computer Science,25.91,25.906040268456376,True
+table3,MiniCPM-V 4.5,Physics,44.85,44.854881266490764,True
+table3,MiniCPM-V 4.5,Statistics,33.88,33.87978142076503,True
+table3,MiniCPM-V 4.5,Mathematics,30.2,30.20408163265306,True
+table3,MiniCPM-V 4.5,Electrical Engineering and Systems Science,30.47,30.46875,True
+table3,MiniCPM-V 4.5,Economics,40.88,40.87591240875913,True
+table3,MiniCPM-V 4.5,Quantitative Biology,51.75,51.75438596491228,True
+table3,MiniCPM-V 4.5,Quantitative Finance,46.51,46.51162790697674,True
+table2,InternVL3.5-8B,All,34.95,34.95454545454545,True
+table2,InternVL3.5-8B,General,36.3,36.3,True
+table2,InternVL3.5-8B,Unanswerable,2.5,2.5,True
+table2,InternVL3.5-8B,Multi-Document,36.88,36.875,True
+table2,InternVL3.5-8B,Reasoning,53.0,53.0,True
+table2,InternVL3.5-8B,E-Precision,30.86,30.860720650472928,True
+table2,InternVL3.5-8B,E-Recall,31.2,31.197113366431545,True
+table2,InternVL3.5-8B,E-F1,28.04,28.044271179368867,True
+table2,InternVL3.5-8B,A-Pages,3.72,3.72,True
+table3,InternVL3.5-8B,All,34.95,34.95454545454545,True
+table3,InternVL3.5-8B,Computer Science,37.99,37.986577181208055,True
+table3,InternVL3.5-8B,Physics,30.34,30.34300791556728,True
+table3,InternVL3.5-8B,Statistics,36.07,36.0655737704918,True
+table3,InternVL3.5-8B,Mathematics,20.82,20.816326530612244,True
+table3,InternVL3.5-8B,Electrical Engineering and Systems Science,38.28,38.28125,True
+table3,InternVL3.5-8B,Economics,43.8,43.7956204379562,True
+table3,InternVL3.5-8B,Quantitative Biology,36.84,36.8421052631579,True
+table3,InternVL3.5-8B,Quantitative Finance,43.02,43.02325581395349,True
+table2,Gemma 3 27B,All,47.32,47.31818181818182,True
+table2,Gemma 3 27B,General,57.0,57.0,True
+table2,Gemma 3 27B,Unanswerable,14.0,14.0,True
+table2,Gemma 3 27B,Multi-Document,43.62,43.625,True
+table2,Gemma 3 27B,Reasoning,47.0,47.0,True
+table2,Gemma 3 27B,E-Precision,34.02,34.02228030554067,True
+table2,Gemma 3 27B,E-Recall,30.85,30.845024293887928,True
+table2,Gemma 3 27B,E-F1,30.36,30.3570234896041,True
+table2,Gemma 3 27B,A-Pages,1.98,1.9772727272727273,True
+table3,Gemma 3 27B,All,47.32,47.31818181818182,True
+table3,Gemma 3 27B,Computer Science,50.34,50.33557046979866,True
+table3,Gemma 3 27B,Physics,51.72,51.715039577836414,True
+table3,Gemma 3 27B,Statistics,47.81,47.814207650273225,True
+table3,Gemma 3 27B,Mathematics,32.24,32.244897959183675,True
+table3,Gemma 3 27B,Electrical Engineering and Systems Science,41.41,41.40625,True
+table3,Gemma 3 27B,Economics,57.66,57.66423357664234,True
+table3,Gemma 3 27B,Quantitative Biology,38.6,38.59649122807018,True
+table3,Gemma 3 27B,Quantitative Finance,46.51,46.51162790697674,True
+table2,Mistral-Small-3.1-24B,All,49.0,49.0,True
+table2,Mistral-Small-3.1-24B,General,72.4,72.4,True
+table2,Mistral-Small-3.1-24B,Unanswerable,9.0,9.0,True
+table2,Mistral-Small-3.1-24B,Multi-Document,24.88,24.875,True
+table2,Mistral-Small-3.1-24B,Reasoning,68.5,68.5,True
+table2,Mistral-Small-3.1-24B,E-Precision,34.51,34.50938916331468,True
+table2,Mistral-Small-3.1-24B,E-Recall,36.39,36.39229848434394,True
+table2,Mistral-Small-3.1-24B,E-F1,32.39,32.39265525522798,True
+table2,Mistral-Small-3.1-24B,A-Pages,3.58,3.5795454545454546,True
+table3,Mistral-Small-3.1-24B,All,49.0,49.0,True
+table3,Mistral-Small-3.1-24B,Computer Science,40.13,40.13422818791946,True
+table3,Mistral-Small-3.1-24B,Physics,60.95,60.949868073878626,True
+table3,Mistral-Small-3.1-24B,Statistics,45.08,45.08196721311475,True
+table3,Mistral-Small-3.1-24B,Mathematics,45.71,45.714285714285715,True
+table3,Mistral-Small-3.1-24B,Electrical Engineering and Systems Science,50.78,50.78125,True
+table3,Mistral-Small-3.1-24B,Economics,63.5,63.503649635036496,True
+table3,Mistral-Small-3.1-24B,Quantitative Biology,64.91,64.91228070175438,True
+table3,Mistral-Small-3.1-24B,Quantitative Finance,52.33,52.325581395348834,True
+table2,Qwen3-VL-4B,All,64.91,64.9090909090909,True
+table2,Qwen3-VL-4B,General,80.0,80.0,True
+table2,Qwen3-VL-4B,Unanswerable,60.0,60.0,True
+table2,Qwen3-VL-4B,Multi-Document,47.38,47.375,True
+table2,Qwen3-VL-4B,Reasoning,64.5,64.5,True
+table2,Qwen3-VL-4B,E-Precision,39.35,39.35198086442059,True
+table2,Qwen3-VL-4B,E-Recall,53.01,53.00593724457361,True
+table2,Qwen3-VL-4B,E-F1,39.22,39.22261513043638,True
+table2,Qwen3-VL-4B,A-Pages,9.26,9.25590909090909,True
+table3,Qwen3-VL-4B,All,64.91,64.9090909090909,True
+table3,Qwen3-VL-4B,Computer Science,63.89,63.89261744966443,True
+table3,Qwen3-VL-4B,Physics,71.24,71.2401055408971,True
+table3,Qwen3-VL-4B,Statistics,55.46,55.46448087431694,True
+table3,Qwen3-VL-4B,Mathematics,62.04,62.04081632653061,True
+table3,Qwen3-VL-4B,Electrical Engineering and Systems Science,64.06,64.0625,True
+table3,Qwen3-VL-4B,Economics,67.88,67.88321167883211,True
+table3,Qwen3-VL-4B,Quantitative Biology,80.7,80.70175438596492,True
+table3,Qwen3-VL-4B,Quantitative Finance,69.77,69.76744186046511,True
+table2,Qwen3-VL-8B,All,68.32,68.31818181818181,True
+table2,Qwen3-VL-8B,General,83.2,83.2,True
+table2,Qwen3-VL-8B,Unanswerable,42.5,42.5,True
+table2,Qwen3-VL-8B,Multi-Document,55.38,55.375,True
+table2,Qwen3-VL-8B,Reasoning,71.5,71.5,True
+table2,Qwen3-VL-8B,E-Precision,43.34,43.33971742021875,True
+table2,Qwen3-VL-8B,E-Recall,49.63,49.63076923076923,True
+table2,Qwen3-VL-8B,E-F1,40.66,40.664217879496846,True
+table2,Qwen3-VL-8B,A-Pages,8.44,8.442272727272726,True
+table3,Qwen3-VL-8B,All,68.32,68.31818181818181,True
+table3,Qwen3-VL-8B,Computer Science,67.11,67.11409395973155,True
+table3,Qwen3-VL-8B,Physics,70.98,70.97625329815304,True
+table3,Qwen3-VL-8B,Statistics,66.12,66.12021857923497,True
+table3,Qwen3-VL-8B,Mathematics,62.45,62.44897959183673,True
+table3,Qwen3-VL-8B,Electrical Engineering and Systems Science,71.88,71.875,True
+table3,Qwen3-VL-8B,Economics,70.8,70.8029197080292,True
+table3,Qwen3-VL-8B,Quantitative Biology,76.32,76.3157894736842,True
+table3,Qwen3-VL-8B,Quantitative Finance,73.26,73.25581395348837,True
+table2,Claude Sonnet 5,All,69.32,69.31818181818181,True
+table2,Claude Sonnet 5,General,71.9,71.9,True
+table2,Claude Sonnet 5,Unanswerable,68.0,68.0,True
+table2,Claude Sonnet 5,Multi-Document,61.0,61.0,True
+table2,Claude Sonnet 5,Reasoning,91.0,91.0,True
+table2,Claude Sonnet 5,E-Precision,35.66,35.657289986048795,True
+table2,Claude Sonnet 5,E-Recall,43.97,43.96992918697464,True
+table2,Claude Sonnet 5,E-F1,36.49,36.49487881796741,True
+table2,Claude Sonnet 5,A-Pages,3.66,3.6586363636363637,True
+table3,Claude Sonnet 5,All,69.32,68.04545454545455,False
+table3,Claude Sonnet 5,Computer Science,69.93,69.93288590604027,True
+table3,Claude Sonnet 5,Physics,71.5,71.50395778364116,True
+table3,Claude Sonnet 5,Statistics,59.84,59.83606557377049,True
+table3,Claude Sonnet 5,Mathematics,60.0,60.0,True
+table3,Claude Sonnet 5,Electrical Engineering and Systems Science,76.56,76.5625,True
+table3,Claude Sonnet 5,Economics,66.42,66.42335766423358,True
+table3,Claude Sonnet 5,Quantitative Biology,77.19,77.19298245614036,True
+table3,Claude Sonnet 5,Quantitative Finance,72.09,72.09302325581395,True
+table2,DeepSeek-V4-Flash,All,79.45,79.45454545454545,True
+table2,DeepSeek-V4-Flash,General,88.2,88.2,True
+table2,DeepSeek-V4-Flash,Unanswerable,15.5,15.5,True
+table2,DeepSeek-V4-Flash,Multi-Document,83.62,83.625,True
+table2,DeepSeek-V4-Flash,Reasoning,83.0,83.0,True
+table2,DeepSeek-V4-Flash,E-Precision,44.49,44.489176150490536,True
+table2,DeepSeek-V4-Flash,E-Recall,49.22,49.220924403878946,True
+table2,DeepSeek-V4-Flash,E-F1,43.61,43.61052572285685,True
+table2,DeepSeek-V4-Flash,A-Pages,2.57,2.5736363636363637,True
+table3,DeepSeek-V4-Flash,All,79.45,79.45454545454545,True
+table3,DeepSeek-V4-Flash,Computer Science,80.54,80.53691275167785,True
+table3,DeepSeek-V4-Flash,Physics,77.57,77.57255936675462,True
+table3,DeepSeek-V4-Flash,Statistics,83.06,83.06010928961749,True
+table3,DeepSeek-V4-Flash,Mathematics,71.84,71.83673469387755,True
+table3,DeepSeek-V4-Flash,Electrical Engineering and Systems Science,79.69,79.6875,True
+table3,DeepSeek-V4-Flash,Economics,83.94,83.94160583941606,True
+table3,DeepSeek-V4-Flash,Quantitative Biology,78.95,78.94736842105263,True
+table3,DeepSeek-V4-Flash,Quantitative Finance,77.91,77.90697674418605,True
+table2,GLM-4.6V,All,80.95,80.95454545454545,True
+table2,GLM-4.6V,General,88.5,88.5,True
+table2,GLM-4.6V,Unanswerable,46.0,46.0,True
+table2,GLM-4.6V,Multi-Document,79.62,79.625,True
+table2,GLM-4.6V,Reasoning,83.5,83.5,True
+table2,GLM-4.6V,E-Precision,51.04,51.03771645021645,True
+table2,GLM-4.6V,E-Recall,50.47,50.474305744760294,True
+table2,GLM-4.6V,E-F1,47.81,47.81021276703095,True
+table2,GLM-4.6V,A-Pages,1.97,1.9736363636363636,True
+table3,GLM-4.6V,All,80.95,80.95454545454545,True
+table3,GLM-4.6V,Computer Science,80.67,80.67114093959732,True
+table3,GLM-4.6V,Physics,82.59,82.58575197889182,True
+table3,GLM-4.6V,Statistics,80.05,80.05464480874316,True
+table3,GLM-4.6V,Mathematics,74.29,74.28571428571429,True
+table3,GLM-4.6V,Electrical Engineering and Systems Science,85.16,85.15625,True
+table3,GLM-4.6V,Economics,86.86,86.86131386861314,True
+table3,GLM-4.6V,Quantitative Biology,82.46,82.45614035087719,True
+table3,GLM-4.6V,Quantitative Finance,81.4,81.3953488372093,True

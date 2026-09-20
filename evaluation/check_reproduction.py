@@ -101,13 +101,13 @@ def main() -> int:
     write_csv(out / "table2_bounds.csv", rows2)
     write_csv(out / "table3_bounds.csv", rows3)
     (out / "local_jobs.json").write_text(json.dumps(jobs, ensure_ascii=False, indent=2) + '\n')
-    output = {"claim": "Stored historical predictions cannot reproduce all current paper cells under the paper contract",
+    output = {"claim": "Current-release strict diagnostics differ from recorded paper cells; this does not invalidate the historical experiments or their reconstructable aggregates",
               "official_reproduction_verified": False, "models": summary, "dataset_hashes": metadata["dataset_hashes"],
               "paper_sha256": file_hash(manuscript), "prompt_sha256": PROMPT_HASH, "source_hashes": sources,
               "table2_proven_mismatches": sum(r["status"] == "PROVEN_MISMATCH" for r in rows2),
               "table3_proven_mismatches": sum(r["status"] == "PROVEN_MISMATCH" for r in rows3),
               "local_jobs": len(jobs), "semantic_jobs_not_run": sum(s["pending_judge"] for s in summary.values()) - len(jobs),
-              "limitations": "Bounds are not full rescoring. Version-mismatched predictions are technical failures, not current-release answers. Evidence ambiguity remains explicit."}
+              "limitations": "Bounds are conditional on the current-release adapter and raw-output contract, not a same-run historical reproduction test. Input-version mismatches receive diagnostic technical-failure slots. Historical table provenance, Judge configuration differences, and illegal-evidence ambiguity must be reconciled separately."}
     (out / "feasibility.json").write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k: v for k, v in output.items() if k not in {"models", "source_hashes"}}, indent=2))
     return 2 if output["table2_proven_mismatches"] or output["table3_proven_mismatches"] else 0

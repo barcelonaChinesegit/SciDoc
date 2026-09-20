@@ -1,5 +1,7 @@
 # Paper-aligned evaluation follow-through
 
+> **2026-09-20 provenance clarification:** [PROVENANCE_RECONCILIATION.md](PROVENANCE_RECONCILIATION.md) is the latest interpretation. Historical experiments and their aggregates are traceable. Current-release strict diagnostics use different input/protocol combinations and do not disprove those experiments. Earlier “cannot reproduce” wording applies only to those diagnostic assumptions; newly generated Judge labels are not human ground truth.
+
 Update: the later [gap investigation](GAP_INVESTIGATION.md) corrects the historical
 adapter's over-rejection of reference-only revisions and reports a complete
 Qwen3-VL-8B local rescore. Earlier bounds/counts below describe the pre-fix audit;

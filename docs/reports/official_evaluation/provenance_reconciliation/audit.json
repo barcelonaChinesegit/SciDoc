@@ -1,0 +1,1021 @@
+{
+  "scope": "provenance reconciliation, not an alternative evaluation protocol",
+  "official_reproduction_verified": false,
+  "historical_copies_identical": 55,
+  "historical_copies_total": 55,
+  "historical_cache_bindings_verified": 21050,
+  "qwen8b_groups": {
+    "identical_judge_inputs": {
+      "items": 1883,
+      "old_correct": 1344,
+      "new_correct": 1112,
+      "correct_to_incorrect": 234,
+      "incorrect_to_correct": 2
+    },
+    "illegal": {
+      "items": 23,
+      "old_correct": 11,
+      "new_correct": 0,
+      "correct_to_incorrect": 11,
+      "incorrect_to_correct": 0
+    },
+    "technical_failure": {
+      "items": 43,
+      "old_correct": 32,
+      "new_correct": 0,
+      "correct_to_incorrect": 32,
+      "incorrect_to_correct": 0
+    },
+    "changed_judge_inputs": {
+      "items": 49,
+      "old_correct": 31,
+      "new_correct": 19,
+      "correct_to_incorrect": 13,
+      "incorrect_to_correct": 1
+    },
+    "historical_judge_skipped": {
+      "items": 2,
+      "old_correct": 0,
+      "new_correct": 1,
+      "correct_to_incorrect": 0,
+      "incorrect_to_correct": 1
+    },
+    "missing": {
+      "items": 12
+    },
+    "deterministic_unanswerable": {
+      "items": 188,
+      "old_correct": 85,
+      "new_correct": 85,
+      "correct_to_incorrect": 0,
+      "incorrect_to_correct": 0
+    }
+  },
+  "historical_table_display_matches": {
+    "table2": 99,
+    "table3": 98
+  },
+  "qwen8b_baseline_counts": {
+    "historical_records": 2190,
+    "strict_raw_legal": 2163,
+    "changed_evidence_pages": 171,
+    "dataset_version_mismatch": 205,
+    "reference_only_revision_rescored": 162,
+    "strict_raw_illegal": 25,
+    "changed_question": 43,
+    "changed_answer": 58,
+    "unresolved_input_version_mismatch": 43,
+    "unmapped_legacy_ids": 2
+  },
+  "qwen8b_current_correct": 1217,
+  "qwen8b_cache_replay_identical": true,
+  "independent_task_discipline_aggregation_identical": true,
+  "paired_jobs": 49,
+  "membership": {
+    "MiniCPM-V-2.6": {
+      "recorded_correct": 343,
+      "subject_join_correct": 343,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ]
+    },
+    "InternVL25-8B": {
+      "recorded_correct": 491,
+      "subject_join_correct": 491,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ]
+    },
+    "MiniCPM-V-4.5": {
+      "recorded_correct": 755,
+      "subject_join_correct": 755,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": []
+    },
+    "InternVL35-8B": {
+      "recorded_correct": 769,
+      "subject_join_correct": 769,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "ordinary1190",
+          "1",
+          "UQA0191"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0192"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0193"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0194"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0195"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0196"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0197"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0198"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0199"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0200"
+        ]
+      ]
+    },
+    "Gemma3-27B-IT": {
+      "recorded_correct": 1041,
+      "subject_join_correct": 1041,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ]
+    },
+    "Mistral-Small3.1-24B": {
+      "recorded_correct": 1078,
+      "subject_join_correct": 1078,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ]
+    },
+    "Qwen3-VL-4B": {
+      "recorded_correct": 1428,
+      "subject_join_correct": 1428,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "ordinary1190",
+          "1",
+          "UQA0191"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0192"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0193"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0194"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0195"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0196"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0197"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0198"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0199"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0200"
+        ]
+      ]
+    },
+    "Qwen3-VL-8B": {
+      "recorded_correct": 1503,
+      "subject_join_correct": 1503,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "ordinary1190",
+          "1",
+          "UQA0191"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0192"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0193"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0194"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0195"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0196"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0197"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0198"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0199"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0200"
+        ]
+      ]
+    },
+    "Claude-sonncet-5": {
+      "recorded_correct": 1525,
+      "subject_join_correct": 1497,
+      "correct_outside_subject_cohort": 28,
+      "contains_out_of_cohort_predictions": true,
+      "outside_records": [
+        {
+          "dataset": "ordinary1190",
+          "paper": "24",
+          "qa": "QA4",
+          "correct": true,
+          "question": "What is the limiting distribution of t{0,HAR} under H_0 and fixed-K?",
+          "reference": "t(K_1+K_2)",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "24",
+          "qa": "QA8",
+          "correct": true,
+          "question": "Which test performs best under strong serial dependence?",
+          "reference": "SHAR-WB test",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "134",
+          "qa": "QA3",
+          "correct": true,
+          "question": "What distribution is used for the viral load outcome in the ACTG359 study?",
+          "reference": "Gamma",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "155",
+          "qa": "QA9",
+          "correct": true,
+          "question": "Which two data sources were used to analyze OSM research and community trends?",
+          "reference": "WoS Core Collection and SotM presentations",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "155",
+          "qa": "QA5",
+          "correct": true,
+          "question": "How many key research interests were identified from highly cited OSM papers?",
+          "reference": "5",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "167",
+          "qa": "QA8",
+          "correct": true,
+          "question": "What is the conclusion of Theorem 4.6 regarding doubly twisted isometric representations?",
+          "reference": "They admit a unique Wold decomposition",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "167",
+          "qa": "QA5",
+          "correct": true,
+          "question": "What type of representation is recovered when U_{ij}=I in doubly twisted representations?",
+          "reference": "Doubly commuting representation",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "167",
+          "qa": "QA6",
+          "correct": true,
+          "question": "What is the formula for the wandering subspace W_{A} for a subset A\\subseteq I_{k}?",
+          "reference": "\\bigcap_{i\\in A}Ran(I-\\tilde{T}{i}\\tilde{T}{i}^{})",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "208",
+          "qa": "QA5",
+          "correct": true,
+          "question": "How does population size fluctuation affect the coalescent process?",
+          "reference": "Leads to time-changed multiple-merger coalescents",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "272",
+          "qa": "QA6",
+          "correct": true,
+          "question": "How many objects in this study have Gaia DR3 astrometric overlap?",
+          "reference": "40",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "276",
+          "qa": "QA6",
+          "correct": true,
+          "question": "What metric is used to compare sampling efficiency of MCMC algorithms?",
+          "reference": "Effective Sample Size (ESS)",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "314",
+          "qa": "QA5",
+          "correct": true,
+          "question": "What identity is used to propagate projection bounds to resolvent bounds?",
+          "reference": "Operator-valued partial fraction decomposition identity",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "673",
+          "qa": "QA3",
+          "correct": true,
+          "question": "What is the expression for S^2 in the affine E_7 planar algebra?",
+          "reference": "S^2=6f^{(4)}+S",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "673",
+          "qa": "QA6",
+          "correct": true,
+          "question": "What is the value of tr(S^2) in the affine E_7 planar algebra?",
+          "reference": "30",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "676",
+          "qa": "QA1",
+          "correct": true,
+          "question": "What is the order of the velocity Verlet integrator used in uHMC-v?",
+          "reference": "2",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "685",
+          "qa": "QA1",
+          "correct": true,
+          "question": "How many core learnable stages does DiSOL decompose the solver into?",
+          "reference": "3",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "685",
+          "qa": "QA6",
+          "correct": true,
+          "question": "How many input channels does the linear elasticity problem have?",
+          "reference": "5",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "700",
+          "qa": "QA5",
+          "correct": true,
+          "question": "How many graph width parameters are used to characterize the symmetric classes?",
+          "reference": "3",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "700",
+          "qa": "QA6",
+          "correct": true,
+          "question": "How many parametrized algebraic complexity classes are referenced in Theorem E?",
+          "reference": "2",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "703",
+          "qa": "QA9",
+          "correct": true,
+          "question": "What is the Hölder exponent of velocity in Kolmogorov's turbulence theory?",
+          "reference": "0.333",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "3",
+          "qa": "QA5",
+          "correct": true,
+          "question": "What happens to the competitive ratio B(\\sigma) as \\sigma increases in the convex cost environment?",
+          "reference": "It decreases",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "3",
+          "qa": "QA9",
+          "correct": true,
+          "question": "What is the relationship between max min and min max competitive ratio when a saddle point exists?",
+          "reference": "They are equal",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "241",
+          "qa": "QA1",
+          "correct": true,
+          "question": "What is the name of the public Monte Carlo code for Higgs decays at NLO in SMEFT?",
+          "reference": "NEWiSH",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "241",
+          "qa": "QA8",
+          "correct": true,
+          "question": "What is the order of the SMEFT expansion used in the calculations?",
+          "reference": "Dimension-6",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "263",
+          "qa": "QA5",
+          "correct": true,
+          "question": "How are the geometric differentials \\delta* related to the James spectral sequence?",
+          "reference": "\\delta_=d_",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "701",
+          "qa": "QA3",
+          "correct": true,
+          "question": "How many types of external representations are used for feedback?",
+          "reference": "3",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "701",
+          "qa": "QA5",
+          "correct": true,
+          "question": "What is the marginal R-squared value for Cohort 1's mixed model?",
+          "reference": "0.36",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        },
+        {
+          "dataset": "ordinary1190",
+          "paper": "701",
+          "qa": "QA9",
+          "correct": true,
+          "question": "Which model is used to analyze post-test scores?",
+          "reference": "Linear mixed-effects model",
+          "exact_subject_candidates": [],
+          "exact_current_candidates": []
+        }
+      ],
+      "subject_items_without_prediction": [
+        [
+          "ordinary1190",
+          "1",
+          "UQA0191"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0192"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0193"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0194"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0195"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0196"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0197"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0198"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0199"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0200"
+        ],
+        [
+          "ordinary1190",
+          "13",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "27",
+          "QA7"
+        ],
+        [
+          "ordinary1190",
+          "37",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "78",
+          "QA6"
+        ],
+        [
+          "ordinary1190",
+          "96",
+          "QA3"
+        ],
+        [
+          "ordinary1190",
+          "98",
+          "QA1"
+        ],
+        [
+          "ordinary1190",
+          "115",
+          "QA5"
+        ],
+        [
+          "ordinary1190",
+          "138",
+          "QA1"
+        ],
+        [
+          "ordinary1190",
+          "139",
+          "QA5"
+        ],
+        [
+          "ordinary1190",
+          "144",
+          "QA3"
+        ],
+        [
+          "ordinary1190",
+          "168",
+          "QA2"
+        ],
+        [
+          "ordinary1190",
+          "178",
+          "QA7"
+        ],
+        [
+          "ordinary1190",
+          "182",
+          "QA3"
+        ],
+        [
+          "ordinary1190",
+          "34",
+          "QA7"
+        ],
+        [
+          "ordinary1190",
+          "43",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "45",
+          "QA8"
+        ],
+        [
+          "ordinary1190",
+          "51",
+          "QA8"
+        ],
+        [
+          "ordinary1190",
+          "63",
+          "QA9"
+        ],
+        [
+          "ordinary1190",
+          "72",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "72",
+          "QA6"
+        ],
+        [
+          "ordinary1190",
+          "100",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "100",
+          "QA6"
+        ],
+        [
+          "ordinary1190",
+          "103",
+          "QA10"
+        ],
+        [
+          "ordinary1190",
+          "109",
+          "QA8"
+        ],
+        [
+          "ordinary1190",
+          "112",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "146",
+          "QA3"
+        ],
+        [
+          "ordinary1190",
+          "170",
+          "QA1"
+        ],
+        [
+          "ordinary1190",
+          "172",
+          "QA5"
+        ]
+      ]
+    },
+    "DeepSeek-V4-flash-Vision-Exp": {
+      "recorded_correct": 1748,
+      "subject_join_correct": 1748,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ]
+    },
+    "GLM-4.6V": {
+      "recorded_correct": 1781,
+      "subject_join_correct": 1781,
+      "correct_outside_subject_cohort": 0,
+      "contains_out_of_cohort_predictions": false,
+      "outside_records": [],
+      "subject_items_without_prediction": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ]
+    }
+  },
+  "source_hashes": {
+    "sxz/evaluation_11models_5datasets_qwen36_calibrated_fixeddenom_v4/evaluation_manifest.json": "f7825a84764afc34fc6ed5658caea625b418a0669fe9de1b2caf47c4e354432b",
+    "evaluation/paper_reference.json": "0ae6486571cc6e24d7dd24800608a402570f54004343bac4a5e92efe0c20abb4",
+    "sxz/evaluation_11models_5datasets_qwen36_calibrated_fixeddenom_v4/qwen36_answer_judge_cache.json": "d3cc79cfcdc524538494d694a5fafa43ba6bf65b22a96a706079edbdd5e49f46",
+    "data/results/evaluations/detail_11models_5datasets.xlsx": "c933f539f7d7f64c776762055dcc21a221be372376b8e36c2aad95704adcad0f",
+    "sxz/final_2200_classification_statistics.xlsx": "9d893502dcab48557eada8874234f4f54352ef5026112956e0084aff039819d7",
+    "sxz/evaluate_11models_5datasets_calibrated_fixeddenom_seed42_gpu2345_parallel_v4.py": "63da86a0e6d7ba6489ac1665b358296e3a83b58af98db31eacf0f74ff5965b60",
+    "sxz/build_table3_by_subject.py": "8eccd4b923c8c4df215dffef525d4b9d92951133ba928059e1bf6f91accbc053",
+    "evaluation/prompts/semantic_judge.txt": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+    "论文/ICLR2027_ScienceDoc/iclr2027_conference.tex": "cd15abe0fa53fda4f9ceadab33fe9ff10e7214fcbd07004e0509305cada66056",
+    "evaluation/audit_score_provenance.py": "aebfdf6bd51325c4d6c8ac41b9522a5fe1fd31fcde0928999e1e0beeda469871",
+    "data/results/MiniCPM-V-2.6/ordinary1190.json": "eaded30e9d26e7e3939e028141a9665608195128fe7b85d359b3398c5a6f6464",
+    "sxz/models/MiniCPM-V-2_6/output/all5_frozen_laterimage_strongfilter_v6/ordinary1190__prompt-v1__dpi144__strongfilter-v6.json": "eaded30e9d26e7e3939e028141a9665608195128fe7b85d359b3398c5a6f6464",
+    "data/results/MiniCPM-V-2.6/cross_old400.json": "bbe0db0af4cc87f0b1fe87664263018a66f2c5632c599f8bb033c861cd3f932e",
+    "sxz/models/MiniCPM-V-2_6/output/all5_frozen_laterimage_strongfilter_v6/cross_old400__prompt-v1__dpi144__strongfilter-v6.json": "bbe0db0af4cc87f0b1fe87664263018a66f2c5632c599f8bb033c861cd3f932e",
+    "data/results/MiniCPM-V-2.6/cross_hard400.json": "4b7c5ed245cca5858d690dc8ec0c531c7bd2d7a52bf7e9cc391ce06e09561184",
+    "sxz/models/MiniCPM-V-2_6/output/all5_frozen_laterimage_strongfilter_v6/cross_hard400__prompt-v1__dpi144__strongfilter-v6.json": "4b7c5ed245cca5858d690dc8ec0c531c7bd2d7a52bf7e9cc391ce06e09561184",
+    "data/results/MiniCPM-V-2.6/reasoning_old100.json": "e480295a96add908c5e96e58b73b1093e4b3ab17b882f2af501637ea1f1eb5d8",
+    "sxz/models/MiniCPM-V-2_6/output/all5_frozen_laterimage_strongfilter_v6/reasoning_old100__prompt-v1__dpi144__strongfilter-v6.json": "e480295a96add908c5e96e58b73b1093e4b3ab17b882f2af501637ea1f1eb5d8",
+    "data/results/MiniCPM-V-2.6/reasoning_hard100.json": "3c83f882fd2788fe210caad04a1f2c0411969cb131092732b0297aceb8ecd63e",
+    "sxz/models/MiniCPM-V-2_6/output/all5_frozen_laterimage_strongfilter_v6/reasoning_hard100__prompt-v1__dpi144__strongfilter-v6.json": "3c83f882fd2788fe210caad04a1f2c0411969cb131092732b0297aceb8ecd63e",
+    "data/results/InternVL25-8B/ordinary1190.json": "ca6d3f8af4dc9545c542038463e983b7860e462f10d2404860f804d294fd66fc",
+    "sxz/models/InternVL2_5-8B/output/v17_sdpa_docbudget96_promptv1_failfast_gpu2345/merged/ordinary1190__v17_sdpa_docbudget96_promptv1_failfast.json": "ca6d3f8af4dc9545c542038463e983b7860e462f10d2404860f804d294fd66fc",
+    "data/results/InternVL25-8B/cross_old400.json": "5fd9e049f921714f53bb7585e9120b8b61223645e7aa1f6247448446cdbe29dd",
+    "sxz/models/InternVL2_5-8B/output/v17_sdpa_docbudget96_promptv1_failfast_gpu2345/merged/cross_old400__v17_sdpa_docbudget96_promptv1_failfast.json": "5fd9e049f921714f53bb7585e9120b8b61223645e7aa1f6247448446cdbe29dd",
+    "data/results/InternVL25-8B/cross_hard400.json": "902efe855a76d4488b8537f5db714661273cdf53d514c25f853966aebf53eabd",
+    "sxz/models/InternVL2_5-8B/output/v17_sdpa_docbudget96_promptv1_failfast_gpu2345/merged/cross_hard400__v17_sdpa_docbudget96_promptv1_failfast.json": "902efe855a76d4488b8537f5db714661273cdf53d514c25f853966aebf53eabd",
+    "data/results/InternVL25-8B/reasoning_old100.json": "cd8b05ecf076a46dca5b32425bc2f8ada838f453a5a9f7d1bc2076192bd4ae1b",
+    "sxz/models/InternVL2_5-8B/output/v17_sdpa_docbudget96_promptv1_failfast_gpu2345/merged/reasoning_old100__v17_sdpa_docbudget96_promptv1_failfast.json": "cd8b05ecf076a46dca5b32425bc2f8ada838f453a5a9f7d1bc2076192bd4ae1b",
+    "data/results/InternVL25-8B/reasoning_hard100.json": "73747579839b537e762ac95277f2e8c614e4906b113feba8911272244a8a22a4",
+    "sxz/models/InternVL2_5-8B/output/v17_sdpa_docbudget96_promptv1_failfast_gpu2345/merged/reasoning_hard100__v17_sdpa_docbudget96_promptv1_failfast.json": "73747579839b537e762ac95277f2e8c614e4906b113feba8911272244a8a22a4",
+    "data/results/MiniCPM-V-4.5/ordinary1190.json": "6503dd406a5e792e7ffcd4f1cbd1f5e33a27f6183fd38d1cd3a9dcb63f7778bf",
+    "sxz/models/MiniCPM-V-4_5/output/parsed_result/ordinary1190__prompt-v1__dpi144__run-v4.1.json": "6503dd406a5e792e7ffcd4f1cbd1f5e33a27f6183fd38d1cd3a9dcb63f7778bf",
+    "data/results/MiniCPM-V-4.5/cross_old400.json": "14cb6acdd039e33d9e98a2e5a9774585ffce58f80e91f76aef42c10ede1adc0d",
+    "sxz/models/MiniCPM-V-4_5/output/strict_min_full_v1/cross_old400__strict-min-full-v1.json": "14cb6acdd039e33d9e98a2e5a9774585ffce58f80e91f76aef42c10ede1adc0d",
+    "data/results/MiniCPM-V-4.5/cross_hard400.json": "d9c9436bd68787af563c1814f943c8b3532b27e323842304356adde305618af4",
+    "sxz/models/MiniCPM-V-4_5/output/strict_min_full_v1/cross_hard400__strict-min-full-v1.json": "d9c9436bd68787af563c1814f943c8b3532b27e323842304356adde305618af4",
+    "data/results/MiniCPM-V-4.5/reasoning_old100.json": "1316d20af51eca85a3251ad2227ad6bbc2464e335d42e37acd2637281197571e",
+    "sxz/models/MiniCPM-V-4_5/output/strict_min_full_v1/reasoning_old100__strict-min-full-v1.json": "1316d20af51eca85a3251ad2227ad6bbc2464e335d42e37acd2637281197571e",
+    "data/results/MiniCPM-V-4.5/reasoning_hard100.json": "87d984991ec43b430e55a79c9989af3216596f26145b27bd11c0f904566e3655",
+    "sxz/models/MiniCPM-V-4_5/output/strict_min_full_v1/reasoning_hard100__strict-min-full-v1.json": "87d984991ec43b430e55a79c9989af3216596f26145b27bd11c0f904566e3655",
+    "data/results/InternVL35-8B/ordinary1190.json": "d53edf52b55259bd4966884aa727434e1518b54bff07450f203d6c3a6baaeca2",
+    "sxz/models/InternVL3_5-8B/output/parsed_result/ordinary1190__prompt-v1__dpi144__run-v1.json": "d53edf52b55259bd4966884aa727434e1518b54bff07450f203d6c3a6baaeca2",
+    "data/results/InternVL35-8B/cross_old400.json": "935f195a9a621e8f96007c5e545c06441730304472fb7277ddff9e4ef344160d",
+    "sxz/models/InternVL3_5-8B/output/strict_min_full_v4_fixed/cross_old400__strict-min-full-v1.json": "935f195a9a621e8f96007c5e545c06441730304472fb7277ddff9e4ef344160d",
+    "data/results/InternVL35-8B/cross_hard400.json": "13bcad1f9df0ab412c54a11bc805f3bfac293994a1df3a08a88613ae7d9091f9",
+    "sxz/models/InternVL3_5-8B/output/strict_min_full_v4_fixed/cross_hard400__strict-min-full-v1.json": "13bcad1f9df0ab412c54a11bc805f3bfac293994a1df3a08a88613ae7d9091f9",
+    "data/results/InternVL35-8B/reasoning_old100.json": "357092f64025df8e3885b98fe83ce4a50ef0c1129889badfe5338bbfda04c2bb",
+    "sxz/models/InternVL3_5-8B/output/strict_min_full_v4_fixed/reasoning_old100__strict-min-full-v1.json": "357092f64025df8e3885b98fe83ce4a50ef0c1129889badfe5338bbfda04c2bb",
+    "data/results/InternVL35-8B/reasoning_hard100.json": "16ba0bbe3757aacc33f74cb1ffab2318a86f3f0228c43e1a87cfb80a905c88fa",
+    "sxz/models/InternVL3_5-8B/output/strict_min_full_v4_fixed/reasoning_hard100__strict-min-full-v1.json": "16ba0bbe3757aacc33f74cb1ffab2318a86f3f0228c43e1a87cfb80a905c88fa",
+    "data/results/Gemma3-27B-IT/ordinary1190.json": "acf57780167a72d69897253576c76670e558d641b3cb4ee00c9c87062b77c0c3",
+    "sxz/models/Gemma-3-27B-IT/output/strict_min_full_v1/ordinary1190__prompt-v1__dpi144__run-v1.json": "acf57780167a72d69897253576c76670e558d641b3cb4ee00c9c87062b77c0c3",
+    "data/results/Gemma3-27B-IT/cross_old400.json": "d48877116ac6037bc68ba992c40d66520d06c96060be1b5ae9a178453e8ea236",
+    "sxz/models/Gemma-3-27B-IT/output/strict_min_full_v1/cross_old400__prompt-v1__dpi144__run-v1.json": "d48877116ac6037bc68ba992c40d66520d06c96060be1b5ae9a178453e8ea236",
+    "data/results/Gemma3-27B-IT/cross_hard400.json": "990accd2fae72f70d9b1d9b3724f9be1b61be73dd3563cd8cc8050787d5c5321",
+    "sxz/models/Gemma-3-27B-IT/output/strict_min_full_v1/cross_hard400__prompt-v1__dpi144__run-v1.json": "990accd2fae72f70d9b1d9b3724f9be1b61be73dd3563cd8cc8050787d5c5321",
+    "data/results/Gemma3-27B-IT/reasoning_old100.json": "0686466ef9eb30d725ec14167fa48c203795838bef5043f95143f4355f5f293d",
+    "sxz/models/Gemma-3-27B-IT/output/strict_min_full_v1/reasoning_old100__prompt-v1__dpi144__run-v1.json": "0686466ef9eb30d725ec14167fa48c203795838bef5043f95143f4355f5f293d",
+    "data/results/Gemma3-27B-IT/reasoning_hard100.json": "9e1f1bb73db64719f934efab4ce01bb11479bd06e1f39189885326fc15f7d282",
+    "sxz/models/Gemma-3-27B-IT/output/strict_min_full_v1/reasoning_hard100__prompt-v1__dpi144__run-v1.json": "9e1f1bb73db64719f934efab4ce01bb11479bd06e1f39189885326fc15f7d282",
+    "data/results/Mistral-Small3.1-24B/ordinary1190.json": "38a6b6bee6b06ba3fa563b73d400689eb06da6de2b7250af4ebdbe794a266960",
+    "sxz/models/Mistral-Small-3.1-24B-Instruct-2503/output/context_fit_fullpages_v1/ordinary1190__prompt-v1__dpi144__run-v1.json": "38a6b6bee6b06ba3fa563b73d400689eb06da6de2b7250af4ebdbe794a266960",
+    "data/results/Mistral-Small3.1-24B/cross_old400.json": "6013cc3579c4174cfbcbc939e6b56f8270d0fa8ee4e194a4053ede2dc915cf26",
+    "sxz/models/Mistral-Small-3.1-24B-Instruct-2503/output/context_fit_fullpages_v1/cross_old400__prompt-v1__dpi144__run-v1.json": "6013cc3579c4174cfbcbc939e6b56f8270d0fa8ee4e194a4053ede2dc915cf26",
+    "data/results/Mistral-Small3.1-24B/cross_hard400.json": "cfe39c0ef4bbbcdd606bd8891c7af0510f5065ad8efbf73c9f2f8645e983fa9f",
+    "sxz/models/Mistral-Small-3.1-24B-Instruct-2503/output/context_fit_fullpages_v1/cross_hard400__prompt-v1__dpi144__run-v1.json": "cfe39c0ef4bbbcdd606bd8891c7af0510f5065ad8efbf73c9f2f8645e983fa9f",
+    "data/results/Mistral-Small3.1-24B/reasoning_old100.json": "0dde77abd4c7b541706e947d1ce928f15552b4f7980355a0c61b20f4f31606d6",
+    "sxz/models/Mistral-Small-3.1-24B-Instruct-2503/output/context_fit_fullpages_v1/reasoning_old100__prompt-v1__dpi144__run-v1.json": "0dde77abd4c7b541706e947d1ce928f15552b4f7980355a0c61b20f4f31606d6",
+    "data/results/Mistral-Small3.1-24B/reasoning_hard100.json": "44f65ca9bfd3d4206410e974b5f9c92ab588a451f33afe8a5c58163a89939fac",
+    "sxz/models/Mistral-Small-3.1-24B-Instruct-2503/output/context_fit_fullpages_v1/reasoning_hard100__prompt-v1__dpi144__run-v1.json": "44f65ca9bfd3d4206410e974b5f9c92ab588a451f33afe8a5c58163a89939fac",
+    "data/results/Qwen3-VL-4B/ordinary1190.json": "d64a90504e4e3a1e142450a0c3ba52bc8d21eb796340734f8198ddd7ddfd230f",
+    "sxz/models/Qwen3-VL-4B/output/parsed_result/ordinary1190__prompt-v1__dpi144__run-v1.json": "d64a90504e4e3a1e142450a0c3ba52bc8d21eb796340734f8198ddd7ddfd230f",
+    "data/results/Qwen3-VL-4B/cross_old400.json": "07b98c50c1e367064c87abc497ab653d3060929c3fcba595ee917c97e3a6cbc9",
+    "sxz/models/Qwen3-VL-4B/output/strict_min_full_v1/cross_old400__strict-min-full-v1.json": "07b98c50c1e367064c87abc497ab653d3060929c3fcba595ee917c97e3a6cbc9",
+    "data/results/Qwen3-VL-4B/cross_hard400.json": "2ddb04e52900ed825901ebfe3c4bfb0fe20c9626b66345cf1f7aaf7db3743204",
+    "sxz/models/Qwen3-VL-4B/output/strict_min_full_v1/cross_hard400__strict-min-full-v1.json": "2ddb04e52900ed825901ebfe3c4bfb0fe20c9626b66345cf1f7aaf7db3743204",
+    "data/results/Qwen3-VL-4B/reasoning_old100.json": "b303309e1cfbe172d356b1c49bedb115cda80bdb301681fd20939647d6987c78",
+    "sxz/models/Qwen3-VL-4B/output/parsed_result/reasoning_old100__prompt-v1__dpi144__run-v1.json": "b303309e1cfbe172d356b1c49bedb115cda80bdb301681fd20939647d6987c78",
+    "data/results/Qwen3-VL-4B/reasoning_hard100.json": "7bb429d47f7575202a9e0b6d59b2eae3557a04b113f34e8d95b78310f4cfd702",
+    "sxz/models/Qwen3-VL-4B/output/parsed_result/reasoning_hard100__prompt-v1__dpi144__run-v1.json": "7bb429d47f7575202a9e0b6d59b2eae3557a04b113f34e8d95b78310f4cfd702",
+    "data/results/Qwen3-VL-8B/ordinary1190.json": "2b5404729c2e7dac8ab6505a74984e22632eb4124d811cadc6ab8b88472717ab",
+    "sxz/models/Qwen3-VL-8B/output/parsed_result/ordinary1190__prompt-v1__dpi144__run-v1.json": "2b5404729c2e7dac8ab6505a74984e22632eb4124d811cadc6ab8b88472717ab",
+    "data/results/Qwen3-VL-8B/cross_old400.json": "9fc0229443add67c8e8f394eb9c684625505dd297c56a5b4e9e86a36b2606827",
+    "sxz/models/Qwen3-VL-8B/output/strict_min_full_v1/cross_old400__strict-min-full-v1.json": "9fc0229443add67c8e8f394eb9c684625505dd297c56a5b4e9e86a36b2606827",
+    "data/results/Qwen3-VL-8B/cross_hard400.json": "44c20b238bb9364f74e5cf0627c33234a853be04f453bc138f141a6342634602",
+    "sxz/models/Qwen3-VL-8B/output/strict_min_full_v1/cross_hard400__strict-min-full-v1.json": "44c20b238bb9364f74e5cf0627c33234a853be04f453bc138f141a6342634602",
+    "data/results/Qwen3-VL-8B/reasoning_old100.json": "ef9966efe36f64bdffe3a2fe841d801f20e0577d5eebb187e9eeff7d1668f703",
+    "sxz/models/Qwen3-VL-8B/output/parsed_result/reasoning_old100__prompt-v1__dpi144__run-v1.json": "ef9966efe36f64bdffe3a2fe841d801f20e0577d5eebb187e9eeff7d1668f703",
+    "data/results/Qwen3-VL-8B/reasoning_hard100.json": "74e3523da23fcc3e580396b7dd45179a77791bb480af7b7a2bd10fe25b23f963",
+    "sxz/models/Qwen3-VL-8B/output/parsed_result/reasoning_hard100__prompt-v1__dpi144__run-v1.json": "74e3523da23fcc3e580396b7dd45179a77791bb480af7b7a2bd10fe25b23f963",
+    "data/results/Claude-sonncet-5/ordinary1190.json": "01460810682b7d820a6d68dd86945bfc9790cf2174a86639597eaeb0e6bdfdfc",
+    "sxz/models/Claude-5/output/raw_result/challenge1190_claude-sonnet-5_remaining_after_balanced_run_wholepdf_dpi144_v1_result.json": "01460810682b7d820a6d68dd86945bfc9790cf2174a86639597eaeb0e6bdfdfc",
+    "data/results/Claude-sonncet-5/cross_old400.json": "480ab4da422a0f2d0363b3859619c0f53fb8e43ee59c3c84f45a6901412069a7",
+    "sxz/models/Claude-5/output/raw_result/qa_cross_pdf_challenge400_claude-sonnet-5_wholemerged_dynamiccompress_dpi144_answerable_v1_result.json": "480ab4da422a0f2d0363b3859619c0f53fb8e43ee59c3c84f45a6901412069a7",
+    "data/results/Claude-sonncet-5/cross_hard400.json": "53462829cfa661e922bbd3bdff84338692065e258650059adc17fef678713cf0",
+    "sxz/models/Claude-5/output/raw_result/hard_cross_pdf_strict_dual_review_final_400_claude-sonnet-5_wholemerged_dynamiccompress_dpi144_v1_result.json": "53462829cfa661e922bbd3bdff84338692065e258650059adc17fef678713cf0",
+    "data/results/Claude-sonncet-5/reasoning_old100.json": "9dd2d291e0966030dca76ca18535bdb6eebccda94c602685cd3ad723b68f44f3",
+    "sxz/models/Claude-5/output/raw_result/reasoning_qa_100_claude-sonnet-5_refreshed_wholepdf_dynamiccompress_dpi144_v2_result.json": "9dd2d291e0966030dca76ca18535bdb6eebccda94c602685cd3ad723b68f44f3",
+    "data/results/Claude-sonncet-5/reasoning_hard100.json": "926e017ac4c16c77bf5f1c2767a6f943178779d8379ee08d3d5fdd5608fdec42",
+    "sxz/models/Claude-5/output/raw_result/reasoning_qa_incremental_100_209_claude-sonnet-5_hard_wholepdf_dynamiccompress_dpi144_v1_result.json": "926e017ac4c16c77bf5f1c2767a6f943178779d8379ee08d3d5fdd5608fdec42",
+    "data/results/DeepSeek-V4-flash-Vision-Exp/ordinary1190.json": "c673e7d4315bf6b0a4530b5f9a0b3bb00733c79506ad7ff2267ac2773c55fe72",
+    "sxz/models/DeepSeek-V4-Flash-Vision-Exp/output/raw_result_base64_nothinking_v1/ordinary1190__prompt-v1__dpi144__run-v1.json": "c673e7d4315bf6b0a4530b5f9a0b3bb00733c79506ad7ff2267ac2773c55fe72",
+    "data/results/DeepSeek-V4-flash-Vision-Exp/cross_old400.json": "ff95ad81c031c79f3505fb619daf712eb1e7d8d6f73603d2207e8df109ff116b",
+    "sxz/models/DeepSeek-V4-Flash-Vision-Exp/output/raw_result_base64_nothinking_v1/cross_old400__prompt-v1__dpi144__run-v1.json": "ff95ad81c031c79f3505fb619daf712eb1e7d8d6f73603d2207e8df109ff116b",
+    "data/results/DeepSeek-V4-flash-Vision-Exp/cross_hard400.json": "a4c28c2d81390e38dba69c5522c6f7044dfd71a7cd6adfbe6b8711e8b969c2cd",
+    "sxz/models/DeepSeek-V4-Flash-Vision-Exp/output/raw_result_base64_nothinking_v1/cross_hard400__prompt-v1__dpi144__run-v1.json": "a4c28c2d81390e38dba69c5522c6f7044dfd71a7cd6adfbe6b8711e8b969c2cd",
+    "data/results/DeepSeek-V4-flash-Vision-Exp/reasoning_old100.json": "aacdbed458b2bda602fa127e41d972e8eb1c22edc06ed87e3ddd45e58fb0d552",
+    "sxz/models/DeepSeek-V4-Flash-Vision-Exp/output/raw_result_base64_nothinking_v1/reasoning_old100__prompt-v1__dpi144__run-v1.json": "aacdbed458b2bda602fa127e41d972e8eb1c22edc06ed87e3ddd45e58fb0d552",
+    "data/results/DeepSeek-V4-flash-Vision-Exp/reasoning_hard100.json": "f2352329d5a0c3659fcb759ce93611200e6d0257366856139eb1b182781dc958",
+    "sxz/models/DeepSeek-V4-Flash-Vision-Exp/output/raw_result_base64_nothinking_v1/reasoning_hard100__prompt-v1__dpi144__run-v1.json": "f2352329d5a0c3659fcb759ce93611200e6d0257366856139eb1b182781dc958",
+    "data/results/GLM-4.6V/ordinary1190.json": "c73e11b152f1aa8973a69920f74a7c6f8cef7a93540d4681475ec9f9615d256c",
+    "sxz/models/GLM-4.6V/output/raw_result_base64_nothinking_v1/ordinary1190__prompt-v1__dpi144__run-v1.json": "c73e11b152f1aa8973a69920f74a7c6f8cef7a93540d4681475ec9f9615d256c",
+    "data/results/GLM-4.6V/cross_old400.json": "8bd3aef2f4f92228bdc211dc06dbd63a82dc8d1b2a310c253f33f69a70c61951",
+    "sxz/models/GLM-4.6V/output/raw_result_base64_nothinking_v1/cross_old400__prompt-v1__dpi144__run-v1.json": "8bd3aef2f4f92228bdc211dc06dbd63a82dc8d1b2a310c253f33f69a70c61951",
+    "data/results/GLM-4.6V/cross_hard400.json": "309d3a3496fe15dcbc1cfdb5e3dd505e16d1c2fdfa82b496026342816e866595",
+    "sxz/models/GLM-4.6V/output/raw_result_base64_nothinking_v1/cross_hard400__prompt-v1__dpi144__run-v1.json": "309d3a3496fe15dcbc1cfdb5e3dd505e16d1c2fdfa82b496026342816e866595",
+    "data/results/GLM-4.6V/reasoning_old100.json": "e5e0013247bd90b79c279755a99d3a549f778f8ae5c8edadfa14aaaf43c3ee5c",
+    "sxz/models/GLM-4.6V/output/raw_result_base64_nothinking_v1/reasoning_old100__prompt-v1__dpi144__run-v1.json": "e5e0013247bd90b79c279755a99d3a549f778f8ae5c8edadfa14aaaf43c3ee5c",
+    "data/results/GLM-4.6V/reasoning_hard100.json": "b42df6e8a8162c7fc19901ff429407d9b82058459b2b6d03b99c40ac95e36ac8",
+    "sxz/models/GLM-4.6V/output/raw_result_base64_nothinking_v1/reasoning_hard100__prompt-v1__dpi144__run-v1.json": "b42df6e8a8162c7fc19901ff429407d9b82058459b2b6d03b99c40ac95e36ac8",
+    "data/results/qwen8b_current_gold_rescore_20260920/judge_config.json": "d971b6a3001ef203b7ee964f0c9b462cd98d96014b080abc6d69a84c93c5c0a4",
+    "data/results/qwen8b_current_gold_rescore_20260920/judge_cache.jsonl": "8d4243893d7460e8deba5fdfdafbc1e1ce5c3a4ddd71c59a1ad6013fd2e8867e",
+    "data/results/qwen8b_current_gold_rescore_20260920/report.json": "302eed1e5d0b9471370bc31172b4561e544354ac369d2fdbc6e48be8083f5392"
+  },
+  "qa_hashes": {
+    "data/qa/1.base/rel__single_pdf__mixed__n4211__v1.json": "87c92b37608c10d98f103a82262d149cdb0ca482ede0b757098eb4a8f5edbaf3",
+    "data/qa/1.base/rel__single_pdf__ordinary__batch01__n1000.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+    "data/qa/1.base/rel__single_pdf__short_answer__n4211__v1.json": "0794fc291d8bbd5d829410b88cdd779da49eb0f3162986599b7559c63e900c6c",
+    "data/qa/1.base/rel__single_pdf__short_answer_unanswerable__n4451__v1.json": "d604cfa88d50a1288342b93be63ead1f3cb0e90300dcb175642216c90024da25",
+    "data/qa/1.base/work__single_pdf__raw_mixed__n6204.json": "854ac43096554429038666392240112669afc9cc948c8312f8c5c5572e5bd451",
+    "data/qa/1.base/work__single_pdf__unanswerable_pool__n240.json": "f92fae1dc59f73605e26da7481e23291030048d4d7e64dd28060655bc3d51bc4",
+    "data/qa/2.unanswerable/rel__single_pdf__unanswerable__batch01__n200.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+    "data/qa/3.reasoning/calibration/reasoning_claude_wrong_candidates_11.json": "d55d3139040b59b0856330753c89b5fc7126ef2df1db2d1c5098b35d70d29892",
+    "data/qa/3.reasoning/dual_review_v2/cleaning_ledger.json": "818342942bff6b2df96f9678c32daff66498b2d13b7e06cedf8af1aed05175bf",
+    "data/qa/3.reasoning/hard_expansion/rel__reasoning__incremental__batch02__n100__claude_hard__v1.json": "a1b24b58aaef10572e30cfccf64ba6c660a6bcbef7edd00896d291229fd4b3c8",
+    "data/qa/3.reasoning/hard_expansion/rel__reasoning__incremental__batch02__n100__v1.json": "5abd1e27f217c4146ce68125224d20794d8f1e3001990b3bd3947a846e3553e4",
+    "data/qa/3.reasoning/pdf_dependency_audit.json": "2767dab338f3d15e59398d65a494e4f42b4eed6fd5abc713b2b6f96eea6f3f36",
+    "data/qa/3.reasoning/rel__reasoning__refreshed__batch01__n100__claude_hard__v1.json": "4d2dac020b3d17388664416a35a9909bdfbc02ba41aee2fb86380bd4756c51fd",
+    "data/qa/3.reasoning/rel__reasoning__refreshed__batch01__n100__v1.json": "73e181fcaad44a396024301e91b6ede647741e6b2166241483fbfa98ceffa8c4",
+    "data/qa/3.reasoning/work__reasoning__historical_clean__batch00__n100.json": "6647533d2d80a2402c88235c113b4854673c8646b2b3e01a9f3f8e528bb4daea",
+    "data/qa/4.cross_pdf/challenge/rel__cross_pdf__challenge__batch01__n400__v1.json": "0984ace5e43887fdea552a21303ecbe1053617e9865407e5d0afdea46d4d5473",
+    "data/qa/4.cross_pdf/hard_expansion/hard_cross_pdf_strict_dual_review_final_400_ledger.json": "c000904952e0ce81a28123b7431f825176aebcbec66d6c94babf9e5328253b45",
+    "data/qa/4.cross_pdf/hard_expansion/rel__cross_pdf__strict_dual_review__batch02__n400__v1.json": "4ac39ed73df85192ee14947a28bc732e1c3e0de7617e8670327204c0591cae0c",
+    "data/qa/5.human_reviewed/rel__human_reviewed__authority__batch01__n983.json": "b3b38c1a3b51be4e20d2a40f23d60a85dc0e6b1a0589d0f85fb2ac7e8bb876a2",
+    "data/qa/6.review/cross_pdf/manual_review_decisions.json": "d0c3ef933e754256de6443e199002760f0f5a3bae7662225ab8cb5763b536332",
+    "data/qa/6.review/final_2200_modalities/work__cross_pdf__modality_api_audit__n800__v1.json": "401acd8bae14d53375e751f24a542d47806d3e7fb2bb935337eac566e2bf977e",
+    "data/qa/6.review/final_2200_modalities/work__single_pdf__modality_api_audit__n1400__v1.json": "dd7a9c1e387008d99d12f6379c23695fb49323fa6c1a17d59ed21a63c639a01a",
+    "data/qa/7.final_2200/cross_pdf_qa.json": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82",
+    "data/qa/7.final_2200/ordinary_qa.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+    "data/qa/7.final_2200/reasoning_qa.json": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+    "data/qa/7.final_2200/rel__collection__final_2200__manifest.json": "a104ab0e614ef01bfeabc27b603eb017bf6c33a32706e6cbd7440a5edab89546",
+    "data/qa/7.final_2200/unanswerable_qa.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4"
+  },
+  "dataset_hashes": {
+    "ordinary_qa.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+    "unanswerable_qa.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+    "reasoning_qa.json": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+    "cross_pdf_qa.json": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82"
+  },
+  "limitations": [
+    "Past weight bytes/revision are not bound by the historical cache.",
+    "Exact historical Judge inputs isolate input changes, not prompt versus checkpoint effects.",
+    "A cached label is not human ground truth.",
+    "Current-release diagnostic scores do not replace paper numbers."
+  ]
+}

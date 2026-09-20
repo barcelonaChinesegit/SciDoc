@@ -13,11 +13,28 @@ See [the audit](../docs/reports/official_evaluation/FINAL_REPORT.md) and
 [unresolved items](reconciliation.json). No historical tri-class decision is
 silently reused as a paper-prompt binary decision.
 
-The subsequent [exhaustive feasibility check and real local Judge verification](../docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md)
-prove that available stored outputs cannot reproduce all current table cells.
-It checks all eleven models, derives explicit bounds, and completes three model
-diagnostics with four real local Qwen3.6-27B judgments. It does not claim a full
-eleven-model rescore. The internal rule-first scoring helpers have been removed.
+The [provenance reconciliation](../docs/reports/official_evaluation/PROVENANCE_RECONCILIATION.md)
+verifies all 55 historical result copies and 21,050 historical cache bindings.
+Independent aggregation of recorded item metrics matches all 99 Table 2 cells
+and 98/99 Table 3 cells, including all 88 discipline cells. Current-release
+strict diagnostics evaluate different input/protocol combinations; they do not
+invalidate those historical experiments. Judge decisions also require scrutiny:
+neither old nor newly generated labels are human ground truth. The internal
+rule-first scoring helpers have been removed.
+
+To repeat the read-only reconciliation using the available historical files
+and the saved full Qwen8B diagnostic (no model generation):
+
+```bash
+python evaluation/audit_score_provenance.py \
+  --rescore-dir data/results/qwen8b_current_gold_rescore_20260920 \
+  --output-dir data/results/provenance_check_new
+```
+
+This is an audit of recorded labels, memberships and input bindings. It does
+not introduce a historical scoring mode or import old decisions into the
+official cache. `scripts/check_judge_input_versions.py` performs the separately
+documented paired input sensitivity experiment using the unchanged paper prompt.
 
 ## Installation and frozen inputs
 

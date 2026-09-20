@@ -1,5 +1,7 @@
 # SciDoc 项目文档
 
+最新核对见 [实验来源与评分差异核对](../reports/official_evaluation/PROVENANCE_RECONCILIATION.md)：55 份历史结果副本与原文件一致，逐题记录可重建 Table 2 的全部数值及 Table 3 的全部学科数值。当前 release 的严格诊断与历史实验属于不同输入/评分组合，新 Judge 标签不能直接当成人工真值。`evaluation/audit_score_provenance.py` 只读核对真实 Judge 缓存输入、逐题汇总和题目集合；不会改变 QA 或官方评测协议。
+
 ## 2026-09-20 论文协议审计更新
 
 公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。

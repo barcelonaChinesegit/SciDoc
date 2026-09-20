@@ -1,0 +1,229 @@
+{
+  "full_test_suite": {
+    "passed": 536,
+    "failed": 0,
+    "command": "python -m pytest -q"
+  },
+  "clean_standalone_tests": {
+    "passed": 75,
+    "failed": 0,
+    "environment": "/tmp/sciencedoc-eval-clean"
+  },
+  "dataset_preflight": {
+    "dataset_hashes": {
+      "ordinary_qa.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+      "unanswerable_qa.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+      "reasoning_qa.json": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+      "cross_pdf_qa.json": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82"
+    },
+    "release_manifest_sha256": "a104ab0e614ef01bfeabc27b603eb017bf6c33a32706e6cbd7440a5edab89546",
+    "pdf_manifest_sha256": "c00a419a56bf8713c349b4c13a0456c224ef86436cdbf91caf7ec8e953d04a10",
+    "total": 2200,
+    "status": "valid",
+    "public_file_checks": {
+      "candidate_text_files_scanned": 377,
+      "credential_pattern_findings": 0,
+      "example_sha256": "87298f4e77fb4b0ea4d6f714a313a23f239e05cd50dbc2c5963a28b99729a569",
+      "scope": "Git-tracked and nonignored candidate text files; pattern scan, not a proof of absence"
+    },
+    "components": {
+      "General": 1000,
+      "Unanswerable": 200,
+      "Reasoning": 200,
+      "Multi-Document": 800
+    },
+    "continuous_unique_ids": true,
+    "duplicate_question_answer_pdf_records": 0,
+    "gold_evidence_positive_integer_and_in_range": true,
+    "canonical_unanswerable_count": 200,
+    "pdf_count": 712,
+    "pdf_readability_and_hashes": "valid",
+    "discipline_counts": {
+      "Computer Science": 743,
+      "Economics": 137,
+      "Electrical Engineering and Systems Science": 129,
+      "Mathematics": 245,
+      "Physics": 379,
+      "Quantitative Biology": 114,
+      "Quantitative Finance": 86,
+      "Statistics": 367
+    },
+    "fine_grained_field_count": 61,
+    "actual_field_inventory": {
+      "ordinary_qa.json": {
+        "paper_fields": {
+          "paper": 398,
+          "primary_category": 398,
+          "secondary_category": 398,
+          "pdf_metadata": 398,
+          "legacy_paper_id": 398,
+          "legacy_paper_ids": 398,
+          "pdf_path": 398
+        },
+        "qa_fields": {
+          "question": 1000,
+          "answer": 1000,
+          "evidence_pages": 1000,
+          "modal_types": 1000,
+          "question_type": 1000,
+          "question_category": 1000,
+          "answer_format": 972,
+          "answer_aliases": 972,
+          "answer_unit": 972,
+          "numeric_tolerance": 972,
+          "oracle_pages": 1000,
+          "evidence_items": 972,
+          "evidence_hops": 972,
+          "evidence_span": 972,
+          "evidence_span_ratio": 972,
+          "annotation_provenance": 1000,
+          "review_status": 972
+        }
+      },
+      "unanswerable_qa.json": {
+        "paper_fields": {
+          "paper": 132,
+          "primary_category": 132,
+          "secondary_category": 132,
+          "pdf_metadata": 132,
+          "legacy_paper_id": 132,
+          "legacy_paper_ids": 132,
+          "pdf_path": 132
+        },
+        "qa_fields": {
+          "question": 200,
+          "answer": 200,
+          "evidence_pages": 200,
+          "modal_types": 200,
+          "question_type": 200,
+          "question_category": 200,
+          "answer_format": 200,
+          "answer_aliases": 200,
+          "answer_unit": 200,
+          "numeric_tolerance": 200,
+          "oracle_pages": 200,
+          "evidence_items": 200,
+          "evidence_hops": 200,
+          "evidence_span": 200,
+          "evidence_span_ratio": 200,
+          "annotation_provenance": 200,
+          "review_status": 200,
+          "unanswerable_construction": 200
+        }
+      },
+      "reasoning_qa.json": {
+        "paper_fields": {
+          "paper": 87,
+          "primary_category": 87,
+          "secondary_category": 87,
+          "legacy_paper_id": 87,
+          "legacy_paper_ids": 87,
+          "pdf_path": 87
+        },
+        "qa_fields": {
+          "question": 200,
+          "answer": 200,
+          "evidence_pages": 200,
+          "modal_types": 200,
+          "question_type": 200,
+          "question_category": 200,
+          "source_qa_ids": 200,
+          "reasoning_type": 200,
+          "relation": 200,
+          "derivation": 200,
+          "construction_quality_check": 200,
+          "reasoning_focus": 198,
+          "derived_conclusion": 198,
+          "intermediate_facts": 198,
+          "source_necessity_tests": 198,
+          "source_evidence_pages": 198,
+          "construction_key_evidence_pages": 198,
+          "evidence_span": 198,
+          "hard_construction_quality_check": 198,
+          "construction_model": 200,
+          "source_pdf_id": 200,
+          "claude_difficulty_diagnostic": 11,
+          "evidence_provenance": 200,
+          "claude_calibration_selection": 25,
+          "annotation_provenance": 200,
+          "dual_model_validation": 175,
+          "closed_book_pdf_dependency": 173
+        }
+      },
+      "cross_pdf_qa.json": {
+        "paper_fields": {
+          "paper": 238,
+          "primary_category": 238,
+          "secondary_category": 238,
+          "legacy_paper_id": 238,
+          "legacy_paper_ids": 238,
+          "pdf_path": 238,
+          "pdf_page_numbering": 120,
+          "source_paper_ids": 120,
+          "source_documents": 120
+        },
+        "qa_fields": {
+          "question": 800,
+          "answer": 800,
+          "evidence_pages": 800,
+          "modal_types": 800,
+          "question_type": 800,
+          "question_category": 800,
+          "qa_id": 402,
+          "source_doc_numbers": 402,
+          "source_document_count": 402,
+          "reasoning_type": 402,
+          "relation": 402,
+          "derived_conclusion": 402,
+          "intermediate_facts": 402,
+          "source_qa_ids": 402,
+          "generation_rank": 402,
+          "dual_model_validation": 402,
+          "review_evidence_ledger": 402,
+          "candidate_pool": 402,
+          "candidate_qa_id": 402,
+          "release_rank": 400,
+          "annotation_provenance": 800,
+          "qa_uid": 400,
+          "evidence_page_numbering": 400,
+          "evidence_items": 400,
+          "evidence_hops": 400,
+          "evidence_source_docs": 400,
+          "evidence_span": 400,
+          "source_paper_ids": 400,
+          "answer_format": 400,
+          "answer_aliases": 400,
+          "answer_unit": 400,
+          "numeric_tolerance": 400,
+          "review_status": 400,
+          "difficulty_basis": 400,
+          "evidence_pages_note": 1,
+          "question_style": 39,
+          "question_style_normalization": 24,
+          "reasoning_style": 12
+        }
+      }
+    }
+  },
+  "qa_json_files_unchanged": 27,
+  "source_files_hashes_unchanged": 123,
+  "historical_original_copies_identical": 55,
+  "historical_cache_bindings_verified": 21050,
+  "historical_table2_recorded_item_display_matches": 99,
+  "historical_table3_recorded_item_display_matches": 98,
+  "historical_table3_discipline_display_matches": 88,
+  "local_paired_judge_checks": {
+    "pairs": 49,
+    "model_calls": 98,
+    "failures": 0,
+    "retries": 0,
+    "current_repeat_agrees": 49,
+    "seconds": 136.27900161710568
+  },
+  "no_baseline_scores_overwritten": true,
+  "official_reproduction_verified": false,
+  "scripts": {
+    "evaluation/audit_score_provenance.py": "aebfdf6bd51325c4d6c8ac41b9522a5fe1fd31fcde0928999e1e0beeda469871",
+    "scripts/check_judge_input_versions.py": "b8e3e83d61e5dfb6bc34a7e8a07ba5c68ee158d2f87948885051f5687e2fce48"
+  }
+}

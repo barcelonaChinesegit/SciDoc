@@ -11,8 +11,8 @@
     "Paper tables provide two-decimal values, not full-precision references; compare recovered historical full-precision artifacts separately."
   ],
   "current_artifact_verification": {
-    "status": "stored_predictions_proven_inconsistent_with_current_paper_tables",
-    "report": "docs/reports/official_evaluation/GAP_INVESTIGATION.md",
+    "status": "historical_aggregates_reconstructed_current_release_diagnostic_differs",
+    "report": "docs/reports/official_evaluation/PROVENANCE_RECONCILIATION.md",
     "table2_proven_answer_cell_mismatches": 31,
     "table3_proven_cell_mismatches": 51,
     "local_judge": "Qwen/Qwen3.6-27B",
@@ -24,5 +24,18 @@
     "reference_only_adapter_bug_fixed": true,
     "single_item_disagreement_checks": 12,
     "controls": 6
+  },
+  "provenance_reconciliation": {
+    "historical_result_files_byte_identical": 55,
+    "historical_cache_bindings_verified": 21050,
+    "table2_recorded_item_display_matches": "99/99",
+    "table3_recorded_item_display_matches": "98/99; all 88 discipline cells match",
+    "claude_correct_records_outside_subject_cohort": 28,
+    "qwen8b_identical_actual_judge_input_items": 1883,
+    "qwen8b_identical_input_net_correct_difference": -232,
+    "paired_input_version_checks": 49,
+    "paired_current_repeat_matches": 49,
+    "paired_net_correct_difference_current_minus_historical_text": -1,
+    "interpretation": "Historical experiments are traceable. New Judge labels are not human ground truth. Current-release diagnostic numbers do not replace paper tables."
   }
 }
