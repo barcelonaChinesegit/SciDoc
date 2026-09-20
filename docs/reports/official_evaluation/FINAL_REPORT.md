@@ -2,6 +2,10 @@
 
 Audit date: 2026-09-20. The manuscript is authoritative; QA and PDF contents are immutable.
 
+Latest implementation, PDF-to-Judge pilot, test results and publication status:
+[FOLLOWTHROUGH_REPORT.md](FOLLOWTHROUGH_REPORT.md). Test counts below describe
+the earlier audit stages; the linked follow-through contains the final checks.
+
 Follow-up: [real local Qwen3.6-27B evaluation test](LOCAL_MODEL_TEST.md) passed
 15 actual model calls, six controls, and independent cache-only CLI replay.
 The updated regression suite has 486 passing tests. This diagnostic does not
@@ -113,17 +117,17 @@ Web relocation: build and all **8 frontend tests passed**. Following service res
 
 ## H. Table 2 reproduction
 
-Every model was validated against the current release. No binary-prompt historical cache matches the required judge contract. New official semantic values therefore remain **unavailable**, rather than fabricated or substituted with old decisions. Offline answer diagnostics retain failures as zeros but are not presented as completed model scores.
+Every model was validated against the current release. No binary-prompt historical cache matches the required judge contract. The later local run completed strict stored-output answer diagnostics for three models; these conclusively differ from the paper and are not official reproduction. The other eight models are bounded but not fully rescored. See [the discrepancy report](REPRODUCTION_DISCREPANCY.md) and its per-cell CSVs.
 
 Columns below show All accuracy. All nine requested metrics for all 11 models are in [table2_comparison.csv](table2_comparison.csv), including full-precision historical values, paper values, rounded differences, new-score availability and reasons.
 
 | Model | Paper All | Historical reaggregation | New official evaluator | New − Paper |
 | --- | ---: | ---: | --- | --- |
-| MiniCPM-V 2.6 | 15.59 | 15.590909090909 | unavailable | unavailable |
-| InternVL2.5-8B | 22.32 | 22.318181818182 | unavailable | unavailable |
+| MiniCPM-V 2.6 | 15.59 | 15.590909090909 | strict diagnostic 0.00 | -15.59 |
+| InternVL2.5-8B | 22.32 | 22.318181818182 | strict diagnostic 0.00 | -22.32 |
 | MiniCPM-V 4.5 | 34.32 | 34.318181818182 | unavailable | unavailable |
 | InternVL3.5-8B | 34.95 | 34.954545454545 | unavailable | unavailable |
-| Gemma 3 27B | 47.32 | 47.318181818182 | unavailable | unavailable |
+| Gemma 3 27B | 47.32 | 47.318181818182 | strict diagnostic 0.045454545454545456 | -47.27454545454545 |
 | Mistral-Small-3.1-24B | 49.00 | 49.000000000000 | unavailable | unavailable |
 | Qwen3-VL-4B | 64.91 | 64.909090909091 | unavailable | unavailable |
 | Qwen3-VL-8B | 68.32 | 68.318181818182 | unavailable | unavailable |

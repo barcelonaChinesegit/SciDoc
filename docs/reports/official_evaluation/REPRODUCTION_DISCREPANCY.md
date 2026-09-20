@@ -84,7 +84,8 @@ sets; no new illegal-evidence policy was invented to force agreement.
   answer text, permits only external JSON whitespace and page sorting/deduplication,
   and rejects duplicate JSON fields, invalid types and noncanonical refusals.
 - Removed the unused page-label extraction helper from the Judge.
-- Inference protocol version is now 7 and scoring version 6; the paper prompt
+- That audit advanced inference/scoring versions to 7/6; the subsequent
+  [follow-through](FOLLOWTHROUGH_REPORT.md) advances them to 8/7; the paper prompt
   hash is part of the Judge fingerprint. Older fingerprints do not certify a
   new run. This intentionally invalidates stale cached contracts.
 

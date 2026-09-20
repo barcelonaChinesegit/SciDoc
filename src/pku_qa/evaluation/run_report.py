@@ -945,7 +945,9 @@ def main():
         raise FileNotFoundError("No readable judge result files found.")
 
     report_text = build_text_report(results)
-    publication_eligible = True
+    # These historical reports contain exact-page/joint diagnostics. They are
+    # not the paper's macro-evidence headline report produced by evaluation/.
+    publication_eligible = False
     protocol_validation = "publication_strict"
     print(report_text)
 
@@ -954,6 +956,9 @@ def main():
     output_path.write_text(report_text, encoding="utf-8")
 
     report_json = {
+        "report_scope": "internal_diagnostics",
+        "official_reproduction_verified": False,
+        "official_evaluator": "evaluation/evaluate.py",
         "models": results,
         "ranking": sorted(
             [

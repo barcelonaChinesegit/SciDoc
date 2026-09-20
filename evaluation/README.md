@@ -290,3 +290,51 @@ unavailable upstream revision is recorded as null. This diagnostic config is
 used with `Judge(generate=...)` and offline replay, not the API backend.
 This test does not establish historical Table 2/3 reproduction or rerun a
 baseline's PDF inference.
+
+## Local PDF-to-score diagnostic
+
+With the repository's ML environment and local checkpoints installed:
+
+```bash
+python scripts/run_local_pipeline.py \
+  --output-dir data/results/local_pdf_pipeline_new --gpu 2
+```
+
+This runs Qwen3-VL-4B-Instruct on the shortest **complete** PDF in each task
+category at 144 DPI, then judges the three answerable tasks with Qwen3.6-27B.
+The Unanswerable task uses the exact-label rule. Selection depends only on page
+count and QA ID, never on model success. Use `--qa-ids QA0001 QA1001 ...` for an
+explicit selection. This is a partial diagnostic, not a Table 2/3 reproduction.
+The report still contains all 2,200 gold slots; absent predictions remain missing.
+
+New-run settings are explicitly recorded: one A800, BF16/SDPA, greedy generation,
+seed 42, no CPU/disk offload, 512 new tokens/three total attempts for inference,
+and 32 new tokens/two total attempts for judging. These are **not recovered
+historical settings**. Weights, tokenizer/template, defaults, PDF and QA hashes,
+code, prompt and runtime versions are bound in the run directory. PDF prompt:
+[`prompts/pdf_inference.txt`](prompts/pdf_inference.txt), copied verbatim from
+the paper's figure source; provenance is in `prompts/pdf_provenance.json`.
+
+Rerun the identical command to verify inference checkpoints and replay the judge
+cache. Changed inputs, settings, code or checkpoint bytes require a new directory.
+Completed illegal/technical results are retained. Interrupted inference resumes
+within its original bounded attempt budget. Every returned raw string, including
+outer whitespace, is retained unchanged. Retry messages only restate the output
+contract; decoding settings stay fixed. No LaTeX repair, nested-JSON extraction,
+page coercion or repetition-based token-limit changes are performed.
+
+The raw audit envelope optionally accepts `generation_audit` alongside `qa_id`
+and `raw_model_output`. It contains ordered `attempts` (status, original output
+and SHA-256, correction trigger/message, token limit), `original_raw_output`
+(first returned string, or null) and `final_status`. The loader revalidates the
+raw hashes, each parse result, attempt order and final-output binding. Exhausted
+technical errors become `technical_failure`, retaining the gold denominator.
+This is producer audit metadata, **not** another model-output field or the
+recommended flat submission format. The optional envelope cannot repair an
+illegal raw output or replace a legal attempt with a later answer.
+
+Internal `src/pku_qa/evaluation/run_report.py` reports are explicitly marked
+`report_scope=internal_diagnostics`, `publication_eligible=false` and
+`official_reproduction_verified=false`. Public headline reporting uses this
+package's macro metrics. Internal exact-page and joint diagnostics do not certify
+paper-table reproduction.

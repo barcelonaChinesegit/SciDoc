@@ -42,49 +42,12 @@ from gpu_reservation import managed_gpu_reservation
 from progress_logging import progress_fields
 
 
-RUNAWAY_EVIDENCE_PAGE_COUNT = 128
-
-
 class InvalidModelOutputError(ValueError):
     """The model returned text, but it violated the output contract."""
 
 
-PDF_SYSTEM_PROMPT = """You will be provided with a question and multiple PDF page images. Each image is preceded by an external page label such as [Page 1].
-
-Please answer the question based only on the content of these images and clearly indicate the source page number(s).
-
-Important:
-- The evidence_pages field must use the external [Page N] numbers provided before each image. It must be a sorted ascending list of unique positive integers.
-- Do not use page numbers printed inside the paper body, header, or footer.
-- Include all and only the pages that directly support the answer; do not add unrelated pages.
-- A consecutive page range is valid only when every listed page directly supports the answer.
-- The answer should be as concise as possible while preserving correctness.
-- If the requested information cannot be answered from the provided pages, the
-  answer_pre value must be exactly "Unanswerable" and evidence_pages must be [].
-- Never use variants such as "not mentioned", "not provided", "unknown", "N/A",
-  or "None". Use only the exact label "Unanswerable" for a refusal.
-- If answer_pre is not "Unanswerable", evidence_pages must contain at least one
-  directly supporting external [Page N] number.
-
-You must strictly output in the following JSON format:
-
-{
-  "answer_pre": "",
-  "evidence_pages": []
-}
-
-The field "answer_pre" should contain a concise answer to the question, using as few words as possible while preserving correctness.
-The field "evidence_pages" should contain the external [Page N] number(s) where the answer is supported.
-There may be multiple page numbers.
-
-Do not provide any extra explanation, comments, or text outside the JSON object.
-
-Example:
-
-{
-  "answer_pre": "In Contrastive Order Learning, it is used for ordinal regression via LConOrd; in BACH, it is used in the contrastive softmaxes pr to fit head concentrations via KL divergence minimization.",
-  "evidence_pages": [12, 13, 17]
-}"""
+PDF_SYSTEM_PROMPT_PATH = Path(__file__).resolve().parents[3] / "evaluation/prompts/pdf_inference.txt"
+PDF_SYSTEM_PROMPT = PDF_SYSTEM_PROMPT_PATH.read_text(encoding="utf-8")
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -408,131 +371,6 @@ def build_fill_prompt(
         "Output only the final answer, no explanation."
     )
 
-def repair_json_string_backslashes(raw: str) -> str:
-    """Escape model-emitted LaTeX slashes without altering JSON structure."""
-    repaired: list[str] = []
-    in_string = False
-    index = 0
-    while index < len(raw):
-        character = raw[index]
-        if character == '"':
-            in_string = not in_string
-            repaired.append(character)
-            index += 1
-            continue
-        if character != "\\" or not in_string:
-            repaired.append(character)
-            index += 1
-            continue
-        if index + 1 >= len(raw):
-            repaired.append("\\\\")
-            index += 1
-            continue
-        following = raw[index + 1]
-        if following in {'"', "\\", "/"}:
-            repaired.extend((character, following))
-            index += 2
-            continue
-        if (
-            following == "u"
-            and index + 5 < len(raw)
-            and all(
-                digit in "0123456789abcdefABCDEF"
-                for digit in raw[index + 2 : index + 6]
-            )
-        ):
-            repaired.append(raw[index : index + 6])
-            index += 6
-            continue
-        # Qwen frequently emits LaTeX such as \leq, \tau or \Omega in an
-        # otherwise valid JSON string. Preserve the literal slash by escaping
-        # it for JSON. This also prevents \t/\n from becoming control chars.
-        repaired.append("\\\\")
-        index += 1
-    return "".join(repaired)
-
-
-def canonical_structured_output(
-    output: str, *, strict_container: bool = False
-) -> str | None:
-    raw = str(output or "").strip()
-    if not raw or looks_like_error_output(raw):
-        return None
-    decoder = json.JSONDecoder()
-    candidates: list[dict] = []
-    if strict_container:
-        try:
-            answer, pages = parse_canonical_pdf_output(raw)
-        except ValueError:
-            return None
-        return json.dumps(
-            {"answer_pre": answer, "evidence_pages": pages},
-            ensure_ascii=False,
-        )
-    else:
-        for index, character in enumerate(raw):
-            if character != "{":
-                continue
-            try:
-                value, _ = decoder.raw_decode(raw[index:])
-            except (json.JSONDecodeError, TypeError):
-                try:
-                    value, _ = decoder.raw_decode(
-                        repair_json_string_backslashes(raw[index:])
-                    )
-                except (json.JSONDecodeError, TypeError):
-                    continue
-            if isinstance(value, dict):
-                candidates.append(value)
-    for value in candidates:
-        answer_field = next(
-            (
-                field
-                for field in ("answer_pre", "answer", "model_answer")
-                if field in value
-            ),
-            None,
-        )
-        raw_pages = value.get("evidence_pages")
-        if answer_field is None or not isinstance(raw_pages, list):
-            continue
-        answer = str(value.get(answer_field, "")).strip()
-        if not answer:
-            continue
-        pages = []
-        for page in raw_pages:
-            if isinstance(page, bool):
-                continue
-            if isinstance(page, int):
-                pages.append(page)
-                continue
-            match = re.fullmatch(
-                r"\s*(?:PDF_PAGE_|PAGE\s*)?(\d+)\s*",
-                str(page),
-                flags=re.IGNORECASE,
-            )
-            if match:
-                pages.append(int(match.group(1)))
-        pages = sorted(set(pages))
-        if answer == "Unanswerable":
-            if pages:
-                continue
-        elif answer.lower() == "unanswerable":
-            # The abstention label is intentionally case-sensitive so the
-            # tested model must follow the controlled output protocol.
-            continue
-        elif not pages:
-            continue
-        return json.dumps(
-            {
-                "answer_pre": answer,
-                "evidence_pages": pages,
-            },
-            ensure_ascii=False,
-        )
-    return None
-
-
 def structured_output_is_valid(
     output: str,
     required: bool,
@@ -588,192 +426,128 @@ def clear_cuda_after_failure(provider) -> None:
         pass
 
 
-def has_runaway_repetition(output: str, minimum_repeats: int = 16) -> bool:
-    """Detect the repeated-token degeneration that can consume the token cap."""
-    raw = str(output or "")
-    if not raw:
-        return False
-    escaped_unicode = re.compile(
-        rf"(\\u[0-9a-fA-F]{{4}})(?:\1){{{minimum_repeats - 1},}}"
-    )
-    if escaped_unicode.search(raw):
-        return True
-    repeated_character = re.compile(
-        rf"(.)(?:\1){{{max(32, minimum_repeats) - 1},}}",
-        re.DOTALL,
-    )
-    return repeated_character.search(raw) is not None
-
-
-def has_runaway_evidence_pages(
-    output: str, maximum_pages: int = RUNAWAY_EVIDENCE_PAGE_COUNT
-) -> bool:
-    """Detect obvious repetition even when generation ends before valid JSON.
-
-    This is only a degeneration guard.  It is deliberately much larger than
-    any expected gold evidence set and is not part of the scoring protocol.
-    A syntactically valid list is always preserved for the Judge to score.
-    """
-    raw = str(output or "")
-    match = re.search(
-        r'["\']evidence_pages["\']\s*:\s*\[(.*)',
-        raw,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-    if not match:
-        return False
-    page_numbers = re.findall(r"\b\d+\b", match.group(1))
-    return len(set(page_numbers)) > maximum_pages
-
-
 def generate_with_retries(
-    provider,
-    messages,
-    args,
-    *,
-    allowed_evidence_pages: list[int] | None = None,
+    provider, messages, args, *, allowed_evidence_pages: list[int] | None = None,
+    audit: dict | None = None, audit_checkpoint=None,
 ) -> str:
-    last_error: BaseException | None = None
-    last_invalid_response: str | None = None
-    attempt_messages = list(messages)
-    fallback_generation = False
-    set_generation_overrides = getattr(
-        provider, "set_generation_overrides", None
-    )
-    try:
-        for attempt in range(1, args.max_qa_retries + 1):
-            invalid_response: str | None = None
-            if callable(set_generation_overrides):
-                set_generation_overrides(
-                    {
-                        "repetition_penalty": 1.12,
-                    }
-                    if fallback_generation
-                    else {}
-                )
-            try:
-                generation_token_limit = (
-                    min(int(args.max_new_tokens), 256)
-                    if fallback_generation
-                    else int(args.max_new_tokens)
-                )
-                output = provider.generate(
-                    attempt_messages, generation_token_limit
-                )
-                if not structured_output_is_valid(
-                    output,
-                    args.require_evidence_pages,
-                    allowed_pages=allowed_evidence_pages,
-                ):
-                    invalid_response = str(output)
-                    last_invalid_response = invalid_response
-                    preview = " ".join(str(output).split())[:500]
-                    print(f" invalid_output_preview={preview!r}", flush=True)
-                    runaway_repetition = has_runaway_repetition(output)
-                    # Token-level n-gram blocking is useful for true repeated
-                    # character degeneration, but is prohibitively expensive
-                    # for very long full-PDF visual prompts. Overlong evidence
-                    # lists are corrected by the explicit retry instruction.
-                    if runaway_repetition:
-                        fallback_generation = True
-                    raise InvalidModelOutputError(
-                        "empty/error/malformed model output"
-                    )
-                if args.require_evidence_pages:
-                    canonical = canonical_structured_output(
-                        output, strict_container=True
-                    )
-                    assert canonical is not None
-                    # Preserve the exact legal model response for downstream
-                    # audit. Judge applies the same strict parser again.
-                    return str(output).strip()
-                return output
-            except Exception as exc:
-                last_error = exc
-                print(
-                    f" retry {attempt}/{args.max_qa_retries} failed: "
-                    f"{type(exc).__name__}: {exc}",
-                    flush=True,
-                )
-                # A format violation means generation itself succeeded. Keep
-                # the cached full-PDF vision features for the correction retry;
-                # rebuilding dozens of pages here can turn seconds into many
-                # minutes. Runtime/model failures still clear CUDA state.
-                if not isinstance(exc, InvalidModelOutputError):
-                    clear_cuda_after_failure(provider)
-                if attempt < args.max_qa_retries:
-                    evidence_guidance = (
-                        "all and only pages that directly support the answer. "
-                        "A consecutive range is valid when every listed page "
-                        "directly supports the answer. Use a sorted ascending "
-                        "list of unique positive integer external page labels. "
-                    )
-                    correction = (
-                        f"Correction attempt {attempt + 1}: your previous "
-                        "response was invalid. "
-                        "Return exactly one JSON object with only "
-                        '"answer_pre" and "evidence_pages". '
-                        "Do not include reasoning or markdown. Include "
-                        f"{evidence_guidance}"
-                        "If the answer is unavailable, use exactly "
-                        '"answer_pre":"Unanswerable" with '
-                        '"evidence_pages":[]; otherwise answer_pre must be '
-                        "non-empty and evidence_pages must be non-empty."
-                    )
-                    if fallback_generation:
-                        correction += (
-                            " The previous answer degenerated into repeated "
-                            "symbols. Keep answer_pre under 60 words, avoid "
-                            "LaTeX and backslashes, express formulas in plain "
-                            "ASCII, and close the JSON object immediately."
-                        )
-                    attempt_messages = [*messages]
-                    if invalid_response is not None and not fallback_generation:
-                        # Make the retry a real conversational correction.
-                        # Previously two consecutive user messages were sent,
-                        # so Qwen often repeated the identical invalid list.
-                        attempt_messages.append(
-                            {
-                                "role": "assistant",
-                                "content": [
-                                    {
-                                        "type": "text",
-                                        "text": invalid_response[:2000],
-                                    }
-                                ],
-                            }
-                        )
-                    attempt_messages.append(
-                        {
-                            "role": "user",
-                            "content": [
-                                {
-                                    "type": "text",
-                                    "text": correction,
-                                }
-                            ],
-                        }
-                    )
-                    time.sleep(
-                        args.retry_backoff_seconds * (2 ** (attempt - 1))
-                    )
-        assert last_error is not None
-        if (
-            isinstance(last_error, InvalidModelOutputError)
-            and last_invalid_response is not None
-        ):
-            print(
-                " exhausted format-correction retries; preserving exact "
-                "model output for Judge scoring",
-                flush=True,
+    """Bounded format correction, retaining every returned byte and failure.
+
+    Decoding settings remain fixed. Corrective messages restate the existing
+    contract; they never rewrite an answer, forbid formulas or shorten answers.
+    """
+    if type(args.max_qa_retries) is not int or args.max_qa_retries < 1:
+        raise ValueError("max_qa_retries must be a positive integer")
+    record = audit if audit is not None else {}
+    if not record:
+        record.update(attempts=[], original_raw_output=None, final_status="pending")
+    if record.get("attempts"):
+        # Resume only a verified trail, never repeat a completed legal output or
+        # reset the bounded retry budget after a process interruption.
+        from evaluation.validation import apply_generation_audit, validate_raw
+        last = record["attempts"][-1]
+        final_raw = last.get("raw_output", "") if last["status"] != "technical_failure" else ""
+        if args.require_evidence_pages:
+            apply_generation_audit(validate_raw("resume", final_raw, max(allowed_evidence_pages or [1])),
+                                   record, max(allowed_evidence_pages or [1]))
+        else:
+            first_raw = None
+            for i, saved in enumerate(record["attempts"], 1):
+                if type(saved.get("attempt")) is not int or saved["attempt"] != i:
+                    raise ValueError("Invalid saved attempt order")
+                if "raw_output" in saved:
+                    value = saved["raw_output"]
+                    if not isinstance(value, str) or saved.get("raw_output_sha256") != hashlib.sha256(value.encode("utf-8")).hexdigest():
+                        raise ValueError("Saved raw output hash mismatch")
+                    if first_raw is None:
+                        first_raw = value
+                elif saved.get("status") != "technical_failure":
+                    raise ValueError("Saved generation is missing raw output")
+                if saved.get("status") not in {"legal", "illegal", "technical_failure"}:
+                    raise ValueError("Invalid saved generation status")
+                if i < len(record["attempts"]) and saved["status"] == "legal":
+                    raise ValueError("Cannot retry a legal output")
+            if record.get("original_raw_output") != first_raw or record.get("final_status") != last["status"]:
+                raise ValueError("Saved generation binding mismatch")
+        for saved in record["attempts"]:
+            if saved["status"] != "technical_failure":
+                legal = structured_output_is_valid(saved["raw_output"], args.require_evidence_pages,
+                                                   allowed_pages=allowed_evidence_pages)
+                if legal != (saved["status"] == "legal"):
+                    raise ValueError("Saved status does not match the supplied page contract")
+        if any(a.get("max_new_tokens") != args.max_new_tokens for a in record["attempts"]):
+            raise ValueError("Cannot resume with changed generation token limit")
+        if len(record["attempts"]) > args.max_qa_retries:
+            raise ValueError("Stored attempts exceed configured retry budget")
+        if last["status"] == "legal":
+            return last["raw_output"]
+        if len(record["attempts"]) == args.max_qa_retries:
+            if last["status"] == "illegal":
+                return last["raw_output"]
+            error = RuntimeError("generation previously exhausted bounded attempts")
+            error.generation_audit = record
+            raise error
+
+    def retry_messages(previous, number):
+        trigger, correction = previous["status"], None
+        next_messages = list(messages)
+        if args.require_evidence_pages and trigger == "illegal":
+            correction = (
+                f"Correction attempt {number}: your previous response was invalid. "
+                "Return exactly one JSON object with only \"answer_pre\" and \"evidence_pages\". "
+                "Do not include reasoning or markdown. Include all and only pages that directly support the answer. "
+                "A consecutive range is valid when every listed page directly supports the answer. "
+                "Use a sorted ascending list of unique positive integer external page labels. "
+                'If the answer is unavailable, use exactly "answer_pre":"Unanswerable" with '
+                '"evidence_pages":[]; otherwise answer_pre must be non-empty and evidence_pages must be non-empty.'
             )
-            return last_invalid_response
-        raise RuntimeError(
-            f"model generation failed after {args.max_qa_retries} attempts"
-        ) from last_error
-    finally:
-        if callable(set_generation_overrides):
-            set_generation_overrides({})
+            next_messages.extend([
+                {"role": "assistant", "content": [{"type": "text", "text": previous["raw_output"]}]},
+                {"role": "user", "content": [{"type": "text", "text": correction}]},
+            ])
+        return next_messages, trigger, correction
+
+    attempt_messages, trigger, correction = list(messages), None, None
+    if record["attempts"]:
+        attempt_messages, trigger, correction = retry_messages(record["attempts"][-1], len(record["attempts"]) + 1)
+    last_error = None
+    for number in range(len(record["attempts"]) + 1, args.max_qa_retries + 1):
+        attempt = {"attempt": number, "correction_trigger": trigger,
+                   "correction_prompt": correction, "max_new_tokens": args.max_new_tokens}
+        raw = None
+        try:
+            raw = provider.generate(attempt_messages, int(args.max_new_tokens))
+            if not isinstance(raw, str):
+                raise TypeError("provider must return original output as a string")
+            attempt.update(raw_output=raw, raw_output_sha256=hashlib.sha256(raw.encode("utf-8")).hexdigest())
+            if record["original_raw_output"] is None:
+                record["original_raw_output"] = raw
+            if not structured_output_is_valid(raw, args.require_evidence_pages,
+                                              allowed_pages=allowed_evidence_pages):
+                raise InvalidModelOutputError("response_contract_violation")
+            attempt["status"] = "legal"
+            record["final_status"] = "legal"
+        except Exception as exc:
+            last_error = exc
+            attempt.update(status="illegal" if isinstance(exc, InvalidModelOutputError) else "technical_failure",
+                           error_type=type(exc).__name__)
+            record["final_status"] = attempt["status"]
+            print(f"attempt {number}/{args.max_qa_retries}: {attempt['status']} ({type(exc).__name__})", flush=True)
+            if attempt["status"] == "technical_failure":
+                clear_cuda_after_failure(provider)
+        record["attempts"].append(attempt)
+        if audit_checkpoint:
+            audit_checkpoint(record)
+        if attempt["status"] == "legal":
+            return raw  # including outer whitespace, unlike the old implementation
+        if number == args.max_qa_retries:
+            if attempt["status"] == "illegal":
+                return raw
+            error = RuntimeError(f"generation failed after {args.max_qa_retries} attempts")
+            error.generation_audit = record
+            raise error from last_error
+        attempt_messages, trigger, correction = retry_messages(attempt, number + 1)
+        time.sleep(args.retry_backoff_seconds * (2 ** (number - 1)))
+    raise AssertionError("unreachable")
 
 
 def process_paper(
@@ -929,6 +703,24 @@ def process_paper(
                 and previous.get("pdf_sha256") == paper_pdf_sha256
             )
         ) if isinstance(previous, dict) else False
+        if isinstance(previous, dict) and previous_matches_protocol and previous.get("generation_audit"):
+            trail = previous["generation_audit"]
+            terminal = trail.get("final_status") == "legal" or len(trail.get("attempts", [])) == args.max_qa_retries
+            if terminal:
+                # A crash/restart is not permission to give failed items a new
+                # attempt budget or overwrite their original outputs.
+                try:
+                    resumed_raw = generate_with_retries(
+                        None, [], args, allowed_evidence_pages=previous.get("shown_pdf_pages"),
+                        audit=trail,
+                    )
+                except RuntimeError as exc:
+                    if not hasattr(exc, "generation_audit"):
+                        raise
+                    resumed_raw = ""
+                if resumed_raw != previous.get("raw_model_output"):
+                    raise ValueError(f"{qa_id}: saved final raw output differs from retry audit")
+                continue
         if (
             isinstance(previous, dict)
             and previous_matches_protocol
@@ -1014,14 +806,21 @@ def process_paper(
             content.append({"type": "text", "text": prompt_text})
             messages = [{"role": "user", "content": content}]
 
-        raw_model_output = generate_with_retries(
-            provider,
-            messages,
-            args,
-            allowed_evidence_pages=(
-                qa_shown_pages if args.input_mode == PDF_INPUT_MODE else None
-            ),
-        )
+        generation_audit = {}
+        technical_failure = False
+        try:
+            raw_model_output = generate_with_retries(
+                provider, messages, args,
+                allowed_evidence_pages=(qa_shown_pages if args.input_mode == PDF_INPUT_MODE else None),
+                audit=generation_audit,
+            )
+        except RuntimeError as exc:
+            if not hasattr(exc, "generation_audit"):
+                raise
+            # Keep the QA slot even when no response was generated. Do not
+            # manufacture an answer or replace the previous raw attempts.
+            raw_model_output = ""
+            technical_failure = True
         if args.input_mode == PDF_INPUT_MODE:
             (
                 model_output,
@@ -1035,6 +834,8 @@ def process_paper(
             model_output = str(raw_model_output)
             deterministic_normalizations = []
             generation_status = None
+        if technical_failure:
+            generation_status = "technical_failure"
         print(
             f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] "
             f"event=qa_completed worker={args.worker_id or args.shard_id} "
@@ -1051,6 +852,7 @@ def process_paper(
             "correct_answer": reference_answer,
             "model_output": model_output,
             "raw_model_output": str(raw_model_output),
+            "generation_audit": generation_audit,
             "raw_model_output_sha256": hashlib.sha256(
                 str(raw_model_output).encode("utf-8")
             ).hexdigest(),

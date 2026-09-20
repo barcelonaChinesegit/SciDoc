@@ -389,6 +389,8 @@ def process_judge_paper(
             "correct_answer": ans,
             "model_output": out,
             "raw_model_output": raw_out,
+            "generation_audit": qa_data.get("generation_audit"),
+            "generation_status": qa_data.get("generation_status"),
             "raw_model_output_sha256": qa_data.get(
                 "raw_model_output_sha256"
             ),

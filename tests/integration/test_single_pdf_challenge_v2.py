@@ -465,7 +465,7 @@ class SinglePdfChallengeV2Tests(unittest.TestCase):
 
     def test_prompts_define_one_refusal_label_and_no_refusal_evidence(self) -> None:
         self.assertIn('exactly "Unanswerable"', PDF_SYSTEM_PROMPT)
-        self.assertIn("evidence_pages must be []", PDF_SYSTEM_PROMPT)
+        self.assertIn("evidence_pages must be []", " ".join(PDF_SYSTEM_PROMPT.split()))
         self.assertIn("all and only", PDF_SYSTEM_PROMPT)
         self.assertNotIn("at most 8", PDF_SYSTEM_PROMPT)
         self.assertNotIn("Never enumerate every shown page", PDF_SYSTEM_PROMPT)

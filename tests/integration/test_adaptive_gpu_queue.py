@@ -18,13 +18,9 @@ from durable_work_queue import DurablePaperQueue
 from eval_framework import LocalTransformersProvider, atomic_write_json
 from run_inference import (
     build_per_qa_page_plan,
-    canonical_structured_output,
     choose_pdf_render_dpi,
     generate_with_retries,
-    has_runaway_evidence_pages,
-    has_runaway_repetition,
     prepare_pdf_output_for_storage,
-    repair_json_string_backslashes,
     structured_output_is_valid,
 )
 
@@ -871,23 +867,6 @@ class AdaptiveGpuSelectionTests(unittest.TestCase):
 
 
 class RetryAndOutputValidationTests(unittest.TestCase):
-    def test_runaway_repetition_detection(self) -> None:
-        self.assertTrue(has_runaway_repetition("\u2009" * 64))
-        self.assertTrue(has_runaway_repetition(r"\u2009" * 32))
-        self.assertFalse(has_runaway_repetition("normal concise answer"))
-
-    def test_runaway_evidence_page_detection_uses_explicit_degen_guard(self) -> None:
-        output = (
-            '{"answer_pre":"ok","evidence_pages":'
-            "[3,4,5,6,7,8,9,10,11,12"
-        )
-        self.assertTrue(has_runaway_evidence_pages(output, maximum_pages=8))
-        self.assertFalse(
-            has_runaway_evidence_pages(
-                '{"answer_pre":"ok","evidence_pages":[3,7,11]}'
-            )
-        )
-
     def test_structured_validator_rejects_thinking_or_malformed_output(self) -> None:
         self.assertFalse(structured_output_is_valid("reasoning...", True))
         self.assertFalse(
@@ -931,36 +910,6 @@ class RetryAndOutputValidationTests(unittest.TestCase):
             {"answer_pre": "ok", "evidence_pages": list(range(1, 10))}
         )
         self.assertTrue(structured_output_is_valid(output, True))
-
-    def test_canonicalizer_finds_valid_object_after_unrelated_braces(self) -> None:
-        output = (
-            'analysis {"noise": 1} final '
-            '{"answer":"ok","evidence_pages":["Page 3", 2, 2]}'
-        )
-        self.assertEqual(
-            json.loads(canonical_structured_output(output)),
-            {"answer_pre": "ok", "evidence_pages": [2, 3]},
-        )
-
-    def test_canonicalizer_repairs_unescaped_latex_in_json_string(self) -> None:
-        output = (
-            r'{"answer_pre":"D_{qc}(X) gives \tau_\alpha and '
-            r'\operatorname{pgdim}\leq 1","evidence_pages":[14]}'
-        )
-        canonical = canonical_structured_output(output)
-        self.assertEqual(
-            json.loads(canonical),
-            {
-                "answer_pre": (
-                    r"D_{qc}(X) gives \tau_\alpha and "
-                    r"\operatorname{pgdim}\leq 1"
-                ),
-                "evidence_pages": [14],
-            },
-        )
-        repaired = repair_json_string_backslashes(output)
-        self.assertIn(r"\\tau", repaired)
-        self.assertIn(r"\\leq", repaired)
 
     def test_generation_retries_invalid_then_succeeds(self) -> None:
         class Provider:
@@ -1181,10 +1130,7 @@ class RetryAndOutputValidationTests(unittest.TestCase):
         )
         correction = provider.messages[1][-1]["content"][0]["text"]
         self.assertIn("consecutive range is valid", correction)
-        self.assertEqual(
-            provider.overrides[1],
-            {},
-        )
+        self.assertEqual(provider.overrides, [])
 
     def test_repeated_malformed_output_is_preserved_after_finite_retries(
         self,
@@ -1219,7 +1165,7 @@ class RetryAndOutputValidationTests(unittest.TestCase):
         self.assertEqual(provider.calls, 5)
 
 
-    def test_generation_retry_enables_repetition_fallback_only_after_loop(
+    def test_generation_retry_preserves_decoding_settings(
         self,
     ) -> None:
         class Provider:
@@ -1247,15 +1193,8 @@ class RetryAndOutputValidationTests(unittest.TestCase):
         )
         output = generate_with_retries(provider, [], args)
         self.assertIn("linear decrease", output)
-        self.assertEqual(provider.overrides[0], {})
-        self.assertEqual(
-            provider.overrides[1],
-            {
-                "repetition_penalty": 1.12,
-            },
-        )
-        self.assertEqual(provider.max_tokens, [512, 256])
-        self.assertEqual(provider.overrides[-1], {})
+        self.assertEqual(provider.overrides, [])
+        self.assertEqual(provider.max_tokens, [512, 512])
 
     def test_local_provider_forwards_safe_generation_overrides(self) -> None:
         import torch

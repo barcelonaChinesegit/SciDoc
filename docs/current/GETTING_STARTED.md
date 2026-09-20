@@ -280,3 +280,18 @@ python scripts/judge_reproduction_jobs.py --audit-dir data/results/paper_check \
 旧类型化评分模块已删除，内部 Judge 不再做数值、别名、文本预匹配，也不再修复
 Judge 标签。PDF 解析只允许 JSON 外部空白和证据页排序去重；答案原文不变。
 推理协议版本升至 7、评分协议版本升至 6，旧指纹缓存不可作为新协议结果复用。
+
+
+## 新增：真实本地 PDF 评测链路诊断
+
+在已有本地模型和 ML 依赖的环境运行：
+
+```bash
+python scripts/run_local_pipeline.py --output-dir data/results/local_pdf_pipeline_new --gpu 2
+```
+
+物理 GPU 2 必须是空闲 A800。脚本绑定 UUID，先跑每类最短完整 PDF 的 1 题，
+再加载论文指定 Qwen3.6-27B 判分；新设置与原始重试逐次留档。
+完全相同的命令可验证断点和缓存，改变代码或输入则需新目录。
+结果是 4 题真实链路诊断，仍保留 2200 分母，不能称为 Table 2/3 复现。
+完整 schema、限制和命令见 [evaluation/README.md](../../evaluation/README.md)。

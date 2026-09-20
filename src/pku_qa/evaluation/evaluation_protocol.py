@@ -30,8 +30,8 @@ PDF_INPUT_MODE = "pdf"
 QUESTION_ONLY_INPUT_MODE = "question_only"
 SUPPORTED_INPUT_MODES = {PDF_INPUT_MODE, QUESTION_ONLY_INPUT_MODE}
 UNANSWERABLE_LABEL = "Unanswerable"
-INFERENCE_PROTOCOL_VERSION = 7
-SCORING_PROTOCOL_VERSION = 6
+INFERENCE_PROTOCOL_VERSION = 8
+SCORING_PROTOCOL_VERSION = 7
 
 JUDGE_REQUIRED_QA_FIELDS = (
     "is_correct",
@@ -75,6 +75,8 @@ JUDGE_INFERENCE_BINDING_FIELDS = (
     "model_output",
     "raw_model_output",
     "raw_model_output_sha256",
+    "generation_audit",
+    "generation_status",
     "deterministic_normalizations",
     "type",
     "input_mode",
@@ -194,6 +196,7 @@ def build_inference_protocol_metadata(
     )
     payload = {
         "protocol_version": INFERENCE_PROTOCOL_VERSION,
+        "pdf_prompt_sha256": sha256_file(Path(__file__).resolve().parents[3] / "evaluation/prompts/pdf_inference.txt"),
         "inference_runner_sha256": sha256_file(runner_path),
         "source_code_sha256": {
             name: sha256_file(runner_path.with_name(name))

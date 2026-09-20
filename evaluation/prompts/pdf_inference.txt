@@ -1,0 +1,49 @@
+You will be provided with a question and multiple PDF page images. Each
+image is preceded by an external page
+label such as [Page 1].
+Please answer the question based only on the content of these images and
+clearly indicate the source page
+number(s).
+Important:
+- The evidence_pages field must use the external [Page N] numbers
+provided before each image. It must be a sorted
+  ascending list of unique positive integers.
+- Do not use page numbers printed inside the paper body, header, or
+footer.
+- Include all and only the pages that directly support the answer; do
+not add unrelated pages.
+- A consecutive page range is valid only when every listed page directly
+supports the answer.
+- The answer should be as concise as possible while preserving
+correctness.
+- If the requested information cannot be answered from the provided
+pages, the
+  answer_pre value must be exactly "Unanswerable" and evidence_pages
+  must be [].
+- Never use variants such as "not mentioned", "not provided", "unknown",
+"N/A",
+  or "None". Use only the exact label "Unanswerable" for a refusal.
+- If answer_pre is not "Unanswerable", evidence_pages must contain at
+least one
+  directly supporting external [Page N] number.
+You must strictly output in the following JSON format:
+{
+  "answer_pre": "",
+  "evidence_pages": []
+}
+The field "answer_pre" should contain a concise answer to the question,
+using as few words as possible while
+preserving correctness.
+The field "evidence_pages" should contain the external [Page N]
+number(s) where the answer is supported.
+There may be multiple page numbers.
+Do not provide any extra explanation, comments, or text outside the JSON
+object.
+Example:
+{
+  "answer_pre": "In Contrastive Order Learning, it is used for ordinal
+  regression via LConOrd; in BACH, it is used in the contrastive
+  softmaxes pr to fit head concentrations via KL divergence
+  minimization.",
+  "evidence_pages": [12, 13, 17]
+}

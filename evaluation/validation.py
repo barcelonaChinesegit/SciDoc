@@ -210,6 +210,47 @@ class SubmissionError(ValueError):
     """Fatal ID/envelope ambiguity. Never guess a binding for invalid JSONL."""
 
 
+def apply_generation_audit(p: Prediction, audit: dict, page_count: int) -> Prediction:
+    """Verify a producer's complete retry trail without reconstructing output."""
+    if not isinstance(audit, dict) or not isinstance(audit.get("attempts"), list) or not audit["attempts"]:
+        raise SubmissionError(f"{p.qa_id}: generation_audit must contain nonempty attempts")
+    first_raw = None
+    for i, attempt in enumerate(audit["attempts"], 1):
+        if not isinstance(attempt, dict) or type(attempt.get("attempt")) is not int or attempt["attempt"] != i:
+            raise SubmissionError(f"{p.qa_id}: invalid attempt ordering")
+        status = attempt.get("status")
+        if status not in {"legal", "illegal", "technical_failure"}:
+            raise SubmissionError(f"{p.qa_id}: invalid generation attempt status")
+        raw = attempt.get("raw_output")
+        if raw is not None:
+            if not isinstance(raw, str) or attempt.get("raw_output_sha256") != digest(raw):
+                raise SubmissionError(f"{p.qa_id}: attempt raw output hash mismatch")
+            if first_raw is None:
+                first_raw = raw
+            if status != "technical_failure" and validate_raw(p.qa_id, raw, page_count).status != status:
+                raise SubmissionError(f"{p.qa_id}: claimed attempt status disagrees with strict parsing")
+        elif status != "technical_failure":
+            raise SubmissionError(f"{p.qa_id}: successful generation has no raw bytes")
+        if i < len(audit["attempts"]) and status == "legal":
+            raise SubmissionError(f"{p.qa_id}: cannot correct an already legal prediction")
+    last = audit["attempts"][-1]
+    if audit.get("original_raw_output") != first_raw or audit.get("final_status") != last["status"]:
+        raise SubmissionError(f"{p.qa_id}: first/final generation audit binding mismatch")
+    final_raw = p.audit["original_raw_output"]
+    if last["status"] == "technical_failure":
+        if final_raw != "":
+            raise SubmissionError(f"{p.qa_id}: failed generation cannot claim a final model answer")
+        p.status, p.answer_pre, p.evidence_pages = "technical_failure", None, None
+        p.errors = [{"type": "generation_failure", "message": "Generation exhausted its bounded attempts"}]
+        p.audit["final_parse_status"] = "technical_failure"
+    elif final_raw != last.get("raw_output"):
+        raise SubmissionError(f"{p.qa_id}: final raw output is not the last generation attempt")
+    p.audit["generation_audit"] = audit
+    p.audit["retry_outputs"] = [a.get("raw_output") for a in audit["attempts"][1:]]
+    p.audit["correction_trigger"] = [a.get("correction_trigger") for a in audit["attempts"][1:]]
+    return p
+
+
 def load_submission(path: Path, gold: dict[str, Gold]) -> dict[str, Prediction]:
     text = path.read_text(encoding="utf-8")
     try:
@@ -227,13 +268,15 @@ def load_submission(path: Path, gold: dict[str, Gold]) -> dict[str, Prediction]:
         if qa_id not in gold:
             raise SubmissionError(f"{qa_id}: unknown QA ID (fatal)")
         # Raw envelope is an audit ingestion format, not the recommended submission.
-        if set(record) == {"qa_id", "raw_model_output"} and isinstance(record["raw_model_output"], str):
+        if set(record) in ({"qa_id", "raw_model_output"}, {"qa_id", "raw_model_output", "generation_audit"}) and isinstance(record["raw_model_output"], str):
             raw = record["raw_model_output"]
             source = "raw_envelope"
         else:
             raw = json.dumps({k: v for k, v in record.items() if k != "qa_id"}, ensure_ascii=False)
             source = "submission_fields_original_model_bytes_unavailable"
         p = validate_raw(qa_id, raw, gold[qa_id].page_count)
+        if source == "raw_envelope" and "generation_audit" in record:
+            p = apply_generation_audit(p, record["generation_audit"], gold[qa_id].page_count)
         p.audit["source"] = source
         p.audit["submission_record"] = record
         predictions[qa_id] = p

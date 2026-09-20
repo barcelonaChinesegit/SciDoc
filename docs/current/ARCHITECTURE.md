@@ -11,6 +11,13 @@
 本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
 
 
+新推理保留逐次 `generation_audit`（原始输出、SHA-256、纠错触发、状态），不再执行
+LaTeX 修复、嵌套 JSON 提取或重试时改变 token 上限。PDF 提示词逐字读取论文图源副本
+`evaluation/prompts/pdf_inference.txt`。协议版本递增后，旧 checkpoint 不能作为新运行续跑。
+`scripts/run_local_pipeline.py` 提供完整 PDF → 4B → 27B Judge → 公开宏平均报告的本地诊断；
+记录全量输入绑定并保留 2200 分母。内部 `run_report.py` 汇总标为
+`internal_diagnostics` / `publication_eligible=false`，不能充当公开主指标报告。
+
 ## 1. 系统边界
 
 本项目负责本仓库中除 `sxz/` 外的 QA 数据审计、模型推理、统一判分、报告、
@@ -375,7 +382,7 @@ Judge 行复制所有用于绑定的推理字段，另加：
 | `judge_verdict`, `judge_response` | 规则或 27B Judge 结论与可选原文 |
 | `inference_binding_sha256` | 该 Judge 行绑定的精确推理行哈希 |
 | `judge_protocol_fingerprint` | Judge 代码、模型身份和参数哈希 |
-| `publication_eligible` | 正式代码恒为 true；缺失即拒绝报告 |
+| `publication_eligible` | 逐题字段用于内部严格校验；内部汇总恒为 false，不代表论文表格已复现 |
 | `protocol_validation` | 正式代码恒为 `publication_strict` |
 
 内部历史报告的三项诊断分别聚合 `answer_is_correct`、`evidence_pages_is_correct` 和

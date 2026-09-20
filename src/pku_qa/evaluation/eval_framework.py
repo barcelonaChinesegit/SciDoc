@@ -74,13 +74,13 @@ DEFAULT_PROVIDER_SPECS: dict[str, dict[str, Any]] = {
     },
     "local_qwen3_6_27b_judge": {
         "provider_type": "local_transformers",
-        "model_class": "AutoModelForCausalLM",  # 修复：改为纯文本模型类
+        "model_class": "AutoModelForImageTextToText",
         "model_path": str(model_directory("Qwen3.6-27B")),
         "processor_path": str(model_directory("Qwen3.6-27B")),
-        "dtype": "auto",
-        "attn_implementation": None,
+        "dtype": "bfloat16",
+        "attn_implementation": "sdpa",
         "local_files_only": True,
-        "trust_remote_code": True,
+        "trust_remote_code": False,
         # The judge must emit only its final verdict. Qwen's chat template
         # inserts an empty thinking block when this is false.
         "enable_thinking": False,
@@ -138,7 +138,7 @@ class LocalTransformersProvider(BaseChatProvider):
 
         import torch
         # 修复：增加 AutoTokenizer 和 AutoModelForCausalLM
-        from transformers import AutoProcessor, AutoTokenizer, AutoModelForCausalLM, Qwen3VLForConditionalGeneration
+        from transformers import AutoProcessor, AutoTokenizer, AutoModelForCausalLM, AutoModelForImageTextToText, Qwen3VLForConditionalGeneration
 
         if self.spec.get("model_backend") == "modelscope":
             from modelscope import (
@@ -157,6 +157,7 @@ class LocalTransformersProvider(BaseChatProvider):
                 else Qwen3VLForConditionalGeneration
             ),
             "AutoModelForCausalLM": AutoModelForCausalLM,
+            "AutoModelForImageTextToText": AutoModelForImageTextToText,
         }
         if model_class_name not in model_class_map:
             raise ProviderError(f"Unsupported local model class: {model_class_name}")
@@ -184,13 +185,14 @@ class LocalTransformersProvider(BaseChatProvider):
                 self.spec["model_path"], require_config=True
             )
         )
-        if model_class_name == "Qwen3VLForConditionalGeneration":
+        if model_class_name in {"Qwen3VLForConditionalGeneration", "AutoModelForImageTextToText"}:
             if qwen_dtype is not None:
                 load_kwargs["dtype"] = qwen_dtype
         else:
             load_kwargs["torch_dtype"] = torch_dtype
 
         self.model = model_class.from_pretrained(model_path, **load_kwargs)
+        self.model.eval()
         device_map = getattr(self.model, "hf_device_map", {}) or {}
         offloaded_modules = [
             module_name
