@@ -2,6 +2,11 @@
 
 Audit date: 2026-09-20. The manuscript is authoritative; QA and PDF contents are immutable.
 
+Follow-up: [real local Qwen3.6-27B evaluation test](LOCAL_MODEL_TEST.md) passed
+15 actual model calls, six controls, and independent cache-only CLI replay.
+The updated regression suite has 486 passing tests. This diagnostic does not
+change the historical reproduction status below.
+
 **Status: engineering implementation and historical audit delivered; an official rescore reproducing the paper is not established.** Historical reaggregation is explicitly distinguished from new semantic evaluation. No numbers, gold answers, or evidence pages were changed to conceal discrepancies.
 
 ## A. Repository audit

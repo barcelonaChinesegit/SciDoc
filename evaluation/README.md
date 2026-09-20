@@ -235,3 +235,52 @@ timestamp. Corrupt bindings and conflicting decisions fail loudly. Do not share
 one append-only cache among simultaneous writers; use a cache per run/process.
 Offline misses become visible technical failures; they are never removed from
 the denominator. Reporting an existing JSON file does not call the judge.
+
+## Real local-model smoke test
+
+The completed [local Qwen3.6-27B test and replayable artifacts](../docs/reports/official_evaluation/LOCAL_MODEL_TEST.md)
+record 15 actual model calls, six successful controls, and cache-only CLI replay.
+
+The opt-in diagnostic below uses local Qwen3.6-27B weights with the unchanged
+paper prompt and strict binary parser. It requires the internal Python 3.12+
+ML environment (tested with PyTorch 2.8.0 and Transformers 5.6.2), an idle A800,
+the frozen PDFs, and historical `data/results/Qwen3-VL-8B/` files. These large
+assets and ML dependencies are not part of `requirements-eval.txt`.
+
+```bash
+python scripts/smoke_local_evaluation.py \
+  --model-dir models/Qwen3.6-27B --gpu 2 \
+  --output-dir data/results/local_evaluation_smoke
+
+# Recompute the full-denominator partial report entirely from the real cache.
+python evaluation/evaluate.py \
+  --predictions data/results/local_evaluation_smoke/predictions.jsonl \
+  --judge-config data/results/local_evaluation_smoke/judge_config.json \
+  --judge-cache data/results/local_evaluation_smoke/judge_cache.jsonl \
+  --offline --output data/results/local_evaluation_smoke/offline_report.json
+```
+
+Use a new output directory for each diagnostic. The script selects the first
+three legal historical raw outputs per task whose question, reference, and
+evidence exactly match current gold. This selection tests execution, not model
+performance; illegal/changed historical records remain accounted for in the
+separate reproduction audit. All 2,200 gold items remain in the scoring report,
+so omitted predictions contribute zero. The offline command returns **2**
+because this deliberately partial submission is incomplete.
+
+Six additional, explicitly constructed predictions check positive/negative
+Judge behavior across the three answerable tasks; they never alter gold.
+Unanswerable scoring remains deterministic. The script records raw Judge
+replies and token IDs, cache bindings, configuration, every checkpoint shard's
+SHA-256, full PDF validation metadata, and before/after hashes of all QA JSONs.
+It checks cache-only replay, fixed denominator, expected controls, and no QA
+changes, returning nonzero on a failed check.
+
+Its greedy decoding, seed 42, 32-token limit, disabled thinking, and two-attempt
+limit are **explicit new diagnostic choices**, not recovered paper settings.
+Generation is synchronous and token-bounded, without a wall-clock timeout.
+The local checkpoint is identified by its complete artifact hashes; the
+unavailable upstream revision is recorded as null. This diagnostic config is
+used with `Judge(generate=...)` and offline replay, not the API backend.
+This test does not establish historical Table 2/3 reproduction or rerun a
+baseline's PDF inference.

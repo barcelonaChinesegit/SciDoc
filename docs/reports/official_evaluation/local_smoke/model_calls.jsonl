@@ -1,0 +1,15 @@
+{"prompt_sha256": "49fb3f93c1d53bca598e368a8b0adb1ba79f16ac46e626de4c6c3c170096cf1d", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "e2cfe63be02946ee0188c071706bd0efab7878a9a4fe75a349f93b1ee8cd1a65", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "9db2fc3e34137ef348a4c8d020ff819b1ed3f716bd79ad20e93fdc11bbb11ae1", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "26ef21ccc9d47b1a38160faf8a5068e4d850495e98af289d50e44fd29ba3657f", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "0043960e759d37de4bbd69dea714398f58dbef67f83ec5fca6fa3744626a2fd4", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "b735b6ba72acc14e3a879970b46391dfbde2b8fa1b83435d5697d6ba7f896fad", "raw": "INCORRECT", "output_token_ids": [37163, 842, 43347, 248046]}
+{"prompt_sha256": "dbebb31c8bbc7163cf7d6e43349a3f789d28ec22b4f6c0a1117e699d131918a1", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "8da925e6bc3a9e7d4088e6e1b529f8f8609ee181113c4f4ce7b17d89f28ecc0c", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "bcccbb3006ff9246a6d2d5279800f283e210783f4e0e555cabae741a982e6d2d", "raw": "INCORRECT", "output_token_ids": [37163, 842, 43347, 248046]}
+{"prompt_sha256": "bfa2de24d2339803930d970fcf56ea78b8847a579cb63299d04413ad58ee88c3", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "6323887da4047cb2ebeac85a420223068380cbf511b6cde283d5167d52eb1fe1", "raw": "INCORRECT", "output_token_ids": [37163, 842, 43347, 248046]}
+{"prompt_sha256": "f54a8225f159f7865eba28419f936bd52cd84be3ed19d67ded4bd3b2dfc2ee57", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "169ef7896f3fe9b75426f44695d8edd8208c055c77f18a4e86c6a2200c4548d4", "raw": "INCORRECT", "output_token_ids": [37163, 842, 43347, 248046]}
+{"prompt_sha256": "bdf76598b64ba023eae6252f466e303d5ca16cf0ef13d1f933948a866f08eb99", "raw": "CORRECT", "output_token_ids": [50564, 43347, 248046]}
+{"prompt_sha256": "b43f6b4f6af0f129d11dbf96060443ecd8e5690e54b709919576892104ebbbef", "raw": "INCORRECT", "output_token_ids": [37163, 842, 43347, 248046]}

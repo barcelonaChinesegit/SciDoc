@@ -1,5 +1,11 @@
 # SciDoc 上手指南
 
+本地真实 Judge 冒烟测试使用 `scripts/smoke_local_evaluation.py`，命令与依赖见
+[evaluation/README.md](../../evaluation/README.md#real-local-model-smoke-test)。
+它只读选取与当前金标一致的历史预测，在空闲 A800 上运行原版论文二分类提示词，
+记录权重哈希、原始回复、缓存复用和 QA 前后哈希；这是新配置的诊断，不能作为
+论文 Table 2/3 已复现的证据。
+
 ## 2026-09-20 论文协议审计更新
 
 公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。

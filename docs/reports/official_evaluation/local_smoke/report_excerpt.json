@@ -1,0 +1,986 @@
+{
+  "total": 2200,
+  "received": 12,
+  "missing": 2188,
+  "legal": 12,
+  "illegal": 0,
+  "technical_failures": 0,
+  "answer_metrics": {
+    "All": {
+      "count": 2200,
+      "correct": 9,
+      "accuracy": 0.4090909090909091
+    },
+    "General": {
+      "count": 1000,
+      "correct": 3,
+      "accuracy": 0.3
+    },
+    "Unanswerable": {
+      "count": 200,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "Reasoning": {
+      "count": 200,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "Multi-Document": {
+      "count": 800,
+      "correct": 2,
+      "accuracy": 0.25
+    }
+  },
+  "evidence_metrics": {
+    "E-Precision": 0.2012987012987013,
+    "E-Recall": 0.19015151515151518,
+    "E-F1": 0.18885281385281386,
+    "A-Pages": 0.010454545454545454
+  },
+  "discipline_breakdown": {
+    "Computer Science": {
+      "count": 743,
+      "correct": 2,
+      "accuracy": 0.2691790040376851
+    },
+    "Physics": {
+      "count": 379,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "Statistics": {
+      "count": 367,
+      "correct": 2,
+      "accuracy": 0.5449591280653951
+    },
+    "Mathematics": {
+      "count": 245,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "Electrical Engineering and Systems Science": {
+      "count": 129,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "Economics": {
+      "count": 137,
+      "correct": 5,
+      "accuracy": 3.6496350364963503
+    },
+    "Quantitative Biology": {
+      "count": 114,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "Quantitative Finance": {
+      "count": 86,
+      "correct": 0,
+      "accuracy": 0.0
+    }
+  },
+  "audit_diagnostics": {
+    "illegal_output_rate": 0.0,
+    "exact_page_set_match": 0.09090909090909091,
+    "joint_answer_evidence_correctness": 0.09090909090909091,
+    "unresolved_illegal_evidence_items": 0,
+    "judge_failures_counted_zero": 0
+  },
+  "dataset_hashes": {
+    "ordinary_qa.json": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+    "unanswerable_qa.json": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+    "reasoning_qa.json": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+    "cross_pdf_qa.json": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82"
+  },
+  "release_manifest_sha256": "a104ab0e614ef01bfeabc27b603eb017bf6c33a32706e6cbd7440a5edab89546",
+  "pdf_manifest_sha256": "c00a419a56bf8713c349b4c13a0456c224ef86436cdbf91caf7ec8e953d04a10",
+  "evaluator_version": "0.1.0",
+  "timestamp": "2026-09-20T16:35:56.688018+00:00",
+  "prediction_file_sha256": "be7d54a0e5a98d704334b58cedaa4ab534dc7adff523fddc9406121b7700c53e",
+  "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+  "judge_identity": {
+    "model": "Qwen/Qwen3.6-27B",
+    "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+    "revision": null,
+    "revision_note": "upstream commit unavailable; local bytes fully hashed",
+    "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+    "serving_version": "5.6.2"
+  },
+  "judge_config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168",
+  "release_status": "provisional_pending_paper_history_reconciliation",
+  "official_reproduction_verified": false,
+  "unresolved_items": [
+    "The binary paper prompt has no recovered, bound historical execution configuration or decisions. Historical v4/v10 use different tri-class prompts.",
+    "Historical checkpoint revision and weight hashes were not bound to cached decisions. Current local files cannot prove past checkpoint bytes.",
+    "Historical prediction parsing repairs fences, extracts strings/pages and scores embedded gold; paper requires strict raw JSON and independent immutable gold.",
+    "Historical evidence scoring precedes output validity checks. The paper does not specify a recoverable page set for every illegal raw output; illegal evidence headline metrics remain null pending reconciliation.",
+    "The 55 baseline files contain missing items and question/reference/evidence version differences relative to the current four-file release.",
+    "No uniform format-correction retry count or complete retry trail is recoverable across all 11 historical baseline pipelines. Submission scoring does not rerun inference or invent retries.",
+    "Paper tables provide two-decimal values, not full-precision references; compare recovered historical full-precision artifacts separately."
+  ],
+  "scope": "Deliberately partial diagnostic; not baseline benchmark performance",
+  "selected_rows": [
+    {
+      "qa_id": "QA0001",
+      "task": "General",
+      "discipline": "Economics",
+      "field": "Theoretical Economics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "predicted_unique_page_count": 1,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "56299f4439a498d8a2b91030f51a112caf0b77fa8d60a3cef565a68950883e6f",
+        "binding": {
+          "qa_id": "QA0001",
+          "question_sha256": "b38e63d64e051b020ebf59a9ea6bde484263b58f62eaf0d212ae32bb27d3eb8d",
+          "reference_answer_sha256": "016fb9897e8f5db2341d458cede446ad2d142ccd6b1eb38f0684c85d08e2af9d",
+          "model_prediction_sha256": "69296caea335c9bb9b3c3f162c30c8b9fa3863135452ad058e5fd58ef29e0c7f",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:18.840266+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA0001",
+        "status": "legal",
+        "answer_pre": "The buyer first identifies all worst-case optimal mechanisms that maximize her minimum payoff across a set of plausible models, and then selects one from this set that maximizes her expected payoff under the conjectured model.",
+        "evidence_pages": [
+          2
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"The buyer first identifies all worst-case optimal mechanisms that maximize her minimum payoff across a set of plausible models, and then selects one from this set that maximizes her expected payoff under the conjectured model.\",\"evidence_pages\":[2]}",
+          "raw_output_sha256": "8c858e71159fbb27b3ec1d324bb7ced65f8a7e3d5c074f35e127af1b0742a21c",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "The buyer first identifies all worst-case optimal mechanisms that maximize her minimum payoff across a set of plausible models, and then selects one from this set that maximizes her expected payoff under the conjectured model.",
+            "evidence_pages": [
+              2
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA0001",
+            "raw_model_output": "{\"answer_pre\":\"The buyer first identifies all worst-case optimal mechanisms that maximize her minimum payoff across a set of plausible models, and then selects one from this set that maximizes her expected payoff under the conjectured model.\",\"evidence_pages\":[2]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA0002",
+      "task": "General",
+      "discipline": "Economics",
+      "field": "Theoretical Economics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "predicted_unique_page_count": 1,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "56f19fe72854fb3f7d506b9f73472249c7ffc4e490c80a65e1845786ae053bd8",
+        "binding": {
+          "qa_id": "QA0002",
+          "question_sha256": "c4b53ba1ad7107afcdcf8bfe68aff2e60b675f6bce6a215be9a206e754039fc4",
+          "reference_answer_sha256": "7ddfebdb31b7a2c9c106b5fa87d4ba9a9a30ee63a5e6f6b1dc93c9114f23e2bd",
+          "model_prediction_sha256": "1debd42d1b5212aaa46bf12be3d9bce6977272b2dd5040b57e5e270a1d049480",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:19.404961+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA0002",
+        "status": "legal",
+        "answer_pre": "price regulation",
+        "evidence_pages": [
+          23
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"price regulation\",\"evidence_pages\":[23]}",
+          "raw_output_sha256": "8a7caf400694a435e8e9ae42a5fe4d3386ae93c80b4c1c477c366d7d7ccc593b",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "price regulation",
+            "evidence_pages": [
+              23
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA0002",
+            "raw_model_output": "{\"answer_pre\":\"price regulation\",\"evidence_pages\":[23]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA0003",
+      "task": "General",
+      "discipline": "Economics",
+      "field": "Theoretical Economics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "predicted_unique_page_count": 1,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "403f6bcaf89e2e569bc1a29028dfc534c6016403b7f3434abc80935f70c8ceef",
+        "binding": {
+          "qa_id": "QA0003",
+          "question_sha256": "f9a6c71da81099f74fc9a134b93215ece45c0d0f6c622e60ed72203e7049e1a7",
+          "reference_answer_sha256": "d87ffe6c9ff614aa0b590058e31280639f5a39040fbb2c9e311ba85d11667f31",
+          "model_prediction_sha256": "27bee48dbedda15992519ba5ef5bf5e2c0e0c30139584afa476a5b092af9359c",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:19.970940+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA0003",
+        "status": "legal",
+        "answer_pre": "They are simple: each type is asked to apply the Bayesian optimal markup (under the government's model), capped at the largest possible cost (a cap binding for high-cost types).",
+        "evidence_pages": [
+          4
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"They are simple: each type is asked to apply the Bayesian optimal markup (under the government's model), capped at the largest possible cost (a cap binding for high-cost types).\",\"evidence_pages\":[4]}",
+          "raw_output_sha256": "9e7675668d8674ed93fff975d3e37933d83009c1efb5d9e98044ceb51e7e9cd4",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "They are simple: each type is asked to apply the Bayesian optimal markup (under the government's model), capped at the largest possible cost (a cap binding for high-cost types).",
+            "evidence_pages": [
+              4
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA0003",
+            "raw_model_output": "{\"answer_pre\":\"They are simple: each type is asked to apply the Bayesian optimal markup (under the government's model), capped at the largest possible cost (a cap binding for high-cost types).\",\"evidence_pages\":[4]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1011",
+      "task": "Unanswerable",
+      "discipline": "Statistics",
+      "field": "Other Statistics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "predicted_unique_page_count": 0,
+      "exact_page_set": true,
+      "joint_correct": true,
+      "judge": {
+        "method": "exact_canonical_refusal",
+        "decision": "CORRECT"
+      },
+      "prediction": {
+        "qa_id": "QA1011",
+        "status": "legal",
+        "answer_pre": "Unanswerable",
+        "evidence_pages": [],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"Unanswerable\",\"evidence_pages\":[]}",
+          "raw_output_sha256": "ce518005010f535a3c46ff3b0d24ae6c93fd08f909f908c8c9d5999a4510191b",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "Unanswerable",
+            "evidence_pages": []
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1011",
+            "raw_model_output": "{\"answer_pre\":\"Unanswerable\",\"evidence_pages\":[]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1012",
+      "task": "Unanswerable",
+      "discipline": "Statistics",
+      "field": "Other Statistics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "predicted_unique_page_count": 0,
+      "exact_page_set": true,
+      "joint_correct": true,
+      "judge": {
+        "method": "exact_canonical_refusal",
+        "decision": "CORRECT"
+      },
+      "prediction": {
+        "qa_id": "QA1012",
+        "status": "legal",
+        "answer_pre": "Unanswerable",
+        "evidence_pages": [],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"Unanswerable\",\"evidence_pages\":[]}",
+          "raw_output_sha256": "ce518005010f535a3c46ff3b0d24ae6c93fd08f909f908c8c9d5999a4510191b",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "Unanswerable",
+            "evidence_pages": []
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1012",
+            "raw_model_output": "{\"answer_pre\":\"Unanswerable\",\"evidence_pages\":[]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1013",
+      "task": "Unanswerable",
+      "discipline": "Statistics",
+      "field": "Computational Statistics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": false,
+      "evidence": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "predicted_unique_page_count": 1,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "method": "exact_canonical_refusal",
+        "decision": "INCORRECT"
+      },
+      "prediction": {
+        "qa_id": "QA1013",
+        "status": "legal",
+        "answer_pre": "The convergence rate for square-summable step-sizes in Theorem 4.4(a) is O(1/k).",
+        "evidence_pages": [
+          9
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"The convergence rate for square-summable step-sizes in Theorem 4.4(a) is O(1/k).\",\"evidence_pages\":[9]}",
+          "raw_output_sha256": "21a545e0d7c4e2393d92202abcaf3a7b870c052560e20c294001e464c2282194",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "The convergence rate for square-summable step-sizes in Theorem 4.4(a) is O(1/k).",
+            "evidence_pages": [
+              9
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1013",
+            "raw_model_output": "{\"answer_pre\":\"The convergence rate for square-summable step-sizes in Theorem 4.4(a) is O(1/k).\",\"evidence_pages\":[9]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1201",
+      "task": "Reasoning",
+      "discipline": "Economics",
+      "field": "Theoretical Economics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "predicted_unique_page_count": 2,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "f73962492df9cc7e93fc5c5bdb6aad23fac8eb5248d70a6a3d90ab9b7a66ea8e",
+        "binding": {
+          "qa_id": "QA1201",
+          "question_sha256": "4bba77b770123a7b5d43601ed81e5f2bb7a8c85ab4a609ea69f969021604fa66",
+          "reference_answer_sha256": "e1cc25a0bc2f0add1068aca6d26c5fd80bd8a58bc8b0664d7552133ca073a248",
+          "model_prediction_sha256": "673ae2668f58578c27c250ac24a88e336f59da3e3fd930dd15253229218225ae",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:20.536970+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA1201",
+        "status": "legal",
+        "answer_pre": "price regulation",
+        "evidence_pages": [
+          23,
+          24
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"price regulation\",\"evidence_pages\":[23, 24]}",
+          "raw_output_sha256": "64514abac33ffb5b945e85a51c280e49bfbbe1725f799c44dfc5e44ec9093bdc",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "price regulation",
+            "evidence_pages": [
+              23,
+              24
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1201",
+            "raw_model_output": "{\"answer_pre\":\"price regulation\",\"evidence_pages\":[23, 24]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1202",
+      "task": "Reasoning",
+      "discipline": "Economics",
+      "field": "Theoretical Economics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        0.5,
+        0.6666666666666666,
+        0.5714285714285715
+      ],
+      "predicted_unique_page_count": 4,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "903862a59f38510cde99ed11ec2835a33c78cc95fca7ecaa88182596dace1344",
+        "binding": {
+          "qa_id": "QA1202",
+          "question_sha256": "1dae2718791d9b71e96d23ab2e2ddeaee096a3ae4fb3396dcdb2474dbf009eb0",
+          "reference_answer_sha256": "032493234a9e9bfc5cefd2b8ed8d8edc5ce69415b49781af42943a5a57e396d2",
+          "model_prediction_sha256": "b4df03dee524f3e48b0599743b991c072aff7e43c56032e70899cb1b51fab345",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:21.100554+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA1202",
+        "status": "legal",
+        "answer_pre": "The payoff function in N-player games is discontinuous and non-quasiconcave, and it depends on an aggregate measure (the average of all players' strategies), which makes the game an aggregative game. These characteristics necessitate the use of the diagonal disjoint payoff matching condition to prove the existence of a symmetric Nash equilibrium.",
+        "evidence_pages": [
+          1,
+          3,
+          16,
+          22
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"The payoff function in N-player games is discontinuous and non-quasiconcave, and it depends on an aggregate measure (the average of all players' strategies), which makes the game an aggregative game. These characteristics necessitate the use of the diagonal disjoint payoff matching condition to prove the existence of a symmetric Nash equilibrium.\",\"evidence_pages\":[1,3,16,22]}",
+          "raw_output_sha256": "ee09aa96dc129f15ac0525670e21059f8762edafc570fca2783c5922fe093a84",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "The payoff function in N-player games is discontinuous and non-quasiconcave, and it depends on an aggregate measure (the average of all players' strategies), which makes the game an aggregative game. These characteristics necessitate the use of the diagonal disjoint payoff matching condition to prove the existence of a symmetric Nash equilibrium.",
+            "evidence_pages": [
+              1,
+              3,
+              16,
+              22
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1202",
+            "raw_model_output": "{\"answer_pre\":\"The payoff function in N-player games is discontinuous and non-quasiconcave, and it depends on an aggregate measure (the average of all players' strategies), which makes the game an aggregative game. These characteristics necessitate the use of the diagonal disjoint payoff matching condition to prove the existence of a symmetric Nash equilibrium.\",\"evidence_pages\":[1,3,16,22]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1203",
+      "task": "Reasoning",
+      "discipline": "Statistics",
+      "field": "Computational Statistics",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": false,
+      "evidence": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "predicted_unique_page_count": 2,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "24c1dace44cce8a5d80a33e38ccded4d3e729e76a476bae6285007f09fbc81e0",
+        "binding": {
+          "qa_id": "QA1203",
+          "question_sha256": "0461ee146ad1a59da01364152a2bde4fd057d5eed04f44be23b6f0a2f2255461",
+          "reference_answer_sha256": "0f9712c1c7faa862821f6639f42434ddb7842e88479a3a4bcaf15ce0b93d3c6e",
+          "model_prediction_sha256": "735fc66b9453897324e64458d1c3aa98d484f5b875d4b319b77fb21ce7b8f6d7",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:21.717601+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA1203",
+        "status": "legal",
+        "answer_pre": "The model's statistical reliability may be compromised.",
+        "evidence_pages": [
+          14,
+          15
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\"answer_pre\":\"The model's statistical reliability may be compromised.\",\"evidence_pages\":[14, 15]}",
+          "raw_output_sha256": "333864bd9bb1f64211a13ef48e05c51ab35e4d120adff1bb97396bf9151beb80",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "The model's statistical reliability may be compromised.",
+            "evidence_pages": [
+              14,
+              15
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1203",
+            "raw_model_output": "{\"answer_pre\":\"The model's statistical reliability may be compromised.\",\"evidence_pages\":[14, 15]}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1401",
+      "task": "Multi-Document",
+      "discipline": "Computer Science",
+      "field": "Data Structures and Algorithms",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        0.5,
+        0.16666666666666666,
+        0.25
+      ],
+      "predicted_unique_page_count": 2,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "2c134051e64594ce94adcff8ba0c361cd6a5a56f517bfa5f77b8ac630472d343",
+        "binding": {
+          "qa_id": "QA1401",
+          "question_sha256": "be13ba3a98e37e88c79df73881a153820648477770509f2a06da78608ec990c0",
+          "reference_answer_sha256": "3ea3925fe3b45d8a97bfb18500e57cc93e44b75b300b78544d555b11883b3073",
+          "model_prediction_sha256": "724736f9b49a3adcac60b0f65cfa800bf0fd9b2d77a0fc466c73a5975863975f",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:22.494566+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA1401",
+        "status": "legal",
+        "answer_pre": "The Trousers T in R^3 admits no minimum CAD because two distinct minimal CADs cannot be merged into a common coarser one. The topological criterion developed in Paper 2 for when three consecutive sector/section cells can be glued into a single closure-coherent piece is not satisfied by T's geometry. The property of T's geometry that causes the failure is that its sections are not locally boundary connected, which prevents the gluing of three consecutive sector/section cells into a single closure-coherent piece.",
+        "evidence_pages": [
+          8,
+          21
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\n  \"answer_pre\": \"The Trousers T in R^3 admits no minimum CAD because two distinct minimal CADs cannot be merged into a common coarser one. The topological criterion developed in Paper 2 for when three consecutive sector/section cells can be glued into a single closure-coherent piece is not satisfied by T's geometry. The property of T's geometry that causes the failure is that its sections are not locally boundary connected, which prevents the gluing of three consecutive sector/section cells into a single closure-coherent piece.\",\n  \"evidence_pages\": [\n    8,\n    21\n  ]\n}",
+          "raw_output_sha256": "90ebc9d857382690c5c471263451fb1815c52aeba640b4a93c8d1d3bba286a46",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "The Trousers T in R^3 admits no minimum CAD because two distinct minimal CADs cannot be merged into a common coarser one. The topological criterion developed in Paper 2 for when three consecutive sector/section cells can be glued into a single closure-coherent piece is not satisfied by T's geometry. The property of T's geometry that causes the failure is that its sections are not locally boundary connected, which prevents the gluing of three consecutive sector/section cells into a single closure-coherent piece.",
+            "evidence_pages": [
+              8,
+              21
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1401",
+            "raw_model_output": "{\n  \"answer_pre\": \"The Trousers T in R^3 admits no minimum CAD because two distinct minimal CADs cannot be merged into a common coarser one. The topological criterion developed in Paper 2 for when three consecutive sector/section cells can be glued into a single closure-coherent piece is not satisfied by T's geometry. The property of T's geometry that causes the failure is that its sections are not locally boundary connected, which prevents the gluing of three consecutive sector/section cells into a single closure-coherent piece.\",\n  \"evidence_pages\": [\n    8,\n    21\n  ]\n}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1402",
+      "task": "Multi-Document",
+      "discipline": "Computer Science",
+      "field": "Data Structures and Algorithms",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": true,
+      "evidence": [
+        0.5,
+        0.25,
+        0.3333333333333333
+      ],
+      "predicted_unique_page_count": 2,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "a5b07d52375d3431e33404230eb716db20d93ae30523c56a8241dd160a8d0d32",
+        "binding": {
+          "qa_id": "QA1402",
+          "question_sha256": "c9d7c74e85fa0c816c2593711ac452612c76d7fb1f9a5af5fccac29aa2dd36c8",
+          "reference_answer_sha256": "2c732bc138fa8da35896cde0f4d92c1af5d16fd072e74b1382c006ad4d25111c",
+          "model_prediction_sha256": "25c1be6a7c10d2365b7a42249c5e32727d0dd9ec8d776973c1c4da75123c7b30",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "CORRECT",
+        "attempts": [
+          {
+            "raw": "CORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:23.221713+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA1402",
+        "status": "legal",
+        "answer_pre": "Paper 1's R^2 merging technique does not invoke the local-boundary-connectedness condition from Paper 2's Lemma 2.3. The two are distinct mechanisms, and this distinction means Paper 1's technique cannot be reused to justify the R^4 counterexamples of Paper 2, as those counterexamples explicitly violate the local-boundary-connectedness condition.",
+        "evidence_pages": [
+          7,
+          28
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\n  \"answer_pre\": \"Paper 1's R^2 merging technique does not invoke the local-boundary-connectedness condition from Paper 2's Lemma 2.3. The two are distinct mechanisms, and this distinction means Paper 1's technique cannot be reused to justify the R^4 counterexamples of Paper 2, as those counterexamples explicitly violate the local-boundary-connectedness condition.\",\n  \"evidence_pages\": [\n    7,\n    28\n  ]\n}",
+          "raw_output_sha256": "bbbfec42e912abb9a76d3e88d29ca71938b264fb6623d298ec47a69f29236fcc",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "Paper 1's R^2 merging technique does not invoke the local-boundary-connectedness condition from Paper 2's Lemma 2.3. The two are distinct mechanisms, and this distinction means Paper 1's technique cannot be reused to justify the R^4 counterexamples of Paper 2, as those counterexamples explicitly violate the local-boundary-connectedness condition.",
+            "evidence_pages": [
+              7,
+              28
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1402",
+            "raw_model_output": "{\n  \"answer_pre\": \"Paper 1's R^2 merging technique does not invoke the local-boundary-connectedness condition from Paper 2's Lemma 2.3. The two are distinct mechanisms, and this distinction means Paper 1's technique cannot be reused to justify the R^4 counterexamples of Paper 2, as those counterexamples explicitly violate the local-boundary-connectedness condition.\",\n  \"evidence_pages\": [\n    7,\n    28\n  ]\n}"
+          }
+        }
+      }
+    },
+    {
+      "qa_id": "QA1403",
+      "task": "Multi-Document",
+      "discipline": "Computer Science",
+      "field": "Data Structures and Algorithms",
+      "status": "legal",
+      "prediction_status": "legal",
+      "answer_correct": false,
+      "evidence": [
+        0.42857142857142855,
+        0.6,
+        0.5
+      ],
+      "predicted_unique_page_count": 7,
+      "exact_page_set": false,
+      "joint_correct": false,
+      "judge": {
+        "key": "1eb7906f9e1988922f61f44da151bbf2016b8db9a7f91ae600234026e5773a65",
+        "binding": {
+          "qa_id": "QA1403",
+          "question_sha256": "70485dc50fb1fccab26dc9ffc908a2af41c6f2e83cf1269838cd4abbc3261895",
+          "reference_answer_sha256": "b6a253170932fcfa733835201faa90ea9c16274670d615dea4e3f6e9a8ddb385",
+          "model_prediction_sha256": "52caec46cd3141ea68756ed73440afee45bea6d60879b54e50b769ff3cde71eb",
+          "judge_identity": {
+            "model": "Qwen/Qwen3.6-27B",
+            "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+            "revision": null,
+            "revision_note": "upstream commit unavailable; local bytes fully hashed",
+            "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "serving_version": "5.6.2"
+          },
+          "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+          "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+        },
+        "decision": "INCORRECT",
+        "attempts": [
+          {
+            "raw": "INCORRECT"
+          }
+        ],
+        "timestamp": "2026-09-20T16:35:24.023135+00:00",
+        "cache_hit": true
+      },
+      "prediction": {
+        "qa_id": "QA1403",
+        "status": "legal",
+        "answer_pre": "The failure breaks the 'locally boundary connected' property. In Paper 1, the failure at the origin (0,0,0) for the Trousers T leads to the non-existence of a minimum CAD, as shown in Theorem 4.4 and Figure 8. In Paper 2, the failure at the origin for the cornet-cell/slit-disk sector leads to a non-simply connected closure, as shown in Proposition 3.7 and Figure 3, which contradicts the conjecture that such sectors should be simply connected.",
+        "evidence_pages": [
+          8,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41
+        ],
+        "errors": [],
+        "audit": {
+          "original_raw_output": "{\n  \"answer_pre\": \"The failure breaks the 'locally boundary connected' property. In Paper 1, the failure at the origin (0,0,0) for the Trousers T leads to the non-existence of a minimum CAD, as shown in Theorem 4.4 and Figure 8. In Paper 2, the failure at the origin for the cornet-cell/slit-disk sector leads to a non-simply connected closure, as shown in Proposition 3.7 and Figure 3, which contradicts the conjecture that such sectors should be simply connected.\",\n  \"evidence_pages\": [\n    8,\n    36,\n    37,\n    38,\n    39,\n    40,\n    41\n  ]\n}",
+          "raw_output_sha256": "f44aabf81e43451d8fc1f0da65b3d306e4d3387a1a903662c7ff399cdd71d543",
+          "correction_trigger": null,
+          "retry_outputs": [],
+          "deterministic_normalizations": [],
+          "parse_status": "parsed",
+          "format_status": "valid",
+          "semantic_contract_status": "valid",
+          "final_normalized_output": {
+            "answer_pre": "The failure breaks the 'locally boundary connected' property. In Paper 1, the failure at the origin (0,0,0) for the Trousers T leads to the non-existence of a minimum CAD, as shown in Theorem 4.4 and Figure 8. In Paper 2, the failure at the origin for the cornet-cell/slit-disk sector leads to a non-simply connected closure, as shown in Proposition 3.7 and Figure 3, which contradicts the conjecture that such sectors should be simply connected.",
+            "evidence_pages": [
+              8,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41
+            ]
+          },
+          "final_parse_status": "legal",
+          "source": "raw_envelope",
+          "submission_record": {
+            "qa_id": "QA1403",
+            "raw_model_output": "{\n  \"answer_pre\": \"The failure breaks the 'locally boundary connected' property. In Paper 1, the failure at the origin (0,0,0) for the Trousers T leads to the non-existence of a minimum CAD, as shown in Theorem 4.4 and Figure 8. In Paper 2, the failure at the origin for the cornet-cell/slit-disk sector leads to a non-simply connected closure, as shown in Proposition 3.7 and Figure 3, which contradicts the conjecture that such sectors should be simply connected.\",\n  \"evidence_pages\": [\n    8,\n    36,\n    37,\n    38,\n    39,\n    40,\n    41\n  ]\n}"
+          }
+        }
+      }
+    }
+  ],
+  "omitted_missing_rows": 2188,
+  "full_cli_report_sha256": "b815970864505e17f9ec5c26be343bef30d12172b72655cc4886d212fffb8874"
+}

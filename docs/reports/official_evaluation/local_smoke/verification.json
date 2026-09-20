@@ -1,0 +1,11 @@
+{
+  "standalone_offline_cli_exit_code": 2,
+  "partial_submission_expected_exit": true,
+  "cli_cache_hits": 9,
+  "cli_judge_failures": 0,
+  "cli_metrics_equal_direct": true,
+  "unit_tests_passed": 486,
+  "focused_evaluation_tests_passed": 62,
+  "script_sha256": "05629f8cac9b3ebd1f399086ddf02d81725c286bbd2eba2e62bbe33e90dbad1e",
+  "qa_equal_original_task_snapshot": true
+}

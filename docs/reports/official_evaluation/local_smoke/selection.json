@@ -1,0 +1,17 @@
+{
+  "source_sha256": {
+    "ordinary1190": "2b5404729c2e7dac8ab6505a74984e22632eb4124d811cadc6ab8b88472717ab",
+    "cross_old400": "9fc0229443add67c8e8f394eb9c684625505dd297c56a5b4e9e86a36b2606827",
+    "cross_hard400": "44c20b238bb9364f74e5cf0627c33234a853be04f453bc138f141a6342634602",
+    "reasoning_old100": "ef9966efe36f64bdffe3a2fe841d801f20e0577d5eebb187e9eeff7d1668f703",
+    "reasoning_hard100": "74e3523da23fcc3e580396b7dd45179a77791bb480af7b7a2bd10fe25b23f963"
+  },
+  "selection_counts": {
+    "General": 3,
+    "Unanswerable": 3,
+    "Reasoning": 3,
+    "Multi-Document": 3
+  },
+  "eligible_count": 1963,
+  "selection": "first global IDs per task, legal raw output and exact question/answer/evidence match"
+}

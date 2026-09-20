@@ -38,7 +38,7 @@
 | `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 415 | `315117c4679e` |
 | `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 69 | `b77445197732` |
 | `docs/current/DATASET_CATALOG.md` | 项目文档：DATASET CATALOG | 33 | `a8b83f7b7a4a` |
-| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 255 | `fc2bc340710a` |
+| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 261 | `37ecc507e615` |
 | `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 678 | `cf611e006c26` |
 | `docs/current/README.md` | 项目文档：README | 126 | `307579b7ddb5` |
 | `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `7ab162dbb736` |
@@ -50,13 +50,24 @@
 | `docs/reports/README.md` | 项目文档：README | 14 | `ce204a6418e8` |
 | `docs/reports/SCIDOC_MIGRATION_20260920.md` | 项目文档：SCIDOC MIGRATION 20260920 | 78 | `e4073f071a5c` |
 | `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 69 | `0ee565793a91` |
-| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 203 | `829462b9e552` |
+| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 208 | `2bf5f74296d0` |
+| `docs/reports/official_evaluation/LOCAL_MODEL_TEST.md` | 项目文档：LOCAL MODEL TEST | 90 | `16c8baa69bac` |
 | `docs/reports/official_evaluation/claude_subject_discrepancy.json` | 项目文档：claude subject discrepancy | 118 | `4fd535e724eb` |
 | `docs/reports/official_evaluation/dataset_preflight.json` | 项目文档：dataset preflight | 1624 | `2fcf32ae8f4e` |
+| `docs/reports/official_evaluation/local_smoke/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 28 | `c7f21f2e8f4b` |
+| `docs/reports/official_evaluation/local_smoke/controls.json` | 项目文档：controls | 206 | `ea6abc83bd7a` |
+| `docs/reports/official_evaluation/local_smoke/judge_config.json` | 项目文档：judge config | 117 | `158cdeca0fd7` |
+| `docs/reports/official_evaluation/local_smoke/preflight.json` | 项目文档：preflight | 1624 | `e5481707eae9` |
+| `docs/reports/official_evaluation/local_smoke/qa_after.json` | 项目文档：qa after | 29 | `29fdb517e43d` |
+| `docs/reports/official_evaluation/local_smoke/qa_before.json` | 项目文档：qa before | 29 | `29fdb517e43d` |
+| `docs/reports/official_evaluation/local_smoke/report_excerpt.json` | 项目文档：report excerpt | 986 | `50159e1eab74` |
+| `docs/reports/official_evaluation/local_smoke/selection.json` | 项目文档：selection | 17 | `a9f307d24afa` |
+| `docs/reports/official_evaluation/local_smoke/summary.json` | 项目文档：summary | 47 | `9bcbf653ffaa` |
+| `docs/reports/official_evaluation/local_smoke/verification.json` | 项目文档：verification | 11 | `1118dfef59aa` |
 | `docs/reports/official_evaluation/reproduction_audit.json` | 项目文档：reproduction audit | 5120 | `0f17d4df501c` |
 | `docs/reports/official_evaluation/verification.json` | 项目文档：verification | 63 | `fa808b6ac98c` |
 | `environment.yml` | 项目配置或入口：environment | 8 | `1dc4df61202c` |
-| `evaluation/README.md` | 项目配置或入口：README | 237 | `53e4fded06d3` |
+| `evaluation/README.md` | 项目配置或入口：README | 286 | `c0b231383c34` |
 | `evaluation/__init__.py` | 项目配置或入口：  init   | 3 | `b51a76f50781` |
 | `evaluation/evaluate.py` | 项目配置或入口：evaluate | 83 | `cdff69d6256c` |
 | `evaluation/judge.py` | 项目配置或入口：judge | 125 | `c6a08c4ff9fd` |
@@ -76,6 +87,7 @@
 | `scripts/dataset_construction/phase1_paper_acquisition/README.md` | 项目配置或入口：README | 62 | `1d9e8bfeca84` |
 | `scripts/dataset_construction/phase1_paper_acquisition/arxiv_download_backend.py` | 项目配置或入口：arxiv download backend | 86 | `a67bf7499717` |
 | `scripts/generate_dataset_catalog.py` | 项目配置或入口：generate dataset catalog | 52 | `58d7107827ed` |
+| `scripts/smoke_local_evaluation.py` | 项目配置或入口：smoke local evaluation | 213 | `05629f8cac9b` |
 | `scripts/validate_submission.py` | 项目配置或入口：validate submission | 29 | `7684e9e25bb3` |
 | `src/pku_qa/__init__.py` | 项目配置或入口：  init   | 23 | `5ec76212d2b6` |
 | `src/pku_qa/evaluation/__init__.py` | 统一评测核心：  init   | 0 | `e3b0c44298fc` |
@@ -203,6 +215,7 @@
 | `tests/system/test_web_stack_health.py` | system 测试：web stack health | 15 | `8feea5f78e59` |
 | `tests/test_e2e.py` | 公共支持 测试：e2e | 50 | `86d45e9716ed` |
 | `tests/test_judge.py` | 公共支持 测试：judge | 109 | `5db380bf1138` |
+| `tests/test_local_smoke.py` | 公共支持 测试：local smoke | 47 | `6c50957d7743` |
 | `tests/test_metrics.py` | 公共支持 测试：metrics | 11 | `4fe3911315ab` |
 | `tests/test_validation.py` | 公共支持 测试：validation | 73 | `f9c76c857561` |
 | `tests/unit/__init__.py` | unit 测试：  init   | 0 | `e3b0c44298fc` |

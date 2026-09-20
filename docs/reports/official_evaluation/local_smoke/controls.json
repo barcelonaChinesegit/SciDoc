@@ -1,0 +1,206 @@
+[
+  {
+    "qa_id": "QA0001",
+    "control": "reference_answer",
+    "prediction": "First maximize worst-case payoff, then maximize expected payoff under conjectured model",
+    "expected": "CORRECT",
+    "judge": {
+      "key": "2d1c5c491f88a25a1a30df290e8ec3d1331806257c77ca308cef0ed18c02f965",
+      "binding": {
+        "qa_id": "QA0001",
+        "question_sha256": "b38e63d64e051b020ebf59a9ea6bde484263b58f62eaf0d212ae32bb27d3eb8d",
+        "reference_answer_sha256": "016fb9897e8f5db2341d458cede446ad2d142ccd6b1eb38f0684c85d08e2af9d",
+        "model_prediction_sha256": "c1ded261865c6eec6b9ef8f716e4513cea8e839a262efb694a695fa0625dd1e1",
+        "judge_identity": {
+          "model": "Qwen/Qwen3.6-27B",
+          "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+          "revision": null,
+          "revision_note": "upstream commit unavailable; local bytes fully hashed",
+          "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "serving_version": "5.6.2"
+        },
+        "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+        "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+      },
+      "decision": "CORRECT",
+      "attempts": [
+        {
+          "raw": "CORRECT"
+        }
+      ],
+      "timestamp": "2026-09-20T16:35:24.647175+00:00",
+      "cache_hit": false
+    }
+  },
+  {
+    "qa_id": "QA0001",
+    "control": "contradictory_control",
+    "prediction": "Purple elephants dance on the moon.",
+    "expected": "INCORRECT",
+    "judge": {
+      "key": "2eb44e23d762440618b0cff3f6eee16d79652290bdd83a4037284499221d1965",
+      "binding": {
+        "qa_id": "QA0001",
+        "question_sha256": "b38e63d64e051b020ebf59a9ea6bde484263b58f62eaf0d212ae32bb27d3eb8d",
+        "reference_answer_sha256": "016fb9897e8f5db2341d458cede446ad2d142ccd6b1eb38f0684c85d08e2af9d",
+        "model_prediction_sha256": "a9d0167250da44f8135158a84efda7d03d4745be40a516729965daaceb74c6ed",
+        "judge_identity": {
+          "model": "Qwen/Qwen3.6-27B",
+          "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+          "revision": null,
+          "revision_note": "upstream commit unavailable; local bytes fully hashed",
+          "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "serving_version": "5.6.2"
+        },
+        "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+        "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+      },
+      "decision": "INCORRECT",
+      "attempts": [
+        {
+          "raw": "INCORRECT"
+        }
+      ],
+      "timestamp": "2026-09-20T16:35:25.263683+00:00",
+      "cache_hit": false
+    }
+  },
+  {
+    "qa_id": "QA1201",
+    "control": "reference_answer",
+    "prediction": "The buyer employs price regulation, which is characterized by a Bayesian optimal markup capped at the largest possible cost for each type. Derived conclusion: Price regulation is the dominant strategy when the quantity-floor mechanism fails, and it is defined by a cost-capped Bayesian markup.",
+    "expected": "CORRECT",
+    "judge": {
+      "key": "ec56fae757a4ea285a7786ad10718b9294012fd4735819336978931963ff6be5",
+      "binding": {
+        "qa_id": "QA1201",
+        "question_sha256": "4bba77b770123a7b5d43601ed81e5f2bb7a8c85ab4a609ea69f969021604fa66",
+        "reference_answer_sha256": "e1cc25a0bc2f0add1068aca6d26c5fd80bd8a58bc8b0664d7552133ca073a248",
+        "model_prediction_sha256": "913089d89ce6ab9072c4891bd46550d9b79e0cd09fa715be3903df25940a411d",
+        "judge_identity": {
+          "model": "Qwen/Qwen3.6-27B",
+          "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+          "revision": null,
+          "revision_note": "upstream commit unavailable; local bytes fully hashed",
+          "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "serving_version": "5.6.2"
+        },
+        "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+        "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+      },
+      "decision": "CORRECT",
+      "attempts": [
+        {
+          "raw": "CORRECT"
+        }
+      ],
+      "timestamp": "2026-09-20T16:35:25.825908+00:00",
+      "cache_hit": false
+    }
+  },
+  {
+    "qa_id": "QA1201",
+    "control": "contradictory_control",
+    "prediction": "Purple elephants dance on the moon.",
+    "expected": "INCORRECT",
+    "judge": {
+      "key": "d93f60ecae738d9565a866700422eea81680cf626f6eb68f055ea245f18381cd",
+      "binding": {
+        "qa_id": "QA1201",
+        "question_sha256": "4bba77b770123a7b5d43601ed81e5f2bb7a8c85ab4a609ea69f969021604fa66",
+        "reference_answer_sha256": "e1cc25a0bc2f0add1068aca6d26c5fd80bd8a58bc8b0664d7552133ca073a248",
+        "model_prediction_sha256": "0b90d2e133447b4c256c8e7cf0fdde4bdd982875180953a8a1ea5e4db0369a17",
+        "judge_identity": {
+          "model": "Qwen/Qwen3.6-27B",
+          "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+          "revision": null,
+          "revision_note": "upstream commit unavailable; local bytes fully hashed",
+          "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "serving_version": "5.6.2"
+        },
+        "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+        "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+      },
+      "decision": "INCORRECT",
+      "attempts": [
+        {
+          "raw": "INCORRECT"
+        }
+      ],
+      "timestamp": "2026-09-20T16:35:26.455636+00:00",
+      "cache_hit": false
+    }
+  },
+  {
+    "qa_id": "QA1401",
+    "control": "reference_answer",
+    "prediction": "In Paper 1, the Trousers T is defined so that the third coordinate equals 0 on the region (x≤0 ∨ y≤0) and equals -x/2 on the region (x>0 ∧ y>0); any candidate minimal CAD that tries to merge the sectors and section straddling this jump into one piece requires gluing three cylinder cells via a single continuous semi-algebraic function on the merged base, and the two minimal CADs C and C' arise precisely because no such continuous gluing exists across the corner at the origin, forcing at least two incompatible ways to place the section (giving infinitely many minimal CADs, by Proposition 4.6). Paper 2's Lemma 2.3 gives the general reason such a merge can fail: for a sector-section-sector triple A = S⊙(f1,f2), B = S⊙{f2}, C = S⊙(f2,f3), the equality B = closure(A) ∩ closure(C) needed to treat A∪B∪C as closure-coherent holds only when the full sector A∪B∪C is locally boundary connected; Remark 3.6 explicitly notes that its counterexample function is reminiscent of the Trousers of [12] (Paper 1) and exhibits a point in closure(A)∩closure(C) not lying in B. Thus the Trousers' failure to admit a minimum CAD is a concrete instance of the general local-boundary-connectedness obstruction identified in Paper 2: the jump in T's defining piecewise value at x=0,y=0 makes the corresponding sector not locally boundary connected, so the closure-based gluing needed for a unique minimal (hence minimum) CAD cannot occur.",
+    "expected": "CORRECT",
+    "judge": {
+      "key": "6a607d0b447a8726aabb63ebba3dadbcccc9ea8746c3bae74f92c5bd4f165137",
+      "binding": {
+        "qa_id": "QA1401",
+        "question_sha256": "be13ba3a98e37e88c79df73881a153820648477770509f2a06da78608ec990c0",
+        "reference_answer_sha256": "3ea3925fe3b45d8a97bfb18500e57cc93e44b75b300b78544d555b11883b3073",
+        "model_prediction_sha256": "259e80a84a1f983adecd69386055b56b0daf42c3c1f0dac792780f5fe3b669b7",
+        "judge_identity": {
+          "model": "Qwen/Qwen3.6-27B",
+          "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+          "revision": null,
+          "revision_note": "upstream commit unavailable; local bytes fully hashed",
+          "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "serving_version": "5.6.2"
+        },
+        "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+        "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+      },
+      "decision": "CORRECT",
+      "attempts": [
+        {
+          "raw": "CORRECT"
+        }
+      ],
+      "timestamp": "2026-09-20T16:35:27.316855+00:00",
+      "cache_hit": false
+    }
+  },
+  {
+    "qa_id": "QA1401",
+    "control": "contradictory_control",
+    "prediction": "Purple elephants dance on the moon.",
+    "expected": "INCORRECT",
+    "judge": {
+      "key": "1d5de3fbcd74a4450d8898d74863ec1e8e60dbd64c9783a2b837ee4c1b7ffdb1",
+      "binding": {
+        "qa_id": "QA1401",
+        "question_sha256": "be13ba3a98e37e88c79df73881a153820648477770509f2a06da78608ec990c0",
+        "reference_answer_sha256": "3ea3925fe3b45d8a97bfb18500e57cc93e44b75b300b78544d555b11883b3073",
+        "model_prediction_sha256": "ee01a3daeaed9249eedb52176969551fa217396340c812d303847423e99c4f12",
+        "judge_identity": {
+          "model": "Qwen/Qwen3.6-27B",
+          "checkpoint": "sha256:a839bf82a2684468f5269bed15428d151dcc754e0ac113df4238639a95de6fa9",
+          "revision": null,
+          "revision_note": "upstream commit unavailable; local bytes fully hashed",
+          "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "chat_template_sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "serving_version": "5.6.2"
+        },
+        "prompt_sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+        "config_sha256": "ba518f0106e72dad684bac273ccd8276594eb1f727e06886ada226ebaca58168"
+      },
+      "decision": "INCORRECT",
+      "attempts": [
+        {
+          "raw": "INCORRECT"
+        }
+      ],
+      "timestamp": "2026-09-20T16:35:28.073836+00:00",
+      "cache_hit": false
+    }
+  }
+]
