@@ -1,0 +1,18 @@
+[Unit]
+Description=PKU local task and data review web console
+After=pku-task-queue-api.service pku-data-manager-api.service
+Wants=pku-task-queue-api.service pku-data-manager-api.service
+
+[Service]
+Type=simple
+WorkingDirectory=/data/czj/SciDoc/task_queue_web
+Environment=PATH=/data/czj/.local/node-v22.20.0-linux-x64/bin:/usr/local/bin:/usr/bin:/bin
+UnsetEnvironment=HTTP_PROXY HTTPS_PROXY ALL_PROXY http_proxy https_proxy all_proxy
+ExecStartPre=/data/czj/.local/node-v22.20.0-linux-x64/bin/npm run build
+ExecStart=/data/czj/.local/node-v22.20.0-linux-x64/bin/npm run start
+Restart=always
+RestartSec=5
+TimeoutStartSec=180
+
+[Install]
+WantedBy=default.target

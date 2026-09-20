@@ -1,0 +1,34 @@
+# Reproducible Python dependencies for the PKU QA/evaluation project.
+# Runtime currently verified in /data/czj/anaconda3 (conda base, Python 3.12.7).
+
+# Model inference and multimodal PDF input
+torch==2.8.0
+torchvision==0.23.0
+transformers==5.6.2
+accelerate==1.12.0
+safetensors==0.6.2
+sentencepiece==0.2.1
+qwen-vl-utils==0.0.14
+
+# PDF, image, and structured-data processing
+pypdfium2==5.9.0
+pypdf==6.10.2
+Pillow==10.4.0
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+openpyxl==3.1.5
+XlsxWriter==3.2.9
+
+# API clients, schemas, and evaluation utilities
+openai==2.32.0
+langchain==1.2.15
+langchain-openai==1.2.1
+pydantic==2.8.2
+jsonschema==4.23.0
+requests==2.32.3
+PySocks==1.7.1
+tqdm==4.66.5
+
+# Test suite
+pytest==7.4.4

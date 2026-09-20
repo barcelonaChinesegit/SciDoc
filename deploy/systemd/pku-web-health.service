@@ -1,0 +1,9 @@
+[Unit]
+Description=Check and repair PKU public web path
+After=pku-task-queue-web.service pku-web-tunnel.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/data/czj/SciDoc
+Environment=PYTHONPATH=/data/czj/SciDoc/src
+ExecStart=/data/czj/anaconda3/bin/python -m pku_qa.workflows.operations.check_web_stack --repair

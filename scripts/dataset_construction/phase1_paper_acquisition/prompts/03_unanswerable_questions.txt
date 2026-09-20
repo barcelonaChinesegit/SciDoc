@@ -1,0 +1,125 @@
+You are an expert academic QA dataset constructor. I will provide you with an academic PDF file, together with three strings: the paper ID, the primary category, and the secondary category. You must use them exactly as given. Your task is to generate a high-quality structured QA dataset in valid JSON format for evaluating a model's ability to detect unanswerable questions. Output JSON only, with no explanation, no markdown fences, and no extra text.
+Internally analyze the paper's discipline, style, and content structure so that the questions sound natural, but do not output that analysis.
+The top-level JSON must contain exactly four fields, in this order: "paper", "primary category", secondary category, "QA". "paper" – use the provided paper ID string exactly; "primary category" – use the provided primary category string exactly; "secondary category" – use the provided secondary category string exactly; "QA" – an object with keys "QA1", "QA2", …, "QA6".
+You must generate exactly 6 QA pairs. All 6 must be UNANSWERABLE – meaning the question is closely related to the paper's content but the paper does NOT contain the information required to answer it. Among them, exactly 3 must be Unanswerable Direct-answer QA (numeric-type question with no answer) and exactly 3 must be Unanswerable Multiple-choice QA (four options, all incorrect or unsupported).
+Each QA item must contain fields in this exact order: "question"; "answer"; "options" (only when required; otherwise omit it completely); "evidence_pages"; "modal_types"; "question_type"; "question_category".
+Question-answer format rules for the 6 unanswerable items:
+- Unanswerable Direct-answer QA: the question asks for a numeric value (pure integer or float) that a reader might expect to find, but the paper does not contain that value. Do NOT include "options". "answer" must be the exact string "unanswerable".
+- Unanswerable Multiple-choice QA: the question is related to the paper but the paper provides no correct answer. Include "options" with exactly four choices: [{"id":"A","text":"..."},{"id":"B","text":"..."},{"id":"C","text":"..."},{"id":"D","text":"..."}]. ALL FOUR choices must be incorrect or unsupported by the paper; they should be plausible but ultimately wrong. "answer" must be the exact string "unanswerable".
+Question design rules: Questions must sound like realistic questions that researchers would ask while reading the paper; questions must be specific, fact-based, and tied to actual content in the paper such as method names, datasets, variables, equations, symbols, modules, losses, theorems, metrics, experiment settings, table entries, figure labels, plotted outcomes, ablation variants, or architecture components; each question must target one clear fact that a reader might expect to find but the paper does not contain it. Do not ask vague, open-ended, opinion-based, significance-based, or "why" questions.
+All mathematical formulas, symbols, variables, and complex letters in questions, answers, and options must be written in standard LaTeX format.
+
+Modalities: each QA item must include "modal_types", an array containing one or more of ["text","image","table","formula"]; "formula" is separate from "text"; unimodal QA has exactly one modal type; multimodal QA has at least two modal types; sort "modal_types" in this fixed order: ["text","image","table","formula"]; use modalities that contain the misleading context (the place where a reader would look for the answer).
+
+Evidence pages: each QA item must include "evidence_pages", an array of page numbers in ascending order from the PDF; include the pages that contain related context or the place where a reader might look for the answer, even if it is insufficient to answer; if the relevant context is on one page, include one number; if distributed across pages, include all relevant pages.
+
+Question type: each QA item must include "question_type". Its value must be exactly "Unanswerable" for all 6 items.
+
+Question category: each QA item must include "question_category". Its value must be derived from the table below, based on the provided primary_category. First, map the primary_category string to one of the disciplines in the table (e.g., if it contains "Computer Science" -> Computer Science; "Economics" -> Economics; "Electrical Engineering" -> Electrical Engineering and Systems Science; "Mathematics" -> Mathematics; "Physics" -> Physics; "Quantitative Biology" -> Quantitative Biology; "Quantitative Finance" -> Quantitative Finance; "Statistics" -> Statistics). Then, for each question, select the most appropriate subcategory among those listed for that discipline, according to the question's content focus. The value must be formatted as "Subcategory ID Subcategory Name" (e.g., "CS-1 Algorithm & Architecture Detail", "ECO-2 Empirical Design & Econometric Method"). Distribute the 6 questions across the three subcategories of the detected discipline as evenly as possible (ideally at least 1 per subcategory, with a reasonable balance if the paper allows).
+
+Discipline & subcategory mapping (ID and Name only, for reference):
+
+Computer Science:
+CS-1 Algorithm & Architecture Detail
+CS-2 Experiment & Result Validation
+CS-3 Method Innovation
+
+Economics:
+ECO-1 Theoretical Framework & Concept Definition
+ECO-2 Empirical Design & Econometric Method
+ECO-3 Causal Inference & Result Interpretation
+
+Electrical Engineering and Systems Science:
+EESS-1 System Architecture & Signal Processing Method
+EESS-2 Experiment & Performance Test
+EESS-3 System Optimization & Engineering Implementation
+
+Mathematics:
+MATH-1 Definition & Theorem Statement
+MATH-2 Formula & Derivation Detail
+MATH-3 Proposition Proof & Logical Reasoning
+
+Physics:
+PHY-1 Physical Concept & Theoretical Model
+PHY-2 Computation & Experimental Validation
+
+Quantitative Biology:
+QBIO-1 Biological Entity & Quantitative Model Definition
+QBIO-2 Experimental Data & Statistical Analysis
+QBIO-3 Biological Network & Dynamic Modeling
+
+Quantitative Finance:
+QFIN-1 Financial Theory & Pricing Model Definition
+QFIN-2 Quantitative Strategy & Performance Analysis
+
+Statistics:
+STAT-1 Statistical Concept & Probability Model Definition
+STAT-2 Statistical Inference & Method Application
+
+Distribution constraints: Among the 6 QA items, exactly 3 must be Unanswerable Direct-answer QA and exactly 3 must be Unanswerable Multiple-choice QA. The number of multimodal questions should be 2 or 3 (i.e., ~40%–50% of 6); the number of cross-page questions should also be 2 or 3 (~40%–50% of 6). The distribution of modalities depends on availability of strong misleading evidence in the paper.
+Quality control: remove duplicates, near-duplicates, template-like rephrasings, vague, non-unique, subjective, or weakly supported questions; never fabricate evidence, page numbers, modalities, or answers; for multiple-choice unanswerable questions, ensure that all four distractors are plausible but definitively unsupported by the paper.
+JSON structure example (6 items):
+{
+  "paper":"1",
+  "primary_category":"Computer Science",
+  "secondary_category":"Machine Learning",
+  "QA": {
+    "QA1": {
+      "question":"What is the dropout rate used in the final transformer layer?",
+      "answer":"unanswerable",
+      "evidence_pages":[4],
+      "modal_types":["text"],
+      "question_type":"Unanswerable",
+      "question_category":"Algorithm & Architecture Detail"
+    },
+    "QA2": {
+      "question":"In the ablation study, what is the exact validation loss when the attention heads are set to 2?",
+      "answer":"unanswerable",
+      "evidence_pages":[6,7],
+      "modal_types":["text","table"],
+      "question_type":"Unanswerable",
+      "question_category":"Experiment & Result Validation"
+    },
+    "QA3": {
+      "question":"What is the weight decay coefficient for the AdamW optimizer used in the main experiment?",
+      "answer":"unanswerable",
+      "options":[{"id":"A","text":"0.01"},{"id":"B","text":"0.05"},{"id":"C","text":"0.1"},{"id":"D","text":"0.5"}],
+      "evidence_pages":[5],
+      "modal_types":["text"],
+      "question_type":"Unanswerable",
+      "question_category":"Experiment & Result Validation"
+    },
+    "QA4": {
+      "question":"What is the hidden dimension of the feed-forward network in the proposed model?",
+      "answer":"unanswerable",
+      "options":[{"id":"A","text":"512"},{"id":"B","text":"1024"},{"id":"C","text":"2048"},{"id":"D","text":"4096"}],
+      "evidence_pages":[3,4],
+      "modal_types":["text","formula"],
+      "question_type":"Unanswerable",
+      "question_category":"Algorithm & Architecture Detail"
+    },
+    "QA5": {
+      "question":"What is the peak GPU memory consumption during inference reported in Table 2?",
+      "answer":"unanswerable",
+      "evidence_pages":[7],
+      "modal_types":["table"],
+      "question_type":"Unanswerable",
+      "question_category":"Experiment & Result Validation"
+    },
+    "QA6": {
+      "question":"What is the ratio of positive to negative samples in the custom dataset introduced in the paper?",
+      "answer":"unanswerable",
+      "options":[{"id":"A","text":"1:1"},{"id":"B","text":"1:3"},{"id":"C","text":"3:1"},{"id":"D","text":"1:10"}],
+      "evidence_pages":[8],
+      "modal_types":["text"],
+      "question_type":"Unanswerable",
+      "question_category":"Method Innovation"
+    }
+  }
+}
+Final constraints: output only the final JSON; generate exactly 6 QA pairs, numbered consecutively QA1–QA6; omit "options" entirely for Unanswerable Direct-answer QA; include "options" for every Unanswerable Multiple-choice QA; for all items, "answer" must be the string "unanswerable"; "question_type" must be "Unanswerable".
+STRICT RULES:
+1. For all LaTeX formulas, output ONLY the RAW LATEX CODE AS PLAIN TEXT, NO $ symbols, NO math rendering, NO formatted math, NO special characters.
+2. Output ONLY a valid JSON object, NO explanations, NO extra text, NO code blocks.
+3. The JSON must be in ONE SINGLE LINE with NO line breaks, NO indentation, NO formatting.
+4. NEVER render mathematical notation. ONLY output plain text LaTeX code.

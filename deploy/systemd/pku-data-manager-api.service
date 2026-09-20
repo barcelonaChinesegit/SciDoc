@@ -1,0 +1,17 @@
+[Unit]
+Description=PKU QA data review HTTP API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/data/czj/SciDoc
+Environment=PYTHONPATH=/data/czj/SciDoc/src
+Environment=PKU_SMTP_PROXY=socks5h://127.0.0.1:10808
+EnvironmentFile=-/data/czj/SciDoc/.env
+EnvironmentFile=-/data/czj/SciDoc/.env.smtp
+ExecStart=/data/czj/anaconda3/bin/python -m pku_qa.services.review.data_manager_api --host 127.0.0.1 --port 8770
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

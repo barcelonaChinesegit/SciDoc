@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "final_2200_qa.schema.json",
+  "title": "Final 2200 shared QA core contract",
+  "type": "object",
+  "minProperties": 1,
+  "additionalProperties": {
+    "$ref": "#/$defs/paper"
+  },
+  "$defs": {
+    "paper": {
+      "type": "object",
+      "required": ["paper", "primary_category", "secondary_category", "QA"],
+      "properties": {
+        "paper": {"type": "string", "minLength": 1},
+        "primary_category": {"type": "string", "minLength": 1},
+        "secondary_category": {"type": "string", "minLength": 1},
+        "QA": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"$ref": "#/$defs/qa"}
+        }
+      },
+      "additionalProperties": true
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "question",
+        "answer",
+        "evidence_pages",
+        "modal_types",
+        "question_type",
+        "question_category"
+      ],
+      "properties": {
+        "question": {"type": "string", "minLength": 1},
+        "answer": {"type": "string", "minLength": 1},
+        "evidence_pages": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 1},
+          "uniqueItems": true
+        },
+        "modal_types": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["text", "image", "table", "formula"]}
+        },
+        "question_type": {"enum": ["Literal", "Inferential"]},
+        "question_category": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    }
+  }
+}

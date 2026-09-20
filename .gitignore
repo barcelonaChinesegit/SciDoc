@@ -1,0 +1,178 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+.secrets/
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+
+# Local maintainer instructions and private development tooling.
+/AGENTS.md
+/.agents/
+/docs/prompts/
+/task_queue_web/.openai/
+
+# Python caches, environments, and test artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.venv/
+venv/
+env/
+
+# JavaScript / frontend build products
+node_modules/
+**/node_modules/
+.next/
+.wrangler/
+.turbo/
+coverage/
+dist/
+/build/
+**/build/
+# Vite imports these handwritten build helpers; they are source, not output.
+!/task_queue_web/build/
+/task_queue_web/build/*
+!/task_queue_web/build/*.ts
+!/task_queue_web/build/*.mjs
+task_queue_web/out/
+
+# Local model weights and downloaded model repositories
+/models/
+**/models/
+**/checkpoints/
+**/weights/
+**/huggingface/
+**/.hf_cache/
+**/transformers_cache/
+**/hub/
+**/model-*.safetensors
+*.safetensors
+*.safetensors.index.json
+*.ckpt
+*.pt
+*.pth
+*.gguf
+*.onnx
+*.bin
+*.msgpack
+*.h5
+*.hdf5
+*.tflite
+*.flax
+*.model
+*.model.*
+*.index
+*.data-*
+
+# Archives and exported model/evaluation bundles are too large for the remote.
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# PDFs are source assets stored outside Git
+/pdf/
+/data/pdfs/
+*.pdf
+
+# Benchmark datasets and generated QA artifacts stay in external storage.
+# Keep experiment README files so the repository still documents the data
+# lineage and current release locations without mirroring hundreds of MB.
+/data/qa/**
+!/data/qa/**/
+!/data/qa/**/README.md
+# The canonical 2,200-question release is small enough to publish and is
+# required for the repository to be usable without external data storage.
+!/data/qa/7.final_2200/
+!/data/qa/7.final_2200/*.json
+!/data/qa/7.final_2200/*.xlsx
+/data/final_2200/
+/data/eval_outputs
+/data/results/
+/data/web/**
+!/data/web/
+!/data/web/README.md
+# Historical archives remain on the data volume; publish only their indexes.
+/data/archive/**
+!/data/archive/
+!/data/archive/**/
+!/data/archive/**/README.md
+!/data/archive/**/*.csv
+
+# Runtime state, generated evaluations, logs, and temporary work
+/data/results/evaluations/
+/data/novel_guardian/
+/data/qa_generation/
+/data/audit_outputs/
+/data/manual_cross_pdf_audit_*/
+/data/cross_pdf_semantic_reaudit_*/
+/data/single_pdf_challenge_*/
+/data/single_pdf_reasoning_qa_*/
+/data/results/reports/
+/sxz/**/output/
+/sxz/**/*_output/
+/logs/
+/tmp*/
+*.log
+*.pid
+nohup.out
+*.bak
+*.sqlite
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Tool and local service caches not useful in source control.
+**/.cache/
+task_queue_web/.vinext/
+task_queue_web/.wrangler/
+task_queue_web/db/
+
+# Accidental root files produced by malformed CLI invocations
+/--*
+/sxz/models/::wq
+
+# Local reference dumps and temporary working material.
+/论文/
+/临时使用文件/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Migration audit and original Git history: retained locally, never published.
+/.migration-backup/
+
+# Collaborator-owned workspace, preserved locally in full and strictly read-only.
+/sxz/
+
+# Additional local environment, notebook, database and build artifacts
+*.egg-info/
+.ipynb_checkpoints/
+*.tsbuildinfo
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+*.zst
+*.tar.xz
+*.tar.bz2
+*.rar
+*.bak_*

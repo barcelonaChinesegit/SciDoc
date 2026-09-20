@@ -1,0 +1,16 @@
+{
+  "my_openai_like_model": {
+    "provider_type": "openai_compatible",
+    "api_base": "https://your-api-base.example/v1",
+    "model": "your-model-name",
+    "api_key_env": "YOUR_API_KEY_ENV",
+    "timeout": 300
+  },
+  "my_other_openai_like_model": {
+    "provider_type": "openai_compatible",
+    "api_base": "https://another-api-base.example/v1",
+    "model": "another-model-name",
+    "api_key_env": "ANOTHER_API_KEY_ENV",
+    "timeout": 300
+  }
+}

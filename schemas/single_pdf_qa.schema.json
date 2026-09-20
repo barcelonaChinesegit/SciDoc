@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "single_pdf_qa.schema.json",
+  "title": "Single-PDF QA dataset",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/$defs/paper"
+  },
+  "$defs": {
+    "paper": {
+      "type": "object",
+      "required": ["QA"],
+      "properties": {
+        "paper": {"type": ["string", "integer"]},
+        "primary_category": {"type": "string"},
+        "secondary_category": {"type": "string"},
+        "pdf_metadata": {"type": "object"},
+        "QA": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/qa"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "question",
+        "answer",
+        "answer_format",
+        "answer_aliases",
+        "answer_unit",
+        "numeric_tolerance",
+        "evidence_pages",
+        "evidence_items",
+        "evidence_hops",
+        "evidence_span",
+        "annotation_provenance",
+        "review_status"
+      ],
+      "properties": {
+        "question": {"type": "string", "minLength": 1},
+        "answer": {"type": "string", "minLength": 1},
+        "answer_format": {
+          "enum": ["Integer", "Float", "String", "List", "Unanswerable"]
+        },
+        "answer_aliases": {
+          "type": "array",
+          "items": {"type": ["string", "number"]}
+        },
+        "answer_unit": {"type": ["string", "null"]},
+        "numeric_tolerance": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "required": ["type", "value"],
+              "properties": {
+                "type": {"enum": ["absolute", "relative"]},
+                "value": {"type": "number", "minimum": 0}
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "evidence_pages": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 1},
+          "uniqueItems": true
+        },
+        "evidence_items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "physical_pdf_page",
+              "printed_page_label",
+              "source_types",
+              "quote_or_region",
+              "necessity_status"
+            ],
+            "properties": {
+              "physical_pdf_page": {"type": "integer", "minimum": 1},
+              "printed_page_label": {"type": ["string", "null"]},
+              "source_types": {
+                "type": "array",
+                "items": {"type": "string"}
+              },
+              "quote_or_region": {"type": ["string", "null"]},
+              "necessity_status": {"type": "string"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "evidence_hops": {"type": "integer", "minimum": 0},
+        "evidence_span": {"type": ["integer", "null"], "minimum": 0},
+        "evidence_span_ratio": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "annotation_provenance": {"type": "object"},
+        "review_status": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    }
+  }
+}

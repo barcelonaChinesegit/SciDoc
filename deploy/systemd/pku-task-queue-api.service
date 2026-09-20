@@ -1,0 +1,15 @@
+[Unit]
+Description=PKU task queue HTTP API
+After=pku-task-queue-daemon.service
+Wants=pku-task-queue-daemon.service
+
+[Service]
+Type=simple
+WorkingDirectory=/data/czj/SciDoc
+Environment=PYTHONPATH=/data/czj/SciDoc/src
+ExecStart=/data/czj/anaconda3/bin/python -m pku_qa.services.task_queue.task_queue_api --db /data/czj/SciDoc/data/web/task_queue/tasks.sqlite3 --host 127.0.0.1 --port 8765
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

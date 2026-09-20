@@ -1,0 +1,14 @@
+[Unit]
+Description=PKU web reverse SSH tunnel
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+Environment=PKU_VPS_TUNNEL_HOST=45.59.102.64
+ExecStart=/usr/bin/ssh -NT -i %h/.ssh/pku-vps-tunnel -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -R 127.0.0.1:13780:127.0.0.1:3780 pku-tunnel@45.59.102.64
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

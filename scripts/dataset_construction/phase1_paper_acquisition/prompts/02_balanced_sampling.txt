@@ -1,0 +1,100 @@
+﻿You are an expert academic QA dataset constructor; I will provide you with an academic PDF file. The naming rule for this PDF file is "paper-primary_category-secondary_category". Among these three data, they are all separated by "-":Paper: The ID of the paper (usually 2512.10279, the first 4 digits. The last 4 digits).；primary_category: the primary Category; secondary_category: the secondary Category。
+You must generate a high-quality structured QA dataset in valid JSON format for evaluating document understanding; output JSON only, with no explanation, no markdown fences, and no extra text.
+Internally analyze the paper’s discipline, style, and content structure so that the QA distribution matches the paper naturally, but do not output that analysis.
+The top‑level JSON must contain exactly four fields, in this order: "paper", "primary category", secondary category, "QA". "paper" – use the provided paper name (exactly as given); "primary category" – use the provided primary category string (exactly as given); "secondary category" – use the provided secondary category string (exactly as given); "QA" – an object with keys "QA1", "QA2", …, "QA10".
+You must generate exactly 10 QA pairs.
+Each QA item must contain fields in this exact order: "question"; "answer"; "options" (only when required; otherwise omit it completely); "evidence_pages"; "modal_types"; "question_type".
+Question-answer format rules: Direct-answer QA: use this format only when the correct answer is a pure integer or float with no other characters or strings, This point requires particular attention. In the direct responses, absolutely no strings other than numbers and decimal points should be included, and no symbols or units should be used either; do not include "options"; "answer" must be the actual correct answer string directly; examples: "3", "12.5", "0.84", "75"; Multiple-choice QA: use this format when the correct answer contains any non‑integer/non‑float content, including text, symbols, percentages, LaTeX formulas, or mixed strings; include "options" as exactly four choices: [{"id":"A","text":"..."},{"id":"B","text":"..."},{"id":"C","text":"..."},{"id":"D","text":"..."}]; there must be exactly one correct option and three plausible distractors; "answer" must be only the correct option ID "A", "B", "C", or "D"; do not put the full correct text into "answer".
+Question design rules: Questions must sound like realistic questions that researchers would ask while reading the paper; questions must be specific, fact-based, and tied to actual content in the paper such as method names, datasets, variables, equations, symbols, modules, losses, theorems, metrics, experiment settings, table entries, figure labels, plotted outcomes, ablation variants, or architecture components; do not ask vague, open-ended, opinion-based, significance-based, or "why" questions; each question must target one clear fact or one clearly checkable result; answers must be short, exact, and easy to judge.
+All mathematical formulas, symbols, variables, and complex letters in questions, answers, and options must be written in standard LaTeX format.
+
+Modalities: each QA item must include "modal_types", an array containing one or more of ["text","image","table","formula"]; "formula" is separate from "text"; unimodal QA has exactly one modal type; multimodal QA has at least two modal types; sort "modal_types" in this fixed order: ["text","image","table","formula"]; use only modalities truly necessary to answer the question.
+
+Evidence pages: each QA item must include "evidence_pages", an array of page numbers in ascending order from the PDF; include only the necessary pages; if evidence is on one page, include one number; if distributed across pages, include all relevant pages; do not guess page numbers.
+
+Question type: each QA item must include "question_type" with value "Literal" or "Inferential"; "Literal": answer is directly stated in the paper; "Inferential": answer requires reasoning, comparison, synthesis, calculation, or linking evidence.
+
+Question category: each QA item must include "question_category". Its value must be derived from the table below, based on the provided primary_category. First, map the primary_category string to one of the disciplines in the table (e.g., if it contains "Computer Science" -> Computer Science; "Economics" -> Economics; "Electrical Engineering" -> Electrical Engineering and Systems Science; "Mathematics" -> Mathematics; "Physics" -> Physics; "Quantitative Biology" -> Quantitative Biology; "Quantitative Finance" -> Quantitative Finance; "Statistics" -> Statistics). Then, for each question, select the most appropriate subcategory among the three listed for that discipline, according to the question's content focus. The value must be formatted as "Subcategory ID Subcategory Name" (e.g., "CS-1 Algorithm & Architecture Detail", "ECO-2 Empirical Design & Econometric Method"). Distribute the 10 questions across the three subcategories of the detected discipline in a balanced way (at least 2 per subcategory, if the paper's content allows).
+
+Discipline & subcategory mapping (ID and Name only, for reference):
+
+Computer Science:
+CS-1 Algorithm & Architecture Detail
+CS-2 Experiment & Result Validation
+CS-3 Method Innovation
+
+Economics:
+ECO-1 Theoretical Framework & Concept Definition
+ECO-2 Empirical Design & Econometric Method
+ECO-3 Causal Inference & Result Interpretation
+
+Electrical Engineering and Systems Science:
+EESS-1 System Architecture & Signal Processing Method
+EESS-2 Experiment & Performance Test
+EESS-3 System Optimization & Engineering Implementation
+
+Mathematics:
+MATH-1 Definition & Theorem Statement
+MATH-2 Formula & Derivation Detail
+MATH-3 Proposition Proof & Logical Reasoning
+
+Physics:
+PHY-1 Physical Concept & Theoretical Model
+PHY-2 Computation & Experimental Validation
+
+Quantitative Biology:
+QBIO-1 Biological Entity & Quantitative Model Definition
+QBIO-2 Experimental Data & Statistical Analysis
+QBIO-3 Biological Network & Dynamic Modeling
+
+Quantitative Finance:
+QFIN-1 Financial Theory & Pricing Model Definition
+QFIN-2 Quantitative Strategy & Performance Analysis
+
+Statistics:
+STAT-1 Statistical Concept & Probability Model Definition
+STAT-2 Statistical Inference & Method Application
+
+Distribution constraints: The direct-answer Q&A must have more than 7 questions; exactly 6 QA pairs must be "Literal" and 4 must be "Inferential"; The number of multimodal questions should be controlled at 50%of the total number of questions; the number of cross-page questions should  be controlled at 80% - 90% of the total number of questions; distribution of "text", "image", "table", "formula" depends on availability of strong evidence in the paper.
+Quality control: remove duplicates, near-duplicates, template-like rephrasings, vague, non-unique, subjective, or weakly supported questions; never fabricate evidence, page numbers, modalities, or answers.
+JSON structure example:
+{
+  "paper":"...",
+  "primary_category":"Computer Science",
+  "secondary_category":"Databases",
+  "QA": {
+    "QA1": {
+      "question":"...",
+      "answer":"...",
+      "evidence_pages":[2],
+      "modal_types":["text"],
+      "question_type":"Literal",
+      "question_category":"CS-1 Algorithm & Architecture Detail"
+    },
+    "QA2": {
+      "question":"...",
+      "answer":"A",
+      "options":[{"id":"A","text":"..."},{"id":"B","text":"..."},{"id":"C","text":"..."},{"id":"D","text":"..."}],
+      "evidence_pages":[7],
+      "modal_types":["table"],
+      "question_type":"Literal",
+      "question_category":"CS-2 Experiment & Result Validation"
+
+    },
+    "QA3": {
+      "question":"...",
+      "answer":"3.2",
+      "evidence_pages":[4,5],
+      "modal_types":["text","formula"],
+      "question_type":"Inferential",
+      "question_category":"CS-3 Method Innovation"
+
+    }
+  }
+}
+Final constraints: output only the final JSON; generate exactly 10 QA pairs, numbered consecutively QA1–QA10; omit "options" entirely for direct-answer numeric QA; include "options" for every non-numeric-answer QA; for multiple-choice QA, "answer" must be only "A", "B", "C", or "D".
+STRICT RULES:
+1. For all LaTeX formulas, output ONLY the RAW LATEX CODE AS PLAIN TEXT, NO $ symbols, NO math rendering, NO formatted math, NO special characters.
+2. Output ONLY a valid JSON object, NO explanations, NO extra text, NO code blocks.
+3. The JSON must be in ONE SINGLE LINE with NO line breaks, NO indentation, NO formatting.
+4. NEVER render mathematical notation. ONLY output plain text LaTeX code.

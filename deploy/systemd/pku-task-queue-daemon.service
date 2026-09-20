@@ -1,0 +1,15 @@
+[Unit]
+Description=PKU experiment task queue daemon
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/data/czj/SciDoc
+Environment=PATH=/data/czj/anaconda3/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONPATH=/data/czj/SciDoc/src
+ExecStart=/data/czj/anaconda3/bin/python -m pku_qa.services.task_queue.task_queue_daemon --db /data/czj/SciDoc/data/web/task_queue/tasks.sqlite3 --poll-seconds 5
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

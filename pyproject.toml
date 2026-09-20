@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pku-paper-qa"
+version = "1.0.0"
+description = "Publication-strict multimodal paper-QA evaluation and review system"
+requires-python = ">=3.12"
+
+[project.scripts]
+pku-qa-eval = "pku_qa.evaluation.run_hard_eval:main"
+pku-qa-infer = "pku_qa.evaluation.run_inference:main"
+pku-qa-judge = "pku_qa.evaluation.run_judge:main"
+pku-qa-report = "pku_qa.evaluation.run_report:main"
+pku-qa-tasks = "pku_qa.services.task_queue.task_queue_cli:main"
+pku-qa-challenge = "pku_qa.workflows.reporting.run_single_pdf_challenge_gpu_queue:main"
+pku-qa-web-health = "pku_qa.workflows.operations.check_web_stack:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

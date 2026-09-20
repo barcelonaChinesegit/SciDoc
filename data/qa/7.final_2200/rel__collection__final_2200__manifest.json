@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "collection_id": "final_2200",
+  "purpose": "canonical_publication_and_manual_review_release",
+  "qa_format": "short_answer_only",
+  "qa_identity": "collection_wide_QA0001_to_QA2200",
+  "qa_count": 2200,
+  "component_count": 4,
+  "components": [
+    {
+      "id": "ordinary_1000",
+      "dataset_id": "ordinary_qa.json",
+      "path": "data/qa/7.final_2200/ordinary_qa.json",
+      "sha256": "706377d66ef456d69cd90f4246b3a4c0f2221b3fc39d57eba9fd692e034d8dbc",
+      "qa_count": 1000,
+      "paper_count": 398,
+      "answerable": 1000,
+      "unanswerable": 0,
+      "qa_format": "short_answer_only"
+    },
+    {
+      "id": "unanswerable_200",
+      "dataset_id": "unanswerable_qa.json",
+      "path": "data/qa/7.final_2200/unanswerable_qa.json",
+      "sha256": "96f0702104f7e16ba8f067f18df0956ce8e96ccc80f7ac33e80d5f179d2053e4",
+      "qa_count": 200,
+      "paper_count": 132,
+      "answerable": 0,
+      "unanswerable": 200,
+      "qa_format": "short_answer_only"
+    },
+    {
+      "id": "reasoning_200",
+      "dataset_id": "reasoning_qa.json",
+      "path": "data/qa/7.final_2200/reasoning_qa.json",
+      "sha256": "ed77ded5c266ae47c053275c258cceeeefc220ec10f79fee77b17485ec5b84fd",
+      "qa_count": 200,
+      "paper_count": 87,
+      "answerable": 200,
+      "unanswerable": 0,
+      "qa_format": "short_answer_only"
+    },
+    {
+      "id": "cross_pdf_800",
+      "dataset_id": "cross_pdf_qa.json",
+      "path": "data/qa/7.final_2200/cross_pdf_qa.json",
+      "sha256": "6bdd3e73a3288ba3d3d84a20de7fd30981e1b41bd7b358ebc76ec15795239c82",
+      "qa_count": 800,
+      "paper_count": 238,
+      "answerable": 800,
+      "unanswerable": 0,
+      "qa_format": "short_answer_only"
+    }
+  ]
+}
