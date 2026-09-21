@@ -25,9 +25,9 @@
 | --- | --- | ---: | --- |
 | `.gitignore` | 项目配置或入口：.gitignore | 181 | `b89d60b64a37` |
 | `CONTRIBUTORS.md` | 项目配置或入口：CONTRIBUTORS | 20 | `b84c7afd6165` |
-| `README.en.md` | 项目配置或入口：README.en | 4 | `d61ad80987bb` |
-| `README.md` | 项目配置或入口：README | 114 | `e2d602eadf2a` |
-| `README.zh-CN.md` | 项目配置或入口：README.zh-CN | 125 | `6a60d0fef051` |
+| `README.en.md` | 项目配置或入口：README.en | 8 | `95099ab767db` |
+| `README.md` | 项目配置或入口：README | 182 | `54732ebe88d4` |
+| `README.zh-CN.md` | 项目配置或入口：README.zh-CN | 171 | `f0d273021d85` |
 | `deploy/systemd/pku-data-manager-api.service` | 本地 systemd 服务与健康守护部署单元 | 17 | `c6dac49af915` |
 | `deploy/systemd/pku-task-queue-api.service` | 本地 systemd 服务与健康守护部署单元 | 15 | `27796a52b576` |
 | `deploy/systemd/pku-task-queue-daemon.service` | 本地 systemd 服务与健康守护部署单元 | 15 | `0e84f267087a` |
@@ -35,29 +35,31 @@
 | `deploy/systemd/pku-web-health.service` | 本地 systemd 服务与健康守护部署单元 | 9 | `d1efa505031c` |
 | `deploy/systemd/pku-web-health.timer` | 本地 systemd 服务与健康守护部署单元 | 10 | `4874bd250b0d` |
 | `deploy/systemd/pku-web-tunnel.service` | 本地 systemd 服务与健康守护部署单元 | 14 | `7ef0af37b291` |
-| `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 434 | `796f348407fe` |
-| `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 69 | `14ac48e42dad` |
+| `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 458 | `dfb54ca3e4b2` |
+| `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 83 | `a886bff5ca9f` |
 | `docs/current/DATASET_CATALOG.md` | 项目文档：DATASET CATALOG | 33 | `a8b83f7b7a4a` |
-| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 298 | `0702955182b4` |
-| `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 678 | `cf611e006c26` |
-| `docs/current/README.md` | 项目文档：README | 128 | `69dd80eac029` |
-| `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `7ab162dbb736` |
+| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 289 | `02557f59e21e` |
+| `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 682 | `cae12da9221c` |
+| `docs/current/README.md` | 项目文档：README | 129 | `e97069d84ef0` |
+| `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `06962e74cb22` |
 | `docs/prompts/MAINTENANCE_REMEDIATION.md` | 项目文档：MAINTENANCE REMEDIATION | 26 | `7640aa7c9528` |
-| `docs/releases/PDF_DISTRIBUTION.md` | 项目文档：PDF DISTRIBUTION | 50 | `2c5375f7eb60` |
+| `docs/releases/PDF_DISTRIBUTION.md` | 项目文档：PDF DISTRIBUTION | 59 | `a9733593cb81` |
 | `docs/reports/CROSS_PDF_EVIDENCE_AUDIT.md` | 项目文档：CROSS PDF EVIDENCE AUDIT | 305 | `f1b33be43190` |
-| `docs/reports/DOCUMENTATION_AUDIT.md` | 项目文档：DOCUMENTATION AUDIT | 52 | `67582a68d2eb` |
-| `docs/reports/FIGURE_RECOVERY_20260916.md` | 项目文档：FIGURE RECOVERY 20260916 | 38 | `17b41b8be827` |
-| `docs/reports/README.md` | 项目文档：README | 14 | `ce204a6418e8` |
-| `docs/reports/SCIDOC_MIGRATION_20260920.md` | 项目文档：SCIDOC MIGRATION 20260920 | 78 | `e4073f071a5c` |
-| `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 69 | `0ee565793a91` |
-| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 225 | `3d464383d463` |
-| `docs/reports/official_evaluation/FOLLOWTHROUGH_REPORT.md` | 项目文档：FOLLOWTHROUGH REPORT | 191 | `444dbfa25b44` |
-| `docs/reports/official_evaluation/GAP_INVESTIGATION.md` | 项目文档：GAP INVESTIGATION | 228 | `47148d01b8c6` |
-| `docs/reports/official_evaluation/IMPLEMENTATION_PLAN.md` | 项目文档：IMPLEMENTATION PLAN | 59 | `710585ba6671` |
-| `docs/reports/official_evaluation/LOCAL_MODEL_TEST.md` | 项目文档：LOCAL MODEL TEST | 90 | `16c8baa69bac` |
-| `docs/reports/official_evaluation/PROVENANCE_RECONCILIATION.md` | 项目文档：PROVENANCE RECONCILIATION | 177 | `419df7ae0471` |
+| `docs/reports/DOCUMENTATION_AUDIT.md` | 项目文档：DOCUMENTATION AUDIT | 52 | `2569697d3234` |
+| `docs/reports/EVALUATION_DOCS_UPDATE_20260921.md` | 项目文档：EVALUATION DOCS UPDATE 20260921 | 38 | `6f64444eb231` |
+| `docs/reports/FIGURE_RECOVERY_20260916.md` | 项目文档：FIGURE RECOVERY 20260916 | 38 | `6ca70504f6be` |
+| `docs/reports/README.md` | 项目文档：README | 20 | `3d3eebcff7ed` |
+| `docs/reports/SCIDOC_MIGRATION_20260920.md` | 项目文档：SCIDOC MIGRATION 20260920 | 78 | `fa0a659cec24` |
+| `docs/reports/SCIDOC_PATH_AUDIT_20260920.md` | 项目文档：SCIDOC PATH AUDIT 20260920 | 69 | `0a53fc1a71d3` |
+| `docs/reports/official_evaluation/FINAL_REPORT.md` | 项目文档：FINAL REPORT | 232 | `d8a225f79449` |
+| `docs/reports/official_evaluation/FOLLOWTHROUGH_REPORT.md` | 项目文档：FOLLOWTHROUGH REPORT | 198 | `13e58226edea` |
+| `docs/reports/official_evaluation/GAP_INVESTIGATION.md` | 项目文档：GAP INVESTIGATION | 235 | `2bdae6870303` |
+| `docs/reports/official_evaluation/IMPLEMENTATION_PLAN.md` | 项目文档：IMPLEMENTATION PLAN | 66 | `52fae026b027` |
+| `docs/reports/official_evaluation/LOCAL_MODEL_TEST.md` | 项目文档：LOCAL MODEL TEST | 97 | `f481533ed6e0` |
+| `docs/reports/official_evaluation/PROVENANCE_RECONCILIATION.md` | 项目文档：PROVENANCE RECONCILIATION | 184 | `8a64f37606f5` |
 | `docs/reports/official_evaluation/RECOVERY_ARTIFACT_INVENTORY.json` | 项目文档：RECOVERY ARTIFACT INVENTORY | 5059 | `91423d0e4f51` |
-| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 130 | `c428fd3d71f3` |
+| `docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md` | 项目文档：REPRODUCTION DISCREPANCY | 137 | `d43619150130` |
+| `docs/reports/official_evaluation/SXZ_V4_ALIGNMENT.md` | 项目文档：SXZ V4 ALIGNMENT | 58 | `3a4f84ca454f` |
 | `docs/reports/official_evaluation/claude_subject_discrepancy.json` | 项目文档：claude subject discrepancy | 118 | `4fd535e724eb` |
 | `docs/reports/official_evaluation/dataset_preflight.json` | 项目文档：dataset preflight | 1624 | `2fcf32ae8f4e` |
 | `docs/reports/official_evaluation/fast_reproduction_check/checkpoint_artifacts.json` | 项目文档：checkpoint artifacts | 31 | `39be229403ba` |
@@ -80,7 +82,7 @@
 | `docs/reports/official_evaluation/gap_investigation/qwen8b/timing.json` | 项目文档：timing | 5 | `34d3c8fbed88` |
 | `docs/reports/official_evaluation/gap_investigation/qwen8b_attribution.json` | 项目文档：qwen8b attribution | 23604 | `f64fc380af8a` |
 | `docs/reports/official_evaluation/gap_investigation/verification.json` | 项目文档：verification | 58 | `8257744e7bef` |
-| `docs/reports/official_evaluation/local_pdf_pipeline/README.md` | 项目文档：README | 15 | `048c5a0a28b8` |
+| `docs/reports/official_evaluation/local_pdf_pipeline/README.md` | 项目文档：README | 22 | `a7482f369d81` |
 | `docs/reports/official_evaluation/local_pdf_pipeline/inference_binding.json` | 项目文档：inference binding | 38 | `c701820f4d1f` |
 | `docs/reports/official_evaluation/local_pdf_pipeline/inference_generation_defaults.json` | 项目文档：inference generation defaults | 74 | `158e1ff42eb4` |
 | `docs/reports/official_evaluation/local_pdf_pipeline/inference_timing.json` | 项目文档：inference timing | 4 | `48f3a9bce5a0` |
@@ -107,38 +109,44 @@
 | `docs/reports/official_evaluation/provenance_reconciliation/qualitative_cases.json` | 项目文档：qualitative cases | 204 | `c753343115f7` |
 | `docs/reports/official_evaluation/provenance_reconciliation/verification.json` | 项目文档：verification | 229 | `c25a739c557d` |
 | `docs/reports/official_evaluation/reproduction_audit.json` | 项目文档：reproduction audit | 5120 | `0f17d4df501c` |
+| `docs/reports/official_evaluation/sxz_v4_alignment/report.json` | 项目文档：report | 931 | `1281c2402d6b` |
+| `docs/reports/official_evaluation/sxz_v4_alignment/run_binding.json` | 项目文档：run binding | 67 | `ad95de8d4032` |
+| `docs/reports/official_evaluation/sxz_v4_alignment/verification.json` | 项目文档：verification | 47 | `07a379cf8bd5` |
 | `docs/reports/official_evaluation/verification.json` | 项目文档：verification | 63 | `fa808b6ac98c` |
 | `environment.yml` | 项目配置或入口：environment | 8 | `1dc4df61202c` |
-| `evaluation/README.md` | 项目配置或入口：README | 386 | `9200c556fbd2` |
-| `evaluation/__init__.py` | 项目配置或入口：  init   | 3 | `b51a76f50781` |
-| `evaluation/audit_score_provenance.py` | 项目配置或入口：audit score provenance | 327 | `aebfdf6bd513` |
-| `evaluation/check_reproduction.py` | 项目配置或入口：check reproduction | 117 | `60fed1bd7583` |
-| `evaluation/evaluate.py` | 项目配置或入口：evaluate | 83 | `cdff69d6256c` |
-| `evaluation/investigate_gaps.py` | 项目配置或入口：investigate gaps | 134 | `bd1c847a165e` |
-| `evaluation/judge.py` | 项目配置或入口：judge | 125 | `c6a08c4ff9fd` |
-| `evaluation/metrics.py` | 项目配置或入口：metrics | 87 | `328f11cbcdd3` |
+| `evaluation/README.md` | 项目配置或入口：README | 193 | `7e9eb355b0e6` |
+| `evaluation/__init__.py` | 项目配置或入口：  init   | 3 | `c97ec8772cbd` |
+| `evaluation/audit_score_provenance.py` | 项目配置或入口：audit score provenance | 332 | `063e868d22c4` |
+| `evaluation/check_reproduction.py` | 项目配置或入口：check reproduction | 122 | `f9ab493bfdb9` |
+| `evaluation/evaluate.py` | 项目配置或入口：evaluate | 10 | `a3b49a0a5fd6` |
+| `evaluation/investigate_gaps.py` | 项目配置或入口：investigate gaps | 139 | `7900a03f299c` |
+| `evaluation/judge.py` | 项目配置或入口：judge | 138 | `3c0474334f7d` |
+| `evaluation/metrics.py` | 项目配置或入口：metrics | 95 | `df527814cd0c` |
 | `evaluation/paper_reference.json` | 项目配置或入口：paper reference | 251 | `0ae6486571cc` |
 | `evaluation/preflight.py` | 项目配置或入口：preflight | 108 | `b3d8dbf81dd3` |
-| `evaluation/prompts.py` | 项目配置或入口：prompts | 12 | `694a63ed56b5` |
+| `evaluation/prompts.py` | 项目配置或入口：prompts | 14 | `8e829f9b8071` |
+| `evaluation/prompts/paper_provenance.json` | 项目配置或入口：paper provenance | 7 | `069ca54dd7b3` |
 | `evaluation/prompts/pdf_provenance.json` | 项目配置或入口：pdf provenance | 7 | `6d630b4a5cb5` |
-| `evaluation/prompts/provenance.json` | 项目配置或入口：provenance | 7 | `069ca54dd7b3` |
-| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 41 | `033a76f18dcd` |
-| `evaluation/reproduce.py` | 项目配置或入口：reproduce | 278 | `88a60888cb42` |
-| `evaluation/validation.py` | 项目配置或入口：validation | 298 | `f6fbdd425d0b` |
+| `evaluation/prompts/provenance.json` | 项目配置或入口：provenance | 213 | `c67263e25f35` |
+| `evaluation/reconciliation.json` | 项目配置或入口：reconciliation | 16 | `b9b8c656e505` |
+| `evaluation/reproduce.py` | 项目配置或入口：reproduce | 252 | `ced1b4334f84` |
+| `evaluation/runner.py` | 项目配置或入口：runner | 270 | `2d9b9299e27e` |
+| `evaluation/sxz_v4.py` | 项目配置或入口：sxz v4 | 2620 | `5f77fa474b92` |
+| `evaluation/validation.py` | 项目配置或入口：validation | 302 | `8e0eaea07a71` |
 | `provider_config.example.json` | 项目配置或入口：provider config.example | 16 | `1ed1d13e6268` |
 | `pyproject.toml` | 项目配置或入口：pyproject | 27 | `7678f6ba4aa5` |
 | `requirements.txt` | 项目配置或入口：requirements | 34 | `b1d620c6158e` |
 | `schemas/final_2200_qa.schema.json` | QA 数据结构约束 | 56 | `8ac0c9e1049b` |
 | `schemas/single_pdf_qa.schema.json` | QA 数据结构约束 | 110 | `b4e168585abf` |
-| `scripts/check_judge_input_versions.py` | 项目配置或入口：check judge input versions | 139 | `b8e3e83d61e5` |
-| `scripts/check_local_judge_disagreements.py` | 项目配置或入口：check local judge disagreements | 88 | `1dbe58919e2b` |
+| `scripts/check_judge_input_versions.py` | 项目配置或入口：check judge input versions | 144 | `f6cbf542d266` |
+| `scripts/check_local_judge_disagreements.py` | 项目配置或入口：check local judge disagreements | 93 | `bc00da42e470` |
 | `scripts/dataset_construction/phase1_paper_acquisition/README.md` | 项目配置或入口：README | 62 | `1d9e8bfeca84` |
 | `scripts/dataset_construction/phase1_paper_acquisition/arxiv_download_backend.py` | 项目配置或入口：arxiv download backend | 86 | `a67bf7499717` |
 | `scripts/generate_dataset_catalog.py` | 项目配置或入口：generate dataset catalog | 52 | `58d7107827ed` |
-| `scripts/judge_reproduction_jobs.py` | 项目配置或入口：judge reproduction jobs | 138 | `92cd6ddfcb03` |
-| `scripts/rescore_baseline_local.py` | 项目配置或入口：rescore baseline local | 192 | `20681c39798a` |
-| `scripts/run_local_pipeline.py` | 项目配置或入口：run local pipeline | 231 | `ecb2d807aa2c` |
-| `scripts/smoke_local_evaluation.py` | 项目配置或入口：smoke local evaluation | 213 | `05629f8cac9b` |
+| `scripts/judge_reproduction_jobs.py` | 项目配置或入口：judge reproduction jobs | 143 | `76240a0f514e` |
+| `scripts/rescore_baseline_local.py` | 项目配置或入口：rescore baseline local | 197 | `2861955fcaee` |
+| `scripts/run_local_pipeline.py` | 项目配置或入口：run local pipeline | 236 | `2757933ed46a` |
+| `scripts/smoke_local_evaluation.py` | 项目配置或入口：smoke local evaluation | 218 | `84aaaf3c5714` |
 | `scripts/validate_submission.py` | 项目配置或入口：validate submission | 29 | `7684e9e25bb3` |
 | `src/pku_qa/__init__.py` | 项目配置或入口：  init   | 23 | `5ec76212d2b6` |
 | `src/pku_qa/evaluation/__init__.py` | 统一评测核心：  init   | 0 | `e3b0c44298fc` |
@@ -146,14 +154,14 @@
 | `src/pku_qa/evaluation/calculate_evidence_weighted_accuracy.py` | 统一评测核心：calculate evidence weighted accuracy | 360 | `7e394ed0574e` |
 | `src/pku_qa/evaluation/durable_work_queue.py` | 统一评测核心：durable work queue | 510 | `0e38dd574f56` |
 | `src/pku_qa/evaluation/eval_framework.py` | 统一评测核心：eval framework | 883 | `d14a9a182c13` |
-| `src/pku_qa/evaluation/evaluation_protocol.py` | 统一评测核心：evaluation protocol | 812 | `7033a65005c8` |
+| `src/pku_qa/evaluation/evaluation_protocol.py` | 统一评测核心：evaluation protocol | 812 | `8b849eb0efb4` |
 | `src/pku_qa/evaluation/gpu_reservation.py` | 统一评测核心：gpu reservation | 355 | `daa7cce39404` |
 | `src/pku_qa/evaluation/model_paths.py` | 统一评测核心：model paths | 69 | `732aac67f3bb` |
 | `src/pku_qa/evaluation/progress_logging.py` | 统一评测核心：progress logging | 22 | `39a607f715b4` |
 | `src/pku_qa/evaluation/run_eval_pipeline.py` | 统一评测核心：run eval pipeline | 309 | `715d05ade3ba` |
 | `src/pku_qa/evaluation/run_hard_eval.py` | 统一评测核心：run hard eval | 894 | `bad05dbe21b6` |
 | `src/pku_qa/evaluation/run_inference.py` | 统一评测核心：run inference | 1236 | `e73b9d1f812c` |
-| `src/pku_qa/evaluation/run_judge.py` | 统一评测核心：run judge | 806 | `be3ac3628b65` |
+| `src/pku_qa/evaluation/run_judge.py` | 统一评测核心：run judge | 806 | `c71efbbe506a` |
 | `src/pku_qa/evaluation/run_report.py` | 统一评测核心：run report | 1010 | `0e8a2a304305` |
 | `src/pku_qa/pdf_assets.py` | 项目配置或入口：pdf assets | 155 | `3d0339ec71b7` |
 | `src/pku_qa/services/__init__.py` | 本地服务：  init   | 0 | `e3b0c44298fc` |
@@ -263,14 +271,15 @@
 | `tests/system/test_project_docs.py` | system 测试：project docs | 24 | `6b25945572f2` |
 | `tests/system/test_relocated_checkout.py` | system 测试：relocated checkout | 48 | `d002c12a5563` |
 | `tests/system/test_web_stack_health.py` | system 测试：web stack health | 15 | `8feea5f78e59` |
-| `tests/test_e2e.py` | 公共支持 测试：e2e | 50 | `86d45e9716ed` |
+| `tests/test_e2e.py` | 公共支持 测试：e2e | 65 | `7642de277b91` |
 | `tests/test_generation_audit.py` | 公共支持 测试：generation audit | 128 | `3e1fee559d5c` |
-| `tests/test_judge.py` | 公共支持 测试：judge | 109 | `5db380bf1138` |
+| `tests/test_judge.py` | 公共支持 测试：judge | 117 | `21ce47d85a15` |
 | `tests/test_local_smoke.py` | 公共支持 测试：local smoke | 47 | `6c50957d7743` |
 | `tests/test_metrics.py` | 公共支持 测试：metrics | 11 | `4fe3911315ab` |
 | `tests/test_reference_revision.py` | 公共支持 测试：reference revision | 74 | `ffe2a947133c` |
 | `tests/test_reproduction_bounds.py` | 公共支持 测试：reproduction bounds | 35 | `286bff79ff4f` |
 | `tests/test_score_provenance.py` | 公共支持 测试：score provenance | 56 | `e8e3051111bb` |
+| `tests/test_sxz_evaluation.py` | 公共支持 测试：sxz evaluation | 164 | `b7c608e6ce39` |
 | `tests/test_validation.py` | 公共支持 测试：validation | 73 | `f9c76c857561` |
 | `tests/unit/__init__.py` | unit 测试：  init   | 0 | `e3b0c44298fc` |
 | `tests/unit/test_bootstrap_data_review_service.py` | unit 测试：bootstrap data review service | 34 | `8915b1841caa` |
@@ -286,7 +295,7 @@
 | `tests/unit/test_judge_rules.py` | unit 测试：judge rules | 414 | `316aa194ac08` |
 | `tests/unit/test_model_paths.py` | unit 测试：model paths | 100 | `8c66cfcfeede` |
 | `tests/unit/test_normalize_final_2200_release.py` | unit 测试：normalize final 2200 release | 33 | `9430c309387d` |
-| `tests/unit/test_paper_judge_alignment.py` | unit 测试：paper judge alignment | 87 | `808d35d94271` |
+| `tests/unit/test_paper_judge_alignment.py` | unit 测试：paper judge alignment | 88 | `fffb1ea345f0` |
 | `tests/unit/test_pdf_assets.py` | unit 测试：pdf assets | 51 | `e4e565121d23` |
 | `tests/unit/test_progress_logging.py` | unit 测试：progress logging | 23 | `d3bfe0099a66` |
 | `tests/unit/test_protocol_fingerprints.py` | unit 测试：protocol fingerprints | 130 | `8a54890c63c7` |
@@ -295,7 +304,7 @@
 | `tests/unit/test_run_final_2200_evaluation.py` | unit 测试：run final 2200 evaluation | 39 | `0b4168e3d025` |
 | `tests/unit/test_sync_final_2200_manifest.py` | unit 测试：sync final 2200 manifest | 59 | `3ad5f544bf8c` |
 | `tests/unit/test_task_queue_api.py` | unit 测试：task queue api | 60 | `312dda8c4d37` |
-| `tools/internal/experiment_console/README.md` | 项目配置或入口：README | 23 | `a2646004dd6f` |
+| `tools/internal/experiment_console/README.md` | 项目配置或入口：README | 28 | `982d0ff67c34` |
 | `tools/internal/experiment_console/web/.openai/hosting.json` | 本地任务与数据审核控制台组件 | 4 | `d2841f8a91a9` |
 | `tools/internal/experiment_console/web/app/admin/users/page.tsx` | 本地任务与数据审核控制台组件 | 580 | `31bc4421bfd4` |
 | `tools/internal/experiment_console/web/app/api/[...path]/route.ts` | 本地任务与数据审核控制台组件 | 90 | `c096d908057d` |

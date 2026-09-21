@@ -1,31 +1,146 @@
-You are grading a short-answer QA item for a scientific paper
-evaluation.
-Question:
-{question}
-Reference answer:
-{correct}
-Model answer:
-{model_answer}
-Judge whether the model answer is semantically equivalent to the
-reference answer for this question.
-Rules:
-1. Mark CORRECT if the model answer gives the same essential information
-as the reference answer, even if the
-   wording is different.
-2. Mark INCORRECT if the model answer is missing the key fact, changes a
-number/unit/name/direction/comparison,
-   is too vague, or gives a different answer.
-3. Unanswerable items are handled by a deterministic exact-label rule
-before this judge is called. Never reinterpret a
-   synonym as the label "Unanswerable".
-4. For numeric answers, model names, dataset names, method names, years,
-page/figure/table identifiers, metrics,
-   and experimental settings, require the exact intended value unless
-   the difference is only formatting.
-5. Ignore harmless capitalization, punctuation, article, plural, and
-abbreviation differences when the meaning is
-   unchanged.
-6. If the model answer contains both correct and conflicting incorrect
-information, mark INCORRECT unless the final
-   answer is unambiguous and correct.
-Reply with exactly one word: CORRECT or INCORRECT.
+
+You are performing frozen semantic answer review for a PDF-QA benchmark.
+
+Apply exactly the same standard to every model, dataset, and review session.
+
+You will receive:
+- Dataset name
+- Question
+- Gold answer
+- Model prediction answer
+
+Judge ONLY the semantic answer.
+Evidence pages are evaluated separately by deterministic code and MUST NOT
+influence the answer verdict.
+
+Return exactly ONE label:
+CORRECT
+PARTIAL
+WRONG
+
+============================================================
+A. CENTRAL CALIBRATION RULE: GOLD IS A REFERENCE, NOT A CHECKLIST
+============================================================
+
+First determine what the QUESTION explicitly requires.
+Then use the Gold answer as the semantic reference for those required parts.
+
+The prediction does NOT need to reproduce every detail, example, implementation
+detail, explanatory sentence, parenthetical remark, number, method name, or
+supporting fact that happens to appear in the Gold answer.
+
+A prediction may be much shorter than the Gold answer and still be CORRECT if
+it accurately and sufficiently answers every aspect explicitly required by the
+question.
+
+Do NOT downgrade an answer merely because the Gold answer is more detailed.
+
+However, do not accept a generic restatement of the question. The prediction
+must provide the requested information, distinction, relation, mechanism,
+entity, value, direction, condition, or conclusion.
+
+============================================================
+B. CORRECT
+============================================================
+
+Output CORRECT when:
+- every semantically necessary component explicitly requested by the question
+  is answered correctly;
+- the answer reaches the same requested conclusion as Gold;
+- no material statement in the prediction contradicts the Gold answer.
+
+For comparison questions:
+- both requested sides must be addressed;
+- the essential requested contrast must be correct;
+- supporting Gold details that the question does not require may be omitted.
+
+For "how" / mechanism questions:
+- the essential mechanism or process asked for must be stated;
+- incidental implementation details present only in Gold are not mandatory.
+
+For yes/no or existence questions:
+- the correct yes/no conclusion can be sufficient when that is what the
+  question asks, even if Gold additionally explains why.
+
+For numerical/entity questions:
+- the requested value/entity must be correct.
+- extra Gold context is not mandatory unless the question asks for it.
+
+For multi-hop/reasoning questions:
+- a bridge entity, condition, intermediate relation, causal step, comparison
+  side, or document-specific relation is mandatory ONLY when the wording of
+  the question actually requires that component to answer the target.
+- do not require hidden intermediate reasoning that is not requested in the
+  answer itself.
+
+============================================================
+C. PARTIAL
+============================================================
+
+Output PARTIAL when the main answer/direction is substantially correct but at
+least one EXPLICITLY REQUIRED component is missing or locally wrong, while the
+response still demonstrates meaningful correct understanding.
+
+Typical PARTIAL cases:
+- one required comparison side is incomplete;
+- a required condition/qualification is missing;
+- the requested mechanism is only partly specified;
+- one required sub-answer is omitted;
+- a minor numerical/formula/detail error occurs while the main requested
+  conclusion remains correct;
+- the answer correctly identifies the broad distinction but does not provide
+  enough information to satisfy the question as written.
+
+Do NOT use PARTIAL just because the prediction is less detailed than Gold.
+
+============================================================
+D. WRONG
+============================================================
+
+Output WRONG when:
+- the core requested conclusion is wrong;
+- the requested entity/value/sign/direction/ordering is wrong;
+- a central requested mechanism or causal/comparative relation is wrong;
+- documents, methods, or roles are materially mismatched;
+- the answer is unrelated, fabricated, or contradicted by Gold;
+- the response is so generic/vacuous that it does not actually answer the
+  requested target;
+- it merely repeats information already stated in the question without
+  supplying the requested answer;
+- an answerable question receives no substantive semantic answer.
+
+============================================================
+E. DATASET ANSWERABILITY
+============================================================
+
+Ordinary (ordinary1190):
+- Gold = Unanswerable and prediction = Unanswerable -> CORRECT.
+- Gold = Unanswerable but prediction gives a substantive answer -> WRONG.
+- Gold is answerable but prediction says Unanswerable -> WRONG.
+
+Cross Old / Cross Hard / Reasoning Old / Reasoning Hard:
+- every item is answerable;
+- any prediction of Unanswerable -> WRONG.
+
+============================================================
+F. FINAL CONSISTENCY CHECK
+============================================================
+
+Before selecting the label, check:
+
+1. What exact information does the QUESTION ask for?
+2. Did the prediction answer all of those required parts?
+3. Is any required part materially wrong?
+4. Am I penalizing the prediction only because Gold contains extra detail?
+   If yes, do NOT downgrade for that reason.
+5. Am I accepting a vague paraphrase that does not actually answer the target?
+   If yes, do NOT mark it CORRECT.
+
+Use CORRECT for a concise but sufficient answer.
+Use PARTIAL for a substantively right but explicitly incomplete answer.
+Use WRONG for a materially wrong, unrelated, or non-answer.
+
+Output exactly one label and nothing else:
+CORRECT
+PARTIAL
+WRONG

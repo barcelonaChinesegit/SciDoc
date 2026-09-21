@@ -119,7 +119,7 @@ def direct_fill_match(reference: str, prediction: str) -> tuple[bool | None, str
 
 
 def build_judge_prompt(question: str, correct: str, model_answer: str) -> str:
-    path = Path(__file__).resolve().parents[3] / "evaluation/prompts/semantic_judge.txt"
+    path = Path(__file__).resolve().parents[3] / "evaluation/prompts/paper_semantic_judge.txt"
     return path.read_text(encoding="utf-8").format(
         question=question, correct=correct, model_answer=model_answer
     )

@@ -1,35 +1,34 @@
 # SciDoc 项目文档
 
-最新核对见 [实验来源与评分差异核对](../reports/official_evaluation/PROVENANCE_RECONCILIATION.md)：55 份历史结果副本与原文件一致，逐题记录可重建 Table 2 的全部数值及 Table 3 的全部学科数值。当前 release 的严格诊断与历史实验属于不同输入/评分组合，新 Judge 标签不能直接当成人工真值。`evaluation/audit_score_provenance.py` 只读核对真实 Judge 缓存输入、逐题汇总和题目集合；不会改变 QA 或官方评测协议。
+最新评分入口与验证见 [sxz v4 对齐报告](../reports/official_evaluation/SXZ_V4_ALIGNMENT.md)。此前 current-release 二分类分差报告保留为历史记录。
 
-## 2026-09-20 论文协议审计更新
+## 2026-09-21 sxz v4 评分规则对齐
 
-公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
-论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
-精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 已移除规则优先匹配，Judge 统一使用论文原版提示词、
-严格标签解析和原始输出；内部报告仍不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
-99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
-差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
-本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
+按项目负责人要求，`evaluation/` 默认使用生成论文实验结果的 sxz v4 规则：原始三分类
+提示词、源脚本预测恢复、结果文件自带历史金标、先证据后答案、固定分母和仅 CORRECT
+计分。现行入口为 `evaluation/evaluate.py`；`reproduce.py` 复用同一评分器并比较论文。
+这替换此前二分类公开评分规则，不新增模型协议或兼容模式。`sxz/`、QA、PDF、论文不修改。
+全量缓存回放匹配历史 77 行汇总的全部 1,540 个数值、Table 2 的 99/99 和 Table 3 的 98/99；
+Claude Table 3 All 仍为 68.05% 对论文 69.32%。这是原始缓存回放，不是新 GPU Judge 运行。
+命令和输入结构见 [evaluation/README.md](../../evaluation/README.md)，
+证据见 [对齐报告](../reports/official_evaluation/SXZ_V4_ALIGNMENT.md)。
+内部 `src/pku_qa/evaluation/` 保留二分类诊断，固定读取 `paper_semantic_judge.txt`；
+不能将其报告当作 v4 评分。旧 current-release 二分类重评命令已停用，旧报告仅记录当时结论。
 
-
-当前发布、人工审核和正式评测统一使用 `data/qa/7.final_2200/` 的四文件集合：
+当前发布、人工审核和内部新推理使用 `data/qa/7.final_2200/` 的四文件集合：
 普通 1,000、不可回答 200、Reasoning 200、Cross-PDF 800，共 2,200 条简答 QA。
 全局 ID 为 `QA0001`–`QA2200`；最终评测使用 474 份单论文 PDF 和 238 份合并 PDF。
 
 项目介绍与 Quick Start 提供 [简体中文](../../README.zh-CN.md) 和 [English](../../README.md) 两个版本；数据规模、命令和协议说明保持一致。
 
-从 [README Quick Start](../../README.md#quick-start) 开始，无 GPU 的首次数据检查为：
-
-```bash
-PYTHONPATH=src python -m pku_qa.workflows.operations.inspect_final_2200
-```
-
-该入口仅需 Python 标准库，不依赖外部 PDF、模型、上游基线或分类镜像，也不改写任何 QA。
-添加 `--check-pdfs` 后使用 pypdf 检查最终 PDF 哈希、可读性及证据页范围。
+新用户从 [中文 Quick Start](../../README.zh-CN.md#quick-start) 或
+[English Quick Start](../../README.md#quick-start) 开始：安装轻量评测依赖，运行无资产
+自检，取得原实验文件后回放 Qwen3-VL-8B，最后读取报告中的指标与输入绑定。
+缓存回放不要求 GPU 或 PDF；新 Judge 运行和当前数据集 PDF 检查有各自的环境要求。
 
 | 需求 | 文档 |
 | --- | --- |
+| 单模型评分、全部模型回放、输出与退出码 | [evaluation Quick Start](../../evaluation/README.md#quick-start) |
 | 理解协议、模块、字段与目录 | [项目架构](ARCHITECTURE.md) |
 | 安装环境、预检和运行评测 | [上手指南](GETTING_STARTED.md) |
 | 按题执行人工校验 | [人工审核手册](MANUAL_REVIEW_GUIDE.md) |
@@ -64,6 +63,9 @@ Word 草稿。人工审核界面和证据 PRF 示例使用附录编号，保存�
 展示名称统一为 Task Types、Question Types、Reasoning Types、Document Type、
 Scientific Fields 与 Equation，移除 Leading 并采用标题式大小写。
 Reasoning Types 的百分比分母仍为 602 条标注记录，不限于 200 道 Reasoning 题；
+保留 `Reasoning Types` 标题，六条数据下方以灰色小字标注 `Top 6 of 11 Types`，
+样式与 Question Types 的下方注记一致，表示仅展示全部 11 类中的前六类，
+共 541 条（约 89.9%），未将部分列表重新归一化为 100%。
 `0 (Unans.)` 表示 200 道不可回答题没有金标准证据页。
 `build_dataset_figures.py --composition-only` 只重绘本图并默认同步至
 `论文/ICLR2027_ScienceDoc/figures/`；正文图注与对应统计段落同步更新术语。
@@ -91,7 +93,6 @@ Web 变更还需 Web build/tests、服务重启和
 `sxz/` 始终只读。
 
 第一阶段 Notebook 和生成提示词位于 `scripts/dataset_construction/phase1_paper_acquisition/`，用于追溯论文获取与基础 QA 构造；其过程性输出不替代最终四文件。
-
 
 2026-09-16 论文图稿的类别显示名称统一为 `General` 与 `Multi-Document`，
 覆盖当前 ICLR LaTeX 正文、附录、图表生成源及论文插图；数据文件名和评测键不变。

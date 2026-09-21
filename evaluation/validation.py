@@ -1,4 +1,7 @@
-"""Strict PDF-mode submission validation. Never repair semantic content."""
+"""Strict producer-format diagnostics and frozen-release validation.
+
+Scoring uses sxz_v4 prediction recovery, not these stricter inference checks.
+"""
 
 from __future__ import annotations
 
@@ -57,6 +60,7 @@ class Gold:
     page_count: int
     legacy_paper_id: str = ""
     legacy_qa_id: str = ""
+    dataset_id: str = ""
 
 
 @dataclass

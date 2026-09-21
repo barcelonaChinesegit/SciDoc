@@ -71,6 +71,11 @@ def select_predictions(gold: dict, source: Path, per_task: int) -> tuple[list, d
 
 
 def main() -> int:
+    raise SystemExit(
+        "This binary-paper diagnostic is retired after the sxz v4 scoring change. "
+        "Saved reports remain historical evidence. Use python evaluation/evaluate.py --help "
+        "for recorded-cache replay or a new local v4 Judge run."
+    )
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--gpu", type=int, required=True, help="Physical A800 index")

@@ -168,6 +168,6 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.check_web_stack
 该命令会检查本地三个端点、VPS 反向隧道后端和公网 HTTPS 前置层。公网必须返回 200；
 401 表示旧 Basic Auth 仍在拦截应用登录页，应视为失败。
 
-数据集目录中的旧 Reasoning 100、4,211 题基线和 983 题人工审核来源明确标为历史构建材料。当前评测与终审只使用 final_2200 四文件；历史数据的既有权限由注册器独立保留。
+数据集目录中的旧 Reasoning 100、4,211 题基线和 983 题人工审核来源明确标为历史构建材料。当前发布集的新推理与终审使用 final_2200 四文件；v4 原实验评分单独读取五个自带金标的结果组件，命令见 [评测 Quick Start](../../evaluation/README.md#quick-start)。历史数据的既有权限由注册器独立保留。
 
 登录页与封面统一显示四个正式 QA 文件、2,200 道题。界面参考见 [人工审核手册](MANUAL_REVIEW_GUIDE.md#18-当前界面参考)，图片随文档提供。

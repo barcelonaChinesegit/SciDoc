@@ -19,3 +19,9 @@ sha256sum -c ScienceDoc_PDFs_complete_20260920.zip.sha256
 
 源 PDF 保留在 `data/pdfs/`，正式 QA 保留在 `data/qa/7.final_2200/`；
 评测运行输出继续写入 `data/results/`。
+
+## 评分回放材料
+
+上述 PDF/QA 资源包不包含原实验五组件结果、v4 Judge 缓存或原始 Table 3 学科清单。
+[评测 Quick Start](../../evaluation/README.md#quick-start) 列出了评分回放的独立材料；
+缓存回放本身不需要 PDF。新 PDF 推理和当前发布集预检才需要部署这里的 PDF 包。

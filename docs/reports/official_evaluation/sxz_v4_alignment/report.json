@@ -1,0 +1,931 @@
+{
+  "scoring_protocol": "sxz_v4",
+  "evaluator_version": "0.2.0",
+  "execution": "recorded_cache_replay",
+  "timestamp": "2026-09-21T04:52:44.405111+00:00",
+  "models": [
+    "MiniCPM-V-2.6",
+    "InternVL25-8B",
+    "MiniCPM-V-4.5",
+    "InternVL35-8B",
+    "Gemma3-27B-IT",
+    "Mistral-Small3.1-24B",
+    "Qwen3-VL-4B",
+    "Qwen3-VL-8B",
+    "Claude-sonncet-5",
+    "DeepSeek-V4-flash-Vision-Exp",
+    "GLM-4.6V"
+  ],
+  "table2": {
+    "MiniCPM-V 2.6": {
+      "All": 15.590909090909092,
+      "General": 14.7,
+      "Unanswerable": 38.5,
+      "Reasoning": 9.5,
+      "Multi-Document": 12.5,
+      "E-Precision": 9.36904761904762,
+      "E-Recall": 9.243290043290044,
+      "E-F1": 9.259776334776335,
+      "A-Pages": 0.10727272727272727
+    },
+    "InternVL2.5-8B": {
+      "All": 22.318181818181817,
+      "General": 24.4,
+      "Unanswerable": 32.0,
+      "Reasoning": 34.5,
+      "Multi-Document": 14.25,
+      "E-Precision": 15.391350351292118,
+      "E-Recall": 31.88317099567099,
+      "E-F1": 16.745781919981404,
+      "A-Pages": 6.6854545454545455
+    },
+    "MiniCPM-V 4.5": {
+      "All": 34.31818181818182,
+      "General": 54.6,
+      "Unanswerable": 15.0,
+      "Reasoning": 46.5,
+      "Multi-Document": 10.75,
+      "E-Precision": 20.029169184993638,
+      "E-Recall": 15.915530303030305,
+      "E-F1": 16.47234581712181,
+      "A-Pages": 1.415
+    },
+    "InternVL3.5-8B": {
+      "All": 34.95454545454545,
+      "General": 36.3,
+      "Unanswerable": 2.5,
+      "Reasoning": 53.0,
+      "Multi-Document": 36.875,
+      "E-Precision": 30.860720650472928,
+      "E-Recall": 31.197113366431545,
+      "E-F1": 28.044271179368867,
+      "A-Pages": 3.72
+    },
+    "Gemma 3 27B": {
+      "All": 47.31818181818182,
+      "General": 57.0,
+      "Unanswerable": 14.0,
+      "Reasoning": 47.0,
+      "Multi-Document": 43.625,
+      "E-Precision": 34.02228030554067,
+      "E-Recall": 30.845024293887928,
+      "E-F1": 30.3570234896041,
+      "A-Pages": 1.9772727272727273
+    },
+    "Mistral-Small-3.1-24B": {
+      "All": 49.0,
+      "General": 72.4,
+      "Unanswerable": 9.0,
+      "Reasoning": 68.5,
+      "Multi-Document": 24.875,
+      "E-Precision": 34.50938916331468,
+      "E-Recall": 36.39229848434394,
+      "E-F1": 32.39265525522798,
+      "A-Pages": 3.5795454545454546
+    },
+    "Qwen3-VL-4B": {
+      "All": 64.9090909090909,
+      "General": 80.0,
+      "Unanswerable": 60.0,
+      "Reasoning": 64.5,
+      "Multi-Document": 47.375,
+      "E-Precision": 39.35198086442059,
+      "E-Recall": 53.00593724457361,
+      "E-F1": 39.22261513043638,
+      "A-Pages": 9.25590909090909
+    },
+    "Qwen3-VL-8B": {
+      "All": 68.31818181818181,
+      "General": 83.2,
+      "Unanswerable": 42.5,
+      "Reasoning": 71.5,
+      "Multi-Document": 55.375,
+      "E-Precision": 43.33971742021875,
+      "E-Recall": 49.63076923076923,
+      "E-F1": 40.664217879496846,
+      "A-Pages": 8.442272727272726
+    },
+    "Claude Sonnet 5": {
+      "All": 69.31818181818181,
+      "General": 71.9,
+      "Unanswerable": 68.0,
+      "Reasoning": 91.0,
+      "Multi-Document": 61.0,
+      "E-Precision": 35.657289986048795,
+      "E-Recall": 43.96992918697464,
+      "E-F1": 36.49487881796741,
+      "A-Pages": 3.6586363636363637
+    },
+    "DeepSeek-V4-Flash": {
+      "All": 79.45454545454545,
+      "General": 88.2,
+      "Unanswerable": 15.5,
+      "Reasoning": 83.0,
+      "Multi-Document": 83.625,
+      "E-Precision": 44.48917615049053,
+      "E-Recall": 49.220924403878946,
+      "E-F1": 43.61052572285685,
+      "A-Pages": 2.5736363636363637
+    },
+    "GLM-4.6V": {
+      "All": 80.95454545454545,
+      "General": 88.5,
+      "Unanswerable": 46.0,
+      "Reasoning": 83.5,
+      "Multi-Document": 79.625,
+      "E-Precision": 51.03771645021645,
+      "E-Recall": 50.474305744760294,
+      "E-F1": 47.81021276703095,
+      "A-Pages": 1.9736363636363636
+    }
+  },
+  "table3": {
+    "MiniCPM-V 2.6": {
+      "All": 15.590909090909092,
+      "Economics": 16.05839416058394,
+      "Statistics": 15.846994535519126,
+      "Electrical Engineering and Systems Science": 10.15625,
+      "Quantitative Biology": 15.789473684210526,
+      "Quantitative Finance": 15.116279069767442,
+      "Computer Science": 16.51006711409396,
+      "Mathematics": 10.204081632653061,
+      "Physics": 18.733509234828496
+    },
+    "InternVL2.5-8B": {
+      "All": 22.318181818181817,
+      "Economics": 32.11678832116788,
+      "Statistics": 24.316939890710383,
+      "Electrical Engineering and Systems Science": 17.96875,
+      "Quantitative Biology": 19.29824561403509,
+      "Quantitative Finance": 23.25581395348837,
+      "Computer Science": 21.34228187919463,
+      "Mathematics": 13.877551020408163,
+      "Physics": 26.385224274406333
+    },
+    "MiniCPM-V 4.5": {
+      "All": 34.31818181818182,
+      "Economics": 40.87591240875913,
+      "Statistics": 33.87978142076503,
+      "Electrical Engineering and Systems Science": 30.46875,
+      "Quantitative Biology": 51.75438596491228,
+      "Quantitative Finance": 46.51162790697674,
+      "Computer Science": 25.906040268456376,
+      "Mathematics": 30.20408163265306,
+      "Physics": 44.854881266490764
+    },
+    "InternVL3.5-8B": {
+      "All": 34.95454545454545,
+      "Economics": 43.7956204379562,
+      "Statistics": 36.0655737704918,
+      "Electrical Engineering and Systems Science": 38.28125,
+      "Quantitative Biology": 36.8421052631579,
+      "Quantitative Finance": 43.02325581395349,
+      "Computer Science": 37.986577181208055,
+      "Mathematics": 20.816326530612244,
+      "Physics": 30.34300791556728
+    },
+    "Gemma 3 27B": {
+      "All": 47.31818181818182,
+      "Economics": 57.66423357664234,
+      "Statistics": 47.814207650273225,
+      "Electrical Engineering and Systems Science": 41.40625,
+      "Quantitative Biology": 38.59649122807018,
+      "Quantitative Finance": 46.51162790697674,
+      "Computer Science": 50.33557046979866,
+      "Mathematics": 32.244897959183675,
+      "Physics": 51.715039577836414
+    },
+    "Mistral-Small-3.1-24B": {
+      "All": 49.0,
+      "Economics": 63.503649635036496,
+      "Statistics": 45.08196721311475,
+      "Electrical Engineering and Systems Science": 50.78125,
+      "Quantitative Biology": 64.91228070175438,
+      "Quantitative Finance": 52.325581395348834,
+      "Computer Science": 40.13422818791946,
+      "Mathematics": 45.714285714285715,
+      "Physics": 60.949868073878626
+    },
+    "Qwen3-VL-4B": {
+      "All": 64.9090909090909,
+      "Economics": 67.88321167883211,
+      "Statistics": 55.46448087431694,
+      "Electrical Engineering and Systems Science": 64.0625,
+      "Quantitative Biology": 80.70175438596492,
+      "Quantitative Finance": 69.76744186046511,
+      "Computer Science": 63.89261744966443,
+      "Mathematics": 62.04081632653061,
+      "Physics": 71.2401055408971
+    },
+    "Qwen3-VL-8B": {
+      "All": 68.31818181818181,
+      "Economics": 70.8029197080292,
+      "Statistics": 66.12021857923497,
+      "Electrical Engineering and Systems Science": 71.875,
+      "Quantitative Biology": 76.3157894736842,
+      "Quantitative Finance": 73.25581395348837,
+      "Computer Science": 67.11409395973155,
+      "Mathematics": 62.44897959183673,
+      "Physics": 70.97625329815304
+    },
+    "Claude Sonnet 5": {
+      "All": 68.04545454545455,
+      "Economics": 66.42335766423358,
+      "Statistics": 59.83606557377049,
+      "Electrical Engineering and Systems Science": 76.5625,
+      "Quantitative Biology": 77.19298245614036,
+      "Quantitative Finance": 72.09302325581395,
+      "Computer Science": 69.93288590604027,
+      "Mathematics": 60.0,
+      "Physics": 71.50395778364116
+    },
+    "DeepSeek-V4-Flash": {
+      "All": 79.45454545454545,
+      "Economics": 83.94160583941606,
+      "Statistics": 83.06010928961749,
+      "Electrical Engineering and Systems Science": 79.6875,
+      "Quantitative Biology": 78.94736842105263,
+      "Quantitative Finance": 77.90697674418605,
+      "Computer Science": 80.53691275167785,
+      "Mathematics": 71.83673469387755,
+      "Physics": 77.57255936675462
+    },
+    "GLM-4.6V": {
+      "All": 80.95454545454545,
+      "Economics": 86.86131386861314,
+      "Statistics": 80.05464480874316,
+      "Electrical Engineering and Systems Science": 85.15625,
+      "Quantitative Biology": 82.45614035087719,
+      "Quantitative Finance": 81.3953488372093,
+      "Computer Science": 80.67114093959732,
+      "Mathematics": 74.28571428571429,
+      "Physics": 82.58575197889182
+    }
+  },
+  "membership": {
+    "MiniCPM-V 2.6": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "InternVL2.5-8B": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "MiniCPM-V 4.5": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "InternVL3.5-8B": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "ordinary1190",
+          "1",
+          "UQA0191"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0192"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0193"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0194"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0195"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0196"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0197"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0198"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0199"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0200"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "Gemma 3 27B": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "Mistral-Small-3.1-24B": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "Qwen3-VL-4B": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "ordinary1190",
+          "1",
+          "UQA0191"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0192"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0193"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0194"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0195"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0196"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0197"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0198"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0199"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0200"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "Qwen3-VL-8B": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "ordinary1190",
+          "1",
+          "UQA0191"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0192"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0193"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0194"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0195"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0196"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0197"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0198"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0199"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0200"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "Claude Sonnet 5": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "ordinary1190",
+          "1",
+          "UQA0191"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0192"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0193"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0194"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0195"
+        ],
+        [
+          "ordinary1190",
+          "1",
+          "UQA0196"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0197"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0198"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0199"
+        ],
+        [
+          "ordinary1190",
+          "2",
+          "UQA0200"
+        ],
+        [
+          "ordinary1190",
+          "13",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "27",
+          "QA7"
+        ],
+        [
+          "ordinary1190",
+          "37",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "78",
+          "QA6"
+        ],
+        [
+          "ordinary1190",
+          "96",
+          "QA3"
+        ],
+        [
+          "ordinary1190",
+          "98",
+          "QA1"
+        ],
+        [
+          "ordinary1190",
+          "115",
+          "QA5"
+        ],
+        [
+          "ordinary1190",
+          "138",
+          "QA1"
+        ],
+        [
+          "ordinary1190",
+          "139",
+          "QA5"
+        ],
+        [
+          "ordinary1190",
+          "144",
+          "QA3"
+        ],
+        [
+          "ordinary1190",
+          "168",
+          "QA2"
+        ],
+        [
+          "ordinary1190",
+          "178",
+          "QA7"
+        ],
+        [
+          "ordinary1190",
+          "182",
+          "QA3"
+        ],
+        [
+          "ordinary1190",
+          "34",
+          "QA7"
+        ],
+        [
+          "ordinary1190",
+          "43",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "45",
+          "QA8"
+        ],
+        [
+          "ordinary1190",
+          "51",
+          "QA8"
+        ],
+        [
+          "ordinary1190",
+          "63",
+          "QA9"
+        ],
+        [
+          "ordinary1190",
+          "72",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "72",
+          "QA6"
+        ],
+        [
+          "ordinary1190",
+          "100",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "100",
+          "QA6"
+        ],
+        [
+          "ordinary1190",
+          "103",
+          "QA10"
+        ],
+        [
+          "ordinary1190",
+          "109",
+          "QA8"
+        ],
+        [
+          "ordinary1190",
+          "112",
+          "QA4"
+        ],
+        [
+          "ordinary1190",
+          "146",
+          "QA3"
+        ],
+        [
+          "ordinary1190",
+          "170",
+          "QA1"
+        ],
+        [
+          "ordinary1190",
+          "172",
+          "QA5"
+        ]
+      ],
+      "outside_subject_predictions": 28,
+      "correct_outside_subject_cohort": 28
+    },
+    "DeepSeek-V4-Flash": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    },
+    "GLM-4.6V": {
+      "subject_counts": {
+        "Economics": 137,
+        "Statistics": 366,
+        "Electrical Engineering and Systems Science": 128,
+        "Quantitative Biology": 114,
+        "Quantitative Finance": 86,
+        "Computer Science": 745,
+        "Mathematics": 245,
+        "Physics": 379
+      },
+      "missing_subject_predictions": [
+        [
+          "cross_old400",
+          "xb_0003",
+          "QA8"
+        ],
+        [
+          "cross_old400",
+          "xb_0043",
+          "QA8"
+        ]
+      ],
+      "outside_subject_predictions": 0,
+      "correct_outside_subject_cohort": 0
+    }
+  },
+  "table2_display_matches": 99,
+  "table3_display_matches": 98,
+  "paper_differences": [
+    {
+      "table": "table3",
+      "model": "Claude Sonnet 5",
+      "metric": "All",
+      "paper": 69.32,
+      "calculated": 68.04545454545455,
+      "display": "68.05",
+      "difference_pp": -1.269999999999996,
+      "matches": false
+    }
+  ],
+  "paper_reference_sha256": "0ae6486571cc6e24d7dd24800608a402570f54004343bac4a5e92efe0c20abb4",
+  "binding": {
+    "scoring_protocol": "sxz_v4",
+    "version": "0.2.0",
+    "input_hashes": {
+      "/data/czj/SciDoc/data/results/MiniCPM-V-2.6/ordinary1190.json": "eaded30e9d26e7e3939e028141a9665608195128fe7b85d359b3398c5a6f6464",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-2.6/cross_old400.json": "bbe0db0af4cc87f0b1fe87664263018a66f2c5632c599f8bb033c861cd3f932e",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-2.6/cross_hard400.json": "4b7c5ed245cca5858d690dc8ec0c531c7bd2d7a52bf7e9cc391ce06e09561184",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-2.6/reasoning_old100.json": "e480295a96add908c5e96e58b73b1093e4b3ab17b882f2af501637ea1f1eb5d8",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-2.6/reasoning_hard100.json": "3c83f882fd2788fe210caad04a1f2c0411969cb131092732b0297aceb8ecd63e",
+      "/data/czj/SciDoc/data/results/InternVL25-8B/ordinary1190.json": "ca6d3f8af4dc9545c542038463e983b7860e462f10d2404860f804d294fd66fc",
+      "/data/czj/SciDoc/data/results/InternVL25-8B/cross_old400.json": "5fd9e049f921714f53bb7585e9120b8b61223645e7aa1f6247448446cdbe29dd",
+      "/data/czj/SciDoc/data/results/InternVL25-8B/cross_hard400.json": "902efe855a76d4488b8537f5db714661273cdf53d514c25f853966aebf53eabd",
+      "/data/czj/SciDoc/data/results/InternVL25-8B/reasoning_old100.json": "cd8b05ecf076a46dca5b32425bc2f8ada838f453a5a9f7d1bc2076192bd4ae1b",
+      "/data/czj/SciDoc/data/results/InternVL25-8B/reasoning_hard100.json": "73747579839b537e762ac95277f2e8c614e4906b113feba8911272244a8a22a4",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-4.5/ordinary1190.json": "6503dd406a5e792e7ffcd4f1cbd1f5e33a27f6183fd38d1cd3a9dcb63f7778bf",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-4.5/cross_old400.json": "14cb6acdd039e33d9e98a2e5a9774585ffce58f80e91f76aef42c10ede1adc0d",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-4.5/cross_hard400.json": "d9c9436bd68787af563c1814f943c8b3532b27e323842304356adde305618af4",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-4.5/reasoning_old100.json": "1316d20af51eca85a3251ad2227ad6bbc2464e335d42e37acd2637281197571e",
+      "/data/czj/SciDoc/data/results/MiniCPM-V-4.5/reasoning_hard100.json": "87d984991ec43b430e55a79c9989af3216596f26145b27bd11c0f904566e3655",
+      "/data/czj/SciDoc/data/results/InternVL35-8B/ordinary1190.json": "d53edf52b55259bd4966884aa727434e1518b54bff07450f203d6c3a6baaeca2",
+      "/data/czj/SciDoc/data/results/InternVL35-8B/cross_old400.json": "935f195a9a621e8f96007c5e545c06441730304472fb7277ddff9e4ef344160d",
+      "/data/czj/SciDoc/data/results/InternVL35-8B/cross_hard400.json": "13bcad1f9df0ab412c54a11bc805f3bfac293994a1df3a08a88613ae7d9091f9",
+      "/data/czj/SciDoc/data/results/InternVL35-8B/reasoning_old100.json": "357092f64025df8e3885b98fe83ce4a50ef0c1129889badfe5338bbfda04c2bb",
+      "/data/czj/SciDoc/data/results/InternVL35-8B/reasoning_hard100.json": "16ba0bbe3757aacc33f74cb1ffab2318a86f3f0228c43e1a87cfb80a905c88fa",
+      "/data/czj/SciDoc/data/results/Gemma3-27B-IT/ordinary1190.json": "acf57780167a72d69897253576c76670e558d641b3cb4ee00c9c87062b77c0c3",
+      "/data/czj/SciDoc/data/results/Gemma3-27B-IT/cross_old400.json": "d48877116ac6037bc68ba992c40d66520d06c96060be1b5ae9a178453e8ea236",
+      "/data/czj/SciDoc/data/results/Gemma3-27B-IT/cross_hard400.json": "990accd2fae72f70d9b1d9b3724f9be1b61be73dd3563cd8cc8050787d5c5321",
+      "/data/czj/SciDoc/data/results/Gemma3-27B-IT/reasoning_old100.json": "0686466ef9eb30d725ec14167fa48c203795838bef5043f95143f4355f5f293d",
+      "/data/czj/SciDoc/data/results/Gemma3-27B-IT/reasoning_hard100.json": "9e1f1bb73db64719f934efab4ce01bb11479bd06e1f39189885326fc15f7d282",
+      "/data/czj/SciDoc/data/results/Mistral-Small3.1-24B/ordinary1190.json": "38a6b6bee6b06ba3fa563b73d400689eb06da6de2b7250af4ebdbe794a266960",
+      "/data/czj/SciDoc/data/results/Mistral-Small3.1-24B/cross_old400.json": "6013cc3579c4174cfbcbc939e6b56f8270d0fa8ee4e194a4053ede2dc915cf26",
+      "/data/czj/SciDoc/data/results/Mistral-Small3.1-24B/cross_hard400.json": "cfe39c0ef4bbbcdd606bd8891c7af0510f5065ad8efbf73c9f2f8645e983fa9f",
+      "/data/czj/SciDoc/data/results/Mistral-Small3.1-24B/reasoning_old100.json": "0dde77abd4c7b541706e947d1ce928f15552b4f7980355a0c61b20f4f31606d6",
+      "/data/czj/SciDoc/data/results/Mistral-Small3.1-24B/reasoning_hard100.json": "44f65ca9bfd3d4206410e974b5f9c92ab588a451f33afe8a5c58163a89939fac",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-4B/ordinary1190.json": "d64a90504e4e3a1e142450a0c3ba52bc8d21eb796340734f8198ddd7ddfd230f",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-4B/cross_old400.json": "07b98c50c1e367064c87abc497ab653d3060929c3fcba595ee917c97e3a6cbc9",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-4B/cross_hard400.json": "2ddb04e52900ed825901ebfe3c4bfb0fe20c9626b66345cf1f7aaf7db3743204",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-4B/reasoning_old100.json": "b303309e1cfbe172d356b1c49bedb115cda80bdb301681fd20939647d6987c78",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-4B/reasoning_hard100.json": "7bb429d47f7575202a9e0b6d59b2eae3557a04b113f34e8d95b78310f4cfd702",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-8B/ordinary1190.json": "2b5404729c2e7dac8ab6505a74984e22632eb4124d811cadc6ab8b88472717ab",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-8B/cross_old400.json": "9fc0229443add67c8e8f394eb9c684625505dd297c56a5b4e9e86a36b2606827",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-8B/cross_hard400.json": "44c20b238bb9364f74e5cf0627c33234a853be04f453bc138f141a6342634602",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-8B/reasoning_old100.json": "ef9966efe36f64bdffe3a2fe841d801f20e0577d5eebb187e9eeff7d1668f703",
+      "/data/czj/SciDoc/data/results/Qwen3-VL-8B/reasoning_hard100.json": "74e3523da23fcc3e580396b7dd45179a77791bb480af7b7a2bd10fe25b23f963",
+      "/data/czj/SciDoc/data/results/Claude-sonncet-5/ordinary1190.json": "01460810682b7d820a6d68dd86945bfc9790cf2174a86639597eaeb0e6bdfdfc",
+      "/data/czj/SciDoc/data/results/Claude-sonncet-5/cross_old400.json": "480ab4da422a0f2d0363b3859619c0f53fb8e43ee59c3c84f45a6901412069a7",
+      "/data/czj/SciDoc/data/results/Claude-sonncet-5/cross_hard400.json": "53462829cfa661e922bbd3bdff84338692065e258650059adc17fef678713cf0",
+      "/data/czj/SciDoc/data/results/Claude-sonncet-5/reasoning_old100.json": "9dd2d291e0966030dca76ca18535bdb6eebccda94c602685cd3ad723b68f44f3",
+      "/data/czj/SciDoc/data/results/Claude-sonncet-5/reasoning_hard100.json": "926e017ac4c16c77bf5f1c2767a6f943178779d8379ee08d3d5fdd5608fdec42",
+      "/data/czj/SciDoc/data/results/DeepSeek-V4-flash-Vision-Exp/ordinary1190.json": "c673e7d4315bf6b0a4530b5f9a0b3bb00733c79506ad7ff2267ac2773c55fe72",
+      "/data/czj/SciDoc/data/results/DeepSeek-V4-flash-Vision-Exp/cross_old400.json": "ff95ad81c031c79f3505fb619daf712eb1e7d8d6f73603d2207e8df109ff116b",
+      "/data/czj/SciDoc/data/results/DeepSeek-V4-flash-Vision-Exp/cross_hard400.json": "a4c28c2d81390e38dba69c5522c6f7044dfd71a7cd6adfbe6b8711e8b969c2cd",
+      "/data/czj/SciDoc/data/results/DeepSeek-V4-flash-Vision-Exp/reasoning_old100.json": "aacdbed458b2bda602fa127e41d972e8eb1c22edc06ed87e3ddd45e58fb0d552",
+      "/data/czj/SciDoc/data/results/DeepSeek-V4-flash-Vision-Exp/reasoning_hard100.json": "f2352329d5a0c3659fcb759ce93611200e6d0257366856139eb1b182781dc958",
+      "/data/czj/SciDoc/data/results/GLM-4.6V/ordinary1190.json": "c73e11b152f1aa8973a69920f74a7c6f8cef7a93540d4681475ec9f9615d256c",
+      "/data/czj/SciDoc/data/results/GLM-4.6V/cross_old400.json": "8bd3aef2f4f92228bdc211dc06dbd63a82dc8d1b2a310c253f33f69a70c61951",
+      "/data/czj/SciDoc/data/results/GLM-4.6V/cross_hard400.json": "309d3a3496fe15dcbc1cfdb5e3dd505e16d1c2fdfa82b496026342816e866595",
+      "/data/czj/SciDoc/data/results/GLM-4.6V/reasoning_old100.json": "e5e0013247bd90b79c279755a99d3a549f778f8ae5c8edadfa14aaaf43c3ee5c",
+      "/data/czj/SciDoc/data/results/GLM-4.6V/reasoning_hard100.json": "b42df6e8a8162c7fc19901ff429407d9b82058459b2b6d03b99c40ac95e36ac8"
+    },
+    "prompt_sha256": "d4365c671f3b69ba98a197691a8eb89e03bd89684fabc462127a78bbf6c13278",
+    "kernel_sha256": "5f77fa474b927be83e725ed320a89ba68244b94f990a6602a9176ee6a3a2aa68",
+    "runner_sha256": "2d9b9299e27e44534ffea5738f798c681e34d275374abba52ed456a9d3967324",
+    "subject_sha256": "9d893502dcab48557eada8874234f4f54352ef5026112956e0084aff039819d7",
+    "execution": "recorded_cache_replay",
+    "recorded_cache_sha256": "d3cc79cfcdc524538494d694a5fafa43ba6bf65b22a96a706079edbdd5e49f46"
+  },
+  "historical_weight_identity_verified": false,
+  "new_judge_calls": 0,
+  "historical_summary_check": {
+    "numeric_cells": 1540,
+    "differences": [],
+    "sha256": "85779b0cdabde94b51d5e4cc0f5703137dc160deddc8e31d75182661a40569fc"
+  }
+}

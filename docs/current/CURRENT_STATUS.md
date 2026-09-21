@@ -1,17 +1,31 @@
 # 当前项目状态
 
-## 2026-09-20 论文协议审计更新
+## 2026-09-21 sxz v4 评分规则对齐
 
-公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
-论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
-精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 已移除规则优先匹配，Judge 统一使用论文原版提示词、
-严格标签解析和原始输出；内部报告仍不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
-99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
-差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
-本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
+按项目负责人要求，`evaluation/` 默认使用生成论文实验结果的 sxz v4 规则：原始三分类
+提示词、源脚本预测恢复、结果文件自带历史金标、先证据后答案、固定分母和仅 CORRECT
+计分。现行入口为 `evaluation/evaluate.py`；`reproduce.py` 复用同一评分器并比较论文。
+这替换此前二分类公开评分规则，不新增模型协议或兼容模式。`sxz/`、QA、PDF、论文不修改。
+全量缓存回放匹配历史 77 行汇总的全部 1,540 个数值、Table 2 的 99/99 和 Table 3 的 98/99；
+Claude Table 3 All 仍为 68.05% 对论文 69.32%。这是原始缓存回放，不是新 GPU Judge 运行。
+命令和输入结构见 [evaluation/README.md](../../evaluation/README.md)，
+证据见 [对齐报告](../reports/official_evaluation/SXZ_V4_ALIGNMENT.md)。
+内部 `src/pku_qa/evaluation/` 保留二分类诊断，固定读取 `paper_semantic_judge.txt`；
+不能将其报告当作 v4 评分。旧 current-release 二分类重评命令已停用，旧报告仅记录当时结论。
 
+核对日期：2026-09-21。本文件用于维护；论文统计引用最终发布文件及分类工作簿。
 
-核对日期：2026-09-20。本文件用于维护；论文统计引用最终发布文件及分类工作簿。
+## 评测交付状态
+
+评分代码与原实验缓存回放已经验证，完整验收见
+[sxz v4 对齐报告](../reports/official_evaluation/SXZ_V4_ALIGNMENT.md)。
+中英文 README 和 [evaluation Quick Start](../../evaluation/README.md#quick-start)
+现提供相同的安装、自检、单模型回放及报告读取路径。
+
+- 已验证：55 个结果文件、77 行历史汇总、1,540 个数值一致；Qwen8B All=68.32%。
+- 保留差异：Claude Table 3 All=68.05%，论文为 69.32%，来自样本集合不同。
+- 未完成的新实验：本次没有重新生成全部模型预测或 GPU Judge 标签。
+- 论文文本：二分类提示词与当前采用的 v4 实验规则仍有差异，尚未修改论文。
 
 ## 当前发布
 

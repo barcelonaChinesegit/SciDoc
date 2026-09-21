@@ -2,7 +2,7 @@
 
 This optional maintainer tool monitors experiments sharing GPUs and hosts the
 collaborative QA review interface. Benchmark users do not need it to validate
-or score submissions. Its source moved from the former top-level
+or score stored model results. Its source moved from the former top-level
 `task_queue_web/` to `tools/internal/experiment_console/web/`.
 
 ```bash
@@ -21,3 +21,8 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.check_web_stack
 ```
 
 See [deployment documentation](../../../docs/current/WEB_CONSOLE.md).
+
+For the supported scoring entry point, use the
+[evaluation Quick Start](../../../evaluation/README.md#quick-start).
+The console's internal inference/binary-Judge reports are separate from the
+public sxz v4 scorer; launching the Web service is not required for replay.

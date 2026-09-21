@@ -25,6 +25,19 @@ The four JSON files use collection-wide IDs `QA0001` through `QA2200`.
 Cross-PDF questions occupy `QA1401` through `QA2200`; each record preserves
 its old paper and QA IDs in `annotation_provenance.final_2200_identity`.
 
+## Evaluation inputs versus released QA
+
+The four files above remain the current QA release. The public scorer follows
+sxz v4 and consumes each model's five original result components, with frozen
+reference fields and prediction fields stored separately. Replay must preserve
+those historical references, which differ from parts of the current release.
+The original subject workbook used for Table 3 also differs from the current
+release statistics workbook; they must not be substituted for each other.
+
+See the [evaluation Quick Start](../../evaluation/README.md#quick-start) for
+required artifacts, recorded-cache replay and a new Judge run. Release/PDF
+validation is a separate workflow and does not rewrite historical inputs.
+
 ## Categorized final views
 
 The four-file release is the only authority. Two byte-identical, read-only views

@@ -13,28 +13,31 @@ def inputs():
     return gold, pred
 
 
-@pytest.mark.parametrize("raw", ["CORRECT", "INCORRECT"])
-def test_binary_labels(raw):
+@pytest.mark.parametrize("raw,expected", [("CORRECT", "CORRECT"), ("PARTIAL", "PARTIAL"),
+    ("WRONG", "WRONG"), ("INCORRECT", "WRONG"), ("correct", "CORRECT"),
+    ("CORRECT\n", "CORRECT"), ("It is CORRECT", "CORRECT"), ("CORRECT but PARTIAL", "PARTIAL")])
+def test_source_label_parser(raw, expected):
     judge = Judge({"max_attempts": 1}, generate=lambda _: raw)
-    assert judge.decide(*inputs())["decision"] == raw
+    assert judge.decide(*inputs())["decision"] == expected
 
 
-@pytest.mark.parametrize("raw", ["correct", "CORRECT\n", "It is CORRECT", "PARTIAL", "WRONG", ""])
-def test_invalid_labels_fail(raw):
-    judge = Judge({"max_attempts": 1}, generate=lambda _: raw)
-    result = judge.decide(*inputs())
-    assert result["decision"] is None
-    assert result["error"] == "judge_failure"
+@pytest.mark.parametrize("raw", ["", "uncertain", "correctness"])
+def test_invalid_labels_abort(raw):
+    with pytest.raises(ValueError, match="invalid label"):
+        Judge({"max_attempts": 1}, generate=lambda _: raw).decide(*inputs())
 
 
-def test_retry_and_final_failure(tmp_path):
-    outputs = iter(["bad", "CORRECT"])
-    path = tmp_path / "cache.jsonl"
-    result = Judge({"max_attempts": 2}, path, lambda _: next(outputs)).decide(*inputs())
-    assert result["decision"] == "CORRECT"
-    assert [x["raw"] for x in result["attempts"]] == ["bad", "CORRECT"]
-    failed = Judge({"max_attempts": 2}, generate=lambda _: "bad").decide(*inputs())
-    assert len(failed["attempts"]) == 2 and failed["decision"] is None
+def test_no_retry_or_cached_failure(tmp_path):
+    calls = []
+    def generate(prompt):
+        calls.append(prompt)
+        return "bad"
+    cache = tmp_path / "cache.jsonl"
+    with pytest.raises(ValueError, match="invalid label"):
+        Judge({"max_attempts": 1}, cache, generate).decide(*inputs())
+    assert len(calls) == 1 and not cache.exists()
+    with pytest.raises(ValueError, match="max_attempts"):
+        Judge({"max_attempts": 2})
 
 
 def test_cache_reuse_and_invalidation(tmp_path):
@@ -45,12 +48,16 @@ def test_cache_reuse_and_invalidation(tmp_path):
     judge = Judge(config, cache)
     assert judge.decide(gold, pred)["cache_hit"]
     changed = validate_raw(gold.qa_id, '{"answer_pre":"43","evidence_pages":[2]}', 9)
-    assert judge.decide(gold, changed)["decision"] is None
-    assert Judge(config, cache, prompt="changed").decide(gold, pred)["decision"] is None
-    assert Judge({**config, "max_attempts": 2}, cache).decide(gold, pred)["decision"] is None
-    assert judge.decide(replace(gold, question="Changed?"), pred)["decision"] is None
-    assert judge.decide(replace(gold, answer="43"), pred)["decision"] is None
-    assert judge.decide(replace(gold, qa_id="QA0002"), pred)["decision"] is None
+    for instance, g, p in [
+        (judge, gold, changed), (Judge(config, cache, prompt="changed"), gold, pred),
+        (Judge({**config, "identity": {"model": "changed"}}, cache), gold, pred),
+        (judge, replace(gold, question="Changed?"), pred),
+        (judge, replace(gold, answer="43"), pred),
+        (judge, replace(gold, qa_id="QA0002"), pred),
+        (judge, replace(gold, dataset_id="reasoning_old100"), pred),
+    ]:
+        with pytest.raises(ValueError, match="No matching"):
+            instance.decide(g, p)
 
 
 def test_corrupt_cache_is_fatal(tmp_path):
@@ -67,7 +74,8 @@ def api_config():
                 "revision": "test-revision", "tokenizer_sha256": "test-tokenizer",
                 "chat_template_sha256": "test-template", "serving_version": "test-server"},
             "max_attempts": 1, "timeout_seconds": 2,
-            "generation": {"temperature": 0, "top_p": 1, "top_k": None, "seed": 7, "max_tokens": 8}}
+            "generation": {"temperature": 0, "top_p": 1, "top_k": None, "seed": 42, "max_tokens": 32,
+                           "extra_body": {"chat_template_kwargs": {"enable_thinking": False}}}}
 
 
 def test_api_transport_preserves_prompt_and_explicit_settings(monkeypatch):
@@ -92,7 +100,7 @@ def test_api_transport_preserves_prompt_and_explicit_settings(monkeypatch):
     config = api_config()
     assert api_generator(config)("  exact prompt\n") == "CORRECT"
     assert requests[0][0]["messages"] == [{"role": "user", "content": "  exact prompt\n"}]
-    assert requests[0][0]["seed"] == 7 and requests[0][0]["max_tokens"] == 8
+    assert requests[0][0]["seed"] == 42 and requests[0][0]["max_tokens"] == 32
     assert requests[0][1] == 2
 
 
@@ -103,7 +111,7 @@ def test_api_missing_settings_are_not_guessed():
         api_generator(config)
 
 
-def test_paper_prompt_provenance_hash():
+def test_sxz_prompt_provenance_hash():
     from evaluation.prompts import PROMPT_HASH, PROMPT_PATH
     provenance = json.loads((PROMPT_PATH.parent / "provenance.json").read_text())
     assert PROMPT_HASH == provenance["sha256"]

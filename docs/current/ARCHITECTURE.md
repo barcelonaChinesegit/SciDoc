@@ -1,22 +1,21 @@
 # 项目架构、目录与字段说明
 
-## 2026-09-20 论文协议审计更新
+## 2026-09-21 sxz v4 评分规则对齐
 
-公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
-论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
-精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 已移除规则优先匹配，Judge 统一使用论文原版提示词、
-严格标签解析和原始输出；内部报告仍不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
-99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
-差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
-本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
+按项目负责人要求，`evaluation/` 默认使用生成论文实验结果的 sxz v4 规则：原始三分类
+提示词、源脚本预测恢复、结果文件自带历史金标、先证据后答案、固定分母和仅 CORRECT
+计分。现行入口为 `evaluation/evaluate.py`；`reproduce.py` 复用同一评分器并比较论文。
+这替换此前二分类公开评分规则，不新增模型协议或兼容模式。`sxz/`、QA、PDF、论文不修改。
+全量缓存回放匹配历史 77 行汇总的全部 1,540 个数值、Table 2 的 99/99 和 Table 3 的 98/99；
+Claude Table 3 All 仍为 68.05% 对论文 69.32%。这是原始缓存回放，不是新 GPU Judge 运行。
+命令和输入结构见 [evaluation/README.md](../../evaluation/README.md)，
+证据见 [对齐报告](../reports/official_evaluation/SXZ_V4_ALIGNMENT.md)。
+内部 `src/pku_qa/evaluation/` 保留二分类诊断，固定读取 `paper_semantic_judge.txt`；
+不能将其报告当作 v4 评分。旧 current-release 二分类重评命令已停用，旧报告仅记录当时结论。
 
-
-新推理保留逐次 `generation_audit`（原始输出、SHA-256、纠错触发、状态），不再执行
-LaTeX 修复、嵌套 JSON 提取或重试时改变 token 上限。PDF 提示词逐字读取论文图源副本
-`evaluation/prompts/pdf_inference.txt`。协议版本递增后，旧 checkpoint 不能作为新运行续跑。
-`scripts/run_local_pipeline.py` 提供完整 PDF → 4B → 27B Judge → 公开宏平均报告的本地诊断；
-记录全量输入绑定并保留 2200 分母。内部 `run_report.py` 汇总标为
-`internal_diagnostics` / `publication_eligible=false`，不能充当公开主指标报告。
+内部推理继续保留逐次 `generation_audit`（原始输出、SHA-256、纠错触发、状态），
+内部 `run_report.py` 标为 `internal_diagnostics` / `publication_eligible=false`。
+v4 评分入口直接消费五个自带金标和预测字段的结果组件，不使用当前四文件替换历史金标。
 
 ## 1. 系统边界
 
@@ -24,7 +23,7 @@ LaTeX 修复、嵌套 JSON 提取或重试时改变 token 上限。PDF 提示词
 断点恢复和任务监控。`sxz/` 属于其他同学，作为只读参考目录保留；项目工具不在其中
 写入、生成缓存或修改文件。
 
-正式评测的不可变原则：
+内部 `src` 推理及二分类诊断的约束（v4 公开评分规则以文首为准）：
 
 1. 被测模型协议只有 `question_only` 与 `pdf` 两种。
 2. Full、Oracle、消融仅改变 PDF 页选择，不产生第三种协议。
@@ -32,6 +31,29 @@ LaTeX 修复、嵌套 JSON 提取或重试时改变 token 上限。PDF 提示词
 4. 4B、8B 使用同一 QA、同一 PDF 集、同一提示协议和同一 Judge 逻辑。
 5. 金标准永远来自独立 `--qa-json`，不得从模型输出反推。
 6. 论文报告只接受完整指纹与逐题绑定；没有“旧产物兼容/宽松报告”开关。
+
+## 1.1 当前公开评分数据流
+
+```text
+每模型五个原始结果 JSON（参考标注与预测分别存储）
+        │ 文件 SHA-256、模型/组件身份
+        ▼
+evaluation/evaluate.py → runner.py → sxz_v4.py
+        │ 原脚本预测恢复、先证据后答案、固定分母
+        ├─ --offline：核验并回放原始三分类 Judge 缓存
+        └─ --gpu：按原脚本配置调用当前本地权重，独立缓存及权重身份
+        ▼
+逐题 details.csv → 77 行 summary.csv → Table 2
+        │ 可选原始学科清单连接
+        ▼
+Table 3 + paper_comparison.csv + report.json + run_binding.json
+```
+
+`prompts/semantic_judge.txt` 是 v4 的 JUDGE_RULES；完整输入还由原始
+`build_judge_prompt` 拼接 Dataset、Question、Gold Answer、Model Prediction。
+只读源缓存缺少任何所需判定时，在评分前失败；不能解析的新 Judge 回复中止运行。
+`reproduce.py` 使用同一评分器，但论文单元格有差异时返回 2。
+当前格式验证器 `validation.py` 和 PDF 预检不参与 v4 的历史预测恢复与计分。
 
 ## 2. 内部历史实验数据流
 
@@ -92,6 +114,7 @@ PDF 原始 JSON 可规范化 JSON 外层空白，并对整数证据页排序去�
 
 | 模块组 | 文件 | 职责 |
 | --- | --- | --- |
+| 原实验公开评分 | `evaluation/{evaluate,runner,sxz_v4}.py` | v4 原规则、缓存回放/新 Judge、固定分母及论文表格比较 |
 | 协议与评分 | `src/pku_qa/evaluation/evaluation_protocol.py` | 输入/输出 contract、精确拒答、有限规范化、哈希绑定 |
 | 模型与 PDF | `src/pku_qa/evaluation/eval_framework.py`, `src/pku_qa/evaluation/run_inference.py` | provider、模型身份、PDF 渲染/页预算、提示、逐题推理 |
 | Judge 与报告 | `src/pku_qa/evaluation/run_judge.py`, `src/pku_qa/evaluation/run_report.py`, `src/pku_qa/evaluation/calculate_evidence_weighted_accuracy.py` | 论文原版 27B 语义判分、严格汇总、内部历史诊断 |
@@ -123,6 +146,12 @@ JSON 前序题删除或序号变化而把进度转移给其他人。
 QA1816 和真实物理 PDF 页 16/57，不写账户、审核事件或正式数据。数据集标题、
 按钮及元数据支持换行；PDF 默认收起缩略图侧栏。截图检查中文与水平溢出，
 按实际面板尺寸生成紧凑画布，再同步至 `论文/ICLR2027_ScienceDoc/figures/`。
+
+论文附录 CASE 1–5 由 `论文/写作材料/图/图表生成代码/build_case_study_cards.py`
+生成，并同步同名 PNG 到 `论文/ICLR2027_ScienceDoc/figures/`。模块配色和圆角外框
+与 CASE 6–10 共用的 draw.io 模板一致，外框最后绘制以保留完整上边线；右侧正文、
+元数据和模型表小字均为纯黑，模块标题保留深蓝色。写作材料中的 PNG、draw.io
+包装图稿和 Overleaf ZIP 随同更新；案例文本及 PDF 证据裁剪不因样式调整而变化。
 
 ### 4.1 JSON 文件命名
 
@@ -422,13 +451,8 @@ Challenge 预检、端到端 Judge/Report、防篡改指纹、断点队列、GPU
 `docs/current/PROJECT_INVENTORY.md` 是不含 `sxz/` 的逐文件哈希清单。任何代码变化后，
 都应重新生成清单并同步本文件及上手指南。
 
-## 历史分差归因与当前金标重评
+## 历史分差诊断
 
-`evaluation/investigate_gaps.py` 逐题归因格式错误、输入版本冲突和历史正确标记。
-旧正确标记只用于差异分析，不能写入当前二分类 Judge 缓存。
-历史适配器已区分模型输入与评分金标：若问题逐字相同、PDF 身份由现有清单对应、
-记录明确未将答案/证据金标输入模型，仅金标更新的预测可按当前独立 gold 重新判分。
-不再把此类记录自动记为技术失败；原始输出若非法仍然非法。
-问题变化、PDF 身份不明或金标输入来源不明则保留为输入版本失败。
-`scripts/rescore_baseline_local.py` 用固定论文提示词批量调用 Qwen3.6-27B，
-完成单模型完整分母的重评，并支持离线缓存回放；这不认证旧推理配置或保证旧表格数字。
+2026-09-20 的 current-release 二分类重评与输入版本归因结果保存在
+`docs/reports/official_evaluation/`。它们属于旧诊断协议，不用作现行 sxz v4 评分。
+相关旧 CLI 已明确停用；新运行和原实验缓存回放统一使用 `evaluation/evaluate.py`。

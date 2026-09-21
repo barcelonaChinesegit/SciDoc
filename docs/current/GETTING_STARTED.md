@@ -1,21 +1,31 @@
 # SciDoc 上手指南
 
-本地真实 Judge 冒烟测试使用 `scripts/smoke_local_evaluation.py`，命令与依赖见
-[evaluation/README.md](../../evaluation/README.md#real-local-model-smoke-test)。
-它只读选取与当前金标一致的历史预测，在空闲 A800 上运行原版论文二分类提示词，
-记录权重哈希、原始回复、缓存复用和 QA 前后哈希；这是新配置的诊断，不能作为
-论文 Table 2/3 已复现的证据。
+## 2026-09-21 sxz v4 评分规则对齐
 
-## 2026-09-20 论文协议审计更新
+按项目负责人要求，`evaluation/` 默认使用生成论文实验结果的 sxz v4 规则：原始三分类
+提示词、源脚本预测恢复、结果文件自带历史金标、先证据后答案、固定分母和仅 CORRECT
+计分。现行入口为 `evaluation/evaluate.py`；`reproduce.py` 复用同一评分器并比较论文。
+这替换此前二分类公开评分规则，不新增模型协议或兼容模式。`sxz/`、QA、PDF、论文不修改。
+全量缓存回放匹配历史 77 行汇总的全部 1,540 个数值、Table 2 的 99/99 和 Table 3 的 98/99；
+Claude Table 3 All 仍为 68.05% 对论文 69.32%。这是原始缓存回放，不是新 GPU Judge 运行。
+命令和输入结构见 [evaluation/README.md](../../evaluation/README.md)，
+证据见 [对齐报告](../reports/official_evaluation/SXZ_V4_ALIGNMENT.md)。
+内部 `src/pku_qa/evaluation/` 保留二分类诊断，固定读取 `paper_semantic_judge.txt`；
+不能将其报告当作 v4 评分。旧 current-release 二分类重评命令已停用，旧报告仅记录当时结论。
 
-公开 submission 的验证、计分和命令以 [evaluation/README.md](../../evaluation/README.md) 为准。
-论文主指标是语义 Answer Accuracy、逐题宏平均 E-Precision / E-Recall / E-F1 和 A-Pages；
-精确页集合匹配与联合正确性只是审计诊断。`src/pku_qa/evaluation/` 已移除规则优先匹配，Judge 统一使用论文原版提示词、
-严格标签解析和原始输出；内部报告仍不能据此宣称复现当前论文。历史 v4 重聚合匹配 Table 2 的
-99/99 个显示值、Table 3 的 98/99 个显示值；新二分类 Judge 的正式历史运行配置仍未恢复。
-差异及完整证据见 [official evaluation 审计](../reports/official_evaluation/FINAL_REPORT.md)。
-本次整理只读验证 QA；问题、答案、证据、元数据和 manifest 均不修改。
+## 0. 先选择工作流
 
+| 需求 | 入口 | 需要的材料 |
+| --- | --- | --- |
+| 第一次安装与评分自检 | [README Quick Start](../../README.zh-CN.md#quick-start) | Python 3.10+ 与 `requirements-eval.txt`；不需要外部资产 |
+| 回放原论文实验 | [evaluation Quick Start](../../evaluation/README.md#quick-start) | 每模型五个历史结果文件及原始 v4 Judge 缓存；不需要 GPU/PDF |
+| 使用当前权重新判已有答案 | [新 Judge 运行](../../evaluation/README.md#新本地-judge-运行) | 上述结果文件、内部 Python 3.12+ ML 环境、A800、27B 权重 |
+| 验证四文件发布集与 PDF | 本文第 1–2 节 | 当前四文件；PDF 检查另需冻结 PDF |
+| 生成新的模型答案与内部诊断 | 本文第 3–4 节 | 当前发布集、PDF、被测模型和内部运行环境 |
+
+v4 评分的五个组件是原实验结果容器；当前发布 QA 仍是四文件。两个入口的数据版本与
+身份绑定不同，内部二分类报告不替代 v4 论文评分。旧扁平 `--predictions` 评分 CLI
+已停用，`scripts/validate_submission.py` 仅保留格式检查。
 
 本机唯一实际工作目录为 `/data/czj/SciDoc`，远程仓库为
 <https://github.com/barcelonaChinesegit/SciDoc>。首次克隆使用：
@@ -44,7 +54,7 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.inspect_final_2200
 
 最终文件位于 `data/qa/7.final_2200/`，分别是 `ordinary_qa.json`、
 `unanswerable_qa.json`、`reasoning_qa.json`、`cross_pdf_qa.json`。
-上游 4,211、Reasoning 两批 100、Cross-PDF 两批 400 是构建来源，不是当前评测入口。
+上游 4,211、Reasoning 两批 100、Cross-PDF 两批 400 是发布集构建来源，不是本节当前发布 QA 的入口。v4 原实验结果使用独立五组件结构。
 
 ## 2. 准备环境与资产
 
@@ -77,7 +87,7 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.inspect_final_2200 --check-
 PYTHONPATH=src python -m pku_qa.workflows.operations.flatten_pdf_assets --check
 ```
 
-默认受控评测需要 CUDA 和以下模型：
+内部四文件推理编排需要 CUDA 和以下模型（v4 Judge 新运行只需 27B 权重）：
 
 - `models/Qwen3-VL-4B-Instruct/`
 - `models/Qwen3-VL-8B-Instruct/`
@@ -262,37 +272,18 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.check_web_stack
 健康检查必须确认三个本地端点、VPS 隧道后端及公网应用页面均返回 200；localhost 成功
 不足以完成 Web 变更。`sxz/` 始终严格只读。
 
-## 快速核验论文表格是否可由现存记录复现
+## 9. 按原实验规则核验论文表格
 
 ```bash
-python evaluation/check_reproduction.py --output-dir data/results/paper_check
-python scripts/judge_reproduction_jobs.py --audit-dir data/results/paper_check \
-  --model-dir models/Qwen3.6-27B --gpu 2
+python evaluation/evaluate.py --offline --results-dir data/results \
+  --judge-cache sxz/evaluation_11models_5datasets_qwen36_calibrated_fixeddenom_v4/qwen36_answer_judge_cache.json \
+  --subject-xlsx sxz/final_2200_classification_statistics.xlsx \
+  --reference-summary data/results/evaluations/summary_11models_77rows_calibrated_fixed_denominator.csv \
+  --output-dir data/results/sxz_v4_replay_new
 ```
 
-第一步检查全部 11 模型的历史原始输出，保留 2200 分母并给出 Answer Accuracy
-上下界。第二步用论文指定本地 Judge 批量完成预算内的完整模型核验；默认仅需 4 条
-语义判断，这三个模型的其余记录由格式/版本/缺失检查确定。
-后续已修复仅金标更新被错误排除的问题，并完整执行 Qwen3-VL-8B 的 1,934 次语义判分：
-当前 gold 诊断 All 为 55.32%，论文为 68.32%。返回 2 表示表格差异，不是复现成功。
-最新逐项差异见 [分差调查](../reports/official_evaluation/GAP_INVESTIGATION.md)。
-
-
-旧类型化评分模块已删除，内部 Judge 不再做数值、别名、文本预匹配，也不再修复
-Judge 标签。PDF 解析只允许 JSON 外部空白和证据页排序去重；答案原文不变。
-推理协议版本为 8、评分协议版本为 7，旧指纹缓存不可作为新协议结果复用。
-
-
-## 新增：真实本地 PDF 评测链路诊断
-
-在已有本地模型和 ML 依赖的环境运行：
-
-```bash
-python scripts/run_local_pipeline.py --output-dir data/results/local_pdf_pipeline_new --gpu 2
-```
-
-物理 GPU 2 必须是空闲 A800。脚本绑定 UUID，先跑每类最短完整 PDF 的 1 题，
-再加载论文指定 Qwen3.6-27B 判分；新设置与原始重试逐次留档。
-完全相同的命令可验证断点和缓存，改变代码或输入则需新目录。
-结果是 4 题真实链路诊断，仍保留 2200 分母，不能称为 Table 2/3 复现。
-完整 schema、限制和命令见 [evaluation/README.md](../../evaluation/README.md)。
+该入口读取全部 55 份自带历史金标的预测文件，用同一 sxz v4 核心及原始缓存重新计分。
+验证已匹配历史汇总全部 1,540 个数值。`--gpu 2` 替换 `--offline` 并移除
+`--judge-cache` 可启动独立的新本地 Judge 运行；不能保证新权重逐条重现旧缓存标签。
+完整规则与参数见 [evaluation/README.md](../../evaluation/README.md)。
+旧二分类 PDF-to-score、smoke 和 current-gold 重评命令已停用；保存的诊断报告不删除。

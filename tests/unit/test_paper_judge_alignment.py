@@ -4,7 +4,8 @@ from unittest.mock import patch
 
 import pytest
 
-from evaluation.prompts import JUDGE_PROMPT
+from pathlib import Path
+JUDGE_PROMPT = (Path(__file__).resolve().parents[2] / "evaluation/prompts/paper_semantic_judge.txt").read_text()
 from eval_framework import ProviderError
 from run_judge import build_judge_prompt, direct_fill_match, judge_fill, process_judge_paper
 from evaluation_protocol import canonicalize_pdf_output_for_storage, parse_canonical_pdf_output

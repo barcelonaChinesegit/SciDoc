@@ -394,7 +394,7 @@ def build_judge_queue_contract(
             )
         },
         "judge_prompt_sha256": sha256_file(
-            Path(__file__).resolve().parents[3] / "evaluation/prompts/semantic_judge.txt"
+            Path(__file__).resolve().parents[3] / "evaluation/prompts/paper_semantic_judge.txt"
         ),
         "judge_provider_identity": judge_provider_identity,
         "judge_config": json.loads(

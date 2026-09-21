@@ -28,10 +28,11 @@ PDFs and model weights are stored separately from Git. See the exact
 A public Drive download link has not yet been configured. Obtain the frozen
 assets from the maintainers and preserve their filenames under `data/pdfs/`.
 
-## Quick start
+## Quick Start
 
-The standalone evaluation package supports Python 3.10+ and requires no GPU
-for validation. Run these commands from the repository root:
+### 1. Install and check the evaluator
+
+Use Python 3.10+ for the standalone evaluator. From a fresh checkout:
 
 ```bash
 git clone https://github.com/barcelonaChinesegit/SciDoc.git
@@ -39,62 +40,129 @@ cd SciDoc
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-eval.txt
-# After placing the frozen PDFs in data/pdfs/:
-python evaluation/preflight.py --output preflight.json
-python scripts/validate_submission.py --predictions predictions.jsonl
+python evaluation/evaluate.py --help
+python -m pytest -q tests/test_sxz_evaluation.py tests/test_judge.py tests/test_e2e.py tests/test_metrics.py
 ```
 
-Recommended submission format: one record per line, with a binding `qa_id`:
+These checks need no GPU, PDFs, weights, API key or historical results. The
+comparison test against the local `sxz/` source skips if that directory is absent;
+the bundled source-hash and scoring tests still run.
 
-```json
-{"qa_id":"QA0001","answer_pre":"First maximize worst-case payoff, then maximize expected payoff under conjectured model","evidence_pages":[1,9]}
+### 2. Replay one model's recorded evaluation
+
+Obtain these original experiment artifacts from the maintainers; Git does not
+include them:
+
+| Asset | Expected location |
+| --- | --- |
+| Five Qwen3-VL-8B result JSONs, retaining reference and prediction fields | `data/results/Qwen3-VL-8B/` |
+| Original v4 Judge cache | `sxz/evaluation_11models_5datasets_qwen36_calibrated_fixeddenom_v4/qwen36_answer_judge_cache.json` |
+
+The five filenames and record schema are in the
+[input guide](evaluation/README.md#输入与安装). Paths below match the maintained
+workspace; `--results-dir` and `--judge-cache` may point to copies elsewhere.
+The scorer does not import or write to `sxz/`.
+
+```bash
+python evaluation/evaluate.py \
+  --results-dir data/results --model Qwen3-VL-8B --offline \
+  --judge-cache sxz/evaluation_11models_5datasets_qwen36_calibrated_fixeddenom_v4/qwen36_answer_judge_cache.json \
+  --output-dir data/results/quick_start_qwen8b
 ```
 
-The model's **raw output** contains only `answer_pre` and `evidence_pages`.
-`qa_id` is added by the submission writer. Page values must be positive JSON
-integers in the PDF's physical range; booleans and page strings are illegal.
-The only refusal is `{"answer_pre":"Unanswerable","evidence_pages":[]}`.
-See the full [evaluation contract and commands](evaluation/README.md).
+This uses no GPU, PDF files or network calls. It recovers predictions, reuses
+input-bound recorded Judge labels and recomputes the metrics. With the original
+artifacts, expect `table2_display_matches: 9`, `paper_differences: []` and exit
+code **0**.
+
+### 3. Read the result
+
+```bash
+python - <<'PY'
+import json
+from pathlib import Path
+report = json.loads(Path("data/results/quick_start_qwen8b/report.json").read_text())
+print(report["execution"])
+print(report["table2"]["Qwen3-VL-8B"])
+PY
+```
+
+The execution is `recorded_cache_replay`. Rounded results are **68.32%** All
+accuracy, **40.66%** E-F1 and **8.44** A-Pages. Per-item results are in
+`data/results/quick_start_qwen8b/Qwen3-VL-8B/details.csv`; input/code/cache hashes
+are in `run_binding.json`. Repeating the command verifies the same binding;
+changed inputs or code require a new output directory.
+
+Remove `--model` for all 11 supported baselines. Add the original
+`--subject-xlsx` for Table 3 and `--reference-summary` to compare the historical
+CSV; see the [full replay command](evaluation/README.md#原实验缓存回放无需-gpu).
+
+### 4. Start a new Judge run (optional, GPU required)
+
+With the internal Python 3.12+ ML environment, a free A800 and local
+Qwen3.6-27B weights installed:
+
+```bash
+python evaluation/evaluate.py \
+  --results-dir data/results --model Qwen3-VL-8B \
+  --gpu 2 --model-dir models/Qwen3.6-27B \
+  --output-dir data/results/quick_start_qwen8b_new_judge
+```
+
+Choose the GPU index for your machine. This judges existing predictions using
+the v4 prompt and settings; it does not rerun PDF answer generation. Do not pass
+`--judge-cache` for a new run. Dependencies and resume rules are in the
+[new-run guide](evaluation/README.md#新本地-judge-运行).
+
+## Dataset and output-format checks
+
+After obtaining the frozen PDFs, validate the current four-file release and its
+712 PDF assets:
+
+```bash
+python evaluation/preflight.py --output data/results/preflight.json
+```
+
+The model-generation contract is JSON with `answer_pre` and `evidence_pages`,
+using 1-based physical PDF pages. A refusal is
+`{"answer_pre":"Unanswerable","evidence_pages":[]}`. For a **format diagnostic**,
+`scripts/validate_submission.py --predictions predictions.jsonl` accepts flat
+records with an added `qa_id` and requires the release PDFs. The bundled
+`examples/predictions.example.jsonl` has only two records and correctly returns
+1 for incompleteness. The v4 scorer consumes five result files, not flat JSONL.
+
+Current-release validation and original-experiment replay use different input
+versions. Preserve the references stored with the historical results when
+reproducing that experiment.
 
 ## Evaluation and reproduction status
 
-The paper defines semantic **Answer Accuracy**, macro **E-Precision**, **E-Recall**,
-**E-F1**, and **A-Pages**, with a fixed full-benchmark denominator of 2,200.
-Answerable items use the paper's Qwen3.6-27B binary semantic judge; Unanswerable
-items use deterministic exact-label validation. Exact page-set match and joint
-correctness are audit diagnostics. There is no composite Overall Score.
+`evaluation/` now uses the **sxz v4 experiment's exact parsing, calibrated
+CORRECT/PARTIAL/WRONG Judge prompt, embedded historical references and fixed
+2,200 denominator**. Only CORRECT contributes to answer accuracy. Evidence is
+scored independently before answer validity checks. The strict producer-format
+validator above is a diagnostic, not a scoring gate.
 
-The new package preserves the paper prompt verbatim and does not normalize
-answer meanings. Historical experiment artifacts use a different tri-class
-judge and permissive parsing, and some predictions target older gold versions.
-**An official rescore reproducing the paper has not been established.**
-Reaggregating historical v4 records matches all 99 displayed Table 2 cells;
-Table 3 matches 98/99 cells, with a discrepancy in Claude's All value.
-See the [complete audit and remaining reproducibility items](docs/reports/official_evaluation/FINAL_REPORT.md).
+Replaying all 55 result files with the original bound Judge cache matches all
+1,540 numeric cells of the historical 77-row summary. Table 2 matches **99/99**
+displayed cells; Table 3 matches **98/99**. Claude's Table 3 All remains 68.05%
+from the subject cohort versus 69.32% in the paper. QA and paper text are unchanged.
 
-The [subsequent full-artifact check and local Judge verification](docs/reports/official_evaluation/REPRODUCTION_DISCREPANCY.md)
-demonstrate concrete mismatches with the current paper protocol. Old rule-first
-answer scoring has been removed; QA and historical artifacts remain unchanged.
-
-```bash
-python evaluation/evaluate.py --predictions predictions.jsonl \
-  --judge-config judge-config.json --judge-cache .cache/sciencedoc_judge.jsonl \
-  --output results.json
-python -m pytest -q tests/test_validation.py tests/test_metrics.py tests/test_judge.py tests/test_e2e.py
-```
-
-Judge configuration must be explicitly supplied; unavailable historical settings
-are not guessed. Use `--offline` for cache-only diagnostics. Incomplete or
-unresolved evaluations return nonzero and are clearly labeled.
+The scorer implementation and recorded-cache replay are verified. Fresh Judge
+generation is a separate run: historical weight identity was not fully recorded,
+so identical newly generated labels cannot be guaranteed. The manuscript still
+contains a binary Judge prompt that differs from the adopted experiment rules;
+this code update has not revised the manuscript. See the
+[alignment verification](docs/reports/official_evaluation/SXZ_V4_ALIGNMENT.md).
 
 ## Repository layout
 
 | Path | Purpose |
 | --- | --- |
-| `data/qa/7.final_2200/` | Immutable evaluation inputs and existing release manifest |
-| `evaluation/` | Paper-contract validation, semantic judge cache, macro metrics, preflight, and reproduction audit |
+| `data/qa/7.final_2200/` | Current four-file release and manifest; original experiment references stay in result files |
+| `evaluation/` | sxz v4 experiment scoring, recorded-cache replay, macro metrics and format diagnostics |
 | `scripts/validate_submission.py` | Submission checking without semantic judging |
-| `examples/` | Public submission example |
+| `examples/` | Two-record output-format diagnostic example |
 | `src/pku_qa/` | Internal construction, inference, review, and historical experiment workflows |
 | `tests/`, `schemas/` | Tests and dataset schemas |
 | `docs/releases/` | External PDF packaging and file inventories |

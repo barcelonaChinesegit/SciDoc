@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Audit all 11 historical baselines against current gold and paper tables.
+"""Reproduce sxz v4 scores and compare paper cells.
 
-Historical tri-class decisions are never imported into the binary judge cache.
-Only read from results/sxz; all outputs go to the explicitly selected directory.
+Older current-release inspection helpers remain for reading archived diagnostics.
+The CLI delegates to the single current sxz v4 scorer.
 """
 
 from __future__ import annotations
@@ -243,35 +243,9 @@ def comparisons(paper, historical, baselines, table):
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--results-dir", type=Path, default=ROOT / "data/results")
-    parser.add_argument("--history-dir", type=Path, default=ROOT / "sxz")
-    parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--pdf-dir", type=Path)
-    args = parser.parse_args()
-    if args.output_dir.resolve().is_relative_to((ROOT / "sxz").resolve()):
-        parser.error("sxz is read-only; select an output directory outside it")
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    gold, metadata = load_gold(pdf_dir=args.pdf_dir)
-    baselines = audit_baselines(args.results_dir, gold, args.output_dir)
-    table2, sources2 = historical_table2(args.history_dir, args.results_dir)
-    table3, meta3 = historical_table3(args.history_dir, args.results_dir)
-    paper = json.loads((Path(__file__).parent / "paper_reference.json").read_text())
-    rows2 = comparisons(paper["table2"], table2, baselines, "table2")
-    rows3 = comparisons(paper["table3"], table3, baselines, "table3")
-    write_csv(args.output_dir / "table2_comparison.csv", rows2)
-    write_csv(args.output_dir / "table3_comparison.csv", rows3)
-    output = {"official_reproduction_verified": False, "dataset_hashes": metadata["dataset_hashes"],
-              "baselines": baselines, "historical_table2": table2, "historical_table2_source_hashes": sources2,
-              "historical_table3": table3, "historical_table3_metadata": meta3,
-              "historical_table2_rounded_matches": sum(abs(r["historical_display_difference"]) < 1e-9 for r in rows2),
-              "historical_table3_rounded_matches": sum(abs(r["historical_display_difference"]) < 1e-9 for r in rows3),
-              "paper_reference": paper, "note": "Historical reaggregation is NOT a binary-paper-protocol rescore. No old decisions enter the new judge cache."}
-    (args.output_dir / "reproduction_audit.json").write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print("Historical Table 2 rounded matches:", output["historical_table2_rounded_matches"], "/ 99")
-    print("Historical Table 3 rounded matches:", output["historical_table3_rounded_matches"], "/ 99")
-    print("Official rescore remains unresolved; see reproduction_audit.json and comparison CSVs.")
-    return 2
+    # The reproduction entry point uses the same scorer as evaluate.py.
+    from evaluation.runner import main as evaluate_main
+    return evaluate_main(require_paper_match=True)
 
 
 if __name__ == "__main__":

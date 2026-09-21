@@ -43,6 +43,11 @@ def compare_bound(model, metric, paper, bound):
 
 
 def main() -> int:
+    raise SystemExit(
+        "This binary-paper diagnostic is retired after the sxz v4 scoring change. "
+        "Saved reports remain historical evidence. Use python evaluation/evaluate.py --help "
+        "for recorded-cache replay or a new local v4 Judge run."
+    )
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--results-dir", type=Path, default=ROOT / "data/results")
     parser.add_argument("--output-dir", type=Path, required=True)

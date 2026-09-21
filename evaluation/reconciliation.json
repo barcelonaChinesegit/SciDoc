@@ -1,41 +1,16 @@
 {
-  "status": "unresolved",
-  "official_reproduction_verified": false,
+  "status": "sxz_v4_scoring_aligned",
+  "scoring_protocol": "sxz_v4",
+  "historical_summary_numeric_matches": "1540/1540",
+  "table2_display_matches": "99/99",
+  "table3_display_matches": "98/99",
+  "verification": "docs/reports/official_evaluation/SXZ_V4_ALIGNMENT.md",
+  "execution": "recorded_cache_replay",
+  "new_gpu_judge_run": false,
   "unresolved_items": [
-    "The binary paper prompt has no recovered, bound historical execution configuration or decisions. Historical v4/v10 use different tri-class prompts.",
-    "Historical checkpoint revision and weight hashes were not bound to cached decisions. Current local files cannot prove past checkpoint bytes.",
-    "Historical prediction parsing repairs fences, extracts strings/pages and scores embedded gold; paper requires strict raw JSON and independent immutable gold.",
-    "Historical evidence scoring precedes output validity checks. The paper does not specify a recoverable page set for every illegal raw output; illegal evidence headline metrics remain null pending reconciliation.",
-    "The 55 baseline files contain missing items and question/reference/evidence version differences relative to the current four-file release.",
-    "No uniform format-correction retry count or complete retry trail is recoverable across all 11 historical baseline pipelines. Submission scoring does not rerun inference or invent retries.",
-    "Paper tables provide two-decimal values, not full-precision references; compare recovered historical full-precision artifacts separately."
-  ],
-  "current_artifact_verification": {
-    "status": "historical_aggregates_reconstructed_current_release_diagnostic_differs",
-    "report": "docs/reports/official_evaluation/PROVENANCE_RECONCILIATION.md",
-    "table2_proven_answer_cell_mismatches": 31,
-    "table3_proven_cell_mismatches": 51,
-    "local_judge": "Qwen/Qwen3.6-27B",
-    "local_semantic_decisions": 1938,
-    "full_11_model_rescore": false,
-    "full_qwen8b_current_release_rescore": true,
-    "qwen8b_paper_all": 68.32,
-    "qwen8b_current_all": 55.31818181818182,
-    "reference_only_adapter_bug_fixed": true,
-    "single_item_disagreement_checks": 12,
-    "controls": 6
-  },
-  "provenance_reconciliation": {
-    "historical_result_files_byte_identical": 55,
-    "historical_cache_bindings_verified": 21050,
-    "table2_recorded_item_display_matches": "99/99",
-    "table3_recorded_item_display_matches": "98/99; all 88 discipline cells match",
-    "claude_correct_records_outside_subject_cohort": 28,
-    "qwen8b_identical_actual_judge_input_items": 1883,
-    "qwen8b_identical_input_net_correct_difference": -232,
-    "paired_input_version_checks": 49,
-    "paired_current_repeat_matches": 49,
-    "paired_net_correct_difference_current_minus_historical_text": -1,
-    "interpretation": "Historical experiments are traceable. New Judge labels are not human ground truth. Current-release diagnostic numbers do not replace paper tables."
-  }
+    "Claude Table 3 All is 68.05% for the original subject cohort, versus paper 69.32%.",
+    "Historical checkpoint revision/weight hashes remain unavailable; new generation is not guaranteed identical.",
+    "Manuscript binary prompt/strict-format wording differs from the adopted sxz v4 experiment rules; manuscript was not changed.",
+    "The current four-file release differs from the historical embedded references. Do not mix versions when claiming reproduction."
+  ]
 }

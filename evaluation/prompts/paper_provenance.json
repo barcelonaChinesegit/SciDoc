@@ -1,0 +1,7 @@
+{
+  "source": "论文/写作材料/图/附录/提示词方框_drawio/source_text/06_semantic_judge.txt",
+  "paper": "论文/ICLR2027_ScienceDoc/iclr2027_conference.tex",
+  "section": "Appendix B.12",
+  "sha256": "45785c6f699520192874355527135b437bf2d0793d88b38b7246c592d3dcbe70",
+  "policy": "Byte-for-byte copy of the source text used to render the paper prompt. No prompt rewriting."
+}

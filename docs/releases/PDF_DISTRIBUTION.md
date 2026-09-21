@@ -26,7 +26,7 @@ Keep the following alongside the PDF package:
 - optional `final_2200_classification_statistics.xlsx` for descriptive statistics.
 
 Preserve the layout `data/pdfs/<filename>.pdf` on extraction. The final QA's
-historical absolute `pdf_path` values are provenance; the evaluator resolves
+historical absolute `pdf_path` values are provenance; `evaluation/preflight.py` resolves
 PDF identities through the manifest and `--pdf-dir`, without changing QA data.
 Use the merged PDFs as supplied. Some final Multi-Document records do not carry
 a complete source interval map, so recreating bundles from source IDs alone is
@@ -45,6 +45,15 @@ python evaluation/preflight.py --output preflight.json --pdf-inventory-dir docs/
 ```
 
 The full asset list retains original PDFs needed for construction history.
-The benchmark subset already includes the complete evaluation inputs; source
-PDFs not in that subset are optional for scoring. Manuscript drafts, screenshots,
+The benchmark subset includes the PDFs needed for current-release answer
+generation and PDF validation; source PDFs outside it are construction references. Manuscript drafts, screenshots,
 and third-party PDFs outside the asset manifest are not benchmark inputs.
+
+## Materials for score replay
+
+The PDF package does not include the original five result components per model,
+v4 Judge cache or historical Table 3 subject workbook. Those are separate
+experiment artifacts listed in the [evaluation Quick Start](../../evaluation/README.md#quick-start).
+Recorded-cache replay reads no PDF bytes; it recomputes scores from the frozen
+result fields and bound Judge decisions. Current-release PDF validation is not
+proof that a historical model run used the same inputs.

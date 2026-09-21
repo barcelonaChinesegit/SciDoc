@@ -58,6 +58,11 @@ def export_submission(out: Path, ids: list[str]) -> Path:
 
 
 def main() -> int:
+    raise SystemExit(
+        "This binary-paper diagnostic is retired after the sxz v4 scoring change. "
+        "Saved reports remain historical evidence. Use python evaluation/evaluate.py --help "
+        "for recorded-cache replay or a new local v4 Judge run."
+    )
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", required=True, type=Path)
     parser.add_argument("--gpu", type=int, required=True, help="Physical idle A800 index")
