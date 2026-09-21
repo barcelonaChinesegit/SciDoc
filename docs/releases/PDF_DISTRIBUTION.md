@@ -1,5 +1,28 @@
 # PDF assets for Google Drive
 
+## Download and validate
+
+The PDFs are available in the
+[public Google Drive folder](https://drive.google.com/drive/folders/1J7l5HHPlKyjjegxZ2c0_plOnk9CdMVbY)
+and are excluded from Git because of repository size limits. Download the
+resources and extract any archives before PDF-based answer generation or
+current-release PDF validation. Preserve the filenames and place the PDFs
+directly at `data/pdfs/<filename>.pdf` in your checkout, without an extra nested
+`data/pdfs/` directory.
+
+After installing `requirements-eval.txt`, run from the repository root:
+
+```bash
+python evaluation/preflight.py --output data/results/preflight.json
+```
+
+Success reports `status: valid` and `pdf_count: 712`; the command verifies the
+current benchmark's PDF hashes, readability and gold evidence-page bounds.
+If you keep the PDFs elsewhere, add `--pdf-dir /absolute/path/to/pdfs` pointing
+directly to the directory containing the PDF files.
+
+## Asset inventories and packaging
+
 Upload the existing frozen files without renaming, recompressing individual
 PDFs, re-downloading newer paper versions, or rebuilding merged documents.
 The existing `data/pdf_assets_manifest.json` remains the hash authority.
@@ -32,11 +55,9 @@ Use the merged PDFs as supplied. Some final Multi-Document records do not carry
 a complete source interval map, so recreating bundles from source IDs alone is
 not an interchangeable substitute.
 
-After upload, set the intended Drive sharing permissions, test download with
-an account without owner privileges, and add the stable download link to the
-root README. No upload has been performed by this task and no Drive link has
-been invented. Do not include `models/`, `data/web/`, credentials, or GPU caches
-in the public PDF package.
+For future package updates, preserve public download access and keep the root
+README's download link current. Do not include `models/`, `data/web/`,
+credentials, or GPU caches in the public PDF package.
 
 Regenerate and verify these lists without modifying PDFs or QA:
 

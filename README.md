@@ -22,11 +22,31 @@ binds these files by SHA-256. The final evaluation uses **712 PDF assets**:
 not additional original papers. Multi-Document evidence refers to physical page
 indices in the frozen merged PDF, not page numbers within a source paper.
 
-PDFs and model weights are stored separately from Git. See the exact
-[benchmark PDF inventory](docs/releases/pdf_upload_benchmark.csv) and
-[Google Drive packaging guide](docs/releases/PDF_DISTRIBUTION.md).
-A public Drive download link has not yet been configured. Obtain the frozen
-assets from the maintainers and preserve their filenames under `data/pdfs/`.
+## Download the PDFs
+
+PDFs are hosted separately because of GitHub repository size limits.
+**Download: [public Google Drive folder](https://drive.google.com/drive/folders/1J7l5HHPlKyjjegxZ2c0_plOnk9CdMVbY).**
+Download them before reproducing PDF-based answer generation or validating the
+release's PDF inputs.
+
+1. Download the PDF resources from the folder and extract any archives.
+2. Place the PDFs directly under `data/pdfs/` in your checkout, preserving their
+   original filenames: `data/pdfs/<filename>.pdf`. Avoid an extra nested
+   `data/pdfs/` directory. Keep the supplied merged PDFs unchanged.
+3. After installing the Quick Start dependencies below, run from the repository root:
+
+   ```bash
+   python evaluation/preflight.py --output data/results/preflight.json
+   ```
+
+Success reports `status: valid` and `pdf_count: 712`, with PDF hashes,
+readability and gold evidence-page bounds checked for the current release.
+The full asset inventory contains 1,717 PDFs; the benchmark uses 712 of them.
+See the [benchmark PDF inventory](docs/releases/pdf_upload_benchmark.csv) and
+[PDF distribution guide](docs/releases/PDF_DISTRIBUTION.md) for exact files and
+alternative storage paths. Model weights and original experiment results/Judge
+caches are separate resources. The recorded-cache score replay below does not
+read PDFs.
 
 ## Quick Start
 
@@ -116,7 +136,7 @@ the v4 prompt and settings; it does not rerun PDF answer generation. Do not pass
 
 ## Dataset and output-format checks
 
-After obtaining the frozen PDFs, validate the current four-file release and its
+After [downloading the frozen PDFs](#download-the-pdfs), validate the current four-file release and its
 712 PDF assets:
 
 ```bash

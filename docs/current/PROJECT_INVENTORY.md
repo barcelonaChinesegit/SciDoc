@@ -26,8 +26,8 @@
 | `.gitignore` | 项目配置或入口：.gitignore | 181 | `b89d60b64a37` |
 | `CONTRIBUTORS.md` | 项目配置或入口：CONTRIBUTORS | 20 | `b84c7afd6165` |
 | `README.en.md` | 项目配置或入口：README.en | 8 | `95099ab767db` |
-| `README.md` | 项目配置或入口：README | 182 | `54732ebe88d4` |
-| `README.zh-CN.md` | 项目配置或入口：README.zh-CN | 171 | `f0d273021d85` |
+| `README.md` | 项目配置或入口：README | 202 | `150b554803c5` |
+| `README.zh-CN.md` | 项目配置或入口：README.zh-CN | 192 | `7d5449a4473c` |
 | `deploy/systemd/pku-data-manager-api.service` | 本地 systemd 服务与健康守护部署单元 | 17 | `c6dac49af915` |
 | `deploy/systemd/pku-task-queue-api.service` | 本地 systemd 服务与健康守护部署单元 | 15 | `27796a52b576` |
 | `deploy/systemd/pku-task-queue-daemon.service` | 本地 systemd 服务与健康守护部署单元 | 15 | `0e84f267087a` |
@@ -38,12 +38,12 @@
 | `docs/current/ARCHITECTURE.md` | 项目文档：ARCHITECTURE | 458 | `dfb54ca3e4b2` |
 | `docs/current/CURRENT_STATUS.md` | 项目文档：CURRENT STATUS | 83 | `a886bff5ca9f` |
 | `docs/current/DATASET_CATALOG.md` | 项目文档：DATASET CATALOG | 33 | `a8b83f7b7a4a` |
-| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 289 | `02557f59e21e` |
+| `docs/current/GETTING_STARTED.md` | 项目文档：GETTING STARTED | 293 | `714f0e6e2338` |
 | `docs/current/MANUAL_REVIEW_GUIDE.md` | 项目文档：MANUAL REVIEW GUIDE | 682 | `cae12da9221c` |
 | `docs/current/README.md` | 项目文档：README | 129 | `e97069d84ef0` |
 | `docs/current/WEB_CONSOLE.md` | 项目文档：WEB CONSOLE | 173 | `06962e74cb22` |
 | `docs/prompts/MAINTENANCE_REMEDIATION.md` | 项目文档：MAINTENANCE REMEDIATION | 26 | `7640aa7c9528` |
-| `docs/releases/PDF_DISTRIBUTION.md` | 项目文档：PDF DISTRIBUTION | 59 | `a9733593cb81` |
+| `docs/releases/PDF_DISTRIBUTION.md` | 项目文档：PDF DISTRIBUTION | 80 | `e42e9dbd3ac6` |
 | `docs/reports/CROSS_PDF_EVIDENCE_AUDIT.md` | 项目文档：CROSS PDF EVIDENCE AUDIT | 305 | `f1b33be43190` |
 | `docs/reports/DOCUMENTATION_AUDIT.md` | 项目文档：DOCUMENTATION AUDIT | 52 | `2569697d3234` |
 | `docs/reports/EVALUATION_DOCS_UPDATE_20260921.md` | 项目文档：EVALUATION DOCS UPDATE 20260921 | 38 | `6f64444eb231` |

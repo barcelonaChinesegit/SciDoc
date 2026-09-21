@@ -25,6 +25,27 @@ SciDoc 面向科学论文 PDF 的阅读理解、证据定位和跨论文推理�
 
 [发布 manifest](data/qa/7.final_2200/rel__collection__final_2200__manifest.json) 固定四文件的数量、身份与内容哈希；[分类统计工作簿](data/qa/7.final_2200/final_2200_classification_statistics.xlsx) 提供分组件统计和逐题明细。上游 6,204 条原始 QA、4,211 条清洗基线及分批源组件属于构建谱系，不与最终 2,200 条相加。
 
+## 下载 PDF
+
+由于 GitHub 仓库空间限制，PDF 单独托管在网盘，未随 Git 仓库提供。
+**下载地址：[公开 Google Drive 文件夹](https://drive.google.com/drive/folders/1J7l5HHPlKyjjegxZ2c0_plOnk9CdMVbY)。**
+从 PDF 重新生成模型答案、复现完整实验或检查发布集 PDF 前，必须先下载这些资源。
+
+1. 从上述文件夹下载 PDF 资源；如果下载的是压缩包，先解压。
+2. 保留原始文件名，将 PDF 平铺到仓库的 `data/pdfs/`，即
+   `data/pdfs/<filename>.pdf`，避免多嵌套一层 `data/pdfs/`。直接使用提供的合并 PDF。
+3. 安装下方 Quick Start 的依赖后，从仓库根目录运行：
+
+   ```bash
+   python evaluation/preflight.py --output data/results/preflight.json
+   ```
+
+成功时输出 `status: valid` 和 `pdf_count: 712`，表示当前发布集 PDF 的哈希、可读性及
+金证据页范围通过检查。完整资产清单有 1,717 份 PDF，其中 712 份用于当前评测。
+具体文件见 [评测 PDF 清单](docs/releases/pdf_upload_benchmark.csv)，其他存放路径的用法见
+[资源分发说明](docs/releases/PDF_DISTRIBUTION.md)。模型权重、原实验结果和 Judge 缓存
+需另行准备；下方仅回放已有缓存的评分流程不读取 PDF。
+
 ## Quick Start
 
 ### 1. 安装并检查评测包
@@ -113,7 +134,7 @@ PYTHONPATH=src python -m pku_qa.workflows.operations.inspect_final_2200
 ```
 
 成功时输出 `status: valid`、`qa_count: 2200` 和 `evaluation_pdfs: 712`。
-取得 [清单](data/pdf_assets_manifest.json) 中的 PDF 并平铺到 `data/pdfs/` 后，可检查
+按 [下载 PDF](#下载-pdf) 部署与 [清单](data/pdf_assets_manifest.json) 匹配的文件后，可检查
 完整的哈希、可读性和金证据页范围：
 
 ```bash

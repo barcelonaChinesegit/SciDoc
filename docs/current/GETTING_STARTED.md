@@ -69,11 +69,15 @@ python -m pip install -e .
 仅检查 PDF 可只安装 `pypdf==6.10.2`；完整 requirements 用于模型推理、API 和测试。
 
 Git 中提供最终 QA 和资产索引，PDF、权重、历史归档压缩包、审核数据库与密钥单独管理。
-本机可直接上传的完整资源包及校验、恢复说明位于 `data/exports/google_drive/`，
+PDF 已通过 [公开 Google Drive 文件夹](https://drive.google.com/drive/folders/1J7l5HHPlKyjjegxZ2c0_plOnk9CdMVbY)
+分发；从 PDF 重新生成模型答案或进行 PDF 预检前，先下载并解压这些资源。
+本机打包副本及校验、恢复说明位于 `data/exports/google_drive/`，
 目录约定见 [资源包说明](../../data/exports/README.md)。
-向维护者取得与 `data/pdf_assets_manifest.json` 匹配的 PDF，平铺到 `data/pdfs/`。
+保留与 `data/pdf_assets_manifest.json` 匹配的原始文件名，将 PDF 平铺到
+`data/pdfs/<filename>.pdf`，避免重复嵌套目录；合并 PDF 直接使用下载版本。
 最终输入使用其中 474 份单论文和 238 份合并 PDF；完整资产目录还包含生成源论文和历史合订本，
-不能把资产总数写成 benchmark 的论文数。
+不能把资产总数写成 benchmark 的论文数。原实验结果、Judge 缓存和模型权重需另行准备；
+仅回放已有 Judge 缓存不读取 PDF。
 
 ```bash
 PYTHONPATH=src python -m pku_qa.workflows.operations.inspect_final_2200 --check-pdfs
