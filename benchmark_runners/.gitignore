@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~
+
+# Logs / temporary files
+*.log
+nohup.out
+*.tmp
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated inference outputs
+models/*/output/
+models/*/logs/
+models/*/render_cache/
+
+# Backups / archives
+*_old/
+*_backup/
+*.bak
+*.bak_*
+*.zip
+*.tar
+*.tar.gz
+
+# Model weights
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.gguf
+
+# Large local data
+data/
+cache/
+
+# Local machine configuration
+settings/local_env.sh
